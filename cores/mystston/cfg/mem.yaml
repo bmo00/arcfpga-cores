@@ -1,0 +1,84 @@
+# Slot offsets are relative to their OWN BANK's start and measured in 16-bit WORDS — the ROM
+# download already re-bases each bank so bank N's word 0 holds the byte at JTFRAME_BAn_START of the
+# download stream (see cores/kunio/cfg/mem.yaml upstream: its second bank-1 slot uses
+# "(`PCM_START-`JTFRAME_BA1_START)>>1", and its first slot has no offset at all). Passing raw
+# JTFRAME_BAn_START byte addresses here (the previous version) made gfx1/gfx2 read words far past
+# anything the download ever wrote into their banks — every graphics fetch returned zeros, so all
+# three layers rendered as transparent/blank over the palette background color.
+
+clocks:
+  clk24:
+    # jt65c02 (modules/jt680x — same CPU jotego's own `kunio` core uses for Renegade, also a real
+    # 1.5MHz 6502-family bus rate) wants its `cen` at 4x the real rate ("crystal clock freq. = 4x E
+    # pin freq.", per jt65c02.v's own port comment) — 6MHz here. `gate: [maincpu]` pauses this cen
+    # automatically while the ROM SDRAM bus is busy (maincpu_cs & ~maincpu_ok), replacing the manual
+    # `rdy` signal the old CPU module needed (jt65c02 has no rdy port at all — kunio doesn't use one
+    # either, relying on this same mem.yaml gate mechanism).
+    - freq: 6000000
+      gate: [maincpu]
+      outputs:
+        - cen_cpu
+    # Real 1.5MHz enable for the AY8910s — independent of cen_cpu (unlike the old CPU module, jt65c02
+    # doesn't need an internal /2 division exposed, so this can just be its own plain declared output).
+    - freq: 1500000
+      outputs:
+        - cen_ay
+  # pxl_cen/pxl2_cen are NOT declared here: JTFRAME_PXLCLK=6 (macros.def) already makes JTFRAME
+  # generate and wire them in as game-module inputs on its own (see jtmystston_game.v's own header
+  # comment) — an extra clocks: entry for them here produced a second, colliding `.pxl_cen(pxl_cen)`
+  # connection in the generated jtmystston_game_sdram.v wrapper (Verilator: "Duplicate pin
+  # connection: 'pxl_cen'").
+
+audio:
+  rsum: 1k
+  channels:
+    - { name: ay1, module: jt49, rsum: 1k }
+    - { name: ay2, module: jt49, rsum: 1k }
+
+sdram:
+  banks:
+    - buses:
+      - name: maincpu
+        addr_width: 16
+        data_width: 8
+    - buses:
+      - name: gfx1
+        addr_width: 16
+        data_width: 16
+    - buses:
+      - name: gfx2
+        addr_width: 16
+        data_width: 16
+
+bram:
+  # Color PROM (32 bytes) — too small for its own SDRAM bank/slot, and NOT a normal SDRAM ROM bus
+  # at all: `prom: true` makes jtframe auto-generate a dedicated small on-chip BRAM (jtframe_prom)
+  # populated directly from the ROM download stream at JTFRAME_PROM_START (jtframe_ioctl_range
+  # watches raw_addr, mem.go's calc_prom_we() computes the offset), with a plain 1-cycle-latency
+  # addr->data read and NO cs/ok handshake at all. The earlier version declared this as a normal
+  # 2-slot SDRAM bus sharing bank 2 with gfx2 (offset: PROMS_OFFSET) — the cs/ok handshake completed
+  # every cycle as expected, but proms_data always read back as 0x00: the real ROM content at that
+  # download offset was only ever routed into this prom BRAM path (per jtframe convention, see
+  # cores/pktgal/cfg/mem.yaml's promrg/promb), never into bank 2's actual SDRAM, so slot1's reads
+  # were sampling SDRAM that the download had never written.
+  - name: proms
+    addr_width: 5
+    data_width: 8
+    prom: true
+
+  - name: workram
+    addr_width: 12
+    data_width: 8
+    rw: true
+  - name: videoram
+    addr_width: 12
+    data_width: 8
+    rw: true
+  - name: spriteram
+    addr_width: 7
+    data_width: 8
+    rw: true
+  - name: paletteram
+    addr_width: 5
+    data_width: 8
+    rw: true

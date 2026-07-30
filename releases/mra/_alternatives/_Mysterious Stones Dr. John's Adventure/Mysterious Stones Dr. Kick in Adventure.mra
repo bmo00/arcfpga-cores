@@ -1,0 +1,82 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="arcfpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (cw)</rotation>
+    <name>Mysterious Stones: Dr. Kick in Adventure</name>
+    <setname>myststono</setname>
+    <mameversion>0288</mameversion>
+    <year>1984</year>
+    <manufacturer>Technos Japan</manufacturer>
+    <players>2</players>
+    <rbf>mystston</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="myststono.zip|mystston.zip" md5="None" asm_md5="1dffc66061f368a726fb281fcd7e26f0">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part repeat="0x4000"> FF</part>
+        <part name="bb00.ic102" crc="6dacc05f"/>
+        <part name="bw01.ic90" crc="a3546df7"/>
+        <part name="bw02.ic76" crc="43bc6182"/>
+        <part name="bw03.ic75" crc="9322222b"/>
+        <part name="bw04.ic62" crc="47cefe9b"/>
+        <part name="bw05.ic61" crc="b37ae12b"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- fgtiles_sprites - starts at 0x10000 - length 0xC000 (16 bits) -->
+        <part name="bw06.ic105" crc="85c83806"/>
+        <part name="bw09.ic93" crc="b146c6ab"/>
+        <part name="bw07.ic107" crc="d025f84d"/>
+        <part name="bw10.ic95" crc="d85015b5"/>
+        <part name="bw08.ic109" crc="53765d89"/>
+        <part name="bw11.ic97" crc="919ee527"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- bgtiles - starts at 0x1C000 - length 0xC000 (16 bits) -->
+        <part name="bw12.ic15" crc="72d8331d"/>
+        <part name="bw13.ic20" crc="845a1f9b"/>
+        <part name="bw14.ic24" crc="822874b0"/>
+        <part name="bw15.ic29" crc="4594e53c"/>
+        <part name="bw16.ic34" crc="2f470b0f"/>
+        <part name="bw17.ic38" crc="38966d1b"/>
+        <!-- JTFRAME_PROM_START -->
+        <!-- proms - starts at 0x28000 - length 0x20 (5 bits) -->
+        <part name="hlo.ic61" crc="e802d6cf"/>
+        <!-- Total 0x28020 bytes - 160 kBytes -->
+    </rom>
+    <!-- Vertical screen. -->
+    <rom index="1">
+        <part>01 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="fb,9f">
+        <DSW0/>
+        <dip name="Lives" bits="0" ids="5,3"/>
+        <dip name="Difficulty" bits="1" ids="Hard,Easy"/>
+        <dip name="Demo Sounds" bits="2" ids="On,Off"/>
+        <DSW1/>
+        <dip name="Coin A" bits="8,9" ids="2/1,1/3,1/2,1/1"/>
+        <dip name="Coin B" bits="10,11" ids="2/1,1/3,1/2,1/1"/>
+        <dip name="Flip Screen" bits="13" ids="Off,On"/>
+        <dip name="Cabinet" bits="14" ids="Upright,Cocktail"/>
+    </switches>
+    <buttons names="Fire,Kick,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>
