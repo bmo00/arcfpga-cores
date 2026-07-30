@@ -1,0 +1,26 @@
+mystston:
+  - get:
+      - jtmystston_game.v
+      - mystston_main.v
+      - mystston_video.v
+      - mystston_colmix.v
+      - mystston_obj.v
+      - mystston_scroll.v
+      - mystston_sound.v
+jtframe:
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_blank.v
+  - from: ram
+    get:
+      - jtframe_ram.v
+  - from: ram
+    get:
+      - jtframe_prom.v
+jt680x:
+  - get:
+      - jt65c02.yaml
+jt49:
+  - get:
+      - '*.v'
