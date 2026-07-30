@@ -1,0 +1,6 @@
+jtframe/target/mist:
+jtframe/target/neptunoplus:
+  - get:
+    - pll.qip
+    - neptunoplus.sdc
+    - jtframe_neptunoplus_top.sv
