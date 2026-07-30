@@ -1,0 +1,18 @@
+# configure MiST target to support neptUNO+ features
+#
+# neptUNO+ ships an RP2040 middle board running real MiST firmware, so this
+# target reuses the genuine MiST io modules (target/mist).
+#
+# Pin-out and macro list: not from an official schematic, verify against
+# real hardware before a release build.
+#
+# Direct upload stays enabled here (unlike sidi128/neptuno): the RP2040
+# middle board shares SPI_SCK/SPI_DO between the normal MiST protocol and
+# a microSD pass-through, selected by SPI_SS4 (see jtframe_neptunoplus_top.sv)
+# - that mux needs SPI_SS4 wired as a real signal, which only happens with
+# direct upload enabled.
+MIST=1
+MIST_I2S_AUDIO=1
+MIST_VGA_8BIT=1
+
+debug JTFRAME_NOSTA
