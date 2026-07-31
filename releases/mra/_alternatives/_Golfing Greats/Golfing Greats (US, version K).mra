@@ -1,0 +1,85 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Golfing Greats (US, version K)</name>
+    <setname>glfgreatu</setname>
+    <mameversion>0288</mameversion>
+    <year>1991</year>
+    <manufacturer>Konami</manufacturer>
+    <players>4</players>
+    <rbf>jtriders</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="glfgreatu.zip|glfgreat.zip" md5="None" address="0x30000000" asm_md5="180da16e2723440784013c31b65f0005">
+        <!-- Offsets for each ROM region. Byte 15 = game selection. -->
+        <part>
+            00 00 40 00 50 01 50 02
+            FF FF 00 00 00 00 00 08
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="061k03.4h" crc="3647999a" map="01"/>
+            <part name="061k02.1h" crc="7d7a4d43" map="10"/>
+        </interleave>
+        <!-- audiocpu - starts at 0x40000 - length 0x10000 (16 bits) -->
+        <part name="061f01.4e" crc="ab9a2a57"/>
+        <part name="061f01.4e" crc="ab9a2a57"/>
+        <!-- pcm - starts at 0x50000 - length 0x100000 (20 bits) -->
+        <part name="061e04.1d" crc="7921d8df"/>
+        <!-- k052109 - starts at 0x150000 - length 0x100000 (20 bits) -->
+        <interleave output="32">
+            <part name="061d14.12l" crc="b9440924" map="0021" length="0x80000"/>
+            <part name="061d13.12k" crc="9f999f0b" map="2100" length="0x80000"/>
+        </interleave>
+        <!-- GLFGREAT_BANK3 -->
+        <!-- obj - starts at 0x250000 - length 0x200000 (21 bits) -->
+        <interleave output="16">
+            <part name="061d11.3k" crc="c45b66a3" map="01"/>
+            <part name="061d12.8k" crc="d305ecd1" map="10"/>
+        </interleave>
+        <!-- PSC_START -->
+        <!-- z-tiles - starts at 0x450000 - length 0x180000 (21 bits) -->
+        <part name="061b08.14g" crc="6ab739c3"/>
+        <part name="061b09.15g" crc="42c7a603"/>
+        <part name="061b10.17g" crc="10f89ce7"/>
+        <!-- PSCMAP_START -->
+        <!-- z-tilemap - starts at 0x5D0000 - length 0x140000 (21 bits) -->
+        <interleave output="16">
+            <part name="061b06.16d" crc="41ada2ad" map="01"/>
+            <part name="061b07.18d" crc="517887e2" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="061b05.15d" crc="2456fb11" map="01"/>
+            <part name="061b05.15d" crc="2456fb11" map="10"/>
+        </interleave>
+        <!-- Total 0x710000 bytes - 7232 kBytes -->
+    </rom>
+    <nvram index="2" size="41153"/>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <buttons names="Stance,Shot,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>
