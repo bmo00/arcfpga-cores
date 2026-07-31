@@ -17,9 +17,9 @@ framework, with an added **neptUNO+** target alongside the targets JTFRAME alrea
 
 ## Cores
 
-| Core | Parents | Description | Last update |
-|---|---|---|---|
-| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 (board TA-0010) | 2026-07-30 |
+| Core | Parents | Description | FPGA | Last update |
+|---|---|---|---|---|
+| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 (board TA-0010) | MiSTer, NeptUNO+ | 2026-07-30 |
 
 *This table is updated as cores are added — see each core's own README for build/hardware notes.*
 
