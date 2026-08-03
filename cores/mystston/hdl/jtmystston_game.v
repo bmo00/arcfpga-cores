@@ -9,12 +9,9 @@
 //============================================================================
 
 module jtmystston_game(
-    // jtframe_game_ports.inc already `include`s mem_ports.inc itself under
-    // `ifdef JTFRAME_MEMGEN (auto-set whenever cfg/mem.yaml exists) — a
-    // second explicit include here (copied from this file's earlier, broken
-    // version) duplicated the whole port list and broke elaboration; see
-    // cores/pspikes/hdl/jtpspikes_game.v for the correct, single-include
-    // pattern this now matches.
+    // jtframe_game_ports.inc already `include`s mem_ports.inc under
+    // `ifdef JTFRAME_MEMGEN (auto-set whenever cfg/mem.yaml exists) — only
+    // one include is needed here.
     `include "jtframe_game_ports.inc"
 );
 
@@ -35,6 +32,13 @@ module jtmystston_game(
     wire [7:0] video_control, scroll_reg;
     wire       flip;
     wire [8:0] vcnt;
+
+    // Constant: mystston is a fixed vertical cabinet (no cocktail mount to
+    // support), so MiSTer's screen-rotation direction never needs to change
+    // at runtime — independent of this game's own cabinet-flip DIP (`flip`,
+    // consumed by u_video below). See doc/IMPLEMENTATION.md's "Screen
+    // rotation" section for how this value was derived.
+    assign dip_flip = 1'b1;
 
     // page_select = video_control[2]; fg_color = {video_control[0],
     // video_control[1]} (mystston.cpp's get_fg_tile_info(): color =
@@ -62,12 +66,8 @@ module jtmystston_game(
     // clk24, NOT clk: cen_cpu/cen_ay are declared under mem.yaml's clk24
     // domain, so their consumers must run on clk24 too (doc/clocks.md: "make
     // sure the right clock is used in the game module for each respective
-    // cen"; cores/kunio/hdl/jtkunio_game.v clocks its jt65c02 main on clk24
-    // for the same reason). Running this on clk while cen_cpu was a clk24
-    // pulse made each enable last TWO clk cycles — the CPU advanced twice per
-    // intended step and changed the SDRAM address mid-request, corrupting
-    // multi-byte operand reads (the crash-loop seen both in simulation and on
-    // real MiSTer hardware as flashing palette colors).
+    // cen"). Running on plain clk while consuming a clk24-domain enable would
+    // make each enable pulse last two clk cycles, double-stepping the CPU.
     // ------------------------------------------------------------------
     /* verilator tracing_off */
     mystston_main u_main(
@@ -138,50 +138,50 @@ module jtmystston_game(
     // Video subsystem (tilemaps + sprites + palette)
     // ------------------------------------------------------------------
     mystston_video u_video(
-        .clk               ( clk               ),
-        .rst               ( rst               ),
-        .pxl_cen           ( pxl_cen           ),
-        .pxl2_cen          ( pxl2_cen          ),
+        .clk                ( clk                 ),
+        .rst                ( rst                 ),
+        .pxl_cen            ( pxl_cen             ),
+        .pxl2_cen           ( pxl2_cen            ),
 
-        .gfx_en            ( gfx_en            ),
-        .flip              ( flip              ),
-        .scroll_reg        ( scroll_reg        ),
-        .page_select       ( page_select       ),
-        .fg_color          ( fg_color          ),
+        .gfx_en             ( gfx_en              ),
+        .flip               ( flip                ),
+        .scroll_reg         ( scroll_reg          ),
+        .page_select        ( page_select         ),
+        .fg_color           ( fg_color            ),
 
-        .cpu_videoram_addr ( cpu_videoram_addr ),
-        .cpu_videoram_din  ( cpu_videoram_din  ),
-        .cpu_videoram_we   ( cpu_videoram_we   ),
+        .cpu_videoram_addr  ( cpu_videoram_addr   ),
+        .cpu_videoram_din   ( cpu_videoram_din    ),
+        .cpu_videoram_we    ( cpu_videoram_we     ),
 
-        .gfx1_addr         ( gfx1_addr         ),
-        .gfx1_data         ( gfx1_data         ),
-        .gfx1_cs           ( gfx1_cs           ),
-        .gfx1_ok           ( gfx1_ok           ),
+        .gfx1_addr          ( gfx1_addr           ),
+        .gfx1_data          ( gfx1_data           ),
+        .gfx1_cs            ( gfx1_cs             ),
+        .gfx1_ok            ( gfx1_ok             ),
 
-        .gfx2_addr         ( gfx2_addr         ),
-        .gfx2_data         ( gfx2_data         ),
-        .gfx2_cs           ( gfx2_cs           ),
-        .gfx2_ok           ( gfx2_ok           ),
+        .gfx2_addr          ( gfx2_addr           ),
+        .gfx2_data          ( gfx2_data           ),
+        .gfx2_cs            ( gfx2_cs             ),
+        .gfx2_ok            ( gfx2_ok             ),
 
-        .cpu_spriteram_addr( cpu_spriteram_addr),
-        .cpu_spriteram_din ( cpu_spriteram_din ),
-        .cpu_spriteram_we  ( cpu_spriteram_we  ),
+        .cpu_spriteram_addr ( cpu_spriteram_addr  ),
+        .cpu_spriteram_din  ( cpu_spriteram_din   ),
+        .cpu_spriteram_we   ( cpu_spriteram_we    ),
 
         .cpu_paletteram_addr( cpu_paletteram_addr ),
         .cpu_paletteram_din ( cpu_paletteram_din  ),
         .cpu_paletteram_we  ( cpu_paletteram_we   ),
-        .proms_addr        ( proms_addr        ),
-        .proms_data        ( proms_data        ),
+        .proms_addr         ( proms_addr          ),
+        .proms_data         ( proms_data          ),
 
-        .LHBL              ( LHBL              ),
-        .LVBL              ( LVBL              ),
-        .HS                ( HS                ),
-        .VS                ( VS                ),
-        .red               ( red               ),
-        .green             ( green             ),
-        .blue              ( blue              ),
+        .LHBL               ( LHBL                ),
+        .LVBL               ( LVBL                ),
+        .HS                 ( HS                  ),
+        .VS                 ( VS                  ),
+        .red                ( red                 ),
+        .green              ( green               ),
+        .blue               ( blue                ),
 
-        .vcnt              ( vcnt              )
+        .vcnt               ( vcnt                )
     );
 
 endmodule

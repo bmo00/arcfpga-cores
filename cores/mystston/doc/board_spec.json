@@ -5,16 +5,15 @@
     "year": 1984,
     "mame_driver": "technos/mystston.cpp",
     "orientation": "vertical",
-    "board_type": "custom (Technos TA-0010, 2-PCB set — confirmed on schematic: TA-0010-P1 'btm bd' carries the CPU, reset/oscillator, sync generation, program ROM, and the sprite-side ROM/logic chain; TA-0010-P2 'top bd' carries dipswitches/IO, controls/coin, both PSGs, the RGB DAC output, and the background-side ROM/logic chain — see pcb.notes for the full per-board breakdown)",
+    "board_type": "custom (Technos TA-0010, 2-PCB set)",
     "similar_jtcores": []
   },
   "cpus": [
     {
       "id": "maincpu",
       "type": "M6502",
-      "notes": "The CPU-board schematic labels the actual part '6502A' — the 2MHz-rated speed grade, run here at 1.5MHz. The same page also shows an NE555-based power-on reset generator plus a manual reset pushbutton feeding the CPU's reset pin, and a separate small header breaking out the raw CPU address bus, data bus, R/W and phi2 clock under 'C'-prefixed net names (distinct from the two main inter-board connectors) — most likely a factory test/in-circuit-emulator header, not used during normal operation.",
       "clock_hz": 1500000,
-      "clock_source": "12MHz master XTAL / 8 — X1=12MHz confirmed directly on the CPU-board schematic, with a 470ohm/470ohm/0.1uF inverter-gate oscillator circuit around the crystal",
+      "clock_source": "12MHz master XTAL / 8",
       "role": "main",
       "address_bits": 16
     }
@@ -276,15 +275,15 @@
       "type": "ram",
       "entries": 64,
       "indirect": false,
-      "notes": "Low 32 entries (index bit5=0) are RAM-backed (paletteram, CPU writable); high 32 entries (index bit5=1) are hardwired from the 32-byte color PROM (ic61/hlo/82s123). Both halves feed the same 3-3-2 resistor-weighted RGB DAC (R/G taps 4.7k/3.3k/1.5k, B taps 3.3k/1.5k), confirmed directly on the video-output board's schematic: 2SC1815 driver transistors per channel (R41/R48-R54), output on connector J3 (B13=Blue, A13=Green, A14=Red, B14=Sync). The real board drives composite sync (CMPSYNC/CMPBLK) to that connector, not separate H/V lines — not something the FPGA core needs to reproduce, just a fact about the original monitor harness."
+      "notes": "Low 32 entries (index bit5=0) are RAM-backed (paletteram, CPU writable); high 32 entries (index bit5=1) are hardwired from the 32-byte color PROM (ic61/hlo/82s123). Both halves feed the same 3-3-2 resistor-weighted RGB DAC (R/G taps 4.7k/3.3k/1.5k, B taps 3.3k/1.5k)."
     },
     "custom_chips": [
-      "HMC20 (video timing/sync generator, inferred from driver comment — weakened by direct schematic review: all 18 schematic pages have now been reviewed, and no part silkscreened 'HMC20' or any other single custom video-timing IC appears anywhere on either board; sync/timing generation is built entirely from small-scale discrete 74LS-class counters and gates. Not an absolute certainty — a label could be misread on the scan — but with the full schematic set checked, no positive evidence for a custom video-timing chip was found)"
+      "HMC20 (video timing/sync generator, inferred from driver comment - not confirmed by schematic text)"
     ],
-    "dac_type": "Resistor ladder (weighted-resistor network) driven by 2SC1815 NPN transistors, not a dedicated DAC IC — confirmed directly on the video-output board's schematic",
+    "dac_type": "Resistor ladder (weighted-resistor network), not a dedicated DAC IC — consistent with pcb.notes stating no custom video silicon was identified, only discrete TTL plus the color PROM",
     "dac_bit_depth": 3,
-    "sync_generation": "The hsync-generator and vsync-generator schematic pages (both on the CPU board) show HSYNC/VSYNC/HBLK/VBLK built from small-scale discrete TTL counters and gates, not a single custom chip — see custom_chips' own updated note on how this relates to the driver's 'HMC20' comment",
-    "layer_priority_logic": "Resolved as far as documentation can go: the sprite line-buffer/color schematic page shows two PAL16R4 chips and a PAL10L8 feeding a 74LS374-class output latch labeled 'OBJCG' (object color generator) — sprite/background layer priority and final color selection appear to be encoded inside these programmable-logic parts rather than simple discrete gates. Their boolean equations aren't recoverable from a schematic drawing alone (no JEDEC/fuse-map dump available), so this can't be reverse-engineered further from documentation. The FPGA core's own priority order (foreground > sprites > background, in mystston_colmix.v) was derived independently from MAME driver source and confirmed against extensive hardware-monitor testing already documented in that module's own comments, not from these PALs — but this is now a concrete, physically-grounded explanation for why that logic was never independently derivable from the schematic."
+    "sync_generation": "board_spec attributes video timing/sync to a chip labeled 'HMC20' from a driver source comment, but flags it as unconfirmed by schematic text; the schematic PDF available for this run is scanned with no OCR layer, so this could not be verified or contradicted",
+    "layer_priority_logic": "confidence: low — not independently derivable from the available (scanned, textless) schematic; board_spec's video_control register bits (fg text color, bg page select) suggest priority is likely register/CPU-controlled rather than a dedicated priority PROM, but no PROM beyond the 32-byte color PROM (ic61/82s123) appears in the ROM listing to support a hardware priority-encoder theory"
   },
   "audio": {
     "chips": [
@@ -303,8 +302,7 @@
         "output_type": "resistor_network"
       }
     ],
-    "mixing": "mono - both AY8910s summed to a single speaker channel at 0.30 gain each; the two chips share one 8-bit data bus (0x2030) and are addressed by toggling a select latch (0x2040) that emulates each chip's discrete BDIR/BC1 pins",
-    "notes": "Real PCB: the two AY8910-equivalents are silkscreened 'PSG1'/'PSG2'; a two-latch (data + control) scheme feeds them, matching this core's own BC1/BDIR edge-detect emulation in mystston_sound.v. Their outputs are summed through a discrete resistor mixing network (1K x3 per PSG into a shared 5.1K x6 bank, then a final 1K into a 10K volume pot) and driven off-board by a Mitsubishi M51516 audio power-amp IC; the external audio connector also carries -5V and +12V supply rails alongside the amplified Sound+/Sound- output."
+    "mixing": "mono - both AY8910s summed to a single speaker channel at 0.30 gain each; the two chips share one 8-bit data bus (0x2030) and are addressed by toggling a select latch (0x2040) that emulates each chip's discrete BDIR/BC1 pins"
   },
   "custom_ics": [],
   "roms": {
@@ -783,8 +781,7 @@
         "buttons": 2,
         "ways": "4"
       }
-    ],
-    "notes": "Real PCB: each player control line is diode+RC filtered before 74LS244 buffering; coin inputs are conditioned through 2SC1075 transistors and shaped by two separate NE555 monostable timers (one per coin slot) before reaching the CPU-board address decoder. Full connector pinout for both players plus COIN1/COIN2 is confirmed on the controls/coin schematic page but not reproduced here since it's board-wiring detail with no bearing on the FPGA implementation."
+    ]
   },
   "dipswitches": [
     {
@@ -1127,11 +1124,11 @@
       "TA-0010-P1-1 / TA-0010-P2-1 (Technos original)",
       "Itisa PCB (unlicensed Spanish clone)"
     ],
-    "notes": "No custom silicon identified beyond two PAL16R4 + one PAL10L8 programmable-logic chips (undumped equations) and a 32-byte color PROM; everything else is discrete TTL. The top-level Schematics.pdf is a scanned image with no extractable text layer, but a separate directory of 18 individually-cropped, human-legible schematic pages (drawing K-10848, sheets 'MPX-01', dated 1985-06-04, drafted by Data East Co., Ltd.) has now been reviewed in full — see doc/enrichment.json's schematic_findings for the detailed write-up. Confirmed board split: TA-0010-P1 ('btm bd') carries the CPU, master oscillator, reset circuit, hsync/vsync generation, the program ROM bank (6x 2764), sprite RAM/pattern address muxing, sprite tile ROMs plus pixel shift registers, sprite Y-range compare logic, and the sprite line-buffer RAM plus priority/color-select PALs. TA-0010-P2 ('top bd') carries the dipswitch/IO decoder, player-control and coin connectors (with NE555 coin-pulse timers), the two AY-3-8910 PSGs plus a M51516 audio power amp, the RGB DAC output stage, and the background tilemap address muxing plus tile ROMs and pixel shift registers. The two boards are joined by two 40-of-50-pin flat cables carrying the shared address/data bus, control strobes, an NMI line, pixel/line counters, composite sync/blank, and clock taps; a third, separate header breaks out the raw CPU bus (address/data/R-W/phi2) under 'C'-prefixed net names, most likely a factory test or in-circuit-emulator connector rather than anything used during normal operation."
+    "notes": "No custom silicon identified; discrete TTL logic plus a 32-byte color PROM. Schematics.pdf reference exists but is a scanned image with no extractable text."
   },
   "jtframe_hints": {
     "recommended_template": "No existing JTframe core matches this early discrete-logic Technos hardware closely enough to use as a template; build from the base jtframe scaffold using a generic 6502 + raster video pipeline.",
-    "reference_jtcore": "jt49 (AY-3-8910) for both sound chips; jt65c02 (modules/jt680x) for the main CPU — see special_considerations below",
+    "reference_jtcore": "jt49 (AY-3-8910) for both sound chips; no CPU-core match in the current public registry",
     "sdram_layout": {
       "bank0": "maincpu program ROM (0x4000-0xffff region, 0x10000 total, only upper 48KB populated)",
       "bank1": "fgtiles_sprites graphics ROM (0xc000, 3bpp planar, shared by fg tilemap and sprite layer)",
@@ -1141,14 +1138,14 @@
     "ioctl_notes": "Color PROM (32B) and palette RAM (32B) are tiny — keep the whole 64-entry palette in BRAM/LUTs rather than SDRAM. No NVRAM/EEPROM in this design (no battery-backed high scores). DIP switches map straight to core status bits.",
     "clock_requirements": "Single 12MHz master XTAL; CPU (M6502) and both AY8910s run at master/8 = 1.5MHz; pixel clock is master/2 = 6MHz driving the 384x272 total raster (256x240 visible, 57.44Hz refresh).",
     "special_considerations": [
-      "Implemented with jt65c02 (modules/jt680x — the same CPU jotego's own `kunio` core uses for Renegade): a transistor-netlist 6502 model never got past the reset vector fetch in simulation, so jt680x's bundled jt65c02 was used instead. jt65c02 has no `rdy` pin — wait states while the ROM SDRAM bus is busy are handled by gating its `cen` via mem.yaml's `gate: [maincpu]` mechanism, and its `cen` must run at 4x the real 1.5MHz bus rate (6MHz) per its own port comment, so mem.yaml declares `freq: 6000000` for cen_cpu, not 1500000 — running it at the real 1.5MHz rate advanced the CPU twice per intended step (each 6MHz-rate cen pulse was mistaken for one 1.5MHz-rate step), corrupting multi-byte reads mid-request.",
+      "No M6502 CPU core is present in the public JTframe module registry (fx68k, jtkcpu, HUC6280, jtdsp16, jt680x listed) — an external 6502-compatible core (e.g. T65) must be sourced separately.",
       "Both AY8910s share a single 8-bit data bus (0x2030) and are selected via a latch (0x2040) that emulates discrete BDIR/BC1 pin toggling on each chip — implement as a small edge-detect FSM rather than simple chip-select decoding.",
       "Palette is split: low 32 entries are CPU-writable RAM, high 32 entries are hardwired from the color PROM; both halves feed the same 3-3-2 resistor-weighted RGB DAC.",
       "Background tilemap selects between two ROM-backed pages via video_control bit 2, and applies per-row Y flip based on tile_index bit 4 — an unusual per-row flip baked into the tile decode rather than a global flag.",
       "Screen flip (video_control bit 7) is XORed against a DIP switch bit (DSW1 bit 5) rather than driven by either source alone — cocktail flip logic must combine both.",
-      "Interrupts are a software-timed 16-per-frame scanline chain (starting at line 8, spaced every 16 lines, cleared via a write to 0x2010) rather than a single vblank IRQ — the FPGA timing generator needs to reproduce this cadence, not just pulse once per frame.",
-      "The schematic's inter-board connector carries a dedicated NMI line (crossing both PCBs alongside the CPU's normal interrupt/control signals). Cross-checked against mystston_main.v: this matches its `assign nmi = ~coin[0] | ~coin[1]` — MAME's mystston.cpp asserts NMI directly on a coin-switch edge (no software acknowledge register), and the FPGA core already implements exactly that. Confirms the real coin-insert path is a hardware NMI, not a polled/IRQ-chained input."
+      "Interrupts are a software-timed 16-per-frame scanline chain (starting at line 8, spaced every 16 lines, cleared via a write to 0x2010) rather than a single vblank IRQ — the FPGA timing generator needs to reproduce this cadence, not just pulse once per frame."
     ]
   },
-  "_enrichment_summary": "Superseded by doc/enrichment.json's own enrichment_summary/schematic_findings — the original claim here (that no PCB documentation could be parsed because Schematics.pdf has no text layer) missed that a separate directory of 18 individually-cropped, legible schematic pages exists and has now been reviewed in full. See the updated jtframe_hints/video/pcb/cpus/audio/inputs fields above and doc/enrichment.json for the full detail (board sub-designations, 6502A CPU part number, 12MHz master crystal, NE555 reset circuit, PSG/audio-amp part number and mixing network, controls/coin connector conditioning, discrete-TTL sync generation, RGB DAC transistor/connector detail, sprite/background pixel shift-register organization, and the PAL-based priority/color-select logic). The 'Hardware Reference' material referenced below (the generic MAME netlist engine changelog) still does not apply to this core, since mystston's audio is driven by MAME's ay8910 device directly, not the netlist analog solver."
+  "_enrichment_summary": "Very little could be confidently added beyond what MAME Scout already extracted for this board. The only PCB documentation available (Mysterious Stones Schematics.pdf) is a scanned image with no text layer, so it could not be parsed for register maps, pinouts, or component values. The supplied 'Hardware Reference' material is the generic MAME netlist engine changelog (audio/nl_konami.cpp, solver internals, etc.) and does not reference Technos, the TA-0010 board, or any AY8910/discrete-logic circuitry used by this game — mystston's audio path is driven directly by two AY8910 PSGs via MAME's ay8910 device, not the netlist analog solver, so none of that changelog is applicable here. Enrichment below is limited to restructuring/clarifying facts already implicit in board_spec.json (clock fan-out, DAC topology) without introducing new unverified data. No custom ICs are enriched because board_spec.custom_ics is empty and no schematic text was available to identify any.",
+  "origin": "native"
 }

@@ -20,6 +20,17 @@
 //  arbitrated by mystston_video.v via a 2-phase-per-line sequencer (only one
 //  of {this module, the fg fetcher} is ever `active` at a time, so there is
 //  no real bus contention despite both nominally targeting the same port).
+//
+//  cpu_spriteram_*: Sprite RAM is single-port BRAM the CPU (mystston_main.v)
+//  also accesses directly — same reasoning as mystston_scroll.v's videoram
+//  shadow: keep a local copy snooped from the CPU's write side instead of
+//  arbitrating a shared address bus.
+//
+//  hcnt/sprite_pxl/sprite_hit: output line buffer, read combinationally by
+//  mystston_colmix during the actual display of target_line (one line after
+//  it was prepared). sprite_pxl = {color, tile_pixel[2:0]}, a 4-bit index
+//  into palette entries 0-15; transparent when tile_pixel[2:0]==0
+//  (sprite_hit low).
 //  License: GPLv3
 //============================================================================
 
@@ -28,14 +39,11 @@ module mystston_obj(
     input               rst,
     input               active,             // this module's turn on the gfx1 bus
     input               start,              // pulse: begin fetching target_line
-    input       [7:0]   target_line,        // physical screen line (0-239) to prepare
+    input       [7:0]   target_line,        // absolute screen line (visible range 8-247)
     output reg          done,               // pulse: target_line's sprite buffer is ready
     input               flip,               // flip screen (X and Y)
 
-    // Sprite RAM is single-port BRAM the CPU (mystston_main.v) also accesses
-    // directly — same reasoning as mystston_scroll.v's videoram shadow: keep
-    // a local copy snooped from the CPU's write side instead of arbitrating
-    // a shared address bus.
+    // Sprite RAM CPU write snoop — see header comment
     input       [6:0]   cpu_spriteram_addr,
     input       [7:0]   cpu_spriteram_din,
     input               cpu_spriteram_we,
@@ -48,16 +56,13 @@ module mystston_obj(
     output reg          gfx1_cs,
     input               gfx1_ok,
 
-    // Output line buffer, read combinationally by mystston_colmix during the
-    // actual display of target_line (one line after it was prepared).
-    // sprite_pxl = {color, tile_pixel[2:0]}, a 4-bit index into palette
-    // entries 0-15; transparent when tile_pixel[2:0]==0 (sprite_hit low).
+    // Output line buffer — see header comment
     input       [8:0]   hcnt,
     output      [3:0]   sprite_pxl,
     output              sprite_hit
 );
 
-    localparam MAX_SPRITES = 24;   // 0x60 bytes / 4 bytes per sprite
+    localparam [4:0] MAX_SPRITES = 5'd24;   // 0x60 bytes / 4 bytes per sprite
 
     reg [3:0] line_pxl [0:255];
     reg       line_hit [0:255];
@@ -93,7 +98,7 @@ module mystston_obj(
 
     wire [8:0] line_minus_y = { 1'b0, target_line } - { 1'b0, y_final };
     wire       on_line      = enabled && (line_minus_y < 9'd16);
-    wire [3:0] row_pre_flip = line_minus_y[3:0];
+    wire [3:0] row_flip_pre = line_minus_y[3:0];
 
     wire [16:0] plane_base = { 2'b00, code, 5'd0 } + (plane_idx * 17'd16384); // code*32 + plane*0x4000
     wire [16:0] byte_addr  = plane_base + (half_idx ? (17'd16 + { 13'd0, row_in_tile })
@@ -152,7 +157,7 @@ module mystston_obj(
 
                 S_CHECK: begin
                     if (on_line) begin
-                        row_in_tile <= flipy_final ? (4'd15 - row_pre_flip) : row_pre_flip;
+                        row_in_tile <= flipy_final ? (4'd15 - row_flip_pre) : row_flip_pre;
                         scr_x       <= { 1'b0, x_final };
                         flipx_r     <= flipx_final;
                         color_r     <= attr_r[3];
