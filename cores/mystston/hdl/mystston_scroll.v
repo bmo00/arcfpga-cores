@@ -17,6 +17,12 @@
 //
 //  No transparency: mystston.cpp never calls set_transparent_pen() on
 //  m_bg_tilemap (only on m_fg_tilemap), so every background pixel is opaque.
+//
+//  cpu_videoram_*: videoram is a single-port BRAM the CPU (mystston_main.v)
+//  also accesses directly — rather than arbitrate a shared address bus
+//  between the CPU and this module's own tile-code prefetching, this module
+//  keeps its own local shadow copy, snooped from the CPU's write-side
+//  signals (cheap on an FPGA, and avoids the arbitration entirely).
 //  License: GPLv3
 //============================================================================
 
@@ -24,18 +30,14 @@ module mystston_scroll(
     input               clk,
     input               rst,
     input               start,              // pulse: begin fetching target_line
-    input       [7:0]   target_line,        // physical screen line (0-239) to prepare
+    input       [7:0]   target_line,        // absolute screen line (visible range 8-247)
     output reg          done,               // pulse: target_line's bg buffer is ready
     input               flip,               // flip screen
 
     input       [7:0]   scroll_reg,         // 0x2020 write — vertical scroll (set_scrolly)
     input               page_select,        // video_control[2]
 
-    // videoram is a single-port BRAM the CPU (mystston_main.v) also accesses
-    // directly — rather than arbitrate a shared address bus between the CPU
-    // and this module's own tile-code prefetching, this module keeps its own
-    // local shadow copy, snooped from the CPU's write-side signals (cheap on
-    // an FPGA, and avoids the arbitration entirely).
+    // videoram CPU write snoop — see header comment
     input       [11:0]  cpu_videoram_addr,
     input       [7:0]   cpu_videoram_din,
     input               cpu_videoram_we,
@@ -66,7 +68,7 @@ module mystston_scroll(
     // Virtual tilemap position for target_line (16 cols x 32 rows of 16x16
     // tiles = 256 x 512 pixels; vertical scroll wraps naturally in 9 bits).
     // ------------------------------------------------------------------
-    wire [8:0] y_pre = flip ? (9'd239 - { 1'b0, target_line }) : { 1'b0, target_line };
+    wire [8:0] y_pre = flip ? (9'd255 - { 1'b0, target_line }) : { 1'b0, target_line };
     wire [8:0] vy    = y_pre + { 1'b0, scroll_reg };
     wire [4:0] row   = vy[8:4];       // 0-31
     wire [3:0] tile_line_pre = vy[3:0];
@@ -79,9 +81,19 @@ module mystston_scroll(
     wire [11:0] code_lo_addr = 12'h800 + { 1'b0, page } + { 3'd0, tile_index };
     wire [11:0] code_hi_addr = code_lo_addr + 12'h200;
 
+    // Explicit read-during-write forwarding: the CPU can write this same
+    // address on the same edge this module reads it (most often from its own
+    // scanline-interrupt handler), and inferred-BRAM read-during-write
+    // behavior isn't guaranteed to match across synthesis tools — bypass the
+    // array with the incoming write data directly on an address match rather
+    // than rely on it.
+    wire code_lo_hit = cpu_videoram_we && (cpu_videoram_addr == code_lo_addr);
+    wire code_hi_hit = cpu_videoram_we && (cpu_videoram_addr == code_hi_addr);
+    wire [7:0] code_lo_rd = code_lo_hit ? cpu_videoram_din : bg_videoram_shadow[code_lo_addr];
+    wire [7:0] code_hi_rd = code_hi_hit ? cpu_videoram_din : bg_videoram_shadow[code_hi_addr];
+
     reg  [3:0] col;                    // 0-15, display column being fetched
-    wire [3:0] eff_col = flip ? (4'd15 - col) : col;
-    wire [8:0] tile_index = { 4'd0, (5'd15 - { 1'b0, eff_col }) } * 9'd32 + { 5'd0, row };
+    wire [8:0] tile_index = { 4'd0, (5'd15 - { 1'b0, col }) } * 9'd32 + { 5'd0, row };
     // ^ (15-col)*32 + row, per TILEMAP_SCAN_COLS_FLIP_X
 
     reg [1:0] plane_idx;
@@ -127,7 +139,7 @@ module mystston_scroll(
                 end
 
                 S_CODE_READ: begin
-                    code <= { bg_videoram_shadow[code_hi_addr][0], bg_videoram_shadow[code_lo_addr] };
+                    code <= { code_hi_rd[0], code_lo_rd };
                     plane_idx <= 2'd0;
                     half_idx  <= 1'b0;
                     state <= S_FETCH_REQ;
@@ -165,7 +177,7 @@ module mystston_scroll(
 
                 S_STORE_COL: begin
                     for (i = 0; i < 16; i = i + 1) begin
-                        col_idx = flip ? (4'd15 - i[3:0]) : i[3:0];
+                        col_idx = i[3:0];
                         if (col_idx < 4'd8)
                             tile_pixel = { left_byte[2][7-col_idx[2:0]], left_byte[1][7-col_idx[2:0]], left_byte[0][7-col_idx[2:0]] };
                         else

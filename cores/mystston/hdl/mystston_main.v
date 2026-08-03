@@ -3,16 +3,35 @@
 //  Verified against src/mame/technos/mystston.cpp (M6502(config,...,MASTER_CLOCK/8),
 //  main_map(), video_control_w(), ay8910_select_w(), on_scanline_interrupt(),
 //  irq_clear_w(), coin_inserted()).
+//
+//  cen_cpu: 6MHz, 4x the real 1.5MHz CPU rate — jt65c02's own requirement
+//  (see IMPLEMENTATION.md#cpu-jt65c02: no rdy pin, mem.yaml's `gate:
+//  [maincpu]` handles wait states instead of a manual ready signal).
+//
+//  joystick1/2, coin, cab_1p: joystick[3:0]=up/down/left/right, [5:4]=
+//  button1/2 (JTFRAME_BUTTONS=2); cab_1p[0]=P1 start; coin[0]/[1]=coin1/2.
+//  All are active-LOW at this interface (idle=1, pressed=0).
+//
+//  LVBL: DSW1 bit 7 (0x80) is not a real DIP switch — it's
+//  PORT_BIT(0x80,IP_ACTIVE_LOW,IPT_CUSTOM), wired to the screen's own vblank
+//  line (PORT_READ_LINE_DEVICE_MEMBER("screen",vblank)). The game busy-waits
+//  on it (LDA $2030 / BMI) to sync updates to vblank; treating it as a static
+//  dip bit hangs that loop forever. LVBL is already
+//  active-high-during-active-display, matching MAME's IP_ACTIVE_LOW
+//  inversion, so no extra inversion is needed here.
+//
+//  vcnt: video timing from mystston_video.v — V counter, 0 = start of
+//  visible area (MAME's raw vpos shifted by -8) so JTFRAME's non-wrapping
+//  vtimer model can express the driver's wrap-around blanking window; see
+//  mystston_video.v's jtframe_vtimer instantiation for the actual
+//  VB_START/VB_END values chosen to reproduce vbend=8/vbstart=248.
 //  License: GPLv3
 //============================================================================
 
 module mystston_main(
     input               clk,
     input               rst,
-    input               cen_cpu,            // 6 MHz — 4x the real 1.5MHz CPU rate (jt65c02.v's own
-                                             // port comment); mem.yaml's `gate: [maincpu]` pauses
-                                             // this automatically while ROM SDRAM isn't ready, so no
-                                             // manual rdy signal is needed here.
+    input               cen_cpu,            // 6 MHz, 4x real CPU rate — see header comment
 
     // SDRAM bus for main program ROM (maincpu), real content 0x4000-0xffff
     output      [15:0]  maincpu_addr,
@@ -44,11 +63,7 @@ module mystston_main(
     output      [7:0]   paletteram_din,
     output              paletteram_we,
 
-    // Inputs — widths/names match jtframe_common_ports.inc; bit order verified
-    // against cores/buggychl/hdl/buggychl_main.v (an already-working core in
-    // this repo): joystick1/2[3]=up,[2]=down,[1]=left,[0]=right,[4]=button1,
-    // [5]=button2 (JTFRAME_BUTTONS=2); cab_1p[0]=P1 start; coin[0]/[1]=coin1/2.
-    // All active-high already at this interface (jtframe's own convention).
+    // Inputs — widths/names match jtframe_common_ports.inc; see header comment
     input       [5:0]   joystick1,
     input       [5:0]   joystick2,
     input       [3:0]   coin,
@@ -57,21 +72,9 @@ module mystston_main(
     input       [31:0]  dipsw,
     input               dip_pause,
 
-    // DSW1 bit 7 (0x80) is not a real DIP switch on real hardware — it's
-    // PORT_BIT(0x80,IP_ACTIVE_LOW,IPT_CUSTOM) wired to the screen's own
-    // vblank line (PORT_READ_LINE_DEVICE_MEMBER("screen",vblank)). The game
-    // busy-waits on it (LDA $2030 / BMI) to sync updates to vblank; treating
-    // it as a static dip bit hangs that loop forever. LVBL is already
-    // active-high-during-active-display, matching MAME's IP_ACTIVE_LOW
-    // inversion of a true-during-vblank callback, so no extra inversion here.
-    input               LVBL,
+    input               LVBL,               // DSW1 bit7 vblank quirk — see header comment
 
-    // Video timing from mystston_video.v (V counter, 0 = start of visible area
-    // — i.e. shifted by -8 from MAME's raw vpos so JTFRAME's non-wrapping
-    // vtimer model can express the driver's wrap-around blanking window; see
-    // mystston_video.v's jtframe_vtimer instantiation for the actual VB_START/
-    // VB_END values chosen to reproduce vbend=8/vbstart=248 from set_raw()).
-    input       [8:0]   vcnt,
+    input       [8:0]   vcnt,               // V=0 at start of visible area — see header comment
 
     // Outputs to video
     output      [7:0]   video_control,      // full register — flip(7), coin ctrs(5:4), page(2), fg color(1:0)
@@ -85,12 +88,7 @@ module mystston_main(
 );
 
     // ------------------------------------------------------------------
-    // CPU instantiation — jt65c02 (modules/jt680x), the same CPU jotego's own
-    // `kunio` core (Technos, Renegade — also a real 1.5MHz 6502-family bus
-    // rate) uses, in place of a transistor-netlist 6502 model that never got
-    // past the reset vector fetch in simulation (see doc/ai-agent-log.md).
-    // Ports/polarity verified against
-    // modules/jt680x/hdl/jt65c02.v and cores/kunio/hdl/jtkunio_main.v: wr/rd
+    // CPU instantiation — jt65c02 (modules/jt680x). Ports/polarity: wr/rd
     // (not a single rw), no rdy port at all (mem.yaml's `gate:` handles wait
     // states instead — see cen_cpu's port comment), irq is level-sensitive
     // and active-HIGH, nmi is edge-sensitive and active-HIGH (both opposite
@@ -146,9 +144,8 @@ module mystston_main(
     // ------------------------------------------------------------------
     // BRAM pass-throughs. addr/wr/rd stay valid for several clk cycles per
     // real bus cycle (jt65c02.v: "addr always valid") — no extra cen gate is
-    // needed on these (same pattern as cores/kunio/hdl/jtkunio_main.v's own
-    // ram_cs/objram_cs/etc.): re-asserting the same write for a few clk
-    // cycles is harmless since cpu_dout hasn't changed yet either.
+    // needed on these: re-asserting the same write for a few clk cycles is
+    // harmless since cpu_dout hasn't changed yet either.
     // ------------------------------------------------------------------
     assign workram_addr    = cpu_addr[11:0];
     assign workram_din     = cpu_dout;
@@ -175,33 +172,14 @@ module mystston_main(
     // ------------------------------------------------------------------
     // Input read mux (IN0 @ 0x2000, IN1 @ 0x2010 — mystston.cpp INPUT_PORTS_START)
     // ------------------------------------------------------------------
-    // coin[]/cab_1p[]/joystick[] are ALL ACTIVE-LOW at this interface (idle=1,
-    // pressed=0) — confirmed directly on real hardware via a debug overlay
-    // that painted each raw bit as a block, white at idle and black when
-    // pressed, for every one of coin/cab_1p/joystick1's 10 bits. This
-    // contradicts jtframe's own hdl/keyboard/jtframe_rec_inputs.v, which
-    // comments "input [5:0] joystick, // active high" (only game_coin/
-    // game_start are commented active-low there) — that comment must refer
-    // to a signal further along the framework's own processing, not the raw
-    // port this game module actually receives. An earlier version fixed
-    // coin[]/cab_1p[] (see the NMI comment below) but left joystick1/2
-    // inverted assuming it was the one genuinely active-high signal — with
-    // idle=1 double-inverted into MAME's IP_ACTIVE_LOW "pressed" reading,
-    // the CPU saw all four directions as permanently held at rest, and
-    // pressing any real direction read as "released" instead: a nonsense,
-    // self-conflicting input state, matching the erratic "up/down never
-    // move, left/right catches only sometimes, movement gets stuck" symptom
-    // (not a clean 100%-broken failure, because the garbled state still
-    // occasionally overlapped with what the game's own code expected).
+    // coin[]/cab_1p[]/joystick[] are ALL ACTIVE-LOW at this interface
+    // (idle=1, pressed=0).
     wire [7:0] in0 = { coin[1], coin[0], joystick1[5], joystick1[4],
                        joystick1[2], joystick1[3], joystick1[1], joystick1[0] };
-    // in0 bit order (LSB first): right,left,up,down,button1,button2,coin1,coin2
-    // (mystston.cpp IN0: bit0=right,1=left,2=up,3=down,4=btn1,5=btn2,6=coin1,
-    // 7=coin2 — joystick1[3:0] is up/down/left/right, so bits [2]/[3] must be
-    // swapped when building in0/in1; a previous version copied joystick1[3:2]
-    // straight into in0[3:2], putting down where MAME expects up and vice
-    // versa — every "up" press read as "down" on real hardware and in MAME's
-    // own bit numbering).
+    // in0/in1 bit order (LSB first): right,left,up,down,button1,button2,
+    // coin1/cab2,coin2/cab1 (mystston.cpp IN0/IN1: bit0=right,1=left,2=up,
+    // 3=down,4=btn1,5=btn2,6/7=coin or cabinet start). joystick[3:0] is
+    // up/down/left/right, so bits [2]/[3] are swapped here to match.
     wire [7:0] in1 = { cab_1p[1], cab_1p[0], joystick2[5], joystick2[4],
                        joystick2[2], joystick2[3], joystick2[1], joystick2[0] };
 
@@ -260,12 +238,11 @@ module mystston_main(
     assign snd_latch     = snd_latch_r;
     assign snd_sel       = snd_sel_r;
     assign snd_sel_we    = snd_sel_cs & wr;
-
-    // Flip: mystston.cpp screen_update(): flip = (video_control&0x80) ^
-    // ((dsw1&0x20)<<2) — only bit7 of the left term and bit5(shifted to 7) of
-    // the right term can be set, so this reduces to a plain XOR of those two
-    // bits. DSW1 bit5 (0x20) is PORT_DIPNAME(0x20,...,Flip_Screen).
-    assign flip = video_control_r[7] ^ dipsw[13]; // dipsw[15:8]=DSW1, bit5 of DSW1 = dipsw[8+5]=dipsw[13]
+    
+    // dipsw[13] is the Flip Screen DIP (DSW1 bit5); see doc/IMPLEMENTATION.md's
+    // Implementation log (Video) for why it's inverted here relative to
+    // mystston.cpp's own flip formula.
+    assign flip = video_control_r[7] ^ ~dipsw[13];
 
     // ------------------------------------------------------------------
     // Scanline interrupt — mystston.cpp: interrupt every 16 scanlines
@@ -279,54 +256,37 @@ module mystston_main(
     // sensitive and active-HIGH, so irq_pending itself IS the irq input
     // (no inversion, unlike the old CPU module's wiring).
     // ------------------------------------------------------------------
-    reg [8:0] vcnt_last;
+    reg [8:0] vcnt_l;
     reg       irq_pending;
     wire      irq_scanline = (vcnt[3:0] == 4'h0) && (vcnt <= 9'd240);
 
     always @(posedge clk, posedge rst) begin
         if (rst) begin
-            vcnt_last   <= 9'd0;
+            vcnt_l   <= 9'd0;
             irq_pending <= 1'b0;
         end else begin
-            vcnt_last <= vcnt;
+            vcnt_l <= vcnt;
             if (irq_clear_cs && wr)
                 irq_pending <= 1'b0;
-            else if (vcnt != vcnt_last && irq_scanline)
+            else if (vcnt != vcnt_l && irq_scanline)
                 irq_pending <= 1'b1;
         end
     end
 
     // dip_pause (test/service pause from the OSD) simply blocks the IRQ line
-    // from ever asserting, freezing game logic — a common jtframe convention.
-    // dip_pause is 1 during NORMAL operation and 0 while paused (see
-    // jtframe_dip.v's own `dip_pause <= ~game_pause & ~osd_shown` — confirmed
-    // against every other jtcores core that gates an IRQ/HALTn with it, e.g.
-    // 1943/jt1943_main.v's `if (... && dip_pause)`, none of them invert it) —
-    // so this must NOT be inverted. As written (`~dip_pause`) IRQ was blocked
-    // whenever the game was NOT paused, i.e. always at boot, and only started
-    // flowing once P (pause) was pressed once — which is what made
-    // mystston's interrupt-driven sound dispatch silent until that key was
-    // hit.
+    // from ever asserting, freezing game logic. dip_pause is 1 during NORMAL
+    // operation and 0 while paused (jtframe_dip.v's own
+    // `dip_pause <= ~game_pause & ~osd_shown`) — must NOT be inverted here.
     assign irq = irq_pending & dip_pause;
 
     // ------------------------------------------------------------------
     // Coin NMI — mystston.cpp's coin_inserted(): NMI is ASSERTED on the
     // falling edge of the raw (active-low) coin switch signal, i.e. the
     // instant the switch is pressed, and stays asserted (a level, not a
-    // latched one-shot) until the switch is released — there is no
-    // software acknowledge register for it on real hardware. coin[] at THIS
-    // interface is itself active-LOW (jtframe's own hdl/keyboard/
-    // jtframe_rec_inputs.v documents "input [3:0] game_coin, // active low"
-    // and explicitly inverts it before use) — "pressed" = coin[x]==0, so
-    // this needs an explicit invert to build an active-high level for
-    // jt65c02's nmi input (edge-sensitive, active-HIGH — see
-    // jt65c02_ctrl.v: `if (nmi & ~nmi_l) nmi_pnd <= 1`). The previous
-    // version fed coin[0]|coin[1] straight in assuming active-high coin[]:
-    // since BOTH slots idle at 1 (released), that OR was permanently stuck
-    // at 1 from power-on, so jt65c02 only ever saw one spurious NMI edge at
-    // boot and never another — coin insert did nothing afterward, on real
-    // hardware, confirmed via a debug overlay showing coin[]/cab_1p[]
-    // idling at 1 and dropping to 0 when pressed.
+    // latched one-shot) until the switch is released — there is no software
+    // acknowledge register for it on real hardware. coin[] at this interface
+    // is itself active-LOW, so building an active-high level for jt65c02's
+    // nmi input (edge-sensitive, active-HIGH) needs an explicit invert.
     assign nmi = ~coin[0] | ~coin[1];
 
 endmodule

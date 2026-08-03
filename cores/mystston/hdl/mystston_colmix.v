@@ -18,6 +18,17 @@
 //  replication rather than the exact resistor-weighted DAC network
 //  (compute_resistor_weights) — a standard, visually-close approximation
 //  used throughout jtframe cores; not bit-exact to the real DAC.
+//
+//  cpu_paletteram_*: Palette RAM is single-port BRAM the CPU
+//  (mystston_main.v) also accesses directly — same reasoning as
+//  mystston_scroll.v's videoram shadow: a local copy snooped from the CPU's
+//  write side, always current (simpler than mystston_scroll's shadow even,
+//  since a write mirrors instantly instead of needing a periodic re-read).
+//
+//  proms_addr/proms_data: Color PROM, a jtframe `prom: true` BRAM bus
+//  (cfg/mem.yaml), not an SDRAM ROM bus: plain synchronous read, 1 cycle of
+//  latency from proms_addr to proms_data, no cs/ok handshake. Read once
+//  after reset into prom_shadow; the PROM never changes, unlike paletteram.
 //  License: GPLv3
 //============================================================================
 
@@ -35,19 +46,12 @@ module mystston_colmix(
     input       [4:0]   fg_pxl,             // {fg_color[1:0],tile_pixel[2:0]}, palette base 32
     input               fg_hit,
 
-    // Palette RAM is single-port BRAM the CPU (mystston_main.v) also accesses
-    // directly — same reasoning as mystston_scroll.v's videoram shadow: a
-    // local copy snooped from the CPU's write side, always current (simpler
-    // than mystston_scroll's shadow even, since a write mirrors instantly
-    // instead of needing a periodic re-read).
+    // Palette RAM CPU write snoop — see header comment
     input       [4:0]   cpu_paletteram_addr,
     input       [7:0]   cpu_paletteram_din,
     input               cpu_paletteram_we,
 
-    // Color PROM — a jtframe `prom: true` BRAM bus (cfg/mem.yaml), not an
-    // SDRAM ROM bus: plain synchronous read, 1 cycle of latency from
-    // proms_addr to proms_data, no cs/ok handshake. Read once after reset
-    // into prom_shadow; the PROM never changes, unlike paletteram.
+    // Color PROM bus — see header comment
     output reg  [4:0]   proms_addr,
     input       [7:0]   proms_data,
 
@@ -62,18 +66,15 @@ module mystston_colmix(
     always @(posedge clk) if (cpu_paletteram_we) pal_shadow[cpu_paletteram_addr] <= cpu_paletteram_din;
 
     // Ramp-and-capture sweep: jtframe_prom (cfg/mem.yaml's `prom: true`) is a
-    // plain synchronous ROM, but the ACTUAL latency from presenting proms_addr
+    // plain synchronous ROM, but the actual latency from presenting proms_addr
     // to seeing the matching proms_data is 2 cycles here, not 1 — proms_addr
     // is itself a register (this block's own output), so a newly-set address
     // only becomes stable for jtframe_prom's own `q<=mem[rd_addr]` to sample
-    // on the NEXT edge, and that q only becomes visible on OUR side as
-    // proms_data the edge AFTER that. Assuming 1-cycle latency (indexing the
-    // shadow with idx-1) silently stored every entry one slot too late and
-    // dropped the last one — verified via a proms_addr/proms_data trace
-    // (address 3 -> data 0xe8, which is address 2's real PROM byte). idx
-    // ramps addresses 0..31 while idx<32, and the shadow write (idx-2) runs
-    // two cycles behind; finishes after 34 cycles (idx 0..33) so the final
-    // two in-flight responses (for addresses 30/31) get captured too.
+    // on the next edge, and that q only becomes visible on our side as
+    // proms_data the edge after that. idx ramps addresses 0..31 while idx<32,
+    // and the shadow write (idx-2) runs two cycles behind; finishes after 34
+    // cycles (idx 0..33) so the final two in-flight responses (for addresses
+    // 30/31) get captured too.
     reg  [5:0] idx;
     reg        proms_done;
 

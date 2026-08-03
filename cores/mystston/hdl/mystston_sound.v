@@ -34,23 +34,22 @@ module mystston_sound(
     // what BC1 was during the preceding BDIR-high phase, exactly like
     // mystston.cpp's ay8910_select_w compares *m_ay8910_select (old) to data
     // (new, i.e. today's snd_sel).
-    reg [7:0] snd_sel_d;
+    reg [7:0] snd_sel_l;
     always @(posedge clk, posedge rst) begin
-        if (rst) snd_sel_d <= 8'd0;
-        else     snd_sel_d <= snd_sel;
+        if (rst) snd_sel_l <= 8'd0;
+        else     snd_sel_l <= snd_sel;
     end
 
-    // Gated by snd_sel_we (an explicit, unambiguous write-strobe from mystston_main.v's own address
-    // decoder) rather than trusting the snd_sel_d/snd_sel comparison alone — this was previously
-    // computed but left unconnected, meaning a real transaction was only ever inferred after the
-    // fact from held register state, with no guarantee that the "fall" this module saw actually
-    // lined up with a genuine register write on this exact cycle. See jtmystston_game.v.
-    wire bdir0_fall = snd_sel_we & snd_sel_d[5] & ~snd_sel[5];
-    wire bdir1_fall = snd_sel_we & snd_sel_d[7] & ~snd_sel[7];
-    wire ay0_latch  = bdir0_fall &  snd_sel_d[4]; // BC1=1: latch address
-    wire ay0_write  = bdir0_fall & ~snd_sel_d[4]; // BC1=0: write data
-    wire ay1_latch  = bdir1_fall &  snd_sel_d[6];
-    wire ay1c_write = bdir1_fall & ~snd_sel_d[6];
+    // Gated by snd_sel_we (an explicit write-strobe from mystston_main.v's own
+    // address decoder) rather than the snd_sel_l/snd_sel comparison alone, so
+    // the detected edge is guaranteed to line up with a genuine register
+    // write on this exact cycle.
+    wire bdir0_fall = snd_sel_we & snd_sel_l[5] & ~snd_sel[5];
+    wire bdir1_fall = snd_sel_we & snd_sel_l[7] & ~snd_sel[7];
+    wire ay0_latch  = bdir0_fall &  snd_sel_l[4]; // BC1=1: latch address
+    wire ay0_write  = bdir0_fall & ~snd_sel_l[4]; // BC1=0: write data
+    wire ay1_latch  = bdir1_fall &  snd_sel_l[6];
+    wire ay1c_write = bdir1_fall & ~snd_sel_l[6];
 
     reg [3:0] ay0_addr, ay1_addr;
     always @(posedge clk, posedge rst) begin

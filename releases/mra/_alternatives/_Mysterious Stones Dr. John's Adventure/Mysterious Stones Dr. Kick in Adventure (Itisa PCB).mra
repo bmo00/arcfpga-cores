@@ -23,10 +23,10 @@
 
 <misterromdescription>
     <about author="arcfpga" source="https://github.com/bmo00/arcfpga-cores"/>
-    <rotation>vertical (cw)</rotation>
+    <rotation>vertical (ccw)</rotation>
     <name>Mysterious Stones: Dr. Kick in Adventure (Itisa PCB)</name>
     <setname>myststonoi</setname>
-    <mameversion>0288</mameversion>
+    <mameversion>0289</mameversion>
     <year>1984</year>
     <manufacturer>Technos Japan</manufacturer>
     <players>2</players>
@@ -67,9 +67,9 @@
         <part name="pal16r4-2.bin" crc="c57555d0"/>
         <!-- Total 0x28254 bytes - 160 kBytes -->
     </rom>
-    <!-- Vertical screen. -->
+    <!-- Vertical screen. Orientation reversed. -->
     <rom index="1">
-        <part>01 80</part>
+        <part>05 80</part>
     </rom>
     <switches page_id="1" page_name="Switches" base="16" default="fb,9f">
         <DSW0/>

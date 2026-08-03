@@ -17,6 +17,16 @@
 //  Bus arbitration: a 2-phase-per-line sequencer prepares sprite and fg-text
 //  line buffers for "the next line" one at a time — never concurrently — so
 //  gfx1_addr/gfx1_cs can be a plain priority mux with no real contention.
+//
+//  cpu_videoram/spriteram/paletteram_*: all single-port BRAM the CPU
+//  (mystston_main.v) also accesses directly, so each submodule below keeps
+//  its own shadow copy instead of sharing an address bus with the CPU
+//  (see mystston_scroll.v's port comment).
+//
+//  proms_addr/proms_data: Color PROM bus, owned entirely by mystston_colmix
+//  (paletteram is a snoop shadow, not a real bus). A jtframe `prom: true`
+//  BRAM bus (cfg/mem.yaml), not an SDRAM ROM bus: plain 1-cycle-latency
+//  addr->data read, no cs/ok handshake.
 //  License: GPLv3
 //============================================================================
 
@@ -34,10 +44,7 @@ module mystston_video(
     input               page_select,        // video_control[2] for bg tile page
     input       [1:0]   fg_color,           // video_control[1:0] swapped, see mystston_main.v
 
-    // CPU-side write snoop for videoram/spriteram/paletteram — all single-
-    // port BRAM the CPU (mystston_main.v) also accesses directly, so each
-    // submodule below keeps its own shadow copy instead of sharing an
-    // address bus with the CPU (see mystston_scroll.v's port comment).
+    // CPU-side write snoop — see header comment
     input       [11:0]  cpu_videoram_addr,
     input       [7:0]   cpu_videoram_din,
     input               cpu_videoram_we,
@@ -60,10 +67,7 @@ module mystston_video(
     output              gfx2_cs,
     input               gfx2_ok,
 
-    // Color PROM — owned entirely by mystston_colmix (paletteram is a snoop
-    // shadow, see above, not a real bus). This is a jtframe `prom: true`
-    // BRAM bus (cfg/mem.yaml), not an SDRAM ROM bus: plain 1-cycle-latency
-    // addr->data read, no cs/ok handshake.
+    // Color PROM bus — see header comment
     output      [4:0]   proms_addr,
     input       [7:0]   proms_data,
 
@@ -86,30 +90,12 @@ module mystston_video(
     // modules/jtframe/hdl/video/jtframe_vtimer.v): vdump/vrender/vrender1/H,
     // not a plain V; VCNT_END/HCNT_END explicitly overridden (see header).
     //
-    // H_PHASE: mystston.cpp's screen.set_raw(...) only gives MAME the total
-    // line width and the active/blanking boundary (HB_START/HB_END below) —
-    // it says nothing about WHERE inside that blanking window the HSYNC
-    // pulse itself sits (MAME's renderer doesn't care), so that front-porch/
-    // back-porch split had to be estimated when this timing was written and
-    // was never verified against real hardware. On a real CRT that split is
-    // exactly what determines horizontal centering: the delay from the end
-    // of the HSYNC pulse to the start of active video (back porch) is time
-    // the beam spends already sweeping before real pixels arrive, so a
-    // larger back porch pushes the image right and a smaller one pulls it
-    // left — confirmed empirically on real hardware (direct/CRT output, no
-    // scandoubler): a first +16-clock trial (shrinking back porch 34->18)
-    // made the picture move 2cm further LEFT (was ~4cm off, became ~6cm),
-    // proving the baseline back porch of 34 was already too small, not too
-    // large. mystston alone is off-center this way — unlike jtcores' 1942
-    // (vertical) or Double Dragon 2 (horizontal) on the same monitor, both
-    // centered fine — so this is this core's own front/back-porch split
-    // being wrong, not a monitor calibration issue. H_PHASE now SUBTRACTS
-    // from HS_START/HS_END (growing back porch, shrinking front porch by
-    // the same amount) to pull the image back to the right. Scaling the
-    // observed 16 clocks/2cm rate to the original ~4cm offset gives ~32
-    // clocks; tune further based on on-hardware measurement.
+    // HS_START/HS_END come straight from mystston.cpp's
+    // screen.set_raw(PIXEL_CLOCK,384,0,256,272,8,248) with no hand-tuned
+    // shift: CRT horizontal centering is a jtframe_resync/OSD H-Offset
+    // concern (arcfpga-frame/doc/video.md, "CRT Adjustments"), not something
+    // to bake into the core's own raw sync timing.
     //========================================================================
-    localparam [8:0] H_PHASE = 9'd32;
 
     wire [8:0] vdump, vrender, vrender1, H;
     wire       hbl, vbl, hsync, vsync;
@@ -123,8 +109,8 @@ module mystston_video(
         .VCNT_END ( 9'd271 ),
         .HB_END   ( 9'd0   ),
         .HB_START ( 9'd256 ),
-        .HS_START ( 9'd320 - H_PHASE ),
-        .HS_END   ( 9'd350 - H_PHASE ),
+        .HS_START ( 9'd320 ),
+        .HS_END   ( 9'd350 ),
         .HCNT_END ( 9'd383 ),
         .HCNT_START(9'd0   )
     ) u_vtimer(
@@ -148,14 +134,19 @@ module mystston_video(
     assign VS    = vsync;
     assign vcnt  = vdump - 9'd8; // wraps naturally; >240 while in vblank
 
-    wire [8:0] target_line_full = vrender - 9'd8;
-    wire       target_valid     = target_line_full < 9'd240;
+    // Sprite/bg/fg tile lookups key off the screen's absolute 256-line
+    // raster position (visible range 8..247), matching how MAME's own
+    // tilemaps are drawn — not a tilemap-local 0..239 index. vrender is one
+    // line ahead of vdump, so -1 selects the physical line about to be
+    // displayed.
+    wire [8:0] target_line_full = vrender - 9'd1;
+    wire       target_valid     = (target_line_full >= 9'd8) && (target_line_full < 9'd248);
 
-    reg [8:0] vrender_last;
+    reg [8:0] vrender_l;
     always @(posedge clk, posedge rst)
-        if (rst) vrender_last <= 9'd0;
-        else     vrender_last <= vrender;
-    wire line_start = (vrender != vrender_last) && target_valid;
+        if (rst) vrender_l <= 9'd0;
+        else     vrender_l <= vrender;
+    wire line_start = (vrender != vrender_l) && target_valid;
 
     //========================================================================
     // 2-phase-per-line gfx1 bus sequencer: phase 0 = sprites active,
@@ -203,14 +194,21 @@ module mystston_video(
     always @(posedge clk) if (cpu_videoram_we) fg_videoram_shadow[cpu_videoram_addr] <= cpu_videoram_din;
 
     reg [4:0] fg_col;             // 0-31
-    wire [4:0] fg_eff_col = flip ? (5'd31 - fg_col) : fg_col;
-    wire [8:0] fg_y_pre   = flip ? (9'd239 - { 1'b0, target_line_r }) : { 1'b0, target_line_r };
+    wire [8:0] fg_y_pre   = flip ? (9'd255 - { 1'b0, target_line_r }) : { 1'b0, target_line_r };
     wire [4:0] fg_row     = fg_y_pre[7:3]; // 0-29
     wire [2:0] fg_line    = fg_y_pre[2:0]; // 0-7, no flip-quirk on fg
-    wire [9:0] fg_tile_index = (5'd31 - fg_eff_col) * 10'd32 + { 5'd0, fg_row }; // (31-col)*32+row
+    wire [9:0] fg_tile_index = (5'd31 - fg_col) * 10'd32 + { 5'd0, fg_row }; // (31-col)*32+row
 
     wire [11:0] fg_code_lo_addr = { 1'b0, fg_tile_index };
     wire [11:0] fg_code_hi_addr = fg_code_lo_addr + 12'h400;
+
+    // Explicit read-during-write forwarding — see mystston_scroll.v's own
+    // code_lo_rd/code_hi_rd comment for why this can't rely on the array's
+    // own read-during-write behavior.
+    wire fg_code_lo_hit = cpu_videoram_we && (cpu_videoram_addr == fg_code_lo_addr);
+    wire fg_code_hi_hit = cpu_videoram_we && (cpu_videoram_addr == fg_code_hi_addr);
+    wire [7:0] fg_code_lo_rd = fg_code_lo_hit ? cpu_videoram_din : fg_videoram_shadow[fg_code_lo_addr];
+    wire [7:0] fg_code_hi_rd = fg_code_hi_hit ? cpu_videoram_din : fg_videoram_shadow[fg_code_hi_addr];
 
     reg  [10:0] fg_code;
     reg  [7:0]  fg_plane_byte [0:2];
@@ -231,83 +229,83 @@ module mystston_video(
     reg [16:0] fg_gfx1_addr_r;
     reg        fg_gfx1_cs_r;
 
-    localparam F_IDLE      = 3'd0,
-               F_CODE      = 3'd1,
-               F_FETCH_REQ = 3'd2,
-               F_FETCH_WAIT= 3'd3,
-               F_FETCH_NEXT= 3'd4,
-               F_STORE     = 3'd5,
-               F_NEXT_COL  = 3'd6,
-               F_DONE      = 3'd7;
+    localparam S_IDLE       = 3'd0,
+               S_CODE       = 3'd1,
+               S_FETCH_REQ  = 3'd2,
+               S_FETCH_WAIT = 3'd3,
+               S_FETCH_NEXT = 3'd4,
+               S_STORE      = 3'd5,
+               S_NEXT_COL   = 3'd6,
+               S_DONE       = 3'd7;
     reg [2:0] f_state;
     integer   j;
 
     always @(posedge clk, posedge rst) begin
         if (rst) begin
-            f_state      <= F_IDLE;
+            f_state      <= S_IDLE;
             fg_gfx1_cs_r <= 1'b0;
             fg_col       <= 5'd0;
         end else begin
             case (f_state)
-                F_IDLE: begin
+                S_IDLE: begin
                     fg_gfx1_cs_r <= 1'b0;
                     if (fg_start) begin
                         fg_col  <= 5'd0;
-                        f_state <= F_CODE;
+                        f_state <= S_CODE;
                     end
                 end
-                F_CODE: begin
-                    fg_code <= { fg_videoram_shadow[fg_code_hi_addr][2:0], fg_videoram_shadow[fg_code_lo_addr] };
+                S_CODE: begin
+                    fg_code <= { fg_code_hi_rd[2:0], fg_code_lo_rd };
                     fg_plane_idx <= 2'd0;
-                    f_state <= F_FETCH_REQ;
+                    f_state <= S_FETCH_REQ;
                 end
-                F_FETCH_REQ: begin
+                S_FETCH_REQ: begin
                     if (fg_active) begin
                         fg_gfx1_addr_r <= fg_byte_addr;
                         fg_gfx1_cs_r   <= 1'b1;
-                        f_state        <= F_FETCH_WAIT;
+                        f_state        <= S_FETCH_WAIT;
                     end
                 end
-                F_FETCH_WAIT: begin
+                S_FETCH_WAIT: begin
                     if (fg_active && gfx1_ok) begin
                         fg_plane_byte[fg_plane_idx] <= fg_byte_addr[0] ? gfx1_data[15:8] : gfx1_data[7:0];
                         fg_gfx1_cs_r <= 1'b0;
-                        f_state <= F_FETCH_NEXT;
+                        f_state <= S_FETCH_NEXT;
                     end
                 end
-                F_FETCH_NEXT: begin
+                S_FETCH_NEXT: begin
                     if (fg_plane_idx == 2'd2) begin
-                        f_state <= F_STORE;
+                        f_state <= S_STORE;
                     end else begin
                         fg_plane_idx <= fg_plane_idx + 2'd1;
-                        f_state <= F_FETCH_REQ;
+                        f_state <= S_FETCH_REQ;
                     end
                 end
-                F_STORE: begin
+                S_STORE: begin
                     for (j = 0; j < 8; j = j + 1) begin
-                        fg_col_idx = flip ? (5'd7 - j[4:0]) : j[4:0];
+                        fg_col_idx = j[4:0];
                         fg_tile_pixel = { fg_plane_byte[2][7-fg_col_idx[2:0]], fg_plane_byte[1][7-fg_col_idx[2:0]], fg_plane_byte[0][7-fg_col_idx[2:0]] };
                         fg_dest_x_pre = { 4'd0, fg_col } * 9'd8 + j[8:0];
                         fg_dest_x = flip ? (9'd255 - fg_dest_x_pre) : fg_dest_x_pre;
                         if (fg_dest_x < 9'd256)
                             fg_pxl_buf[fg_dest_x[7:0]] <= { fg_color, fg_tile_pixel };
                     end
-                    f_state <= F_NEXT_COL;
+                    f_state <= S_NEXT_COL;
                 end
-                F_NEXT_COL: begin
+                S_NEXT_COL: begin
                     if (fg_col == 5'd31) begin
-                        f_state <= F_DONE;
+                        f_state <= S_DONE;
                     end else begin
                         fg_col  <= fg_col + 5'd1;
-                        f_state <= F_CODE;
+                        f_state <= S_CODE;
                     end
                 end
-                F_DONE: f_state <= F_IDLE;
-                default: f_state <= F_IDLE;
+                S_DONE: f_state <= S_IDLE;
+                default: f_state <= S_IDLE;
             endcase
         end
     end
-    assign fg_done = (f_state == F_DONE);
+    assign fg_done = (f_state == S_DONE);
 
 
     //========================================================================
@@ -326,72 +324,69 @@ module mystston_video(
     wire [2:0] bg_pxl;
     wire       bg_hit;
     mystston_scroll u_scroll(
-        .clk               ( clk               ),
-        .rst               ( rst               ),
-        .start             ( line_start        ),
-        .target_line       ( target_line_full[7:0] ),
-        .done              (                   ),
-        .flip              ( flip              ),
-        .scroll_reg        ( scroll_reg        ),
-        .page_select       ( page_select       ),
-        .cpu_videoram_addr ( cpu_videoram_addr ),
-        .cpu_videoram_din  ( cpu_videoram_din  ),
-        .cpu_videoram_we   ( cpu_videoram_we   ),
-        .gfx2_addr         ( gfx2_addr         ),
-        .gfx2_data         ( gfx2_data         ),
-        .gfx2_cs           ( gfx2_cs           ),
-        .gfx2_ok           ( gfx2_ok           ),
-        .hcnt              ( hcnt              ),
-        .bg_pxl            ( bg_pxl            ),
-        .bg_hit            ( bg_hit            )
+        .clk              ( clk                   ),
+        .rst              ( rst                   ),
+        .start            ( line_start            ),
+        .target_line      ( target_line_full[7:0] ),
+        .done             (                       ),
+        .flip             ( flip                  ),
+        .scroll_reg       ( scroll_reg            ),
+        .page_select      ( page_select           ),
+        .cpu_videoram_addr( cpu_videoram_addr     ),
+        .cpu_videoram_din ( cpu_videoram_din      ),
+        .cpu_videoram_we  ( cpu_videoram_we       ),
+        .gfx2_addr        ( gfx2_addr             ),
+        .gfx2_data        ( gfx2_data             ),
+        .gfx2_cs          ( gfx2_cs               ),
+        .gfx2_ok          ( gfx2_ok               ),
+        .hcnt             ( hcnt                  ),
+        .bg_pxl           ( bg_pxl                ),
+        .bg_hit           ( bg_hit                )
     );
 
     wire [3:0] sprite_pxl;
     wire       sprite_hit;
     mystston_obj u_obj(
-        .clk            ( clk            ),
-        .rst            ( rst            ),
-        .active         ( obj_active     ),
-        .start          ( obj_start      ),
-        .target_line    ( target_line_r  ),
-        .done           ( obj_done       ),
-        .flip           ( flip           ),
-        .cpu_spriteram_addr ( cpu_spriteram_addr ),
-        .cpu_spriteram_din  ( cpu_spriteram_din  ),
-        .cpu_spriteram_we   ( cpu_spriteram_we   ),
-        .gfx1_addr      ( obj_gfx1_addr  ),
-        .gfx1_data      ( gfx1_data      ),
-        .gfx1_cs        ( obj_gfx1_cs    ),
-        .gfx1_ok        ( gfx1_ok        ),
-        .hcnt           ( hcnt           ),
-        .sprite_pxl     ( sprite_pxl     ),
-        .sprite_hit     ( sprite_hit     )
+        .clk               ( clk                ),
+        .rst               ( rst                ),
+        .active            ( obj_active         ),
+        .start             ( obj_start          ),
+        .target_line       ( target_line_r      ),
+        .done              ( obj_done           ),
+        .flip              ( flip               ),
+        .cpu_spriteram_addr( cpu_spriteram_addr ),
+        .cpu_spriteram_din ( cpu_spriteram_din  ),
+        .cpu_spriteram_we  ( cpu_spriteram_we   ),
+        .gfx1_addr         ( obj_gfx1_addr      ),
+        .gfx1_data         ( gfx1_data          ),
+        .gfx1_cs           ( obj_gfx1_cs        ),
+        .gfx1_ok           ( gfx1_ok            ),
+        .hcnt              ( hcnt               ),
+        .sprite_pxl        ( sprite_pxl         ),
+        .sprite_hit        ( sprite_hit         )
     );
 
     mystston_colmix u_colmix(
-        .clk            ( clk             ),
-        .rst            ( rst             ),
-        .pxl_cen        ( pxl_cen         ),
-        .video_on       ( LHBL & LVBL     ),
-        .bg_pxl         ( bg_pxl          ),
-        .bg_hit         ( bg_hit          ),
-        .sprite_pxl     ( sprite_pxl      ),
-        .sprite_hit     ( sprite_hit      ),
-        .fg_pxl         ( fg_pxl          ),
-        .fg_hit         ( fg_hit          ),
+        .clk                ( clk                 ),
+        .rst                ( rst                 ),
+        .pxl_cen            ( pxl_cen             ),
+        .video_on           ( LHBL & LVBL         ),
+        .bg_pxl             ( bg_pxl              ),
+        .bg_hit             ( bg_hit              ),
+        .sprite_pxl         ( sprite_pxl          ),
+        .sprite_hit         ( sprite_hit          ),
+        .fg_pxl             ( fg_pxl              ),
+        .fg_hit             ( fg_hit              ),
         .cpu_paletteram_addr( cpu_paletteram_addr ),
         .cpu_paletteram_din ( cpu_paletteram_din  ),
         .cpu_paletteram_we  ( cpu_paletteram_we   ),
-        .proms_addr     ( proms_addr      ),
-        .proms_data     ( proms_data      ),
-        .red            ( red             ),
-        .green          ( green           ),
-        .blue           ( blue            )
+        .proms_addr         ( proms_addr          ),
+        .proms_data         ( proms_data          ),
+        .red                ( red                 ),
+        .green              ( green               ),
+        .blue               ( blue                )
     );
 
-    // Verilator lint-off idiom: pxl2_cen and gfx_en are real framework ports (see their own port
-    // comments above for why neither is used here) — referencing them keeps Verilator from
-    // flagging them as unused/undriven without disabling the check core-wide.
     wire _unused0 = &{1'b0, pxl2_cen, gfx_en};
 
 endmodule
