@@ -19,7 +19,8 @@ framework, with an added **neptUNO+** target alongside the targets JTFRAME alrea
 
 | Core | Parents | Description | FPGA | Last update |
 |---|---|---|---|---|
-| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 (board TA-0010) | MiSTer, NeptUNO+ | 2026-07-30 |
+| [`1942`](cores/1942/README.md) | 1942 (`1942`)<br>Vulgus (`vulgus`)<br>Pirate Ship Higemaru (`higemaru`) | Capcom, 1984 | NeptUNO+ | 2026-08-03 |
+| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 (board TA-0010) | MiSTer, NeptUNO+ | 2026-08-03 |
 | [`riders`](cores/riders/README.md) | Sunset Riders (`ssriders`)<br>Turtles in Time (`tmnt2`)<br>Lightning Fighters (`lgtnfght`)<br>Golfing Greats (`glfgreat`) | Konami, 1991–1994 (TMNT2/GX hardware) | MiSTer, NeptUNO+ | 2026-07-31 |
 
 *This table is updated as cores are added — see each core's own README for build/hardware notes.*
