@@ -1,0 +1,12 @@
+sbaskt:
+  - get:
+    - jtsbaskt_snd.v
+    - jtsbaskt_snd_dev.v
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_z80.yaml
+jt12:
+  - get:
+    - jt89.yaml
+vlm5030:

@@ -1,0 +1,19 @@
+sbaskt:
+  - get:
+      - jtsbaskt_game.v
+      - jtsbaskt_main.v
+      - jtsbaskt_video.v
+      - jtsbaskt_obj.v
+      - jtsbaskt_colmix.v
+      - sound.yaml
+kicker:
+  - get:
+      - common.yaml
+jtframe:
+  - from: ram
+    get:
+      - jtframe_prom.v
+      - jtframe_dual_ram.v
+  - from: video
+    get:
+      - jtframe_blank.v
