@@ -1,0 +1,34 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "fastlane.cpp" ]
+
+[Audio]
+volume=[
+    { machine="fastlane", value=0x30 },  
+]
+
+[buttons]
+names = [
+    { names="Accelerate,Jump" }
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+rename = [ {name="Bonus Life", to="Bonus"} ]
+
+[ROM]
+# values starting with $ refer to macro definitions in the .def file
+# or arguments passed to mame2mra
+regions = [
+    { name="maincpu", no_offset=true  },
+    { name="gfx",       start="GFX_START", width=16 },
+    { name="k007232_1", start="PCM0_START" },
+    { name="k007232_2", start="PCM1_START" },
+    { name="proms",     start="JTFRAME_PROM_START"},
+]
+# { name="myregion", reorder=[3,2,1,0] } # reorder files inside a region
+order = [
+    "maincpu", "gfx", "k007232_1", "k007232_2", "proms"
+]
