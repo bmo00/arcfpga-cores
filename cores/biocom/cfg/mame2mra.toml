@@ -1,0 +1,45 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "bionicc.cpp" ]
+# skip.Setnames=["bioniccbl2"]
+
+[Audio]
+volume = [
+    { machine="bionicc", value=0x40 },
+    ]
+    
+[buttons]
+names=[
+    { names="Shoot,Arm" }
+]
+
+[dipsw]
+rename=[
+    { name="Bonus Life", to="Bonus" },
+]
+
+[ROM]
+regions=[
+    { name="maincpu", width=16, reverse=true },
+    # gfx2 = scroll 2
+    { name="gfx2", width=16, reverse=true, start="JTFRAME_BA1_START", no_offset=true },
+    { name="gfx1", start="FIX_START", reverse=true },
+    { name="gfx3", width=16, sequence=[4,0,5,1,6,2,7,3], start="JTFRAME_BA2_START" },
+    { name="audiocpu", no_offset=true, start="JTFRAME_BA3_START" },
+    { name="spritegen", width=32, reverse=true, no_offset=true },
+    { name="mcu", start="JTFRAME_PROM_START" },
+]
+
+patches=[
+    { setname="topsecrt2", offset=4, data="00 00 a8 42" }, # skip initial test
+    { setname="topsecrt",  offset=4, data="00 00 90 42" }, # skip initial test
+]
+
+order=[ "maincpu",
+    "gfx2", "gfx1",
+    "gfx3",
+    "audiocpu", "spritegen",
+    "mcu","proms"
+]
