@@ -1,0 +1,37 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "lwings.cpp" ]
+skip.Machines=[ "avengers", "trojan", "fball" ]
+
+[Audio]
+volume = [
+    { machine="lwings", value=0x40 },
+    { machine="sectionz", value=0x21 },
+]
+
+[buttons]
+names=[
+    { machine="sectionz", names="Shoot,Turn" },
+    { machine="lwings", names="Shoot,Bomb" },
+]
+
+[header]
+data=[ { machine="sectionz", offset=0, data="00" },
+       { machine="lwings",   offset=0, data="01" } ]
+
+[dipsw]
+rename=[ {name="Bonus Life", to="Bonus"}]
+
+[ROM]
+regions=[
+    { name="maincpu",  sequence=[1,2,0] },
+    { name="soundcpu", start="JTFRAME_BA1_START" },
+    { name="gfx1",     start="CHAR_START", reverse=true },
+    { name="gfx2",     start="JTFRAME_BA2_START", width=32, sequence=[6,4,2,0,7,5,3,1] },
+    { name="gfx3",     start="JTFRAME_BA3_START", width=16, sequence=[2,0,3,1] },
+    { name="proms",    skip=true },
+]
+
+order=[ "maincpu", "soundcpu", "adpcm", "gfx1", "gfx2", "gfx3" ]
