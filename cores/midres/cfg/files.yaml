@@ -1,0 +1,19 @@
+cop:
+  - get:
+      - common.yaml
+midres:
+  - get:
+      - jtmidres_decoder.v
+      - jtmidres_colmix.v
+      - jtmidres_snd.v
+jtframe:
+  - get:
+      - jtframe_sort.v
+  - from: ram
+    get:
+      - jtframe_prom.v
+      - jtframe_ram.v
+  - from: video
+    get:
+      - jtframe_blank.v
+HUC6280: null
