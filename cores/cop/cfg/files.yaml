@@ -1,0 +1,25 @@
+cop:
+  - get:
+      - jtcop_prot.v
+      - jtcop_decoder.v
+      - jtcop_colmix.v
+      - jtcop_snd.v
+      - common.yaml
+jtframe:
+  - get:
+      - jtframe_ff.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_prom.v
+  - from: cpu
+    get:
+      - jtframe_8751mcu.v
+      - jtframe_68kdtack_cen.v
+  - from: clocking
+    get:
+      - jtframe_frac_cen.v
+HUC6280: null
+jt680x:
+  - get:
+      - jt65c02.yaml
