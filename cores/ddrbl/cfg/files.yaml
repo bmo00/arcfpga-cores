@@ -1,0 +1,41 @@
+ddrbl:
+  - get:
+      - jtddrbl_main.v
+      - jtddrbl_sub.v
+      - jtddrbl_sound.v
+      - jtddrbl_k005885.v
+      - jtddrbl_scroll.v
+      - jtddrbl_obj.v
+      - jtddrbl_colmix.v
+      - jtddrbl_video.v
+      - jtddrbl_game.v
+jtframe:
+  - get:
+      - jtframe_ff.v
+      - jtframe_8bit_reg.v
+      - jtframe_edge.v
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_scroll.yaml
+  - from: video/layouts
+    get:
+      - jtframe_8x8x4_packed_msb.v
+  - from: ram
+    get:
+      - jtframe_obj_buffer.v
+      - jtframe_bram_dma.v
+  - from: cpu
+    get:
+      - jtframe_6809.yaml
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_prom.v
+  - from: cpu
+    get:
+      - jtframe_sys6809.v
+jt12:
+  - get:
+      - jt03.yaml
+vlm5030: null
