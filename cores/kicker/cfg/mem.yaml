@@ -1,0 +1,50 @@
+params:
+  - { name: SCR_OFFSET, value: "`SCR_START >> 1" }
+  - { name: OBJ_OFFSET, value: "`OBJ_START >> 1" }
+  - { name: PCM_OFFSET, value: "`PCM_START >> 1" }
+clocks:
+  clk24:
+    - mul: 1
+      div: 4
+      outputs:
+        - cpu4
+        - ti1
+        - ti2
+audio: 
+  rsum: 220
+  rc: { r: 1k, c: 100n }
+  channels:
+    # equivalent filter
+    - { name: ti1, module: jt89, rsum: 220, rc: [{ r: 2k, c: 100n }, { r: 1.25k, c: 47n }] }
+    - { name: ti2, module: jt89, rsum: 220, rc: [{ r: 2k, c: 100n }, { r: 1.25k, c: 47n }] }
+download:
+  post_addr: true
+sdram:
+  banks:
+    - buses:
+        - name: scr
+          addr_width: 15
+          data_width: 32
+          offset: SCR_OFFSET
+        - name: objrom
+          addr_width: 16
+          data_width: 32
+          offset: OBJ_OFFSET
+        - name: pcm
+          addr_width: 16
+          data_width: 8
+          offset: PCM_OFFSET
+        - name: main
+          addr_width: 16
+          data_width: 8
+bram:
+  - name: vram
+    addr_width: 11
+    data_width: 16
+    simfile: {}
+    dual_port:
+      name: vramrw
+      din:  vramrw_din
+      dout: vramrw_dout
+      rw:   true
+    ioctl: { save: true, order: 0 }
