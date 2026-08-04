@@ -1,0 +1,42 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "hcastle.cpp" ]
+
+[Audio]
+volume = [
+      { machine="hcastle", value=0x47 },
+]  
+
+[buttons]
+names = [
+    { names="Attack,Jump" }
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+rename = [
+    {  name="Difficulty 1 (Game)", To="Gameplay" },
+    {  name="Difficulty 2 (Strength)", To="Strength" },
+    {  name="Allow Continue", To="Continue" },
+]
+
+[header]
+frames = [
+    # the black frame is not symmetrical but 16 left/8 right
+    # so this will still leave 8 on the left side
+    { width=8 },
+]
+
+[ROM]
+regions = [
+    { name="maincpu",  no_offset=true, sequence=[1,0] }, # First 32kB go to $8000, the rest are banked at $6000
+    { name="audiocpu",  start="JTFRAME_BA1_START" },
+    { name="k007232",   start="PCM_START" },
+    { name="k007121_1", start="JTFRAME_BA2_START", width=16 },
+    { name="k007121_2", start="JTFRAME_BA3_START", width=16 },
+    { name="proms",     start="JTFRAME_PROM_START" } # last one is the priority encoder
+]
+
+order = [ "maincpu", "audiocpu", "k007232", "k007121_1", "k007121_2", "proms" ]
