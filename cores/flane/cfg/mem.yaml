@@ -1,0 +1,44 @@
+params:
+  - { name: GFX_OFFSET,  value: "`GFX_START >>1" }
+  - { name: PCM0_OFFSET, value: "`PCM0_START>>1" }
+  - { name: PCM1_OFFSET, value: "`PCM1_START>>1" }
+clocks:
+  clk24:
+    - freq: 12M
+      outputs:
+        - cen12
+        - cen6
+        - cen3
+        - cen1p5
+audio:
+  rsum: 12k
+  missing_info: true # just using the same schematic for K007232 as in TMNT
+  channels:
+    - { name: pcm0, module: jt007232, rsum: 12k,  rc: [ { r: 19.65k, c: 470p } ], pre: 0.42 } # 120k || (47k||47k)
+    - { name: pcm1, module: jt007232, rsum: 12k,  rc: [ { r: 19.65k, c: 470p } ], pre: 0.42 } # 120k || (47k||47k)
+sdram:
+  banks:
+    - buses:
+        - name: gfx
+          addr_width: 19
+          data_width: 16
+          offset: GFX_OFFSET
+        - name: pcma
+          addr_width: 17
+          data_width: 8
+          offset: PCM0_OFFSET
+        - name: pcmb
+          addr_width: 17
+          data_width: 8
+          offset: PCM0_OFFSET
+        - name: pcmc
+          addr_width: 19
+          data_width: 8
+          offset: PCM1_OFFSET
+        - name: pcmd
+          addr_width: 19
+          data_width: 8
+          offset: PCM1_OFFSET
+        - name: main
+          addr_width: 17
+          data_width: 8
