@@ -1,0 +1,59 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "hyperspt.cpp" ]
+skip.bootlegs=true
+
+[Audio]
+volume = [
+    { machine="hyperspt", value=0x7B },
+    { machine="roadf", value=0x4B },
+]
+
+[buttons]
+names=[
+    { machine="roadf", names="Low gear,High gear" },
+    { machine="hyperspt", names="Left button, Centre button, Right button" }
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+bitcnt = 19
+extra = [
+    { machine="roadf", name="Flip", bits="16", Options="Off,On" }
+]
+rename = [
+    { name="After Last Event", To="After ending"},
+    { name="World Records", To="Records"},
+    { name="Number of Opponents", To ="Other cars"}
+]
+
+[header]
+info = """ Header to identify the game"""
+data = [
+    { machine="roadf",    offset=0, data="00" },
+    { machine="hyperspt", offset=0, data="01" },
+]
+
+[ROM]
+# values starting with $ refer to macro definitions in the .def file
+# or arguments passed to mame2mra
+regions = [
+    { name="maincpu" },
+    { name="audiocpu" },
+    { name="tiles", width=16, no_offset=true, Sort_even=true, start="SCR_START" },
+    { machine="roadf", name="sprites", width=16, no_offset=true, start="OBJ_START" },
+    { machine="hyperspt", name="sprites", width=16, no_offset=true, start="OBJ_START", sequence=[0,4,1,5,2,6,3,7] },
+    { name="vlm", start="PCM_START" },
+    { name="proms", start="JTFRAME_PROM_START" },
+]
+
+order = [
+    "maincpu", "audiocpu", "tiles", "sprites", "vlm", "proms"
+]
+
+blanks = [
+    { machine="hyperspt", region="tiles", offset=0x4000, len=0x4000 }
+]
+
