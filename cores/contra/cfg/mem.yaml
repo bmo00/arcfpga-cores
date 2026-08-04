@@ -1,0 +1,44 @@
+params:
+  - { name: GAME, value: "`JTCONTRA_PCB"}
+  - { name: CONTRA, value: "0"}
+  - { name: SND_OFFSET,  value: "`SND_START >>1" }
+  - { name: GFX1_OFFSET, value: "`GFX1_START>>1" }
+  - { name: GFX2_OFFSET, value: "`GFX2_START>>1" }
+  - { name: PCM_OFFSET,  value: "`PCM_START >>1" }
+clocks:
+  clk24:
+    - freq: 3M
+      gate: [ "main", "snd" ]
+      outputs:
+        - cen3
+        - cen1p5
+    - freq: 3579545
+      gate: [ "main", "snd" ]
+      outputs:
+        - cen_fm
+        - cen_fm2
+audio:
+  channels:
+    - { name: fm, module: jt51, rsum: 2k, rc: [{r: rout, c: 3.3n}, {r: 666, c: 33n }]}
+sdram:
+  banks:
+    - buses:
+        - name: gfx1
+          addr_width: 19
+          data_width: 16
+          offset: GFX1_OFFSET
+        - name: gfx2
+          addr_width: 19
+          data_width: 16
+          offset: GFX2_OFFSET
+        - name: pcm
+          addr_width: 17
+          data_width: 8
+          offset: PCM_OFFSET
+        - name: snd
+          addr_width: 15
+          data_width: 8
+          offset: SND_OFFSET
+        - name: main
+          addr_width: 18
+          data_width: 8
