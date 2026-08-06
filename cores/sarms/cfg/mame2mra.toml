@@ -1,0 +1,52 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "sidearms.cpp" ]
+skip.Setnames=[
+    "dyger",
+    "dygera",
+    "turtship",
+    "turtshipj",
+    "turtshipk",
+    "turtshipkn",
+    "turtshipko",
+    "twinfalc",
+    "whizz",
+]
+
+[Audio]
+volume = [
+    { machine="sidearms", value=0x41 },
+]
+
+[buttons]
+core=3 # max number of buttons supported by the core
+names=[
+    { names="Fire-Left,Fire-Right,Power" },
+]
+
+[dipsw]
+bitcnt=19   # number 19 is freeze, active low
+defaults=[
+    { value="fc,ff,ff" },
+]
+
+[rom]
+regions=[
+    { name="maincpu"                                               },
+    { name="audiocpu",    start="JTFRAME_BA1_START"                },
+    { name="user1",       start="STAR_START"                       }, # starfield
+    { name="gfx1",        start="JTFRAME_BA2_START", reverse=true  },
+    # GFX2
+    { name="gfx2",        start="SCR_START", reverse=true  },
+    { machine="sidearms", start="SCR_START", name="gfx2", width=16, sequence=[4,0,5,1,6,2,7,3] },
+    # GFX3
+    { name="gfx3",        start="JTFRAME_BA3_START", reverse=true  },
+    { machine="sidearms", start="JTFRAME_BA3_START", name="gfx3", width=16, sequence=[4,0,5,1,6,2,7,3] },
+    { name="gfx4",        start="MAP_START", reverse=true          },
+    { name="proms",       start="JTFRAME_PROM_START" },
+]
+
+order = [ "maincpu","audiocpu", "user1",
+"gfx1", "gfx2", "gfx3", "gfx4", "proms" ]

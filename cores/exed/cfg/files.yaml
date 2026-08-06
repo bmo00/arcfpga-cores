@@ -1,15 +1,15 @@
 commnd:
   - get:
-      - jtcommnd_main.v
+    - jtcommnd_main.v
 exed:
   - get:
-      - '*.v'
+    - "*.v"
 gng:
   - get:
-      - jtgng_video.v
-      - jtgng_video.yaml
-      - jtgng_sound.yaml
-      - jtgng_dual_ram.v
+    - jtgng_video.v
+    - jtgng_video.yaml
+    - jtgng_sound.yaml
+    - jtgng_dual_ram.v
 jtframe:
   - from: clocking
     get:
@@ -24,10 +24,7 @@ jtframe:
   - from: video
     get:
       - jtframe_blank.v
-  - from: ram
-    get:
-      - jtframe_prom.v
 jt12:
   - get:
-      - jt89.yaml
-      - jt12_rst.v
+    - jt89.yaml
+    - jt12_rst.v

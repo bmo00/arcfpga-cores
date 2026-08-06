@@ -1,13 +1,13 @@
 paclan:
   - get:
-      - '*.v'
+    - "*.v"
 shouse:
   - get:
-      - jtcus30.sv
-      - jtshouse_vtimer.v
+    - jtcus30.sv
+    - jtshouse_vtimer.v
 thundr:
   - get:
-      - jtthundr_cenloop.v
+    - jtthundr_cenloop.v
 jtframe:
   - get:
       - jtframe_ff.v
@@ -34,6 +34,3 @@ jtframe:
   - from: ram
     get:
       - jtframe_ram_rdmux.v
-  - from: cpu
-    get:
-      - jtframe_6801mcu.v

@@ -1,17 +1,17 @@
 toki:
   - get:
-      - jttoki_game.v
-      - jttoki_main.v
-      - jttoki_cabal_adpcm.v
-      - jttoki_video_mmr.v
-      - jttoki_video.v
-      - jttoki_colmix.v
-      - jttoki_fix.v
-      - jttoki_scroll.v
-      - jttoki_obj.v
-      - jttoki_irq.v
-      - jttoki_sound.v
-      - sei80bu.v
+    - jttoki_game.v
+    - jttoki_main.v
+    - jttoki_cabal_adpcm.v
+    - jttoki_video_mmr.v
+    - jttoki_video.v
+    - jttoki_colmix.v
+    - jttoki_fix.v
+    - jttoki_scroll.v
+    - jttoki_obj.v
+    - jttoki_irq.v
+    - jttoki_sound.v
+    - sei80bu.v
 jtframe:
   - from: ram
     get:
@@ -34,18 +34,9 @@ jtframe:
       - jtframe_vtimer.v
       - jtframe_scroll.yaml
       - jtframe_obj.yaml
-  - from: video/tilemap
-    get:
-      - jtframe_tilemap.v
-  - from: cpu
-    get:
-      - jtframe_68kdtack_cen.v
-  - from: video
-    get:
-      - jtframe_objdraw.v
-jt6295: null
+jt6295:
 jtopl:
   - get:
-      - jtopl2.yaml
-jt51: null
-jt5205: null
+    - jtopl2.yaml
+jt51:
+jt5205:

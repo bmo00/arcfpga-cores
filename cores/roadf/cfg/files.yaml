@@ -1,21 +1,16 @@
 roadf:
   - get:
-      - jtroadf_game.v
-      - jtroadf_main.v
-      - jtroadf_video.v
-      - jtroadf_scroll.v
-      - jtroadf_obj.v
+    - jtroadf_game.v
+    - jtroadf_main.v
+    - jtroadf_video.v
+    - jtroadf_scroll.v
+    - jtroadf_obj.v
 yiear:
   - get:
-      - jtyiear_colmix.v
+    - jtyiear_colmix.v
 kicker:
   - get:
-      - common.yaml
+    - common.yaml
 sbaskt:
   - get:
-      - sound.yaml
-jtframe:
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-      - jtframe_prom.v
+    - sound.yaml

@@ -1,15 +1,18 @@
 [ARC]
 RBF=JTBUBL
-MOD=0
+MOD=1
 NAME=TOKIOU
 DEFAULT=0xFFFF0000
 CONF="P1,Switches"
+CONF="P1OG,Cabinet,Upright,Cocktail"
 CONF="P1OH,Flip Screen,On,Off"
+CONF="P1OI,Service Mode,On,Off"
 CONF="P1OJ,Demo Sounds,Off,On"
 CONF="P1OKL,Coin A,2/3,2/1,1/2,1/1"
 CONF="P1OMN,Coin B,2/3,2/1,1/2,1/1"
-CONF="P1OOP,Difficulty,Very Hard,Hard,Easy,Normal"
-CONF="P1OQR,Bonus Life,50K 250K 500K,40K 200K 500K,20K 80K 300K,30K 100K 400K"
-CONF="P1OST,Lives,2,1,5,3"
-CONF="P1OV,Type,IC52=256kb IC53=256kb,IC52=512kb IC53=none"
+CONF="P1OO,Enemies,Many,Few"
+CONF="P1OP,Enemy Shots,Many,Few"
+CONF="P1OQR,Bonus Life,400K 400K,300K 400K,200K 400K,100K 400K"
+CONF="P1OST,Lives,99,5,4,3"
+CONF="P1OV,Language,English,Japanese"
 BUTTONS="Jump,Shoot,Start,Coin,Core credits"

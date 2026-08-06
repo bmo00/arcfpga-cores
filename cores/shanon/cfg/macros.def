@@ -1,0 +1,25 @@
+include ../../outrun/cfg/macros.def
+
+CORENAME=JTSHANON
+JTFRAME_RATE=60.02
+GAMETOP=jtshanon_game_sdram
+SHANON=1
+-JTFRAME_LF_BUFFER
+JTFRAME_COLORW=6
+
+# System 16B Objects don't work
+# well with 64-bit bursts. I just
+# revert to default 32-bit bursts
+-JTFRAME_BA0_LEN=64
+-JTFRAME_BA2_LEN=64
+-JTFRAME_BA3_LEN=64
+
+# This system does not fit in MiST because of the 32kB used for road memory
+# and the 32kB used for NVRAM
+# Disabled the OSD logo or the credits won't make it fit
+
+[sidi128]
+-JTFRAME_LF_SDRAM_BUFFER
+
+[pocket]
+-JTFRAME_SKIP

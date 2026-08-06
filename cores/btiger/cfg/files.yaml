@@ -1,18 +1,18 @@
 btiger:
   - get:
-      - jtbtiger_main.v
-      - jtbtiger_game.v
-      - jtbtiger_video.v
-      - jtbtiger_mcu.v
-      - jtbtiger_colmix.v
-      - jtbtiger_scroll.v
+    - jtbtiger_main.v
+    - jtbtiger_game.v
+    - jtbtiger_video.v
+    - jtbtiger_mcu.v
+    - jtbtiger_colmix.v
+    - jtbtiger_scroll.v
 gng:
   - get:
-      - jtgng_video.v
-      - jtgng_video.yaml
-      - jtgng_sound.yaml
-      - jtgng_dual_ram.v
-      - jtgng_colmix.v
+    - jtgng_video.v
+    - jtgng_video.yaml
+    - jtgng_sound.yaml
+    - jtgng_dual_ram.v
+    - jtgng_colmix.v
 jtframe:
   - from: clocking
     get:
@@ -27,16 +27,6 @@ jtframe:
   - from: ram
     get:
       - jtframe_ram.v
-  - from: ram
-    get:
-      - jtframe_prom.v
-  - from: cpu
-    get:
-      - jtframe_z80wait.v
-      - jtframe_8751mcu.v
-  - from: clocking
-    get:
-      - jtframe_frac_cen.v
 jt12:
   - get:
-      - jt12_rst.v
+    - jt12_rst.v

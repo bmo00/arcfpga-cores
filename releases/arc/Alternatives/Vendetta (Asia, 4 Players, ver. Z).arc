@@ -1,5 +1,5 @@
 [ARC]
 RBF=JTSIMSON
-MOD=0
+MOD=32
 NAME=VENDETTAZ
 BUTTONS="Punch,Kick,-,Start,Coin,Core credits"

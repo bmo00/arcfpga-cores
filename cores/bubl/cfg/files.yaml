@@ -1,14 +1,14 @@
 bubl:
   - get:
-      - jtbubl_game.v
-      - jtbubl_main.v
-      - jtbubl_colmix.v
-      - jtbubl_video.v
-      - jtbubl_gfx.v
-      - jtbubl_sound.v
+    - jtbubl_game.v
+    - jtbubl_main.v
+    - jtbubl_colmix.v
+    - jtbubl_video.v
+    - jtbubl_gfx.v
+    - jtbubl_sound.v
 kunio:
   - get:
-      - jtkunio_mcu.v
+    - jtkunio_mcu.v
 jtframe:
   - get:
       - jtframe_ff.v
@@ -27,18 +27,14 @@ jtframe:
       - jtframe_blank.v
   - from: cpu
     get:
+      # Z80
       - jtframe_z80.yaml
+      # MCU
       - jtframe_6801mcu.yaml
       - jtframe_6805mcu.yaml
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-  - from: cpu
-    get:
-      - jtframe_z80wait.v
 jt12:
   - get:
-      - jt03.yaml
+    - jt03.yaml
 jtopl:
   - get:
-      - jt26.yaml
+    - jt26.yaml

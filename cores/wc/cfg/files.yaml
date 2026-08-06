@@ -1,6 +1,6 @@
 wc:
   - get:
-      - '*.v'
+    - "*.v"
 jtframe:
   - get:
       - jtframe_edge.v
@@ -12,13 +12,7 @@ jtframe:
       - jtframe_vtimer.v
       - jtframe_scroll.yaml
       - jtframe_obj.yaml
-  - from: video
-    get:
-      - jtframe_objdraw.v
-  - from: video/tilemap
-    get:
-      - jtframe_tilemap.v
-jt5205: null
+jt5205:
 jt12:
   - get:
-      - jt49.yaml
+    - jt49.yaml

@@ -1,5 +1,5 @@
 [ARC]
 RBF=JTRIDERS
-MOD=0
+MOD=32
 NAME=SSRIDERSADD
 BUTTONS="Shoot,Jump,-,-,Start,Coin,Core credits"

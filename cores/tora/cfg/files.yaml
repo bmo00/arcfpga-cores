@@ -1,37 +1,35 @@
-'1943':
-  - get:
-      - jt1943_scroll.yaml
 tora:
   - get:
-      - jttora_colmix.v
-      - jttora_game.v
-      - jttora_video.v
-      - jttora_sound.v
-      - jttora_adpcm.v
-      - jttora_obj.v
-      - jttora_objdata.v
+    - jttora_colmix.v
+    - jttora_game.v
+    - jttora_video.v
+    - jttora_sound.v
+    - jttora_adpcm.v
+    - jttora_obj.v
+    - jttora_objdata.v
+"1943":
+  - get:
+    - jt1943_scroll.yaml
 biocom:
   - get:
-      - jtbiocom_main.v
-      - jtbiocom_mcu.v
+    - jtbiocom_main.v
+    - jtbiocom_mcu.v
 gng:
   - get:
-      - jtgng_video.yaml
-      - jtgng_sound.yaml
-      - jtgng_dual_ram.v
+    - jtgng_video.yaml
+    - jtgng_sound.yaml
+    - jtgng_dual_ram.v
 jtframe:
   - from: clocking
     get:
       - jtframe_cen48.v
       - jtframe_cen24.v
   - from: cpu
-    unless:
-      - NOSOUND
+    unless: [NOSOUND]
     get:
       - jtframe_z80.yaml
   - from: cpu
-    unless:
-      - NOMAIN
+    unless: [NOMAIN]
     get:
       - jtframe_m68k.yaml
   - from: cpu
@@ -46,15 +44,9 @@ jtframe:
     get:
       - jtframe_blank.v
       - jtframe_obj.yaml
-  - from: ram
-    get:
-      - jtframe_prom.v
-  - from: video
-    get:
-      - jtframe_objdraw.v
-jt51: null
-jt5205: null
+jt51:
+jt5205:
 jt12:
   - get:
-      - jt12_rst.v
-      - jt49.yaml
+    - jt12_rst.v
+    - jt49.yaml
