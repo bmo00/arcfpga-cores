@@ -1,16 +1,15 @@
 [ARC]
 RBF=JT1942
-MOD=5
+MOD=0
 NAME=HIGEMARU
-DEFAULT=0xFFF70000
+DEFAULT=0xFEFF0000
 CONF="P1,Switches"
-CONF="P1OGI,Coin A,Free Play,4/1,3/1,2/3,2/1,1/4,1/2,1/1"
-CONF="P1OJ,Cabinet,Upright,Cocktail"
-CONF="P1OKL,Bonus Life,30K 100K 100K+,30K 80K 80K+,20K 100K 100K+,20K 80K 80K+"
+CONF="P1OGI,Coin A,Free Play,5/1,4/1,3/1,2/1,1/3,1/2,1/1"
+CONF="P1OJL,Coin B,Free Play,5/1,4/1,3/1,2/1,1/3,1/2,1/1"
 CONF="P1OMN,Lives,5,2,1,3"
-CONF="P1OOQ,Coin B,Free Play,4/1,3/1,2/3,2/1,1/4,1/2,1/1"
-CONF="P1OR,Service Mode,On,Off"
-CONF="P1OS,Flip Screen,On,Off"
-CONF="P1OTU,Difficulty,Very Difficult,Difficult,Easy,Normal"
-CONF="P1OV,Screen Stop,On,Off"
+CONF="P1OO,Cabinet,Upright,Cocktail"
+CONF="P1OPR,Bonus Life,None,40k 100k 100k+,30k 80k 80k+,30k 70k 70k+,20k 70k 70k+,20k 60k 60k+,10k 60k 60k+,10k 50k 50k+"
+CONF="P1OS,Demo Sounds,Off,On"
+CONF="P1OT,Demo Music,Off,On"
+CONF="P1OU,Flip Screen,On,Off"
 BUTTONS="Action,-,Start,Coin,Core credits"
