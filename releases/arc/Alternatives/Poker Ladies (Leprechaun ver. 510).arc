@@ -1,5 +1,5 @@
 [ARC]
 RBF=JTPANG
-MOD=5
+MOD=0
 NAME=PKLADIESL
 BUTTONS="button 1,button 2,-,-,Start,Coin,Core credits"

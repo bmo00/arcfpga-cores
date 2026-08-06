@@ -1,12 +1,12 @@
 pang:
   - get:
-      - jtpang_game.v
-      - jtpang_main.v
-      - jtpang_video.v
-      - jtpang_colmix.v
-      - jtpang_char.v
-      - jtpang_obj.v
-      - jtpang_snd.v
+    - jtpang_game.v
+    - jtpang_main.v
+    - jtpang_video.v
+    - jtpang_colmix.v
+    - jtpang_char.v
+    - jtpang_obj.v
+    - jtpang_snd.v
 jtframe:
   - from: ram
     get:
@@ -25,14 +25,8 @@ jtframe:
     get:
       - jtframe_z80.yaml
       - jtframe_kabuki.v
-  - from: clocking
-    get:
-      - jtframe_frac_cen.v
-  - from: video
-    get:
-      - jtframe_objdraw.v
-jteeprom: null
-jt6295: null
+jteeprom:
+jt6295:
 jtopl:
   - get:
-      - jt2413.yaml
+    - jt2413.yaml

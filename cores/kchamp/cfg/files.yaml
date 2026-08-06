@@ -1,12 +1,12 @@
 kchamp:
   - get:
-      - jtkchamp_game.v
-      - jtkchamp_main.v
-      - jtkchamp_video.v
-      - jtkchamp_snd.v
-      - jtkchamp_char.v
-      - jtkchamp_obj.v
-      - jtkchamp_colmix.v
+    - jtkchamp_game.v
+    - jtkchamp_main.v
+    - jtkchamp_video.v
+    - jtkchamp_snd.v
+    - jtkchamp_char.v
+    - jtkchamp_obj.v
+    - jtkchamp_colmix.v
 jtframe:
   - get:
       - jtframe_ff.v
@@ -20,14 +20,7 @@ jtframe:
   - from: video
     get:
       - jtframe_vtimer.v
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-      - jtframe_prom.v
-  - from: clocking
-    get:
-      - jtframe_frac_cen.v
-jt5205: null
+jt5205:
 jt12:
   - get:
-      - jt49.yaml
+    - jt49.yaml

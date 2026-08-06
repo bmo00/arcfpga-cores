@@ -1,5 +1,5 @@
 [ARC]
 RBF=JTSIMSON
-MOD=0
+MOD=32
 NAME=VENDETTA2PEBA
 BUTTONS="Punch,Kick,-,Start,Coin,Core credits"

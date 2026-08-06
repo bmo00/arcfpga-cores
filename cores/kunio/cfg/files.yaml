@@ -1,14 +1,14 @@
 kunio:
   - get:
-      - jtkunio_game.v
-      - jtkunio_main.v
-      - jtkunio_mcu.v
-      - jtkunio_sound.v
-      - jtkunio_video.v
-      - jtkunio_char.v
-      - jtkunio_scroll.v
-      - jtkunio_obj.v
-      - jtkunio_colmix.v
+    - jtkunio_game.v
+    - jtkunio_main.v
+    - jtkunio_mcu.v
+    - jtkunio_sound.v
+    - jtkunio_video.v
+    - jtkunio_char.v
+    - jtkunio_scroll.v
+    - jtkunio_obj.v
+    - jtkunio_colmix.v
 jtframe:
   - from: cpu
     get:
@@ -25,16 +25,10 @@ jtframe:
   - from: video
     get:
       - jtframe_vtimer.v
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-  - from: cpu
-    get:
-      - jtframe_sys6809.v
-jt5205: null
+jt5205:
 jtopl:
   - get:
-      - jtopl2.yaml
+    - jtopl2.yaml
 jt680x:
   - get:
-      - jt65c02.yaml
+    - jt65c02.yaml

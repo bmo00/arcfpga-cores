@@ -1,15 +1,15 @@
 rumble:
   - get:
-      - jtrumble_game.v
-      - jtrumble_main.v
-      - jtrumble_video.v
-      - jtrumble_colmix.v
-      - jtrumble_banks.v
+    - jtrumble_game.v
+    - jtrumble_main.v
+    - jtrumble_video.v
+    - jtrumble_colmix.v
+    - jtrumble_banks.v
 gng:
   - get:
-      - jtgng_video.yaml
-      - jtgng_sound.yaml
-      - jtgng_dual_ram.v
+    - jtgng_video.yaml
+    - jtgng_sound.yaml
+    - jtgng_dual_ram.v
 jtframe:
   - from: clocking
     get:
@@ -30,11 +30,7 @@ jtframe:
       - jtframe_blank.v
   - get:
       - jtframe_sort.v
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-      - jtframe_prom.v
 jt12:
   - get:
-      - jt49.yaml
-      - jt12_rst.v
+    - jt49.yaml
+    - jt12_rst.v

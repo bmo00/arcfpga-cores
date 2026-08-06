@@ -1,15 +1,15 @@
 roc:
   - get:
-      - jtroc_game.v
-      - jtroc_main.v
-      - jtroc_snd.v
-      - jtroc_video.v
+    - jtroc_game.v
+    - jtroc_main.v
+    - jtroc_snd.v
+    - jtroc_video.v
 kicker:
   - get:
-      - jtkicker_colmix.v
-      - common.yaml
+    - jtkicker_colmix.v
+    - common.yaml
 yiear:
-  - get:
+    - get:
       - jtyiear_colmix.v
 jtframe:
   - get:
@@ -30,9 +30,6 @@ jtframe:
     get:
       - jtframe_cen48.v
       - jtframe_crossclk_cen.v
-  - from: cpu
-    get:
-      - jtframe_sys6809.v
 jt12:
   - get:
-      - jt49.yaml
+    - jt49.yaml

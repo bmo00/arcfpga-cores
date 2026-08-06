@@ -1,10 +1,10 @@
 dd:
   - get:
-      - jtdd_game.v
-      - jtdd_mcu.v
-      - jtdd_sound.v
-      - jtdd_adpcm.v
-      - common.yaml
+    - jtdd_game.v
+    - jtdd_mcu.v
+    - jtdd_sound.v
+    - jtdd_adpcm.v
+    - common.yaml
 jtframe:
   - from: cpu
     get:
@@ -13,11 +13,4 @@ jtframe:
   - from: clocking
     get:
       - jtframe_cendiv.v
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-      - jtframe_prom.v
-  - from: video
-    get:
-      - jtframe_objdraw.v
-jt5205: null
+jt5205:

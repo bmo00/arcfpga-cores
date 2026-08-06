@@ -1,6 +1,6 @@
 flstory:
   - get:
-      - '*.v'
+    - "*.v"
 jtframe:
   - get:
       - jtframe_edge.v
@@ -23,13 +23,7 @@ jtframe:
       - jtframe_vtimer.v
       - jtframe_obj.yaml
       - jtframe_scroll.yaml
-  - from: sound
-    get:
-      - jtframe_pole.v
-  - from: ram
-    get:
-      - jtframe_dual_ram.v
-jt5232: null
+jt5232:
 jt12:
   - get:
-      - jt49.yaml
+    - jt49.yaml

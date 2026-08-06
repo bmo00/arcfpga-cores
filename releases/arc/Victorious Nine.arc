@@ -1,16 +1,16 @@
 [ARC]
 RBF=JTFLSTORY
-MOD=1
+MOD=0
 NAME=VICTNINE
-DEFAULT=0xFFFBFF0000
+DEFAULT=0xBF807F0000
 CONF="P1,Switches"
-CONF="P1OI,Service Mode,On,Off"
-CONF="P1OJ,Demo Sounds,Off,On"
-CONF="P1OKL,Coin A,2/3,2/1,1/2,1/1"
-CONF="P1OMN,Coin B,2/3,2/1,1/2,1/1"
-CONF="P1OOP,Difficulty,Hardest,Hard,Easy,Medium"
-CONF="P1OQR,Bonus Life,400k 900k 500k+,300k 700k 400k+,200k 500k 300k+,150k 350k 200k+"
-CONF="P1OST,Lives,1,4,5,3"
-CONF="P1OV,Reset Damage (Cheat),On,Off"
-CONF="P1Oa,Infinite Bullets,On,Off"
+CONF="P1OI,Free Play,On,Off"
+CONF="P1OL,Cabinet,MA / MB,Upright,-,-,-,Cocktail"
+CONF="P1OM,Flip Screen,On,Off"
+CONF="P1ONQ,Coin A,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1ORU,Coin B,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OZ,Coinage Display,Off,On"
+CONF="P1Oa,Show Year,Off,On"
+CONF="P1Ob,No Hit,On,Off"
+CONF="P1Oc,Coinage,1-Way,2-Way"
 BUTTONS="Button 1,Button 2,Button 3,Button 4,Button 5,Button 6,Start,Coin,Core credits"

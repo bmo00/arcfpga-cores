@@ -1,10 +1,10 @@
 thundr:
   - get:
-      - '*.v'
+    - "*.v"
 shouse:
   - get:
-      - jtcus30.sv
-      - jtshouse_vtimer.v
+    - jtcus30.sv
+    - jtshouse_vtimer.v
 jtframe:
   - get:
       - jtframe_ff.v
@@ -28,10 +28,4 @@ jtframe:
   - from: ram
     get:
       - jtframe_ram_rdmux.v
-  - from: video/tilemap
-    get:
-      - jtframe_tilemap.v
-  - from: cpu
-    get:
-      - jtframe_6801mcu.v
-jt51: null
+jt51:

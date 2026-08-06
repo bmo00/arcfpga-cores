@@ -1,5 +1,5 @@
 [ARC]
 RBF=JTSIMSON
-MOD=0
+MOD=96
 NAME=SIMPSONS4PE
 BUTTONS="Attack,Jump,-,Start,Coin,Core credits"

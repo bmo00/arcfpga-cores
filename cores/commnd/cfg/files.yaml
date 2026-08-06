@@ -1,14 +1,14 @@
 commnd:
   - get:
-      - jtcommnd_game.v
-      - jtcommnd_main.v
+    - jtcommnd_game.v
+    - jtcommnd_main.v
 gng:
   - get:
-      - jtgng_video.v
-      - jtgng_video.yaml
-      - jtgng_sound.yaml
-      - jtgng_dual_ram.v
-      - jtgng_colmix.v
+    - jtgng_video.v
+    - jtgng_video.yaml
+    - jtgng_sound.yaml
+    - jtgng_dual_ram.v
+    - jtgng_colmix.v
 jtframe:
   - from: cpu
     get:
@@ -16,12 +16,6 @@ jtframe:
   - from: ram
     get:
       - jtframe_ram.v
-  - from: cpu
-    get:
-      - jtframe_z80wait.v
-  - from: ram
-    get:
-      - jtframe_prom.v
 jt12:
   - get:
-      - jt12_rst.v
+    - jt12_rst.v

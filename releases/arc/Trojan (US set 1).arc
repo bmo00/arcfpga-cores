@@ -1,16 +1,14 @@
 [ARC]
 RBF=JTTROJAN
-MOD=1
+MOD=0
 NAME=TROJAN
-DEFAULT=0xFFFF0000
+DEFAULT=0xFFFC0000
 CONF="P1,Switches"
-CONF="P1OG,Service Mode,On,Off"
-CONF="P1OH,Flip Screen,On,Off"
-CONF="P1OIK,Coin B,4/1,1/4,2/1,1/2,3/1,1/3,1/6,1/1"
-CONF="P1OLN,Coin A,4/1,1/4,2/1,1/2,3/1,1/3,1/6,1/1"
-CONF="P1OO,Allow Continue,No,Yes"
-CONF="P1OP,Demo Sounds,Off,On"
-CONF="P1OQR,Difficulty,Very Hard,Easy,Hard,Normal"
-CONF="P1OST,Bonus Life,30k 80k,20k 70k,20k 80k,20k 60k"
-CONF="P1OUV,Lives,6,4,5,3"
+CONF="P1OGH,Cabinet,Upright 1 Player,-,Upright 2 Players,Cocktail"
+CONF="P1OIK,Bonus Life,None,40k 80k,20k 80k,20k 70k,20k 60k,30k 80k,30k 70k,30k 60k"
+CONF="P1OOP,Coin A,2/1,1/3,1/2,1/1"
+CONF="P1OQR,Coin B,4/1,3/1,2/1,1/1"
+CONF="P1OST,Lives,5,4,2,3"
+CONF="P1OU,Flip Screen,On,Off"
+CONF="P1OV,Allow Continue,No,Yes"
 BUTTONS="Attack,Jump,Start,Coin,Core credits"
