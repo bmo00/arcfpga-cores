@@ -17,13 +17,16 @@ main_setnames=["wrally2a"]
 # wrally2_inputs.v (puertos IN0/IN1 del 68000) espera "input wire [15:0] dipsw" con dsw1=dipsw[7:0]
 # -> IN1[15:8] (Free Play/Credit/Coin B/Coin A) y dsw2=dipsw[15:8] -> IN0[15:8] (Service Mode/Coin
 # mechanism/Demo Sounds/Cabinet1-2/Monitors/Difficulty), igual que la .mra a mano ya validada
-# (default="ff,ff", 16 bits en total). Por defecto jtframe reserva un carril de 16 bits POR CADA
-# puerto MAME con DIPs (IN0 en 8-15, IN1 saltaria a 24-31 con hueco 16-23 de por medio, ver abajo
-# el "[dipsw].offset" que se probo primero) -> no cabe en el bus [15:0] del RTL y los DIP de IN1
-# quedarian sin leerse en HW. jtframe.offset solo SUMA (un shift negativo hace panic en dipsw.go:
-# "each.Mask << offset" con offset<0), asi que no se puede bajar IN1 de su bit nativo 8 a 0 por ahi
-# -> se borran los 11 DIP auto-extraidos y se re-declaran a mano como "extra" con los mismos bits
-# EXACTOS que ya usa la .mra existente (mismos names/ids, copiados literalmente de ahi).
+# (16 bits en total). Por defecto jtframe reserva un carril de 16 bits POR CADA puerto MAME con
+# DIPs (IN0 cae en 8-15, IN1 saltaria a 24-31 con hueco 16-23 de por medio) -> no cabe en el bus
+# [15:0] del RTL y los DIP de IN1 quedarian sin leerse en HW. La unica herramienta de jtframe para
+# esto es "[dipsw].offset", pero solo SUMA (un shift negativo hace panic en dipsw.go: "each.Mask
+# << offset" con offset<0), asi que no se puede bajar IN1 de su bit nativo 8 a 0 por ahi -> se
+# borran los 11 DIP auto-extraidos y se re-declaran a mano como "extra" con los mismos bits
+# EXACTOS que ya usa la .mra existente (mismos names/ids, copiados literalmente de ahi). El
+# "default" resultante (probado: ff,fd) sale MEJOR que el "ff,ff" a mano: Coin mechanism cae en
+# el bit 9 tal cual lo calcula jtframe desde el default real de MAME (0=Common), el resto de bits
+# no los toca nadie y quedan en 1 (que coincide con el default real de MAME en todos los demas).
 bitcnt=16
 delete=[
     { names=["Free Play","Credit configuration","Coin B","Coin A","Service Mode",
