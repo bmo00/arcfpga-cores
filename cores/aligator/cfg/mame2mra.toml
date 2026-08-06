@@ -1,0 +1,25 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+sourcefile=[ "gaelco2.cpp" ]
+mustbe.machines=["aligator"]
+
+[ROM]
+# gfx_temp (MAME) -> gfx: real dump has u48/u47/u50/u49 as 4 flat 4MB blocks, but the FPGA needs
+# them byte-interleaved 2-bytes-per-file (init_alighunt bit-plane layout, see mra/*.mra comment).
+# `files=` assigns synthetic small offsets purely so jtframe's own offset-grouping detects the
+# wlen=2 pairing (u48+u50, then u47+u49); real name/crc/size are untouched. Verified byte-identical
+# (same part names + same map="0012"/"1200" codes) against the hand-built, HW-validated .mra.
+regions=[
+    { name="maincpu", width=16, reverse=true },
+    { name="gfx_temp", rename="gfx", width=32, reverse=true, files=[
+        { name="u50", crc="85daecf9", size=4194304, offset=0 },
+        { name="u48", crc="19e03bf1", size=4194304, offset=2 },
+        { name="u49", crc="70a4ee0b", size=4194304, offset=4194304 },
+        { name="u47", crc="74a5a29f", size=4194304, offset=4194306 },
+    ] },
+    { name="plds", skip=true },
+    { name="gaelco_ds5002fp:sram", rename="dallas", start="JTFRAME_PROM_START" },
+]
+order=["maincpu","gfx","dallas"]

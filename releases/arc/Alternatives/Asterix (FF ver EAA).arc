@@ -1,0 +1,5 @@
+[ARC]
+RBF=JTASTERIX
+MOD=32
+NAME=ASTERIXEAA
+BUTTONS="Punch,Jump,Start,Coin,Core credits"

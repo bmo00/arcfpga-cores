@@ -1,0 +1,30 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+sourcefile=[ "gaelco.cpp" ]
+mustbe.machines=["thoop"]
+skip.setnames=["thoopa","thoopb","thoopna","thoopnna","thoopnnaa"]
+
+[ROM]
+# maincpu: th18 (512K) is bigger than th161 (256K) - mra2rom's plain interleave truncates to the
+# shorter part, silently dropping half of th18 (real HW failure, see mra/*.mra comment 2026-06-22).
+# Two explicit parts blocks read th18 in two 256K halves against th161 re-read as don't-care filler
+# for the second half - verified byte-identical against the hand-built, HW-validated fix.
+regions=[
+    { name="maincpu", width=16, parts=[
+        { name="th18dea1.040", crc="59bad625", length=0x40000, map="10" },
+        { name="th161eb4.020", crc="6add61ed", map="01" },
+        { name="th18dea1.040", crc="59bad625", offset=0x40000, length=0x40000, map="10" },
+        { name="th161eb4.020", crc="6add61ed", map="01" },
+    ] },
+    { name="gfx", width=32, start="JTFRAME_BA1_START", parts=[
+        { name="c12", crc="29a5ca36", map="0001" },
+        { name="c11", crc="7403ef7e", map="0010" },
+        { name="c10", crc="2d227085", map="0100" },
+        { name="c09", crc="06f0edbf", map="1000" },
+    ] },
+    { name="oki", start="JTFRAME_BA2_START" },
+    { name="plds", skip=true },
+]
+order=["maincpu","gfx","oki"]
