@@ -1,0 +1,29 @@
+asterix:
+  - get:
+      - '*.v'
+      - '*.sv'
+riders:
+  - get:
+      - common.yaml
+simson:
+  - get:
+      - jt053246_dma.v
+      - jt053246_mmr.v
+jtframe:
+  - get:
+      - jtframe_toggle.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_ram16.v
+      - jtframe_dual_ram16.v
+      - jtframe_rpwp_ram.v
+      - jtframe_obj_buffer.v
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_objdraw.v
+  - from: cpu
+    get:
+      - jtframe_m68k.v
+      - jtframe_68kdtack_cen.v

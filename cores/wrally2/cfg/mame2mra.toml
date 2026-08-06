@@ -1,0 +1,101 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+# wrally2a (gaelco2.cpp, REF: 950510-1) es el UNICO set de la familia wrally2 cuyos ROMs de
+# programa/gfx (wr2_63/64.icNN, wr2_ic68/69/70.icNN) coinciden con los que ya tenemos volcados
+# y con el .mra existente (mra/World Rally 2 (FF, Gaelco, 1995).mra, V.014, verificado byte a
+# byte contra wr2gfx.bin golden). El dallas (DS5002FP sram) que usa esa .mra es el dump
+# "nuevo"/bugfixed compartido por wrally2b/c/d (crc 4c532e9e), NO el que declara wrally2a en
+# MAME (wrally2_ds5002fp_sram_old.bin, crc b0e25571) -> se fuerza explicito en el part de abajo.
+sourcefile=[ "gaelco2.cpp" ]
+mustbe.machines=["wrally2"]
+skip.setnames=["wrally2","wrally2b","wrally2c","wrally2d"]
+main_setnames=["wrally2a"]
+
+[dipsw]
+# wrally2_inputs.v (puertos IN0/IN1 del 68000) espera "input wire [15:0] dipsw" con dsw1=dipsw[7:0]
+# -> IN1[15:8] (Free Play/Credit/Coin B/Coin A) y dsw2=dipsw[15:8] -> IN0[15:8] (Service Mode/Coin
+# mechanism/Demo Sounds/Cabinet1-2/Monitors/Difficulty), igual que la .mra a mano ya validada
+# (default="ff,ff", 16 bits en total). Por defecto jtframe reserva un carril de 16 bits POR CADA
+# puerto MAME con DIPs (IN0 en 8-15, IN1 saltaria a 24-31 con hueco 16-23 de por medio, ver abajo
+# el "[dipsw].offset" que se probo primero) -> no cabe en el bus [15:0] del RTL y los DIP de IN1
+# quedarian sin leerse en HW. jtframe.offset solo SUMA (un shift negativo hace panic en dipsw.go:
+# "each.Mask << offset" con offset<0), asi que no se puede bajar IN1 de su bit nativo 8 a 0 por ahi
+# -> se borran los 11 DIP auto-extraidos y se re-declaran a mano como "extra" con los mismos bits
+# EXACTOS que ya usa la .mra existente (mismos names/ids, copiados literalmente de ahi).
+bitcnt=16
+delete=[
+    { names=["Free Play","Credit configuration","Coin B","Coin A","Service Mode",
+             "Coin mechanism","Demo Sounds","Cabinet 1 Control Configuration",
+             "Cabinet 2 Control Configuration","Monitors","Difficulty"] },
+]
+extra=[
+    { name="Free Play",             options="On,Off",                                             bits="0" },
+    { name="Credit configuration",  options="Start 2C/Continue 1C,Start 1C/Continue 1C",           bits="1" },
+    { name="Coin B",                options="2C 3C,1C 4C,2C 1C,1C 2C,3C 1C,1C 3C,4C 1C,1C 1C",     bits="2,3,4" },
+    { name="Coin A",                options="2C 3C,1C 4C,2C 1C,1C 2C,3C 1C,1C 3C,4C 1C,1C 1C",     bits="5,6,7" },
+    { name="Service Mode",          options="On,Off",                                              bits="8" },
+    { name="Coin mechanism",        options="Common,Independent",                                  bits="9" },
+    { name="Demo Sounds",           options="Off,On",                                              bits="10" },
+    { name="Cabinet 1 Control",     options="Pot Wheel,Joystick",                                  bits="11" },
+    { name="Cabinet 2 Control",     options="Pot Wheel,Joystick",                                  bits="12" },
+    { name="Monitors",              options="One,Two",                                             bits="13" },
+    { name="Difficulty",            options="Hardest,Easy,Hard,Normal",                             bits="14,15" },
+]
+
+[ROM]
+# El layout de "gfx" NO es el ROM_START estatico de MAME: wrally2a rellena esa region en
+# DRIVER_INIT (init_wrally2, gaelco2_m.cpp) haciendo un split even/odd de wr2_ic69 y wr2_ic70 que
+# MAME solo ve en su espacio de direcciones emulado (no en el dump fisico) -> jtframe no puede
+# auto-derivar el interleave de MiSTer a partir del mame.xml. El mapeo de abajo (L1/L2 = ic69+ic70
+# interleado par/impar a 32 bits, U1 = ic68 repetido en los 4 lanes, U2 = relleno hasta 16MB para
+# que el firmware caiga en JTFRAME_PROM_START=0x1100000) es la transcripcion exacta del .mra
+# hand-built ya validado (comentario V.014: "maps correctos = los de aligator: ic69=0012,
+# ic70=1200"). El relleno de U2 lo genera jtframe automaticamente (FF) al no llegar los parts a
+# "len"; el .mra a mano usaba 00 ahi, pero es zona muerta (padding hasta el offset del firmware)
+# asi que no deberia importar.
+regions=[
+    { name="maincpu", width=16, parts=[
+        { name="wr2_64.ic64", crc="4cdf4e1e", map="10" },
+        { name="wr2_63.ic63", crc="94887c9f", map="01" },
+    ] },
+    { name="gfx", width=32, start="JTFRAME_BA1_START", len=0x1000000, files=[
+        # wr2_ic69.ic69 y wr2_ic70.ic70 estan declarados en mame.xml bajo la region "gfx_temp"
+        # (MAME solo los mueve a "gfx" en tiempo de ejecucion via DRIVER_INIT, init_wrally2 en
+        # gaelco2_m.cpp) -> jtframe no los encuentra si se piden desde la region "gfx". "files"
+        # sustituye la lista de ROMs de la region por esta (bypasea el region-matching de mame.xml).
+        { name="wr2_ic69.ic69", crc="a174d196", size=0x400000 },
+        { name="wr2_ic70.ic70", crc="8d1e43ba", size=0x200000 },
+        { name="wr2_ic68.ic68", crc="4a75ffaa", size=0x100000 },
+    ], parts=[
+        # L1 (4MB): ic69[0:2M] par/impar + ic70[0:2M] par/impar
+        { name="wr2_ic69.ic69", crc="a174d196", length=0x200000, map="0012" },
+        { name="wr2_ic70.ic70", crc="8d1e43ba", map="1200" },
+        # L2 (4MB): ic69[2M:4M] par/impar + ic70 reusado (lanes 2,3 don't-care en el RTL)
+        { name="wr2_ic69.ic69", crc="a174d196", offset=0x200000, length=0x200000, map="0012" },
+        { name="wr2_ic70.ic70", crc="8d1e43ba", map="1200" },
+        # U1 (4MB): ic68 (plano 4) repetido en las 4 lanes
+        { name="wr2_ic68.ic68", crc="4a75ffaa", map="0001" },
+        { name="wr2_ic68.ic68", crc="4a75ffaa", map="0010" },
+        { name="wr2_ic68.ic68", crc="4a75ffaa", map="0100" },
+        { name="wr2_ic68.ic68", crc="4a75ffaa", map="1000" },
+        # U2 (4MB): relleno automatico (FF) hasta completar len=16MB
+    ] },
+    { name="plds", skip=true },
+    # gfx_temp: region interna de MAME (ic69+ic70 SIN partir), solo existe para que init_wrally2
+    # la trocee en tiempo de ejecucion hacia "gfx" (ver arriba). Sin este skip, jtframe la vuelca
+    # tal cual al final de la .mra (duplicado, 6MB de mas, sin interleave) porque no aparece en
+    # ninguna region configurada explicitamente.
+    { name="gfx_temp", skip=true },
+    { name="gaelco_ds5002fp:sram", rename="dallas", start="JTFRAME_PROM_START", files=[
+        # wrally2a declara su propio dump (wrally2_ds5002fp_sram_old.bin, crc b0e25571) pero la
+        # .mra ya validada usa el dump "nuevo"/bugfixed que MAME asigna a wrally2b/c/d (crc
+        # 4c532e9e) -> mismo bypass de "files" que en gfx, para no depender del ROM que wrally2a
+        # trae declarado en mame.xml.
+        { name="wrally2_ds5002fp_sram.bin", crc="4c532e9e", size=0x8000 },
+    ], parts=[
+        { name="wrally2_ds5002fp_sram.bin", crc="4c532e9e" },
+    ] },
+]
+order=["maincpu","gfx","dallas"]
