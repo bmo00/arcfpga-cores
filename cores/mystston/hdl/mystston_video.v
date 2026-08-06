@@ -189,10 +189,18 @@ module mystston_video(
     // col C -> byte (plane*0x4000 + code*8 + R), bit(7-C) (see emu/video/
     // generic.cpp's gfx_8x8x3_planar; only one byte per plane per row, unlike
     // the 16x16 sprite/bg layout's two halves).
+    //
+    // The CPU-write snoop used to feed a plain reg-array "shadow" read
+    // combinationally (2 ports x 4096 entries) — Quartus can only map an
+    // array to block RAM when the read is synchronous, so that combinational
+    // read forced ~4096 flip-flops PLUS a full 4096:1 mux per read port into
+    // distributed logic, alone accounting for a large share of this core's
+    // abnormal ALM/LE usage (and, transitively, of its Fitter time). Now a
+    // real jtframe_dual_ram: port 0 is the CPU write snoop (same signals as
+    // before), port 1 is read by the fetch FSM below, address held for one
+    // cycle per byte (S_CODE_LO / S_CODE_HI) to match the RAM's 1-cycle
+    // registered-read latency.
     //========================================================================
-    reg [7:0] fg_videoram_shadow [0:4095];
-    always @(posedge clk) if (cpu_videoram_we) fg_videoram_shadow[cpu_videoram_addr] <= cpu_videoram_din;
-
     reg [4:0] fg_col;             // 0-31
     wire [8:0] fg_y_pre   = flip ? (9'd255 - { 1'b0, target_line_r }) : { 1'b0, target_line_r };
     wire [4:0] fg_row     = fg_y_pre[7:3]; // 0-29
@@ -202,13 +210,37 @@ module mystston_video(
     wire [11:0] fg_code_lo_addr = { 1'b0, fg_tile_index };
     wire [11:0] fg_code_hi_addr = fg_code_lo_addr + 12'h400;
 
-    // Explicit read-during-write forwarding — see mystston_scroll.v's own
-    // code_lo_rd/code_hi_rd comment for why this can't rely on the array's
-    // own read-during-write behavior.
-    wire fg_code_lo_hit = cpu_videoram_we && (cpu_videoram_addr == fg_code_lo_addr);
-    wire fg_code_hi_hit = cpu_videoram_we && (cpu_videoram_addr == fg_code_hi_addr);
-    wire [7:0] fg_code_lo_rd = fg_code_lo_hit ? cpu_videoram_din : fg_videoram_shadow[fg_code_lo_addr];
-    wire [7:0] fg_code_hi_rd = fg_code_hi_hit ? cpu_videoram_din : fg_videoram_shadow[fg_code_hi_addr];
+    // Port 1 reads fg_code_lo_addr while f_state==S_CODE_LO (so its
+    // registered output is ready when S_CODE_HI captures it) and
+    // fg_code_hi_addr while f_state==S_CODE_HI (ready when S_CODE_JOIN
+    // captures it) — the address driven during any other state is unused.
+    wire [11:0] fg_shadow_rd_addr = (f_state == S_CODE_HI) ? fg_code_hi_addr : fg_code_lo_addr;
+    wire [7:0]  fg_shadow_q1;
+
+    jtframe_dual_ram #(.DW(8),.AW(12)) u_fg_videoram(
+        .clk0 ( clk                ),
+        .data0( cpu_videoram_din   ),
+        .addr0( cpu_videoram_addr  ),
+        .we0  ( cpu_videoram_we    ),
+        .q0   (                    ),
+        .clk1 ( clk                ),
+        .data1( 8'd0               ),
+        .addr1( fg_shadow_rd_addr  ),
+        .we1  ( 1'b0               ),
+        .q1   ( fg_shadow_q1       )
+    );
+
+    // Explicit read-during-write forwarding, same reasoning as before
+    // (a dual-port RAM's cross-port read-during-write result isn't
+    // guaranteed to match across synthesis tools) — now registered a cycle
+    // ahead of use, alongside the address that was actually presented that
+    // cycle, so it lines up with the byte jtframe_dual_ram returns for it.
+    reg        fg_lo_hit_r, fg_hi_hit_r;
+    reg  [7:0] fg_lo_din_r, fg_hi_din_r;
+    reg  [7:0] fg_code_lo_byte;
+    wire       fg_lo_hit_now = cpu_videoram_we && (cpu_videoram_addr == fg_code_lo_addr);
+    wire       fg_hi_hit_now = cpu_videoram_we && (cpu_videoram_addr == fg_code_hi_addr);
+    wire [7:0] fg_code_hi_byte = fg_hi_hit_r ? fg_hi_din_r : fg_shadow_q1;
 
     reg  [10:0] fg_code;
     reg  [7:0]  fg_plane_byte [0:2];
@@ -229,15 +261,17 @@ module mystston_video(
     reg [16:0] fg_gfx1_addr_r;
     reg        fg_gfx1_cs_r;
 
-    localparam S_IDLE       = 3'd0,
-               S_CODE       = 3'd1,
-               S_FETCH_REQ  = 3'd2,
-               S_FETCH_WAIT = 3'd3,
-               S_FETCH_NEXT = 3'd4,
-               S_STORE      = 3'd5,
-               S_NEXT_COL   = 3'd6,
-               S_DONE       = 3'd7;
-    reg [2:0] f_state;
+    localparam S_IDLE       = 4'd0,
+               S_CODE_LO    = 4'd1,
+               S_CODE_HI    = 4'd2,
+               S_CODE_JOIN  = 4'd3,
+               S_FETCH_REQ  = 4'd4,
+               S_FETCH_WAIT = 4'd5,
+               S_FETCH_NEXT = 4'd6,
+               S_STORE      = 4'd7,
+               S_NEXT_COL   = 4'd8,
+               S_DONE       = 4'd9;
+    reg [3:0] f_state;
     integer   j;
 
     always @(posedge clk, posedge rst) begin
@@ -251,11 +285,26 @@ module mystston_video(
                     fg_gfx1_cs_r <= 1'b0;
                     if (fg_start) begin
                         fg_col  <= 5'd0;
-                        f_state <= S_CODE;
+                        f_state <= S_CODE_LO;
                     end
                 end
-                S_CODE: begin
-                    fg_code <= { fg_code_hi_rd[2:0], fg_code_lo_rd };
+                S_CODE_LO: begin
+                    // fg_shadow_rd_addr presents fg_code_lo_addr this cycle
+                    fg_lo_hit_r <= fg_lo_hit_now;
+                    fg_lo_din_r <= cpu_videoram_din;
+                    f_state     <= S_CODE_HI;
+                end
+                S_CODE_HI: begin
+                    // fg_shadow_q1 now holds the byte at fg_code_lo_addr
+                    fg_code_lo_byte <= fg_lo_hit_r ? fg_lo_din_r : fg_shadow_q1;
+                    // fg_shadow_rd_addr presents fg_code_hi_addr this cycle
+                    fg_hi_hit_r <= fg_hi_hit_now;
+                    fg_hi_din_r <= cpu_videoram_din;
+                    f_state     <= S_CODE_JOIN;
+                end
+                S_CODE_JOIN: begin
+                    // fg_shadow_q1 now holds the byte at fg_code_hi_addr
+                    fg_code <= { fg_code_hi_byte[2:0], fg_code_lo_byte };
                     fg_plane_idx <= 2'd0;
                     f_state <= S_FETCH_REQ;
                 end
@@ -297,7 +346,7 @@ module mystston_video(
                         f_state <= S_DONE;
                     end else begin
                         fg_col  <= fg_col + 5'd1;
-                        f_state <= S_CODE;
+                        f_state <= S_CODE_LO;
                     end
                 end
                 S_DONE: f_state <= S_IDLE;
