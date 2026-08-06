@@ -1,0 +1,16 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+sourcefile=[ "gaelco.cpp" ]
+mustbe.machines=["bigkarnk"]
+
+[ROM]
+# gfx byte-lanes calibrated on real HW (see mra/*.mra comment, 2026-07-01 fix) - sequence
+# reproduces that exact h5/h10/h8/h6 swap, verified byte-identical against the hand-built .mra.
+regions=[
+    { name="maincpu", width=16, reverse=true },
+    { name="gfx", width=32, no_offset=true, sequence=[1,0,3,2] },
+    { name="plds", skip=true },
+]
+order=["maincpu","gfx","oki","audiocpu"]

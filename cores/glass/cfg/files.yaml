@@ -1,0 +1,42 @@
+glass:
+  - get:
+      - jtglass_game.v
+      - glass_main.v
+      - glass_addr_decode.v
+      - glass_vram_decrypt.v
+      - glass_iolatch.v
+      - glass_oki.v
+      - glass_inputs.v
+      - glass_vmem.v
+      - glass_video_top.v
+      - glass_video.v
+      - glass_video_timing.v
+      - glass_tilemap.v
+      - glass_palette.v
+      - glass_gfx_decode.v
+      - glass_sprite_layer.v
+      - glass_sprite_engine.v
+      - glass_bitmap.v
+      - glass_blitter.v
+      - glass_dbg_uart.v
+      - glass_68kdtack.v
+      - glass_mcu.v
+      - mc8051_regen.v
+      - glass_clk48_96.sdc
+jtframe:
+  - from: ram
+    get:
+      - jtframe_ram_rst.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+jt6295: null
+fx68k:
+  - get:
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv

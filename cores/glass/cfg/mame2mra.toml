@@ -1,0 +1,24 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+sourcefile=[ "glass.cpp" ]
+mustbe.machines=["glassa"]
+main_setnames=["glassa"]
+
+[ROM]
+# gfx: h13/h11 byte-interleaved 2-bytes-per-file (same technique as aligator's gfx_temp - see that
+# core's comment). Verified byte-identical (map="0012"/"1200") against the hand-built .mra, except
+# the auto-inserted 512K pad before BA1_START fills with FF (jtframe's hardcoded default) where the
+# hand-built .mra used 00 - the pad sits outside the game's addressable ROM, so this should be inert.
+regions=[
+    { name="maincpu", width=16, reverse=true },
+    { name="gfx", width=32, reverse=true, start="JTFRAME_BA1_START", files=[
+        { name="h13.bin", crc="13ab7f31", size=2097152, offset=0 },
+        { name="h11.bin", crc="c6ac41c8", size=2097152, offset=2 },
+    ] },
+    { name="oki", start="JTFRAME_BA2_START" },
+    { name="bmap", start="JTFRAME_BA3_START" },
+    { name="gaelco_ds5002fp:sram", rename="dallas", start="JTFRAME_PROM_START" },
+]
+order=["maincpu","gfx","oki","bmap","dallas"]

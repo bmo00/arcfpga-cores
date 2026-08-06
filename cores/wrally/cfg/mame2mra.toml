@@ -1,0 +1,28 @@
+[global]
+author=["arcfpga"]
+
+[parse]
+sourcefile=[ "wrally.cpp" ]
+mustbe.machines=["wrally"]
+skip.setnames=["wrallya","wrallyac","wrallyat","wrallyata","wrallyb","wrallyc","wrallyd","wrallye"]
+
+[ROM]
+# gfx byte-lanes verified byte-identical against the hand-built, HW-validated .mra
+# (mra/*.mra comment: FIX COLORES V.054 - explicit map needed or the loader mispositions the
+# 4 gfx byte-lanes on real MiSTer HW even though sim looked fine with the default order).
+regions=[
+    { name="maincpu", width=16, parts=[
+        { name="invers_taula_c22_coche_8-11-93_o.bin", crc="af91579b", map="01" },
+        { name="invers_taula_c23_coche_8-11-93_e.bin", crc="593189bf", map="10" },
+    ] },
+    { name="gfx", width=32, start="JTFRAME_BA1_START", parts=[
+        { name="worldr18.i07", crc="b37c807e", map="0001" },
+        { name="worldr19.i09", crc="018b35bb", map="0010" },
+        { name="worldr20.i11", crc="58b2809a", map="0100" },
+        { name="worldr21.i13", crc="b7fddb12", map="1000" },
+    ] },
+    { name="oki", start="JTFRAME_BA2_START" },
+    { name="plds", skip=true },
+    { name="gaelco_ds5002fp:sram", rename="dallas", start="JTFRAME_PROM_START" },
+]
+order=["maincpu","gfx","oki","dallas"]
