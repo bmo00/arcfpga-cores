@@ -10,7 +10,7 @@
 #
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtsquash_game_sdram.v (GAMETOP)
 # que instancia hdl/jtsquash_game.v + slots SDRAM + dwnld.
-CORENAME=JTSQUASH
+CORENAME=SQUASH
 GAMETOP=jtsquash_game_sdram
 
 # Pantalla: 320x240, ROT0 horizontal. xBGR-555 = 5 bits/canal.

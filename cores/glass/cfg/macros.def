@@ -18,7 +18,7 @@
 #
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtglass_game_sdram.v (GAMETOP)
 # que instancia hdl/jtglass_game.v + slots SDRAM + dwnld.
-CORENAME=JTGLASS
+CORENAME=GLASS
 GAMETOP=jtglass_game_sdram
 
 # Pantalla: 368x240 (confirmado por MAME glassa snapshot), ROT0 horizontal. xBGR-555 = 5 bits/canal.

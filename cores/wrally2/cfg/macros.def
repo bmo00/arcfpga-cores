@@ -8,7 +8,7 @@
 # Scaffold clonado de biomtoy (infra fx68k + build); el motor Tipo-1 se REEMPLAZA por el GAE1.
 #
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtwrally2_game_sdram.v (GAMETOP).
-CORENAME=JTWRALLY2
+CORENAME=WRALLY2
 GAMETOP=jtwrally2_game_sdram
 
 # Pantalla: 1 monitor = 384x240. TWIN (2 monitores side-by-side) = 768. JTFRAME_WIDTH = ancho MÁXIMO de

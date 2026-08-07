@@ -4,7 +4,7 @@
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtwrally_game_sdram.v
 # (GAMETOP) que instancia nuestro hdl/jtwrally_game.v + los slots SDRAM + dwnld + BRAM.
 # (Macros por defecto = sin cabecera de seccion, como en s16. Sin comentarios inline.)
-CORENAME=JTWRALLY
+CORENAME=WRALLY
 GAMETOP=jtwrally_game_sdram
 
 # Pantalla: 368x232, ROT0 horizontal, xBRG_444 = 4 bits/canal. WIDTH=368 = resolución real de MAME

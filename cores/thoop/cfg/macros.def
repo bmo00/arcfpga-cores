@@ -10,7 +10,7 @@
 #
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtthoop_game_sdram.v (GAMETOP)
 # que instancia hdl/jtthoop_game.v + slots SDRAM + dwnld.
-CORENAME=JTTHOOP
+CORENAME=THOOP
 GAMETOP=jtthoop_game_sdram
 
 # Pantalla: 320x240, ROT0 horizontal. xBGR-555 = 5 bits/canal.

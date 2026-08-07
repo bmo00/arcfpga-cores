@@ -1,7 +1,7 @@
 [global]
 # Saneado de atribucion (FASE-6 §6.3 / CONVENCION-NOMBRES §F7): el default heredado del arbol jtframe
 # es "jotego" -> el core es NUESTRO, no de jotego. Ver konami-fpga (cowboys/moomesa) para el precedente.
-author=["konami-fpga"]
+author=["jlrh"]
 
 [parse]
 # Asterix vive en konami/asterix.cpp (placa GX068)
