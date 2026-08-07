@@ -3,19 +3,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -24,19 +24,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -45,19 +45,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -66,19 +66,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -150,19 +150,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -192,19 +192,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -213,19 +213,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -234,19 +234,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -262,11 +262,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -275,19 +275,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -296,19 +296,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -317,19 +317,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
       }
     }
@@ -338,19 +338,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -359,19 +359,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -380,19 +380,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -401,19 +401,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -422,19 +422,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -443,19 +443,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
       }
     }
@@ -485,19 +485,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -506,19 +506,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -527,19 +527,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
       }
     }
@@ -555,11 +555,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -575,11 +575,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
@@ -609,19 +609,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -630,19 +630,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -651,19 +651,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
@@ -672,19 +672,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -693,19 +693,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -714,19 +714,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
       }
     }
@@ -735,19 +735,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -756,19 +756,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -777,19 +777,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -798,19 +798,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -840,19 +840,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -861,32 +861,44 @@
     "origin": "internal",
     "core_author": "bmo00",
     "framework": "jtframe",
-    "beta": false,
     "mra_author": "arcfpga",
+    "beta": false,
     "releases": {
-      "arc": "2026-08-06",
-      "mister": "2026-08-06",
-      "mra": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-07",
+        "commit": null
+      },
+      "mister": {
+        "date": "2026-08-07",
+        "commit": null
+      },
+      "mra": {
+        "date": "2026-08-07",
+        "commit": null
+      },
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": null
+      }
     }
   },
   "ninja": {
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -916,19 +928,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
       }
     }
@@ -944,11 +956,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -957,19 +969,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -985,11 +997,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
@@ -998,19 +1010,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1029,20 +1041,27 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
-      "mister": "2026-07-31",
+      "mister": {
+        "date": "2026-08-07",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
+      "mra": {
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
@@ -1051,19 +1070,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1072,19 +1091,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1093,19 +1112,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1125,19 +1144,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1146,19 +1165,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1174,11 +1193,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1187,19 +1206,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1208,19 +1227,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1229,19 +1248,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1250,19 +1269,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1271,19 +1290,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1299,11 +1318,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1319,11 +1338,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
@@ -1332,19 +1351,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
@@ -1423,11 +1442,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -1436,19 +1455,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1457,19 +1476,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "Solal Jacob",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
     },
-    "mra_author": "Solal Jacob",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
       }
     }
@@ -1478,19 +1497,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1499,19 +1518,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1520,19 +1539,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
       }
     }
@@ -1548,11 +1567,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1561,19 +1580,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
@@ -1582,19 +1601,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -1652,11 +1671,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
@@ -1665,19 +1684,19 @@
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
-    "mra_author": "jotego",
     "releases": {
       "arc": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-06",
+        "date": "2026-08-07",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }

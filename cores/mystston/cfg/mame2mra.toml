@@ -1,5 +1,5 @@
 [global]
-author=["arcfpga"]
+author=["bmo00"]
 
 [parse]
 sourcefile=[ "mystston.cpp" ]

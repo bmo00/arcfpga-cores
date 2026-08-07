@@ -22,7 +22,7 @@
 -->
 
 <misterromdescription>
-    <about author="arcfpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <about author="bmo00" source="https://github.com/bmo00/arcfpga-cores"/>
     <rotation>vertical (ccw)</rotation>
     <name>Mysterious Stones: Dr. John&apos;s Adventure</name>
     <setname>mystston</setname>
