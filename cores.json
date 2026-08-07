@@ -397,6 +397,27 @@
       }
     }
   },
+  "cps2": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "mra_author": "jotego",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
+    }
+  },
   "dd": {
     "origin": "external",
     "core_author": "jotego",
