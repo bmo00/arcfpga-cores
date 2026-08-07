@@ -17,7 +17,7 @@
 # ESTADO: Fases 1-4 (CPU+vídeo+audio) SIN el MCU (camino escalonado de aligator). El DS5002 (PROM
 # del firmware + mc8051 + RAM compartida) entra en la Fase 5; se añaden entonces JTFRAME_PROM_START
 # (firmware 32KB tras el oki) y el bloque bram/dallas de mem.yaml.
-CORENAME=JTTHOOP2
+CORENAME=THOOP2
 GAMETOP=jtthoop2_game_sdram
 
 # Pantalla: 320x240 (visarea 0..319 x 16..255), ROT0. Paleta xBGR-555 = 5 bits/canal.

@@ -8,7 +8,7 @@
 # Scaffold clonado de biomtoy (infra fx68k + build); el motor Tipo-1 se REEMPLAZA por el GAE1.
 #
 # FLUJO: jtcore lee este fichero + cfg/mem.yaml y AUTO-GENERA jtaligator_game_sdram.v (GAMETOP).
-CORENAME=JTALIGATOR
+CORENAME=ALIGATOR
 GAMETOP=jtaligator_game_sdram
 
 # Pantalla: 320x240, ROT0 horizontal. Paleta xRRRRRGGGGGBBBBB = 5 bits/canal. Refresh 59.1 Hz (gaelco2).

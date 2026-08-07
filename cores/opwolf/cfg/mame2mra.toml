@@ -1,5 +1,5 @@
 [global]
-author=["jotego"]
+author=["jlrh"]
 
 [parse]
 sourcefile=[ "opwolf.cpp" ]

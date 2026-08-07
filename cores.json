@@ -10,8 +10,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "1943": {
@@ -25,8 +31,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "ajax": {
@@ -40,8 +52,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "aliens": {
@@ -55,53 +73,77 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "aligator": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "asterix": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
       "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
     },
-    "mra_author": "konami-fpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+      }
     }
   },
   "bigkarnk": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "biocom": {
@@ -115,23 +157,35 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "biomtoy": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "btiger": {
@@ -145,8 +199,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "bubl": {
@@ -160,8 +220,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "castle": {
@@ -175,8 +241,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "circus": {
@@ -189,8 +261,14 @@
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "commnd": {
@@ -204,8 +282,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "comsc": {
@@ -219,8 +303,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "contra": {
@@ -234,8 +324,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
+      }
     }
   },
   "cop": {
@@ -249,8 +345,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "cps1": {
@@ -264,8 +366,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "cps15": {
@@ -279,8 +387,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "dd": {
@@ -294,8 +408,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "dd2": {
@@ -309,8 +429,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "ddrbl": {
@@ -324,23 +450,35 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
+      }
     }
   },
   "empirecity": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/seibu-fpga",
       "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
     },
-    "mra_author": "jlrodriguez",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+      }
     }
   },
   "exed": {
@@ -354,8 +492,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "flane": {
@@ -369,8 +513,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "flstory": {
@@ -384,8 +534,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
+      }
     }
   },
   "fround": {
@@ -398,8 +554,14 @@
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "gaiden": {
@@ -412,23 +574,35 @@
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      }
     }
   },
   "glass": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "gng": {
@@ -442,8 +616,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "gunsmk": {
@@ -457,8 +637,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "karnov": {
@@ -472,8 +658,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      }
     }
   },
   "kchamp": {
@@ -487,8 +679,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "kicker": {
@@ -502,8 +700,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "kiwi": {
@@ -517,8 +721,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      }
     }
   },
   "kunio": {
@@ -532,8 +742,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "labrun": {
@@ -547,8 +763,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "midres": {
@@ -562,8 +784,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "mikie": {
@@ -577,23 +805,35 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "moomesa": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
       "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
     },
-    "mra_author": "konami-fpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+      }
     }
   },
   "mx5k": {
@@ -607,8 +847,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "mystston": {
@@ -635,23 +881,35 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "opwolf": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/taito-fpga",
       "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
     },
-    "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+      }
     }
   },
   "outrun": {
@@ -665,8 +923,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
+      }
     }
   },
   "paclan": {
@@ -679,8 +943,14 @@
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "pang": {
@@ -694,8 +964,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "paroda": {
@@ -708,8 +984,14 @@
       "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      }
     }
   },
   "pinpon": {
@@ -723,8 +1005,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "prmr": {
@@ -748,9 +1036,15 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
       "mister": "2026-07-31",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      }
     }
   },
   "roadf": {
@@ -764,8 +1058,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "roc": {
@@ -779,8 +1079,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "rumble": {
@@ -794,8 +1100,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "rungun": {
@@ -820,8 +1132,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "s16b": {
@@ -835,8 +1153,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "s18": {
@@ -849,8 +1173,14 @@
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "sarms": {
@@ -864,8 +1194,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "sbaskt": {
@@ -879,8 +1215,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "sectnz": {
@@ -894,8 +1236,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "sf": {
@@ -909,8 +1257,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
     }
   },
   "shanon": {
@@ -924,8 +1278,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "shouse": {
@@ -938,8 +1298,14 @@
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "simson": {
@@ -952,8 +1318,14 @@
       "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      }
     }
   },
   "slyspy": {
@@ -967,53 +1339,77 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      }
     }
   },
   "squash": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "thoop": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "thoop2": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "thundr": {
@@ -1026,8 +1422,14 @@
       "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "tmnt": {
@@ -1041,8 +1443,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "toki": {
@@ -1056,8 +1464,14 @@
     },
     "mra_author": "Solal Jacob",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
+      }
     }
   },
   "tora": {
@@ -1071,8 +1485,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "track": {
@@ -1086,8 +1506,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "trojan": {
@@ -1101,8 +1527,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
+      }
     }
   },
   "twin16": {
@@ -1115,8 +1547,14 @@
       "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+      }
     }
   },
   "vigil": {
@@ -1130,8 +1568,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+      }
     }
   },
   "wc": {
@@ -1145,38 +1589,56 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   },
   "wrally": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "wrally2": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "jtframe",
+    "mra_author": "jlrh",
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
       "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
     },
-    "mra_author": "arcfpga",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      }
     }
   },
   "wwfss": {
@@ -1189,8 +1651,14 @@
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     },
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      }
     }
   },
   "yiear": {
@@ -1204,8 +1672,14 @@
     },
     "mra_author": "jotego",
     "releases": {
-      "arc": "2026-08-06",
-      "neptunoplus": "2026-08-06"
+      "arc": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      },
+      "neptunoplus": {
+        "date": "2026-08-06",
+        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+      }
     }
   }
 }

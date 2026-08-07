@@ -1,5 +1,5 @@
 [global]
-author=["arcfpga"]
+author=["jlrh"]
 
 [parse]
 # wrally2a (gaelco2.cpp, REF: 950510-1) es el UNICO set de la familia wrally2 cuyos ROMs de

@@ -3,7 +3,7 @@
 # no es suyo; el <about author="jotego"> del .mra publicado era boilerplate heredado y se
 # corrigio (peticion del usuario, ses.27). El credito honesto al framework JTFRAME de jotego
 # (GPL) va en README/cabeceras .v, no como autor del core.
-author=["konami-fpga"]
+author=["jlrh"]
 
 [parse]
 # Moo Mesa vive en konami/moo.cpp (placa GX151, hardware Xexex pre-GX)

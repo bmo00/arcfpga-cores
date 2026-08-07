@@ -38,7 +38,7 @@
 #   Requiere `JTBIN` exportado.
 #
 [global]
-author=["jlrodriguez"]
+author=["jlrh"]
 
 [parse]
 sourcefile=[ "stfight.cpp" ]
