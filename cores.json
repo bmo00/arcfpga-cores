@@ -1,0 +1,1211 @@
+{
+  "1942": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "1943": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "ajax": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "aliens": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "aligator": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "asterix": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+    },
+    "mra_author": "konami-fpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "bigkarnk": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "biocom": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "biomtoy": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "btiger": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "bubl": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "castle": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "circus": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "commnd": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "comsc": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "contra": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "cop": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "cps1": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "cps15": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "dd": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "dd2": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "ddrbl": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "empirecity": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/seibu-fpga",
+      "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+    },
+    "mra_author": "jlrodriguez",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "exed": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "flane": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "flstory": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "fround": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "gaiden": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "glass": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "gng": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "gunsmk": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "karnov": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "kchamp": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "kicker": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "kiwi": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "kunio": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "labrun": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "midres": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "mikie": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "moomesa": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
+    },
+    "mra_author": "konami-fpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "mx5k": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "mystston": {
+    "origin": "internal",
+    "core_author": "bmo00",
+    "framework": "jtframe",
+    "beta": false,
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "mister": "2026-08-06",
+      "mra": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "ninja": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "opwolf": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/taito-fpga",
+      "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "outrun": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "paclan": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "pang": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "paroda": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "pinpon": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "prmr": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    }
+  },
+  "riders": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "mister": "2026-07-31",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "roadf": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "roc": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "rumble": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "rungun": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    },
+    "mra_author": "jotego"
+  },
+  "s16": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "s16b": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "s18": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "sarms": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "sbaskt": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "sectnz": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "sf": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "shanon": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "shouse": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "simson": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "slyspy": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "squash": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "thoop": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "thoop2": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "thundr": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "tmnt": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "toki": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
+    },
+    "mra_author": "Solal Jacob",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "tora": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "track": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "trojan": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "twin16": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "vigil": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "wc": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "wrally": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "wrally2": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/gaelco-fpga",
+      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+    },
+    "mra_author": "arcfpga",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "wwfss": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+    },
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  },
+  "yiear": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
+    },
+    "mra_author": "jotego",
+    "releases": {
+      "arc": "2026-08-06",
+      "neptunoplus": "2026-08-06"
+    }
+  }
+}

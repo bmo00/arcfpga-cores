@@ -36,7 +36,11 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 | [`jt1943`](cores/1943/README.md) | 1943 Kai: Midway Kaisen (Japan) (`1943kai`)<br>1943: The Battle of Midway (Euro) (`1943`)<br>1943: The Battle of Midway Mark II (US) (`1943mii`) | Capcom, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtajax`](cores/ajax/) | Ajax (`ajax`) | Konami, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtaliens`](cores/aliens/README.md) | Aliens (World set 1) (`aliens`)<br>Crime Fighters (World 2 players) (`crimfght`)<br>Gang Busters (set 1) (`gbusters`)<br>Super Contra (set 1) (`scontra`)<br>Thunder Cross (set 1) (`thunderx`) | Konami, 1988–1990 — port of the official jotego core | 2026-08-06 |
+| [`jtaligator`](cores/aligator/) | Alligator Hunt (World, protected, checksum 2B34128B) (`aligator`) | Gaelco, 1994 (Type-2/GAE1 hardware, DS5002FP-protected) | 2026-08-06 |
+| [`jtasterix`](cores/asterix/) | Asterix (ver EAD) (`asterix`) | Konami, 1992 (GX068 hardware) | 2026-08-06 |
+| [`jtbigkarnk`](cores/bigkarnk/) | Big Karnak (ver. 1.0, checksum 1e38c94) (`bigkarnk`) | Gaelco, 1991 (Type-1 hardware, unprotected) | 2026-08-06 |
 | [`jtbiocom`](cores/biocom/README.md) | Bionic Commando (Euro) (`bionicc`) | Capcom, 1987 — port of the official jotego core | 2026-08-06 |
+| [`jtbiomtoy`](cores/biomtoy/) | Biomechanical Toy (ver. 1.0.1885, checksum 69f5e032) (`biomtoy`) | Gaelco / Zeus, 1995 (Type-1 hardware) | 2026-08-06 |
 | [`jtbtiger`](cores/btiger/README.md) | Black Tiger (`blktiger`) | Capcom, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtbubl`](cores/bubl/README.md) | Bubble Bobble (Japan, Ver 0.1) (`bublbobl`)<br>Tokio - Scramble Formation (newer) (`tokio`) | Taito Corporation, 1986 — port of the official jotego core | 2026-08-06 |
 | [`jtcastle`](cores/castle/README.md) | Haunted Castle (version M) (`hcastle`) | Konami, 1988 — port of the official jotego core | 2026-08-06 |
@@ -50,11 +54,13 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 | [`jtdd`](cores/dd/README.md) | Double Dragon (World set 1) (`ddragon`) | Technos Japan (Taito license), 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtdd2`](cores/dd2/README.md) | Double Dragon II: The Revenge (World) (`ddragon2`) | Technos Japan, 1988 — port of the official jotego core | 2026-08-06 |
 | [`jtddrbl`](cores/ddrbl/) | Double Dribble (`ddribble`) | Konami, 1986 — port of the official jotego core | 2026-08-06 |
+| [`jtempirecity`](cores/empirecity/) | Empire City: 1931 (bootleg?) (`empcity`) | Seibu Kaihatsu, 1986 | 2026-08-06 |
 | [`jtexed`](cores/exed/README.md) | Exed Exes (`exedexes`) | Capcom, 1985 — port of the official jotego core | 2026-08-06 |
 | [`jtflane`](cores/flane/README.md) | Fast Lane (`fastlane`) | Konami, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtflstory`](cores/flstory/README.md) | Bronx (bootleg of Cycle Shooting) (`bronx`)<br>Cycle Shooting (`cyclshtg`)<br>N.Y. Captor (rev 2) (`nycaptor`)<br>Onna Sanshirou - Typhoon Gal (rev 1) (`onna34ro`)<br>Rumba Lumber (rev 1) (`rumba`)<br>The FairyLand Story (`flstory`)<br>Victorious Nine (`victnine`) | Taito, 1984–1986 — port of the official jotego core | 2026-08-06 |
 | [`jtfround`](cores/fround/README.md) | The Final Round (version M) (`fround`) | Konami, 1988 — port of the official jotego core | 2026-08-06 |
 | [`jtgaiden`](cores/gaiden/README.md) | Raiga - Strato Fighter (US) (`stratof`)<br>Shadow Warriors (World, set 1) (`shadoww`)<br>Wild Fang - Tecmo Knight (World?) (`wildfang`) | Tecmo, 1988–1991 — port of the official jotego core | 2026-08-06 |
+| [`jtglass`](cores/glass/) | Glass (ver 1.1, Break Edition, checksum 49D5E66B, Version 1994, set 2) (`glassa`) | Gaelco, 1994 (Type-1 hardware, DS5002FP-protected, blitter/bitmap layer) | 2026-08-06 |
 | [`jtgng`](cores/gng/README.md) | Ghosts'n Goblins (World? set 1) (`gng`) | Capcom, 1985 — port of the official jotego core | 2026-08-06 |
 | [`jtgunsmk`](cores/gunsmk/README.md) | Gun.Smoke (World, 1985-11-15) (`gunsmoke`) | Capcom, 1985 — port of the official jotego core | 2026-08-06 |
 | [`jtkarnov`](cores/karnov/) | Atomic Runner Chelnov (World) (`chelnov`)<br>Karnov (US, rev 6) (`karnov`)<br>Wonder Planet (Japan) (`wndrplnt`) | Data East Corporation, 1987–1988 — port of the official jotego core | 2026-08-06 |
@@ -65,8 +71,10 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 | [`jtlabrun`](cores/labrun/README.md) | Trick Trap (World?) (`tricktrp`) | Konami, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtmidres`](cores/midres/) | Midnight Resistance (World, set 1) (`midres`) | Data East Corporation, 1989 — port of the official jotego core | 2026-08-06 |
 | [`jtmikie`](cores/mikie/README.md) | Mikie (`mikie`) | Konami, 1984 — port of the official jotego core | 2026-08-06 |
+| [`jtmoomesa`](cores/moomesa/) | Wild West C.O.W.-Boys of Moo Mesa (ver EAB) (`moomesa`) | Konami, 1992 (GX151 hardware) | 2026-08-06 |
 | [`jtmx5k`](cores/mx5k/README.md) | MX5000 (`mx5000`) | Konami, 1987 — port of the official jotego core | 2026-08-06 |
 | [`jtninja`](cores/ninja/README.md) | Bad Dudes vs. Dragonninja (US, revision 1) (`baddudes`)<br>Heavy Barrel (World) (`hbarrel`) | Data East USA, 1987–1988 — port of the official jotego core | 2026-08-06 |
+| [`jtopwolf`](cores/opwolf/) | Operation Wolf (World, rev 2, set 1) (`opwolf`) | Taito Corporation Japan, 1987 (PC080SN/PC090OJ/PC060HA hardware, C-Chip HLE) | 2026-08-06 |
 | [`jtoutrun`](cores/outrun/README.md) | Out Run (sitdown-upright, Rev B) (`outrun`)<br>Turbo Out Run (Out Run upgrade) (FD1094 317-0118) (`toutrun`) | Sega, 1986–1989 — port of the official jotego core | 2026-08-06 |
 | [`jtpaclan`](cores/paclan/) | Pac-Land (World) (`pacland`) | Namco, 1984 — port of the official jotego core | 2026-08-06 |
 | [`jtpang`](cores/pang/README.md) | Adventure Quiz 2 - Hatena? no Daibouken (Japan 900228) (`hatena`)<br>Block Block (World 911219 Joystick) (`block`)<br>Capcom World (Japan) (`cworld`)<br>Dokaben (Japan) (`dokaben`)<br>Dokaben 2 (Japan) (`dokaben2`)<br>Mahjong Gakuen (`mgakuen`)<br>Mahjong Gakuen 2 Gakuen-chou no Fukushuu (`mgakuen2`)<br>Pang (World) (`pang`)<br>Poker Ladies (`pkladies`)<br>Quiz Sangokushi (Japan) (`qsangoku`)<br>Quiz Tonosama no Yabou (Japan) (`qtono1`)<br>Super Marukin-Ban (Japan 911128) (`marukin`)<br>Super Pang (World 900914) (`spang`) | Capcom, 1988–1991 — port of the official jotego core | 2026-08-06 |
@@ -87,6 +95,9 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 | [`jtshouse`](cores/shouse/README.md) | Bakutotsu Kijuutei (`bakutotu`)<br>Blast Off (Japan) (`blastoff`)<br>Blazer (Japan) (`blazer`)<br>Boxy Boy (World, SB2) (`boxyboy`)<br>Chou Zetsurinjin Berabowman (Japan, Rev C) (`berabohm`)<br>Dangerous Seed (Japan) (`dangseed`)<br>Dragon Spirit (new version (DS3)) (`dspirit`)<br>Face Off (Japan 2 Players) (`faceoff`)<br>Galaga '88 (`galaga88`)<br>Marchen Maze (Japan) (`mmaze`)<br>Pac-Mania (`pacmania`)<br>Pistol Daimyo no Bouken (Japan) (`pistoldm`)<br>Pro Tennis World Court (Japan) (`wldcourt`)<br>Pro Yakyuu World Stadium (Japan) (`ws`)<br>Quester (Japan) (`quester`)<br>Rompers (Japan, new version (Rev B)) (`rompers`)<br>Shadowland (YD3) (`shadowld`)<br>Splatter House (World, new version (SH3)) (`splatter`)<br>Tank Force (US, 2 Players) (`tankfrce`) | Namco, 1987–1991 — port of the official jotego core | 2026-08-06 |
 | [`jtsimson`](cores/simson/README.md) | Escape Kids (Asia, 4 Players) (`esckids`)<br>The Simpsons (4 Players World, set 1) (`simpsons`)<br>Vendetta (World, 4 Players, ver. T) (`vendetta`) | Konami, 1991 — port of the official jotego core | 2026-08-06 |
 | [`jtslyspy`](cores/slyspy/) | Boulder Dash - Boulder Dash Part 2 (World) (`bouldash`)<br>Secret Agent (World, revision 3) (`secretag`) | Data East Corporation (licensed from First Star), 1989–1990 — port of the official jotego core | 2026-08-06 |
+| [`jtsquash`](cores/squash/) | Squash (World, ver. 1.0, checksum 015aef61) (`squash`) | Gaelco, 1992 (Type-1 hardware) | 2026-08-06 |
+| [`jtthoop`](cores/thoop/) | Thunder Hoop (ver. 1, checksum 02a09f7d) (`thoop`) | Gaelco, 1992 (Type-1 hardware) | 2026-08-06 |
+| [`jtthoop2`](cores/thoop2/) | TH Strikes Back (non North America, version 1.0, checksum 020EB356) (`thoop2`) | Gaelco, 1994 (Type-1 Rev B hardware, DS5002FP-protected) | 2026-08-06 |
 | [`jtthundr`](cores/thundr/) | Alien Sector (`aliensec`)<br>Genpei ToumaDen (`genpeitd`)<br>Hopping Mappy (`hopmappy`)<br>Metro-Cross (set 1) (`metrocrs`)<br>Rolling Thunder (rev 3) (`rthunder`)<br>Sky Kid Deluxe (set 1) (`skykiddx`)<br>The Return of Ishtar (`roishtar`)<br>Wonder Momo (`wndrmomo`) | Namco, 1985–1987 — port of the official jotego core | 2026-08-06 |
 | [`jttmnt`](cores/tmnt/README.md) | M.I.A. - Missing in Action (version T) (`mia`)<br>Punk Shot (US 4 Players) (`punkshot`)<br>Teenage Mutant Ninja Turtles (World 4 Players, version X) (`tmnt`)<br>Thunder Cross II (World) (`thndrx2`) | Konami, 1989–1991 — port of the official jotego core | 2026-08-06 |
 | [`jttoki`](cores/toki/README.md) | Cabal (World, Joystick) (`cabal`)<br>Toki (World, set 1) (`toki`) | TAD Corporation, 1988–1989 — port of the official jotego core | 2026-08-06 |
@@ -96,6 +107,8 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 | [`jttwin16`](cores/twin16/README.md) | Devil World (`devilw`)<br>Vulcan Venture (new) (`vulcan`) | Konami, 1987–1988 — port of the official jotego core | 2026-08-06 |
 | [`jtvigil`](cores/vigil/README.md) | Vigilante (World, Rev E) (`vigilant`) | Irem, 1988 — port of the official jotego core | 2026-08-06 |
 | [`jtwc`](cores/wc/README.md) | Gridiron Fight (World) (`gridiron`)<br>Tehkan World Cup (set 1) (`tehkanwc`) | Tehkan, 1985 — port of the official jotego core | 2026-08-06 |
+| [`jtwrally`](cores/wrally/) | World Rally Championship (version 1.0, checksum DE0D, 08 Nov 1993) (`wrally`) | Gaelco, 1993 (Type-1 hardware, DS5002FP-protected) | 2026-08-06 |
+| [`jtwrally2`](cores/wrally2/) | World Rally 2: Twin Racing (version 26-06, checksum 3EDB, mask ROM version) (`wrally2a`) | Gaelco, 1995 (Type-2/GAE1 hardware, twin-monitor cabinet) | 2026-08-06 |
 | [`jtwwfss`](cores/wwfss/README.md) | WWF Superstars (Europe) (`wwfsstar`) | Technos Japan, 1989 — port of the official jotego core | 2026-08-06 |
 | [`jtyiear`](cores/yiear/README.md) | Yie Ar Kung-Fu (version I) (`yiear`) | Konami, 1985 — port of the official jotego core | 2026-08-06 |
 | [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 (board TA-0010) | 2026-08-03 |
