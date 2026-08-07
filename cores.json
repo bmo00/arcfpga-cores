@@ -1075,6 +1075,14 @@
       "arc": {
         "date": "2026-08-07",
         "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      },
+      "mister": {
+        "date": "2026-08-07",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      },
+      "mra": {
+        "date": "2026-08-07",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
       }
     }
   },

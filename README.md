@@ -25,6 +25,7 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 
 | Core | Parents | Description | Last update |
 |---|---|---|---|
+| [`jtrastan`](cores/rastan/README.md) | Operation Wolf (World, rev 2, set 1) (`opwolf`)<br>Rainbow Islands (rev 1) (`rbisland`)<br>Rainbow Islands - Extra Version (`rbislande`)<br>Rastan (World Rev 1) (`rastan`) | Taito Corporation, 1987–1988 — JOTEGO port | 2026-08-07 |
 | [`jtriders`](cores/riders/README.md) | Golfing Greats (World, version L) (`glfgreat`)<br>Lightning Fighters (World) (`lgtnfght`)<br>Sunset Riders (4 Players ver EAC) (`ssriders`)<br>Teenage Mutant Ninja Turtles: Turtles in Time (4 Players ver UAA) (`tmnt2`) | Konami, 1990–1991 — JOTEGO port | 2026-08-07 |
 | [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (`mystston`) | Technos Japan, 1984 | 2026-08-07 |
 
