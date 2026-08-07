@@ -21,8 +21,14 @@
 //  cpu_videoram_*: videoram is a single-port BRAM the CPU (mystston_main.v)
 //  also accesses directly — rather than arbitrate a shared address bus
 //  between the CPU and this module's own tile-code prefetching, this module
-//  keeps its own local shadow copy, snooped from the CPU's write-side
-//  signals (cheap on an FPGA, and avoids the arbitration entirely).
+//  keeps its own copy in a jtframe_dual_ram (port 0 = CPU write snoop,
+//  port 1 = this module's own synchronous read), avoiding the arbitration
+//  entirely (see code_lo_addr/code_hi_addr below for why the read needs two
+//  cycles: a plain reg-array read here, before this port was BRAM-backed,
+//  couldn't be inferred as block RAM since it was read combinationally —
+//  Quartus falls back to distributed logic for that, ~4096 FFs plus a full
+//  4096:1 mux per read port, which was the single largest contributor to
+//  this core's abnormally high ALM/LE usage and Fitter time).
 //  License: GPLv3
 //============================================================================
 
@@ -59,11 +65,6 @@ module mystston_scroll(
     assign bg_pxl = line_pxl[hcnt[7:0]];
     assign bg_hit = (hcnt < 9'd256); // background is always opaque
 
-    // Local shadow of videoram (see port comment above) — the whole 0x800
-    // (bg_videoram) region since page_select swaps between its two halves.
-    reg [7:0] bg_videoram_shadow [0:4095];
-    always @(posedge clk) if (cpu_videoram_we) bg_videoram_shadow[cpu_videoram_addr] <= cpu_videoram_din;
-
     // ------------------------------------------------------------------
     // Virtual tilemap position for target_line (16 cols x 32 rows of 16x16
     // tiles = 256 x 512 pixels; vertical scroll wraps naturally in 9 bits).
@@ -76,21 +77,45 @@ module mystston_scroll(
     wire [3:0] tile_line = flipy_quirk ? (4'd15 - tile_line_pre) : tile_line_pre;
 
     // bg_videoram's own 0-based index (page|tile_index, 0-0x7ff) plus the
-    // 0x800 base offset where it sits within the flat 4096-entry shadow.
+    // 0x800 base offset where it sits within the flat 4096-entry copy.
     wire [10:0] page = { page_select, 10'd0 }; // 0 or 0x400, within bg_videoram's own 0x800 window
     wire [11:0] code_lo_addr = 12'h800 + { 1'b0, page } + { 3'd0, tile_index };
     wire [11:0] code_hi_addr = code_lo_addr + 12'h200;
 
+    // Port 1 reads code_lo_addr while state==S_CODE_LO (registered output
+    // ready when S_CODE_HI captures it) and code_hi_addr while
+    // state==S_CODE_HI (ready when S_CODE_JOIN captures it) — the address
+    // driven during any other state is unused.
+    wire [11:0] shadow_rd_addr = (state == S_CODE_HI) ? code_hi_addr : code_lo_addr;
+    wire [7:0]  shadow_q1;
+
+    jtframe_dual_ram #(.DW(8),.AW(12)) u_bg_videoram(
+        .clk0 ( clk               ),
+        .data0( cpu_videoram_din  ),
+        .addr0( cpu_videoram_addr ),
+        .we0  ( cpu_videoram_we   ),
+        .q0   (                   ),
+        .clk1 ( clk               ),
+        .data1( 8'd0              ),
+        .addr1( shadow_rd_addr    ),
+        .we1  ( 1'b0              ),
+        .q1   ( shadow_q1         )
+    );
+
     // Explicit read-during-write forwarding: the CPU can write this same
     // address on the same edge this module reads it (most often from its own
-    // scanline-interrupt handler), and inferred-BRAM read-during-write
-    // behavior isn't guaranteed to match across synthesis tools — bypass the
-    // array with the incoming write data directly on an address match rather
-    // than rely on it.
-    wire code_lo_hit = cpu_videoram_we && (cpu_videoram_addr == code_lo_addr);
-    wire code_hi_hit = cpu_videoram_we && (cpu_videoram_addr == code_hi_addr);
-    wire [7:0] code_lo_rd = code_lo_hit ? cpu_videoram_din : bg_videoram_shadow[code_lo_addr];
-    wire [7:0] code_hi_rd = code_hi_hit ? cpu_videoram_din : bg_videoram_shadow[code_hi_addr];
+    // scanline-interrupt handler), and a dual-port RAM's cross-port
+    // read-during-write result isn't guaranteed to match across synthesis
+    // tools — bypass with the incoming write data on an address match rather
+    // than rely on it. Registered a cycle ahead of use, alongside the
+    // address that was actually presented that cycle, so it lines up with
+    // the byte jtframe_dual_ram returns for it.
+    reg        lo_hit_r, hi_hit_r;
+    reg  [7:0] lo_din_r, hi_din_r;
+    reg  [7:0] code_lo_byte;
+    wire       lo_hit_now = cpu_videoram_we && (cpu_videoram_addr == code_lo_addr);
+    wire       hi_hit_now = cpu_videoram_we && (cpu_videoram_addr == code_hi_addr);
+    wire [7:0] code_hi_byte = hi_hit_r ? hi_din_r : shadow_q1;
 
     reg  [3:0] col;                    // 0-15, display column being fetched
     wire [8:0] tile_index = { 4'd0, (5'd15 - { 1'b0, col }) } * 9'd32 + { 5'd0, row };
@@ -107,7 +132,9 @@ module mystston_scroll(
                                                      : { 13'd0, tile_line });
 
     localparam S_IDLE        = 4'd0,
-               S_CODE_READ   = 4'd1,
+               S_CODE_LO     = 4'd1,
+               S_CODE_HI     = 4'd2,
+               S_CODE_JOIN   = 4'd3,
                S_FETCH_REQ   = 4'd5,
                S_FETCH_WAIT  = 4'd6,
                S_FETCH_NEXT  = 4'd7,
@@ -134,12 +161,27 @@ module mystston_scroll(
                     gfx2_cs <= 1'b0;
                     if (start) begin
                         col   <= 4'd0;
-                        state <= S_CODE_READ;
+                        state <= S_CODE_LO;
                     end
                 end
 
-                S_CODE_READ: begin
-                    code <= { code_hi_rd[0], code_lo_rd };
+                S_CODE_LO: begin
+                    // shadow_rd_addr presents code_lo_addr this cycle
+                    lo_hit_r <= lo_hit_now;
+                    lo_din_r <= cpu_videoram_din;
+                    state    <= S_CODE_HI;
+                end
+                S_CODE_HI: begin
+                    // shadow_q1 now holds the byte at code_lo_addr
+                    code_lo_byte <= lo_hit_r ? lo_din_r : shadow_q1;
+                    // shadow_rd_addr presents code_hi_addr this cycle
+                    hi_hit_r <= hi_hit_now;
+                    hi_din_r <= cpu_videoram_din;
+                    state    <= S_CODE_JOIN;
+                end
+                S_CODE_JOIN: begin
+                    // shadow_q1 now holds the byte at code_hi_addr
+                    code <= { code_hi_byte[0], code_lo_byte };
                     plane_idx <= 2'd0;
                     half_idx  <= 1'b0;
                     state <= S_FETCH_REQ;
@@ -195,7 +237,7 @@ module mystston_scroll(
                         state <= S_DONE;
                     end else begin
                         col   <= col + 4'd1;
-                        state <= S_CODE_READ;
+                        state <= S_CODE_LO;
                     end
                 end
 
