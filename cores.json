@@ -1058,6 +1058,26 @@
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     }
   },
+  "rastan": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "beta": true,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+    },
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-07",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      },
+      "arc": {
+        "date": "2026-08-07",
+        "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
+      }
+    }
+  },
   "riders": {
     "origin": "external",
     "core_author": "jotego",
