@@ -1,8 +1,0 @@
-[ARC]
-RBF=JTCPS15
-MOD=0
-NAME=SLAMMAST
-DEFAULT=0xFF0000
-CONF="P1,Switches"
-CONF="P1OJ,Freeze,On,Off"
-BUTTONS="Attack,Jump,Pin,-,-,-,Start,Coin,Core credits"

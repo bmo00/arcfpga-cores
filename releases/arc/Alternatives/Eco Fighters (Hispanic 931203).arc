@@ -1,8 +1,0 @@
-[ARC]
-RBF=JTCPS2
-MOD=0
-NAME=ECOFGHTRH
-DEFAULT=0xFFFF0000
-CONF="P1,Switches"
-CONF="P1OG,Spinner,on,off"
-BUTTONS="Rotate CCW,Shoot,Rotate CW,-,-,-,Start,Coin,Core credits"
