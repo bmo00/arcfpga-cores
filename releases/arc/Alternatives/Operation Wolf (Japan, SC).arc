@@ -1,5 +1,5 @@
 [ARC]
-RBF=OPWOLF
+RBF=JTRASTAN
 MOD=2
 NAME=OPWOLFJSC
 DEFAULT=0x3FFF0000
@@ -11,5 +11,6 @@ CONF="P1OKL,Coin A,2/3,2/1,1/2,1/1"
 CONF="P1OMN,Coin B,2/3,2/1,1/2,1/1"
 CONF="P1OOP,Difficulty,Hardest,Hard,Easy,Medium"
 CONF="P1OQR,Ammo Magazines at Start,4,5,7,6"
+CONF="P1OU,Continue discount,Yes,No"
 CONF="P1OV,Language,English,Japanese"
-BUTTONS="Slash,Jump,Start,Coin,Core credits"
+BUTTONS="Bullet,Grenade,Start,Coin,Core credits"
