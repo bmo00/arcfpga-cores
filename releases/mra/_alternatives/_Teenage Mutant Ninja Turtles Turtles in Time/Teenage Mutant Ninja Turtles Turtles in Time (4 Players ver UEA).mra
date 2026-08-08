@@ -30,7 +30,7 @@
     <year>1991</year>
     <manufacturer>Konami</manufacturer>
     <players>4</players>
-    <rbf>riders</rbf>
+    <rbf>jtriders</rbf>
     <joystick>8</joystick>
     <region>World</region>
     <rom index="0" zip="tmnt24pu.zip|tmnt2.zip" md5="None" address="0x30000000" asm_md5="dedf2a893c982eb8af9995ccdf5f005d">

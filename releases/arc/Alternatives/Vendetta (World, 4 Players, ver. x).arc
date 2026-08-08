@@ -1,5 +1,5 @@
 [ARC]
-RBF=SIMSON
+RBF=JTSIMSON
 MOD=32
 NAME=VENDETTAUN
 BUTTONS="Punch,Kick,-,Start,Coin,Core credits"

@@ -30,7 +30,7 @@
     <year>1990</year>
     <manufacturer>Konami</manufacturer>
     <players>2</players>
-    <rbf>riders</rbf>
+    <rbf>jtriders</rbf>
     <joystick>8</joystick>
     <region>World</region>
     <rom index="0" zip="lgtnfght.zip" md5="None" address="0x30000000" asm_md5="7573f35ae74d2502328cd862471ac62e">

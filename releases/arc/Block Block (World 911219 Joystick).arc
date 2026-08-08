@@ -1,5 +1,5 @@
 [ARC]
-RBF=PANG
+RBF=JTPANG
 MOD=5
 NAME=BLOCK
 BUTTONS="button 1,button 2,-,-,Start,Coin,Core credits"

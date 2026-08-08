@@ -30,7 +30,7 @@
     <year>1991</year>
     <manufacturer>Konami</manufacturer>
     <players>4</players>
-    <rbf>riders</rbf>
+    <rbf>jtriders</rbf>
     <joystick>8</joystick>
     <region>World</region>
     <rom index="0" zip="ssriders.zip" md5="None" address="0x30000000" asm_md5="d2ccd581af6a884d8a8573c033a1f3a5">

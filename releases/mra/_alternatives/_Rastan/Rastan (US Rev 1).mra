@@ -30,7 +30,7 @@
     <year>1987</year>
     <manufacturer>Taito America Corporation</manufacturer>
     <players>2</players>
-    <rbf>rastan</rbf>
+    <rbf>jtrastan</rbf>
     <joystick>8</joystick>
     <region>World</region>
     <rom index="0" zip="rastanu.zip|rastan.zip|cchip.zip" md5="None" address="0x30000000" asm_md5="86a3fded2531b70aabbc54fd64f794c4">
