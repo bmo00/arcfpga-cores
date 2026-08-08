@@ -5,6 +5,12 @@ author=["bmo00"]
 sourcefile=[ "mystston.cpp" ]
 mustbe.machines=["mystston", "myststono", "myststonoi"]
 skip.Bootlegs=true
+# Marca de autoria (bmo00) al final del nombre publicado.
+rename = [
+    { setname="mystston",   name="Mysterious Stones: Dr. John's Adventure (bmo00)" },
+    { setname="myststono",  name="Mysterious Stones: Dr. Kick in Adventure (bmo00)" },
+    { setname="myststonoi", name="Mysterious Stones: Dr. Kick in Adventure (Itisa PCB) (bmo00)" },
+]
 
 [buttons]
 names=[

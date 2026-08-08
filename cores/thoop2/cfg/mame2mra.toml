@@ -5,6 +5,10 @@ author=["jlrh"]
 sourcefile=[ "thoop2.cpp" ]
 mustbe.machines=["thoop2"]
 skip.setnames=["thoop2a","thoop2b","thoop2c","thoop2d","thoop2e"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="thoop2", name="TH Strikes Back (Gaelco, 1994) (jlrh)" },
+]
 
 [ROM]
 # gfx: h8/h12 byte-interleaved 2-bytes-per-file (same technique as aligator's gfx_temp).

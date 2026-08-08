@@ -12,6 +12,10 @@ sourcefile=[ "gaelco2.cpp" ]
 mustbe.machines=["wrally2"]
 skip.setnames=["wrally2","wrally2b","wrally2c","wrally2d"]
 main_setnames=["wrally2a"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="wrally2a", name="World Rally 2 (Gaelco, 1995) (jlrh)" },
+]
 
 [dipsw]
 # wrally2_inputs.v (puertos IN0/IN1 del 68000) espera "input wire [15:0] dipsw" con dsw1=dipsw[7:0]

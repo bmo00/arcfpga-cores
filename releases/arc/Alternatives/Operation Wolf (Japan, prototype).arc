@@ -1,5 +1,5 @@
 [ARC]
-RBF=OPWOLF
+RBF=RASTAN
 MOD=2
 NAME=OPWOLFP
 DEFAULT=0xFFFF0000
@@ -11,6 +11,7 @@ CONF="P1OKL,Coin A,4/1,3/1,2/1,1/1"
 CONF="P1OMN,Coin B,1/6,1/4,1/3,1/2"
 CONF="P1OOP,Difficulty,Hardest,Hard,Easy,Medium"
 CONF="P1OQR,Ammo Magazines at Start,4,5,7,6"
+CONF="P1OS,Hit Percentage Cheat,Yes,No"
 CONF="P1OU,Infinite Ammo (Cheat),Yes,No"
 CONF="P1OV,Language,English,Japanese"
-BUTTONS="Slash,Jump,Start,Coin,Core credits"
+BUTTONS="Bullet,Grenade,Start,Coin,Core credits"

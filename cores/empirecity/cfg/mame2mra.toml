@@ -46,6 +46,10 @@ sourcefile=[ "stfight.cpp" ]
 machines=[ "empcity" ]   # Seibu Kaihatsu ORIGINAL (no empcityu=Taito US). Cambiado 2026-07-17: el usuario
                          # quiere la marca Seibu. vs empcityu solo cambian ec_01/ec_02/17.2n; mapa igual.
                          # El color de balas es el DIP "Bullet Colour" (SW1:8), NO depende del set.
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="empcity", name="Empire City: 1931 (Seibu Kaihatsu, 1986) (jlrh)" },
+]
 
 [dipsw]
 delete=[{names=["Unused","Unknown"]}]

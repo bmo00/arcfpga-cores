@@ -5,6 +5,10 @@ author=["jlrh"]
 sourcefile=[ "glass.cpp" ]
 mustbe.machines=["glassa"]
 main_setnames=["glassa"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="glassa", name="Glass (Gaelco, 1993) (jlrh)" },
+]
 
 [ROM]
 # gfx: h13/h11 byte-interleaved 2-bytes-per-file (same technique as aligator's gfx_temp - see that

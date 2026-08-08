@@ -5,6 +5,10 @@ author=["jlrh"]
 sourcefile=[ "gaelco.cpp" ]
 mustbe.machines=["thoop"]
 skip.setnames=["thoopa","thoopb","thoopna","thoopnna","thoopnnaa"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="thoop", name="Thunder Hoop (Gaelco, 1992) (jlrh)" },
+]
 
 [ROM]
 # maincpu: th18 (512K) is bigger than th161 (256K) - mra2rom's plain interleave truncates to the

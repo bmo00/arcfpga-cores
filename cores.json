@@ -11,19 +11,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -40,19 +36,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -69,19 +61,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -98,26 +86,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "aligator": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -127,11 +111,11 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
@@ -148,26 +132,22 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
       },
       "arc": {
-        "date": "2026-08-07",
-        "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
       }
     }
   },
   "bigkarnk": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -177,11 +157,11 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
@@ -198,26 +178,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "biomtoy": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -227,18 +203,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "btiger": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -248,18 +224,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
+        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      },
+      "mra": {
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "bubl": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -269,18 +249,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "castle": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -290,11 +270,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -310,19 +290,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -339,19 +315,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -368,19 +340,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
@@ -397,19 +365,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "43dd34d28180b86e451dd6c4b747d85376b6c35a"
       }
     }
@@ -426,26 +390,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "cps1": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -455,11 +415,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -476,20 +436,31 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
+      }
+    }
+  },
+  "cps2": {
+    "origin": "internal",
+    "core_author": "bmo00",
+    "framework": "jtframe",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-08",
+        "commit": null
+      },
+      "arc": {
+        "date": "2026-08-08",
+        "commit": null
       }
     }
   },
@@ -505,19 +476,15 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -534,26 +501,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "ddrbl": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -563,18 +526,22 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
+        "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
+      },
+      "mra": {
+        "date": "2026-08-08",
         "commit": "e093a0ff3b66786305e5df1aa9082964342b1209"
       }
     }
   },
   "empirecity": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -584,18 +551,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
       }
     }
   },
   "exed": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -605,11 +572,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -630,10 +597,6 @@
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-08",
-        "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
-      },
-      "mister": {
         "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
@@ -662,10 +625,6 @@
         "date": "2026-08-08",
         "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
       },
-      "mister": {
-        "date": "2026-08-08",
-        "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
-      },
       "mra": {
         "date": "2026-08-08",
         "commit": "c79de8c706d2d2ca9240ea63e780ddaeca1566d4"
@@ -687,10 +646,6 @@
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-08",
-        "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
-      },
-      "mister": {
         "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
@@ -718,10 +673,6 @@
         "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
-      "mister": {
-        "date": "2026-08-08",
-        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
-      },
       "mra": {
         "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
@@ -729,8 +680,8 @@
     }
   },
   "glass": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -740,18 +691,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "gng": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -761,18 +712,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "gunsmk": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -782,18 +733,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "karnov": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -803,18 +754,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
   },
   "kchamp": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -824,18 +775,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "kicker": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -845,18 +796,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "kiwi": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -866,18 +817,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
       }
     }
   },
   "kunio": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -887,18 +838,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "labrun": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -908,18 +859,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "midres": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -929,18 +880,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "mikie": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -950,18 +901,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "moomesa": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -971,18 +922,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "5e8903830603e15a4520e70d66c4d36a22553ac2"
       }
     }
   },
   "mx5k": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -992,11 +943,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
@@ -1009,11 +960,7 @@
     "beta": false,
     "releases": {
       "arc": {
-        "date": "2026-08-07",
-        "commit": null
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": null
       },
       "mra": {
@@ -1021,14 +968,14 @@
         "commit": null
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": null
       }
     }
   },
   "ninja": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1038,18 +985,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "opwolf": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1059,18 +1006,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
       }
     }
   },
   "outrun": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1080,18 +1027,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f84f52b9f77c8147220370f9e01f7186d74c5ad1"
       }
     }
   },
   "paclan": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1100,18 +1047,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "pang": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1121,18 +1068,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "paroda": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1141,18 +1088,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
   },
   "pinpon": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1162,11 +1109,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1181,9 +1128,24 @@
       "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
     }
   },
+  "rastan": {
+    "origin": "internal",
+    "core_author": "bmo00",
+    "framework": "jtframe",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-08",
+        "commit": null
+      },
+      "arc": {
+        "date": "2026-08-08",
+        "commit": null
+      }
+    }
+  },
   "riders": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1193,15 +1155,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
-        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
-      },
-      "mister": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "mra": {
@@ -1211,8 +1169,8 @@
     }
   },
   "roadf": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1222,18 +1180,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "roc": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1243,18 +1201,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "rumble": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1264,11 +1222,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
@@ -1285,8 +1243,8 @@
     "mra_author": "jotego"
   },
   "s16": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1296,18 +1254,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "s16b": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1317,18 +1275,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "s18": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1337,18 +1295,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "sarms": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1358,18 +1316,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "sbaskt": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1379,18 +1337,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "sectnz": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1400,18 +1358,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "sf": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1421,18 +1379,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
       }
     }
   },
   "shanon": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1442,18 +1400,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "shouse": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1462,18 +1420,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "simson": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1482,18 +1440,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
   },
   "slyspy": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1503,18 +1461,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
   },
   "squash": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1524,18 +1482,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "thoop": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1545,18 +1503,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "thoop2": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1566,18 +1524,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "thundr": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1586,18 +1544,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "tmnt": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1607,18 +1565,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "toki": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "Solal Jacob",
     "beta": false,
@@ -1628,18 +1586,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "759e0cd49f7189faec56b9f3388ca885971e7d32"
       }
     }
   },
   "tora": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1649,18 +1607,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "track": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1670,18 +1628,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "trojan": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1691,18 +1649,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "ccc0f7e149106f391787a45c7b611a0c5d1ad197"
       }
     }
   },
   "twin16": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1711,18 +1669,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }
   },
   "vigil": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1732,18 +1690,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f07313e37307d89c735fc6c6ae895b8ad0883d5c"
       }
     }
   },
   "wc": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1753,18 +1711,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }
   },
   "wrally": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1774,18 +1732,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "wrally2": {
-    "origin": "external",
-    "core_author": "jlrh",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1795,18 +1753,18 @@
     },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       },
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
       }
     }
   },
   "wwfss": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1815,18 +1773,18 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }
   },
   "yiear": {
-    "origin": "external",
-    "core_author": "jotego",
+    "origin": "internal",
+    "core_author": "bmo00",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1836,11 +1794,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       },
       "neptunoplus": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": "f197b81c3ab93fb462d4c2dd983f6b34a2587889"
       }
     }

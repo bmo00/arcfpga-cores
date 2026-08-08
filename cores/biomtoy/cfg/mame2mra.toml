@@ -4,6 +4,10 @@ author=["jlrh"]
 [parse]
 sourcefile=[ "gaelco.cpp" ]
 mustbe.machines=["biomtoy"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="biomtoy", name="Biomechanical Toy (Gaelco, 1995) (jlrh)" },
+]
 
 [ROM]
 # gfx: 8 MAME files (h6/h7/h9/h10 + j6/j7/j9/j10) reordered into the j-block-then-h-block layout

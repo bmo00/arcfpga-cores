@@ -4,6 +4,10 @@ author=["jlrh"]
 [parse]
 sourcefile=[ "gaelco2.cpp" ]
 mustbe.machines=["aligator"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="aligator", name="Alligator Hunt (Gaelco, 1994) (jlrh)" },
+]
 
 [ROM]
 # gfx_temp (MAME) -> gfx: real dump has u48/u47/u50/u49 as 4 flat 4MB blocks, but the FPGA needs

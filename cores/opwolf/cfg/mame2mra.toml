@@ -3,6 +3,10 @@ author=["jlrh"]
 
 [parse]
 sourcefile=[ "opwolf.cpp" ]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="opwolf", name="Operation Wolf (World, rev 2, set 1) (jlrh)" },
+]
 
 [Audio]
 volume = [

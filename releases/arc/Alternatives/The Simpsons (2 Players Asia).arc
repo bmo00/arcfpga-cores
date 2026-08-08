@@ -1,5 +1,5 @@
 [ARC]
-RBF=JTSIMSON
+RBF=SIMSON
 MOD=96
 NAME=SIMPSONS2PA
 BUTTONS="Attack,Jump,-,Start,Coin,Core credits"

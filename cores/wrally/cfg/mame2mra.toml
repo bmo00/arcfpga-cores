@@ -5,6 +5,10 @@ author=["jlrh"]
 sourcefile=[ "wrally.cpp" ]
 mustbe.machines=["wrally"]
 skip.setnames=["wrallya","wrallyac","wrallyat","wrallyata","wrallyb","wrallyc","wrallyd","wrallye"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="wrally", name="World Rally Championship (Gaelco, 1993, checksum DE0D) (jlrh)" },
+]
 
 [ROM]
 # gfx byte-lanes verified byte-identical against the hand-built, HW-validated .mra

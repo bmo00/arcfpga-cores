@@ -4,6 +4,10 @@ author=["jlrh"]
 [parse]
 sourcefile=[ "gaelco.cpp" ]
 mustbe.machines=["bigkarnk"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="bigkarnk", name="Big Karnak (Gaelco, 1991) (jlrh)" },
+]
 
 [ROM]
 # gfx byte-lanes calibrated on real HW (see mra/*.mra comment, 2026-07-01 fix) - sequence

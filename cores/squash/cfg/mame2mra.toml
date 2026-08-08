@@ -4,6 +4,10 @@ author=["jlrh"]
 [parse]
 sourcefile=[ "gaelco.cpp" ]
 mustbe.machines=["squash"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="squash", name="Squash (Gaelco, 1992) (jlrh)" },
+]
 
 [ROM]
 # gfx byte-lanes verified byte-identical against the hand-built .mra (c12/c11/c10/c09 swap).
