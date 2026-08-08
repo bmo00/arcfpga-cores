@@ -263,22 +263,9 @@ docker run --rm --entrypoint "" --user "$(id -u):$(id -g)" \
   '
 ```
 
-Verified end to end against `mystston -neptunoplus`: `Quartus II Full Compilation was successful.
-0 errors, 54 warnings` → `PASS`, producing a real 1.7MB `/build/release/neptunoplus/mystston.rbf`
-in ~13 minutes on this machine — that's the ballpark to expect for a single-game core; multi-game
-cores (CPS1, S16B, ...) take longer.
-
 Output lands in `/build/release/<target>/`. A core with a `syn/` override needs the matching
 `-v ...cores/<core>/syn:/core_syn:ro` mount too, copied into `/build/cores/<core>/syn/` before
 `jtcore` runs — same idea as the `hdl` mount above.
-
-**Cores that share HDL/config with a sibling** (jotego's shared-hardware families — confirmed
-directly: `1942`'s `cfg/files.yaml` references `gng`'s modules) need that sibling's `cfg`/`hdl`
-bind-mounted too, at `/core_cfg__<dep>`/`/core_hdl__<dep>` and copied into
-`/build/cores/<dep>/{cfg,hdl}/` the same way — otherwise `jtcore` fails with `Cannot resolve path
-alias <dep> meaningfully`. Resolving which siblings a given core depends on isn't a one-liner (it
-means reading that core's own `files.yaml`); this is exactly the piece
-[arcfpga-ui](https://github.com/bmo00/arcfpga-ui) automates for you.
 
 ## Credits
 
@@ -287,4 +274,5 @@ means reading that core's own `files.yaml`); this is exactly the piece
   builds on.
 - [somhi](https://github.com/somhi) — reference work on JTFRAME-based neptUNO+ targets, used
   alongside other public sources when building this project's own neptUNO+ target.
+- [jlrh](https://github.com/jlrh) — core development.
 - The MiSTer/MiST/SiDi open-source FPGA arcade community.

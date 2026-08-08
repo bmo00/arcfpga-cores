@@ -1,1 +1,8 @@
-jt12.yaml
+jt12:
+  - get:
+    - "*.v"
+    - jt49.yaml
+  - from: adpcm
+    get:
+    - "*.v"
+
