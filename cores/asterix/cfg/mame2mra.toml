@@ -7,15 +7,15 @@ author=["jlrh"]
 # Asterix vive en konami/asterix.cpp (placa GX068)
 sourcefile=[ "asterix.cpp" ]
 skip = { bootlegs=true }
-# Prefijo de marca "FF" (decision del usuario 2026-07-28, ver
-# metodologia-cores_FPGA/_inbox/convencion-20260728-prefijo-ff-nombres-mra.md).
-# Cambia <name> y el nombre de fichero del .mra en las 5 variantes.
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF"
+# (decision anterior del usuario 2026-07-28). Cambia <name> y el nombre de fichero del .mra
+# en las 5 variantes.
 rename = [
-    { setname="asterix",    name="Asterix (FF ver EAD)" },
-    { setname="asterixaad", name="Asterix (FF ver AAD)" },
-    { setname="asterixeaa", name="Asterix (FF ver EAA)" },
-    { setname="asterixeac", name="Asterix (FF ver EAC)" },
-    { setname="asterixj",   name="Asterix (FF ver JAD)" },
+    { setname="asterix",    name="Asterix (ver EAD) (jlrh)" },
+    { setname="asterixaad", name="Asterix (ver AAD) (jlrh)" },
+    { setname="asterixeaa", name="Asterix (ver EAA) (jlrh)" },
+    { setname="asterixeac", name="Asterix (ver EAC) (jlrh)" },
+    { setname="asterixj",   name="Asterix (ver JAD) (jlrh)" },
 ]
 
 [buttons]
