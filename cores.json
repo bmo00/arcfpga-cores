@@ -1,7 +1,7 @@
 {
   "1942": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -25,8 +25,8 @@
     }
   },
   "1943": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -50,8 +50,8 @@
     }
   },
   "ajax": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -75,8 +75,8 @@
     }
   },
   "aliens": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -100,8 +100,8 @@
     }
   },
   "aligator": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -121,8 +121,8 @@
     }
   },
   "asterix": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -146,8 +146,8 @@
     }
   },
   "bigkarnk": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -167,8 +167,8 @@
     }
   },
   "biocom": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -192,8 +192,8 @@
     }
   },
   "biomtoy": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -213,8 +213,8 @@
     }
   },
   "btiger": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -238,8 +238,8 @@
     }
   },
   "bubl": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -259,8 +259,8 @@
     }
   },
   "castle": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -280,8 +280,8 @@
     }
   },
   "circus": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -304,8 +304,8 @@
     }
   },
   "commnd": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -329,8 +329,8 @@
     }
   },
   "comsc": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -354,8 +354,8 @@
     }
   },
   "contra": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -379,8 +379,8 @@
     }
   },
   "cop": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -404,8 +404,8 @@
     }
   },
   "cps1": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -425,8 +425,8 @@
     }
   },
   "cps15": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -450,8 +450,8 @@
     }
   },
   "cps2": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "releases": {
       "neptunoplus": {
@@ -462,11 +462,17 @@
         "date": "2026-08-08",
         "commit": null
       }
+    },
+    "mra_author": "jotego",
+    "beta": false,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "2287d18164d0e156920475e5ea449020fd23d7c2"
     }
   },
   "dd": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -490,8 +496,8 @@
     }
   },
   "dd2": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -515,8 +521,8 @@
     }
   },
   "ddrbl": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -540,8 +546,8 @@
     }
   },
   "empirecity": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -561,8 +567,8 @@
     }
   },
   "exed": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -582,8 +588,8 @@
     }
   },
   "flane": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -607,8 +613,8 @@
     }
   },
   "flstory": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -632,8 +638,8 @@
     }
   },
   "fround": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -656,8 +662,8 @@
     }
   },
   "gaiden": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -680,8 +686,8 @@
     }
   },
   "glass": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -701,8 +707,8 @@
     }
   },
   "gng": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -722,8 +728,8 @@
     }
   },
   "gunsmk": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -743,8 +749,8 @@
     }
   },
   "karnov": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -764,8 +770,8 @@
     }
   },
   "kchamp": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -785,8 +791,8 @@
     }
   },
   "kicker": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -806,8 +812,8 @@
     }
   },
   "kiwi": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -827,8 +833,8 @@
     }
   },
   "kunio": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -848,8 +854,8 @@
     }
   },
   "labrun": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -869,8 +875,8 @@
     }
   },
   "midres": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -890,8 +896,8 @@
     }
   },
   "mikie": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -911,8 +917,8 @@
     }
   },
   "moomesa": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -932,8 +938,8 @@
     }
   },
   "mx5k": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -978,8 +984,8 @@
     }
   },
   "ninja": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -999,8 +1005,8 @@
     }
   },
   "opwolf": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1020,8 +1026,8 @@
     }
   },
   "outrun": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1041,8 +1047,8 @@
     }
   },
   "paclan": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1061,8 +1067,8 @@
     }
   },
   "pang": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1082,8 +1088,8 @@
     }
   },
   "paroda": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1102,8 +1108,8 @@
     }
   },
   "pinpon": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1133,8 +1139,8 @@
     }
   },
   "rastan": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "releases": {
       "neptunoplus": {
@@ -1153,11 +1159,16 @@
         "date": "2026-08-08",
         "commit": null
       }
+    },
+    "beta": true,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "1be22f172898aa2cc3db50ad372db928ed823fd2"
     }
   },
   "riders": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1185,8 +1196,8 @@
     }
   },
   "roadf": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1206,8 +1217,8 @@
     }
   },
   "roc": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1227,8 +1238,8 @@
     }
   },
   "rumble": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1259,8 +1270,8 @@
     "mra_author": "jotego"
   },
   "s16": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1280,8 +1291,8 @@
     }
   },
   "s16b": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1301,8 +1312,8 @@
     }
   },
   "s18": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1321,8 +1332,8 @@
     }
   },
   "sarms": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1342,8 +1353,8 @@
     }
   },
   "sbaskt": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1363,8 +1374,8 @@
     }
   },
   "sectnz": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1384,8 +1395,8 @@
     }
   },
   "sf": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1405,8 +1416,8 @@
     }
   },
   "shanon": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1426,8 +1437,8 @@
     }
   },
   "shouse": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1446,8 +1457,8 @@
     }
   },
   "simson": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1466,8 +1477,8 @@
     }
   },
   "slyspy": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1487,8 +1498,8 @@
     }
   },
   "squash": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1508,8 +1519,8 @@
     }
   },
   "thoop": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1529,8 +1540,8 @@
     }
   },
   "thoop2": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1550,8 +1561,8 @@
     }
   },
   "thundr": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1570,8 +1581,8 @@
     }
   },
   "tmnt": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1591,8 +1602,8 @@
     }
   },
   "toki": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "Solal Jacob",
     "beta": false,
@@ -1612,8 +1623,8 @@
     }
   },
   "tora": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1633,8 +1644,8 @@
     }
   },
   "track": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1654,8 +1665,8 @@
     }
   },
   "trojan": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1675,8 +1686,8 @@
     }
   },
   "twin16": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1695,8 +1706,8 @@
     }
   },
   "vigil": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1716,8 +1727,8 @@
     }
   },
   "wc": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
@@ -1737,8 +1748,8 @@
     }
   },
   "wrally": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1758,8 +1769,8 @@
     }
   },
   "wrally2": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jlrh",
     "framework": "jtframe",
     "mra_author": "jlrh",
     "beta": false,
@@ -1779,8 +1790,8 @@
     }
   },
   "wwfss": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "beta": false,
     "external": {
@@ -1799,8 +1810,8 @@
     }
   },
   "yiear": {
-    "origin": "internal",
-    "core_author": "bmo00",
+    "origin": "external",
+    "core_author": "jotego",
     "framework": "jtframe",
     "mra_author": "jotego",
     "beta": false,
