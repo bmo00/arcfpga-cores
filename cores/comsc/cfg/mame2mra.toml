@@ -1,0 +1,44 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "combatsc.cpp" ]
+skip.bootlegs=true
+skip.setnames= [
+    # trackball versions not supported
+    "combatsct",
+    "combatscj"
+]
+
+[Audio]
+volume = [
+    { machine="combatsc", value=0x22 },
+]    
+
+[buttons]
+names = [
+    { names="Shoot/Attack,Jump" }
+]
+
+[header]
+frames = [
+    # the black frame is not symmetrical but 16 left/8 right
+    # so this will still leave 8 on the left side
+    { width=8 },
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+shifts = [ { name="DSW3", shift=-4 } ]
+
+[ROM]
+regions = [
+    { name="audiocpu", start="SND_START" },
+    { name="gfx1", reverse=true, start="GFX1_START", width=16 },
+    { name="gfx2", reverse=true, start="GFX2_START", width=16 },
+    { name="upd", start="PCM_START" },
+    { name="proms", start="JTFRAME_PROM_START" },
+    { name="plds", skip=true }
+]
+
+order = [ "maincpu", "audiocpu", "gfx1", "gfx2", "upd", "proms" ]

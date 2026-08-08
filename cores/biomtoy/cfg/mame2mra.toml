@@ -1,0 +1,21 @@
+[global]
+author=["jlrh"]
+
+[parse]
+sourcefile=[ "gaelco.cpp" ]
+mustbe.machines=["biomtoy"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="biomtoy", name="Biomechanical Toy (Gaelco, 1995) (jlrh)" },
+]
+
+[ROM]
+# gfx: 8 MAME files (h6/h7/h9/h10 + j6/j7/j9/j10) reordered into the j-block-then-h-block layout
+# the hand-built .mra uses (each plane = j_k[0:0x80000] ++ h_k[0x80000:0x100000]); sequence indices
+# are into MAME's offset-sorted file list, verified byte-identical against the hand-built .mra.
+regions=[
+    { name="maincpu", width=16, reverse=true },
+    { name="gfx", width=32, no_offset=true, sequence=[0,2,4,6,1,3,5,7] },
+    { name="plds", skip=true },
+]
+order=["maincpu","gfx","oki"]

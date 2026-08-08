@@ -1,0 +1,44 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "sbasketb.cpp" ]
+
+[Audio]
+volume = [
+    { machine="sbasketb", value=0x7B },
+]
+
+[buttons]
+names=[
+    { names="Bounce,Throw,Pass" }
+]
+
+[header]
+info = """ Header to identify the PCB type
+        Byte 0 = 0 for M6809 CPU, 1 for KONAMI-1 CPU
+"""
+data = [
+    { setnames=["sbasketb","sbasketg","sbaskete"], offset=0, data="01" },
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+
+[ROM]
+# values starting with $ refer to macro definitions in the .def file
+# or arguments passed to mame2mra
+regions = [
+    { name="maincpu"  },
+    { name="audiocpu" },
+    { name="tiles"    },
+    { name="sprites"  },
+    { name="vlm"      },
+    { name="proms"    },
+]
+
+order = [
+    "maincpu", "audiocpu", "tiles", "sprites", "vlm", "proms"
+]
+
+

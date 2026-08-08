@@ -1,0 +1,33 @@
+[global]
+# info = [ {tag="mameversion", value="0229"} ]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "flkatck.cpp" ]
+
+[Audio]
+volume = [
+    { machine="mx5000", value=0xFF },
+]
+
+[buttons]
+names = [
+    { names="Shot,Bomb" }
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+
+[ROM]
+# values starting with $ refer to macro definitions in the .def file
+# or arguments passed to mame2mra
+regions = [
+    { name="maincpu",       no_offset=true  },
+    { name="audiocpu",      start="SND_START" },
+    { name="gfx",          start="GFX_START", width=16 },
+    { name="k007232",       start="PCM_START" }
+]
+# { name="myregion", reorder=[3,2,1,0] } # reorder files inside a region
+order = [
+    "maincpu", "audiocpu", "gfx", "k007232"
+]

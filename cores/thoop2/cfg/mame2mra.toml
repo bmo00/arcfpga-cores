@@ -1,0 +1,29 @@
+[global]
+author=["jlrh"]
+
+[parse]
+sourcefile=[ "thoop2.cpp" ]
+mustbe.machines=["thoop2"]
+skip.setnames=["thoop2a","thoop2b","thoop2c","thoop2d","thoop2e"]
+# Marca de autoria (jlrh) al final del nombre publicado, sustituye al viejo prefijo "FF".
+rename = [
+    { setname="thoop2", name="TH Strikes Back (Gaelco, 1994) (jlrh)" },
+]
+
+[ROM]
+# gfx: h8/h12 byte-interleaved 2-bytes-per-file (same technique as aligator's gfx_temp).
+# Verified byte-identical (map="0012"/"1200") against the hand-built .mra.
+regions=[
+    { name="maincpu", width=16, parts=[
+        { name="3.c23", crc="6cd4a8dc", map="10" },
+        { name="2.c22", crc="59ba9b43", map="01" },
+    ] },
+    { name="gfx", width=32, reverse=true, start="JTFRAME_BA1_START", files=[
+        { name="th2-h12.h12", crc="b25c2d3e", size=4194304, offset=0 },
+        { name="th2-h8.h8", crc="60328a11", size=4194304, offset=2 },
+    ] },
+    { name="oki", start="JTFRAME_BA2_START" },
+    { name="plds", skip=true },
+    { name="gaelco_ds5002fp:sram", rename="dallas", start="JTFRAME_PROM_START" },
+]
+order=["maincpu","gfx","oki","dallas"]

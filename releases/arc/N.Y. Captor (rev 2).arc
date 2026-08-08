@@ -1,0 +1,22 @@
+[ARC]
+RBF=FLSTORY
+MOD=2
+NAME=NYCAPTOR
+DEFAULT=0xFB00BF0000
+CONF="P1,Switches"
+CONF="P1OGH,Bonus Life,150k 300k 300k+,100k 300k 300k+,20k 80k 80k+,50k 150k 200k+"
+CONF="P1OI,Infinite Bullets,On,Off"
+CONF="P1OJK,Lives,2,1,5,3"
+CONF="P1OL,Free Play,On,Off"
+CONF="P1OM,Allow Continue,On,Off"
+CONF="P1ON,Demo Sounds,Off,On"
+CONF="P1OOR,Coin A,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OSV,Coin B,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OW,Freeze,On,Off"
+CONF="P1OX,Training Spot,No,Yes"
+CONF="P1OYZ,Difficulty,Hardest,Hard,Normal,Easy"
+CONF="P1Oa,Coinage Display,No,Yes"
+CONF="P1Ob,Reset Damage,Every 4 spots,Every spot"
+CONF="P1Oc,No Hit (Cheat),On,Off"
+CONF="P1Od,Coin Slots,1,2"
+BUTTONS="button 1,button 2,-,-,-,-,Start,Coin,Core credits"

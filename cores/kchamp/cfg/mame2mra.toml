@@ -1,0 +1,53 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "kchamp.cpp" ]
+
+[Audio]
+volume = [
+    { machine="kchamp", value=0x1D },
+]
+
+[buttons]
+Names = [ { names="right(2),left(2),up(2),bottom(2)"} ]
+
+[dipsw]
+delete=[{names=["Unused","Unknown","Coin A","Coin B"]}]
+extra=[
+    { name="Link joysticks", options="Off,On", bits="8" },
+]
+
+[ROM]
+regions = [
+    { name="audiocpu", start="JTFRAME_BA1_START" },
+    { name="gfx1",     start="JTFRAME_BA2_START", width=16, sort_even=true },
+    { name="gfx2",     start="JTFRAME_BA3_START", no_offset=true },
+    { name="proms",    start="JTFRAME_PROM_START" }
+]
+
+order = [
+    "maincpu", "audiocpu",
+    "gfx1", "gfx2", "proms"
+]
+
+splits = [
+    { region="maincpu", offset=0xa000, min_len=0x4000, setnames=[
+        "karatevs",
+        "kchampvs",
+        "kchampvs2",
+        "kchampvs3",
+        "kchampvs4",
+    ] },
+]
+
+blanks = [
+    { region="gfx2", offset=0xc000, len=0x4000 },
+]
+
+# It isn't clear how the ROM decryption works for the first
+# four instructions. It is safe to just skip over them
+patches = [
+    { setnames=[ "kchampvs", "kchampvs3", "kchampvs4", ], offset=0, data="69 6e B4" },
+    { setnames=[ "karatevs",                           ], offset=0, data="69 5f B4" },
+]

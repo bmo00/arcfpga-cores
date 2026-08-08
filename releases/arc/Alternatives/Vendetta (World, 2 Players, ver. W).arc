@@ -1,0 +1,5 @@
+[ARC]
+RBF=SIMSON
+MOD=32
+NAME=VENDETTA2PW
+BUTTONS="Punch,Kick,-,Start,Coin,Core credits"

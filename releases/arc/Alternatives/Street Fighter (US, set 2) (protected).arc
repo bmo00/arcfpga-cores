@@ -1,0 +1,19 @@
+[ARC]
+RBF=SF
+MOD=0
+NAME=SFUA
+DEFAULT=0xFFFFFFFFDFFF0000
+CONF="P1,Switches"
+CONF="P1OGI,Coin A,4/1,3/1,2/1,1/6,1/4,1/3,1/2,1/1"
+CONF="P1OJL,Coin B,4/1,3/1,2/1,1/6,1/4,1/3,1/2,1/1"
+CONF="P1OO,Flip Screen,On,Off"
+CONF="P1OP,Attract Music,Off,On"
+CONF="P1OS,Speed,Slow,Normal"
+CONF="P1OT,Demo Sounds,On,Off"
+CONF="P1OU,Freeze,On,Off"
+CONF="P1OV,Service Mode,On,Off"
+CONF="P1OWY,Continue,-,-,None,1st Stage Maximum,2nd Stage Maximum,3rd Stage Maximum,4th Stage Maximum,5th Stage Maximum"
+CONF="P1OZa,Time,250,200,150,100"
+CONF="P1Obc,Difficulty,Very Difficult,Difficult,Easy,Normal"
+CONF="P1Og,Countries,4,2"
+BUTTONS="Light Punch,Middle Punch,Heavy Punch,Light Kick,Middle Kick,Heavy Kick,Start,Coin,Core credits"

@@ -1,0 +1,73 @@
+include:
+  - file: audio.yaml
+params:
+  - { name: SCR_OFFSET, value: "`SCR_START >> 1" }
+  - { name: OBJ_OFFSET, value: "`OBJ_START >> 1" }
+  - { name: PCM_OFFSET, value: "`PCM_START >> 1" }
+  - { name: SND_OFFSET, value: "`SND_START >> 1" }
+
+clocks:
+  clk24:
+    - mul: 1
+      div: 16
+      gate: ["main"]
+      outputs:
+        - cpu
+    - mul: 1
+      div: 8
+      outputs:
+        - ti1
+        - ti2
+    - freq: 3579545
+      outputs:
+        - snd
+        - psg
+download:
+  post_data: true
+sdram:
+  banks:
+    -
+      buses:
+        -
+          name: scr
+          addr_width: 15
+          data_width: 32
+          offset: SCR_OFFSET
+          cs: LVBL
+        -
+          name: obj
+          addr_width: 16
+          data_width: 32
+          offset: OBJ_OFFSET
+        -
+          name: pcm
+          addr_width: 16
+          data_width: 8
+          offset: PCM_OFFSET
+          cs: "1'b1"
+        -
+          name: snd
+          addr_width: 14
+          data_width: 8
+          offset: SND_OFFSET
+        -
+          name: main
+          addr_width: 16
+          data_width: 8
+bram:
+  - name: ram
+    addr_width: 12
+    data_width: 8
+    rw: true
+    addr: "main_addr[11:0]"
+    din: cpu_dout
+  - name: vram
+    addr_width: 11
+    data_width: 16
+    simfile: {}
+    dual_port:
+      name: vramrw
+      din:  "{2{cpu_dout}}"
+      dout: vramrw_dout
+      rw:   true
+    ioctl: { save: true, order: 0 }

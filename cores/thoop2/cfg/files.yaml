@@ -1,0 +1,37 @@
+thoop2:
+  - get:
+      - jtthoop2_game.v
+      - thoop2_main.v
+      - thoop2_addr_decode.v
+      - thoop2_iolatch.v
+      - thoop2_oki.v
+      - thoop2_inputs.v
+      - thoop2_vmem.v
+      - thoop2_video_top.v
+      - thoop2_video.v
+      - thoop2_video_timing.v
+      - thoop2_tilemap.v
+      - thoop2_palette.v
+      - thoop2_gfx_decode.v
+      - thoop2_sprite_layer.v
+      - thoop2_sprite_engine.v
+      - thoop2_68kdtack.v
+      - thoop2_mcu.v
+      - mc8051_regen.v
+jtframe:
+  - from: ram
+    get:
+      - jtframe_ram_rst.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+jt6295: null
+fx68k:
+  - get:
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv

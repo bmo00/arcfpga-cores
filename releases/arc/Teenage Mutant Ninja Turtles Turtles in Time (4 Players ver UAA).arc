@@ -1,0 +1,5 @@
+[ARC]
+RBF=RIDERS
+MOD=32
+NAME=TMNT2
+BUTTONS="Shoot,Jump,-,-,Start,Coin,Core credits"

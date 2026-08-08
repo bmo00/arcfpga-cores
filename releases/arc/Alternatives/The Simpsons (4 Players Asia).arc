@@ -1,0 +1,5 @@
+[ARC]
+RBF=SIMSON
+MOD=96
+NAME=SIMPSONS4PA
+BUTTONS="Attack,Jump,-,Start,Coin,Core credits"

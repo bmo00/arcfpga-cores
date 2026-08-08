@@ -1,0 +1,68 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "aliens.cpp",
+    "thunderx.cpp",
+    "crimfght.cpp",
+]
+
+[Audio]
+volume = [
+    { machine="aliens", value=0x7A },
+    { machine="crimfght", value=0xE6 },
+    { machine="gbusters", value=0x34 },
+    { machine="scontra", value=0xD9 },
+    { machine="thunderx", value=0x5E },
+]
+
+[buttons]
+names = [
+    { machine="aliens", names="Shoot standing,Shoot crouching" },
+    { machine="thunderx", names="Shoot,Option adjust" },
+    { machine="scontra", names="Shoot,Jump" },
+    { machine="crimfght", names="Punch,Kick,Back Kick" },
+    { machine="gbusters", names="Shoot,Super shot" },
+]
+
+[header]
+info="""
+
+        byte 0: PCB ID
+        byte 1:
+            bit    0 = GX878 (Gang Busters)
+            bits 2:1 = PCB config -> 0=Aliens, 1=Super Contra, 2=Thunder Cross"""
+PCBs = [
+    { machine=  "aliens"   },
+    { machines=["crimfght","gbusters"] },
+    { machine=  "thunderx" },
+    { machine=  "scontra"  },
+]
+data = [
+    { pcb_id=true,        offset=0 },
+    { machine="scontra",  offset=1, data="02" },
+    { machine="thunderx", offset=1, data="04" },
+    { machine="crimfght", offset=1, data="06" },
+    { machine="gbusters", offset=1, data="05" },
+]
+
+[dipsw]
+delete=[{names=["Unused","Unknown"]}]
+rename=[ {name="Continue Limit (1Player/2Players)", to="Max cont", values=["5 and 4","3 and 2"] }, ]
+
+[ROM]
+regions = [
+    { name="maincpu" }, # First 32kB go to $8000, the rest are banked at $6000
+    { name="audiocpu",  start="JTFRAME_BA1_START" },
+    { name="k007232",   start="PCM_START" },
+    { name="k052109",   start="JTFRAME_BA2_START", width=32 }, # tiles
+    { name="k051960",   start="JTFRAME_BA3_START", width=32, reverse=true }, # sprites
+    { name="proms",     start="JTFRAME_PROM_START" } # last one is the priority encoder
+]
+
+order = [ "maincpu", "audiocpu", "k007232", "k052109", "k051960", "proms" ]
+
+# Skips the RAM check
+patches = [ { setname="aliens",  offset=0x2806a, data="AE AE AE" },
+            { setname="scontra", offset=0x0808e, data="68 03 83" },
+        ] # @ 808E -> 8414

@@ -1,0 +1,1151 @@
+{
+  "board": {
+    "name": "mystston",
+    "manufacturer": "Technos Japan",
+    "year": 1984,
+    "mame_driver": "technos/mystston.cpp",
+    "orientation": "vertical",
+    "board_type": "custom (Technos TA-0010, 2-PCB set)",
+    "similar_jtcores": []
+  },
+  "cpus": [
+    {
+      "id": "maincpu",
+      "type": "M6502",
+      "clock_hz": 1500000,
+      "clock_source": "12MHz master XTAL / 8",
+      "role": "main",
+      "address_bits": 16
+    }
+  ],
+  "clocks": {
+    "master_hz": 12000000,
+    "derived": [
+      {
+        "name": "maincpu clock",
+        "freq_hz": 1500000
+      },
+      {
+        "name": "ay1 clock",
+        "freq_hz": 1500000
+      },
+      {
+        "name": "ay2 clock",
+        "freq_hz": 1500000
+      },
+      {
+        "name": "pixel clock",
+        "freq_hz": 6000000
+      }
+    ],
+    "distribution": [
+      {
+        "source": "12MHz master XTAL",
+        "target": "maincpu (M6502)",
+        "path": "divide-by-8 (direct hardwired divider, per MAME driver clock config)"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "ay1 (AY8910)",
+        "path": "divide-by-8, shares the same derived 1.5MHz line as maincpu"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "ay2 (AY8910)",
+        "path": "divide-by-8, shares the same derived 1.5MHz line as maincpu and ay1"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "video timing/sync logic (pixel clock)",
+        "path": "divide-by-2 to 6MHz pixel clock driving the 384x272 raster"
+      }
+    ]
+  },
+  "memory_map": {
+    "maincpu": [
+      {
+        "range": [
+          "0x0000",
+          "0x077f"
+        ],
+        "type": "ram",
+        "name": "Work RAM"
+      },
+      {
+        "range": [
+          "0x0780",
+          "0x07df"
+        ],
+        "type": "ram",
+        "name": "Sprite RAM",
+        "notes": "96 bytes, 4 bytes/entry, 24 sprites max"
+      },
+      {
+        "range": [
+          "0x07e0",
+          "0x0fff"
+        ],
+        "type": "ram",
+        "name": "Work RAM (extended)"
+      },
+      {
+        "range": [
+          "0x1000",
+          "0x17ff"
+        ],
+        "type": "ram_video",
+        "name": "Foreground videoram",
+        "notes": "code low byte at tile_index, code hi bit + unused at 0x400+tile_index"
+      },
+      {
+        "range": [
+          "0x1800",
+          "0x1fff"
+        ],
+        "type": "ram_video",
+        "name": "Background videoram",
+        "notes": "two selectable 0x400 pages (video_control bit2), code hi bit at page|0x200|tile_index"
+      },
+      {
+        "range": [
+          "0x2000",
+          "0x2000"
+        ],
+        "type": "io_read",
+        "name": "IN0 - player 1 joystick/buttons/coins",
+        "notes": "mirrored every 0x10 across 0x2000-0x3fff0 (mirror mask 0x1f8f)"
+      },
+      {
+        "range": [
+          "0x2000",
+          "0x2000"
+        ],
+        "type": "io_write",
+        "name": "Video control register",
+        "notes": "D0-1 fg text color, D2 bg page select, D4-5 coin counters, D7 screen flip; shared as video_control"
+      },
+      {
+        "range": [
+          "0x2010",
+          "0x2010"
+        ],
+        "type": "io_read",
+        "name": "IN1 - player 2 joystick/buttons/start"
+      },
+      {
+        "range": [
+          "0x2010",
+          "0x2010"
+        ],
+        "type": "io_write",
+        "name": "IRQ acknowledge",
+        "notes": "clears maincpu IRQ0 line"
+      },
+      {
+        "range": [
+          "0x2020",
+          "0x2020"
+        ],
+        "type": "io_read",
+        "name": "DSW0 dipswitches"
+      },
+      {
+        "range": [
+          "0x2020",
+          "0x2020"
+        ],
+        "type": "io_write",
+        "name": "Background Y scroll register",
+        "notes": "write-only, shared as scroll; applied via tilemap set_scrolly"
+      },
+      {
+        "range": [
+          "0x2030",
+          "0x2030"
+        ],
+        "type": "io_read",
+        "name": "DSW1 dipswitches"
+      },
+      {
+        "range": [
+          "0x2030",
+          "0x2030"
+        ],
+        "type": "io_write",
+        "name": "AY8910 shared data latch",
+        "device": "ay1/ay2",
+        "notes": "write-only, shared as ay8910_data; combined with select latch at 0x2040 to emulate discrete BDIR/BC1 bus"
+      },
+      {
+        "range": [
+          "0x2040",
+          "0x2040"
+        ],
+        "type": "io_write",
+        "name": "AY8910 BDIR/BC1 select latch",
+        "device": "ay1/ay2",
+        "notes": "bit5/4 -> ay1 BDIR/BC1 edge, bit7/6 -> ay2 BDIR/BC1 edge; no read handler (nopr)"
+      },
+      {
+        "range": [
+          "0x2050",
+          "0x2050"
+        ],
+        "type": "io_rw",
+        "name": "Unused I/O slot",
+        "notes": "no read or write handler installed (noprw)"
+      },
+      {
+        "range": [
+          "0x2060",
+          "0x207f"
+        ],
+        "type": "ram",
+        "name": "Palette RAM",
+        "notes": "32 bytes, low half of the 64-entry palette (mirror mask 0x1f80)"
+      },
+      {
+        "range": [
+          "0x4000",
+          "0xffff"
+        ],
+        "type": "rom",
+        "name": "Program ROM"
+      }
+    ]
+  },
+  "video": {
+    "screen": {
+      "type": "raster",
+      "width": 256,
+      "height": 240,
+      "pixel_clock_hz": 6000000,
+      "htotal": 384,
+      "vtotal": 272,
+      "refresh_hz": 57.444853
+    },
+    "layers": [
+      {
+        "name": "sprites",
+        "type": "sprites",
+        "tile_size": [
+          16,
+          16
+        ],
+        "color_depth": 3,
+        "ram": "spriteram",
+        "max_per_frame": 24,
+        "notes": "gfx region fgtiles_sprites decoded with 16x16 3bpp planar layout, palette base 0, 2 color groups (16 colors); code = (attr bit4<<4)|spriteram[+1], flip bits in attr"
+      },
+      {
+        "name": "fg (text)",
+        "type": "tilemap",
+        "tile_size": [
+          8,
+          8
+        ],
+        "map_size": [
+          32,
+          32
+        ],
+        "color_depth": 3,
+        "ram": "fg_videoram",
+        "notes": "transparent pen 0, palette base 32, color from video_control bits 0-1, TILEMAP_SCAN_COLS_FLIP_X"
+      },
+      {
+        "name": "bg (scroll)",
+        "type": "tilemap",
+        "tile_size": [
+          16,
+          16
+        ],
+        "map_size": [
+          16,
+          32
+        ],
+        "color_depth": 3,
+        "ram": "bg_videoram",
+        "scroll_registers": [
+          "0x2020"
+        ],
+        "notes": "palette base 16, 1 color group; two selectable ROM pages via video_control bit2; per-row Y flip when (tile_index & 0x10)"
+      }
+    ],
+    "palette": {
+      "type": "ram",
+      "entries": 64,
+      "indirect": false,
+      "notes": "Low 32 entries (index bit5=0) are RAM-backed (paletteram, CPU writable); high 32 entries (index bit5=1) are hardwired from the 32-byte color PROM (ic61/hlo/82s123). Both halves feed the same 3-3-2 resistor-weighted RGB DAC (R/G taps 4.7k/3.3k/1.5k, B taps 3.3k/1.5k)."
+    },
+    "custom_chips": [
+      "HMC20 (video timing/sync generator, inferred from driver comment - not confirmed by schematic text)"
+    ],
+    "dac_type": "Resistor ladder (weighted-resistor network), not a dedicated DAC IC — consistent with pcb.notes stating no custom video silicon was identified, only discrete TTL plus the color PROM",
+    "dac_bit_depth": 3,
+    "sync_generation": "board_spec attributes video timing/sync to a chip labeled 'HMC20' from a driver source comment, but flags it as unconfirmed by schematic text; the schematic PDF available for this run is scanned with no OCR layer, so this could not be verified or contradicted",
+    "layer_priority_logic": "confidence: low — not independently derivable from the available (scanned, textless) schematic; board_spec's video_control register bits (fg text color, bg page select) suggest priority is likely register/CPU-controlled rather than a dedicated priority PROM, but no PROM beyond the 32-byte color PROM (ic61/82s123) appears in the ROM listing to support a hardware priority-encoder theory"
+  },
+  "audio": {
+    "chips": [
+      {
+        "id": "ay1",
+        "type": "AY8910",
+        "clock_hz": 1500000,
+        "channels": 3,
+        "output_type": "resistor_network"
+      },
+      {
+        "id": "ay2",
+        "type": "AY8910",
+        "clock_hz": 1500000,
+        "channels": 3,
+        "output_type": "resistor_network"
+      }
+    ],
+    "mixing": "mono - both AY8910s summed to a single speaker channel at 0.30 gain each; the two chips share one 8-bit data bus (0x2030) and are addressed by toggling a select latch (0x2040) that emulates each chip's discrete BDIR/BC1 pins"
+  },
+  "custom_ics": [],
+  "roms": {
+    "sets": [
+      {
+        "setname": "mystston",
+        "description": "Mysterious Stones: Dr. John's Adventure",
+        "isParent": true,
+        "isBootleg": false,
+        "regions": [
+          {
+            "name": "maincpu",
+            "files": [
+              {
+                "name": "rom6.bin",
+                "offset": "0x4000",
+                "size": "0x2000",
+                "crc": "7bd9c6cd"
+              },
+              {
+                "name": "rom5.bin",
+                "offset": "0x6000",
+                "size": "0x2000",
+                "crc": "a83f04a6"
+              },
+              {
+                "name": "rom4.bin",
+                "offset": "0x8000",
+                "size": "0x2000",
+                "crc": "46c73714"
+              },
+              {
+                "name": "rom3.bin",
+                "offset": "0xa000",
+                "size": "0x2000",
+                "crc": "34f8b8a3"
+              },
+              {
+                "name": "rom2.bin",
+                "offset": "0xc000",
+                "size": "0x2000",
+                "crc": "bfd22cfc"
+              },
+              {
+                "name": "rom1.bin",
+                "offset": "0xe000",
+                "size": "0x2000",
+                "crc": "fb163e38"
+              }
+            ]
+          },
+          {
+            "name": "fgtiles_sprites",
+            "files": [
+              {
+                "name": "ms6",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "85c83806"
+              },
+              {
+                "name": "ms9",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "b146c6ab"
+              },
+              {
+                "name": "ms7",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "d025f84d"
+              },
+              {
+                "name": "ms10",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "d85015b5"
+              },
+              {
+                "name": "ms8",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "53765d89"
+              },
+              {
+                "name": "ms11",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "919ee527"
+              }
+            ]
+          },
+          {
+            "name": "bgtiles",
+            "files": [
+              {
+                "name": "ms12",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "72d8331d"
+              },
+              {
+                "name": "ms13",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "845a1f9b"
+              },
+              {
+                "name": "ms14",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "822874b0"
+              },
+              {
+                "name": "ms15",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "4594e53c"
+              },
+              {
+                "name": "ms16",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "2f470b0f"
+              },
+              {
+                "name": "ms17",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "38966d1b"
+              }
+            ]
+          },
+          {
+            "name": "proms",
+            "files": [
+              {
+                "name": "ic61",
+                "offset": "0x0000",
+                "size": "0x0020",
+                "crc": "e802d6cf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "setname": "myststono",
+        "description": "Mysterious Stones: Dr. Kick in Adventure",
+        "isParent": false,
+        "cloneOf": "mystston",
+        "isBootleg": false,
+        "regions": [
+          {
+            "name": "maincpu",
+            "files": [
+              {
+                "name": "bb00.ic102",
+                "offset": "0x4000",
+                "size": "0x2000",
+                "crc": "6dacc05f"
+              },
+              {
+                "name": "bw01.ic90",
+                "offset": "0x6000",
+                "size": "0x2000",
+                "crc": "a3546df7"
+              },
+              {
+                "name": "bw02.ic76",
+                "offset": "0x8000",
+                "size": "0x2000",
+                "crc": "43bc6182"
+              },
+              {
+                "name": "bw03.ic75",
+                "offset": "0xa000",
+                "size": "0x2000",
+                "crc": "9322222b"
+              },
+              {
+                "name": "bw04.ic62",
+                "offset": "0xc000",
+                "size": "0x2000",
+                "crc": "47cefe9b"
+              },
+              {
+                "name": "bw05.ic61",
+                "offset": "0xe000",
+                "size": "0x2000",
+                "crc": "b37ae12b"
+              }
+            ]
+          },
+          {
+            "name": "fgtiles_sprites",
+            "files": [
+              {
+                "name": "bw06.ic105",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "85c83806"
+              },
+              {
+                "name": "bw09.ic93",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "b146c6ab"
+              },
+              {
+                "name": "bw07.ic107",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "d025f84d"
+              },
+              {
+                "name": "bw10.ic95",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "d85015b5"
+              },
+              {
+                "name": "bw08.ic109",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "53765d89"
+              },
+              {
+                "name": "bw11.ic97",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "919ee527"
+              }
+            ]
+          },
+          {
+            "name": "bgtiles",
+            "files": [
+              {
+                "name": "bw12.ic15",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "72d8331d"
+              },
+              {
+                "name": "bw13.ic20",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "845a1f9b"
+              },
+              {
+                "name": "bw14.ic24",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "822874b0"
+              },
+              {
+                "name": "bw15.ic29",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "4594e53c"
+              },
+              {
+                "name": "bw16.ic34",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "2f470b0f"
+              },
+              {
+                "name": "bw17.ic38",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "38966d1b"
+              }
+            ]
+          },
+          {
+            "name": "proms",
+            "files": [
+              {
+                "name": "hlo.ic61",
+                "offset": "0x0000",
+                "size": "0x0020",
+                "crc": "e802d6cf"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "setname": "myststonoi",
+        "description": "Mysterious Stones: Dr. Kick in Adventure (Itisa PCB)",
+        "isParent": false,
+        "cloneOf": "mystston",
+        "isBootleg": false,
+        "regions": [
+          {
+            "name": "maincpu",
+            "files": [
+              {
+                "name": "14.bin",
+                "offset": "0x4000",
+                "size": "0x2000",
+                "crc": "78bf2a58"
+              },
+              {
+                "name": "13.bin",
+                "offset": "0x6000",
+                "size": "0x2000",
+                "crc": "a3546df7"
+              },
+              {
+                "name": "12.bin",
+                "offset": "0x8000",
+                "size": "0x2000",
+                "crc": "43bc6182"
+              },
+              {
+                "name": "11.bin",
+                "offset": "0xa000",
+                "size": "0x2000",
+                "crc": "9322222b"
+              },
+              {
+                "name": "8.bin",
+                "offset": "0xc000",
+                "size": "0x2000",
+                "crc": "47cefe9b"
+              },
+              {
+                "name": "7.bin",
+                "offset": "0xe000",
+                "size": "0x2000",
+                "crc": "b37ae12b"
+              }
+            ]
+          },
+          {
+            "name": "fgtiles_sprites",
+            "files": [
+              {
+                "name": "18.bin",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "85c83806"
+              },
+              {
+                "name": "15.bin",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "b146c6ab"
+              },
+              {
+                "name": "19.bin",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "d025f84d"
+              },
+              {
+                "name": "16.bin",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "d85015b5"
+              },
+              {
+                "name": "20.bin",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "53765d89"
+              },
+              {
+                "name": "17.bin",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "919ee527"
+              }
+            ]
+          },
+          {
+            "name": "bgtiles",
+            "files": [
+              {
+                "name": "1.bin",
+                "offset": "0x00000",
+                "size": "0x2000",
+                "crc": "72d8331d"
+              },
+              {
+                "name": "2.bin",
+                "offset": "0x02000",
+                "size": "0x2000",
+                "crc": "845a1f9b"
+              },
+              {
+                "name": "3.bin",
+                "offset": "0x04000",
+                "size": "0x2000",
+                "crc": "822874b0"
+              },
+              {
+                "name": "4.bin",
+                "offset": "0x06000",
+                "size": "0x2000",
+                "crc": "4594e53c"
+              },
+              {
+                "name": "5.bin",
+                "offset": "0x08000",
+                "size": "0x2000",
+                "crc": "2f470b0f"
+              },
+              {
+                "name": "6.bin",
+                "offset": "0x0a000",
+                "size": "0x2000",
+                "crc": "38966d1b"
+              }
+            ]
+          },
+          {
+            "name": "proms",
+            "files": [
+              {
+                "name": "82s123.bin",
+                "offset": "0x0000",
+                "size": "0x0020",
+                "crc": "e802d6cf"
+              }
+            ]
+          },
+          {
+            "name": "pals",
+            "files": [
+              {
+                "name": "pal10l8.bin",
+                "offset": "0x0000",
+                "size": "0x002c",
+                "crc": "2d4d034c"
+              },
+              {
+                "name": "pal16r4-1.bin",
+                "offset": "0x0000",
+                "size": "0x0104",
+                "crc": "c57555d0"
+              },
+              {
+                "name": "pal16r4-2.bin",
+                "offset": "0x0000",
+                "size": "0x0104",
+                "crc": "c57555d0"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "inputs": {
+    "buttons": 2,
+    "button_names": [
+      "Button 1 (Fire)",
+      "Button 2 (Kick)"
+    ],
+    "players": 2,
+    "coins": 2,
+    "controls": [
+      {
+        "type": "joy",
+        "player": 1,
+        "buttons": 2,
+        "ways": "4"
+      },
+      {
+        "type": "joy",
+        "player": 2,
+        "buttons": 2,
+        "ways": "4"
+      }
+    ]
+  },
+  "dipswitches": [
+    {
+      "name": "Lives",
+      "tag": "DSW0",
+      "mask": 1,
+      "dipvalues": [
+        {
+          "name": "3",
+          "value": 1,
+          "default": true
+        },
+        {
+          "name": "5",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "3",
+      "values": [
+        "3",
+        "5"
+      ]
+    },
+    {
+      "name": "Difficulty",
+      "tag": "DSW0",
+      "mask": 2,
+      "dipvalues": [
+        {
+          "name": "Easy",
+          "value": 2,
+          "default": true
+        },
+        {
+          "name": "Hard",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Easy",
+      "values": [
+        "Easy",
+        "Hard"
+      ]
+    },
+    {
+      "name": "Demo Sounds",
+      "tag": "DSW0",
+      "mask": 4,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 4,
+          "default": false
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": true
+        }
+      ],
+      "default": "On",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW0",
+      "mask": 8,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 8,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW0",
+      "mask": 16,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 16,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW0",
+      "mask": 32,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 32,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW0",
+      "mask": 64,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 64,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW0",
+      "mask": 128,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 128,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Coin A",
+      "tag": "DSW1",
+      "mask": 3,
+      "dipvalues": [
+        {
+          "name": "2 Coins/1 Credit",
+          "value": 0,
+          "default": false
+        },
+        {
+          "name": "1 Coin/1 Credit",
+          "value": 3,
+          "default": true
+        },
+        {
+          "name": "1 Coin/2 Credits",
+          "value": 2,
+          "default": false
+        },
+        {
+          "name": "1 Coin/3 Credits",
+          "value": 1,
+          "default": false
+        }
+      ],
+      "default": "1 Coin/1 Credit",
+      "values": [
+        "2 Coins/1 Credit",
+        "1 Coin/1 Credit",
+        "1 Coin/2 Credits",
+        "1 Coin/3 Credits"
+      ]
+    },
+    {
+      "name": "Coin B",
+      "tag": "DSW1",
+      "mask": 12,
+      "dipvalues": [
+        {
+          "name": "2 Coins/1 Credit",
+          "value": 0,
+          "default": false
+        },
+        {
+          "name": "1 Coin/1 Credit",
+          "value": 12,
+          "default": true
+        },
+        {
+          "name": "1 Coin/2 Credits",
+          "value": 8,
+          "default": false
+        },
+        {
+          "name": "1 Coin/3 Credits",
+          "value": 4,
+          "default": false
+        }
+      ],
+      "default": "1 Coin/1 Credit",
+      "values": [
+        "2 Coins/1 Credit",
+        "1 Coin/1 Credit",
+        "1 Coin/2 Credits",
+        "1 Coin/3 Credits"
+      ]
+    },
+    {
+      "name": "Unused",
+      "tag": "DSW1",
+      "mask": 16,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 16,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 0,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Flip Screen",
+      "tag": "DSW1",
+      "mask": 32,
+      "dipvalues": [
+        {
+          "name": "Off",
+          "value": 0,
+          "default": true
+        },
+        {
+          "name": "On",
+          "value": 32,
+          "default": false
+        }
+      ],
+      "default": "Off",
+      "values": [
+        "Off",
+        "On"
+      ]
+    },
+    {
+      "name": "Cabinet",
+      "tag": "DSW1",
+      "mask": 64,
+      "dipvalues": [
+        {
+          "name": "Upright",
+          "value": 0,
+          "default": true
+        },
+        {
+          "name": "Cocktail",
+          "value": 64,
+          "default": false
+        }
+      ],
+      "default": "Upright",
+      "values": [
+        "Upright",
+        "Cocktail"
+      ]
+    }
+  ],
+  "mame": {
+    "sourcefile": "technos/mystston.cpp",
+    "status": {
+      "status": "good",
+      "emulation": "good",
+      "savestate": "supported"
+    },
+    "history": "Arcade Video game published 42 years ago:\r\n\r\nMysterious Stones (c) 1984 Technos Japan Corp.\r\n\r\n- TECHNICAL -\r\n\r\nGame ID : TA-0010\r\n\r\nMain CPU : MOS Technology M6502 (@ 1.5 Mhz)\r\nSound Chips : (2x) General Instrument AY8910 (@ 1.5 Mhz)\r\n\r\nPlayers : 2\r\nControl : 4-way joystick\r\nButtons : 2\r\n\r\n- TRIVIA -\r\n\r\nMysterious Stones was released in November 1984.\r\n\r\nWith this game, Technos Japan developers pushed even further the peculiar gameplay elements on which \"Eggs\" and \"Scrambled Egg\" were based, by putting them into an Indy-themed, multi-room mayhem.\r\n\r\n- UPDATES -\r\n\r\nThe subtitle is slightly different between the new and old versions. The new version says 'Dr. John's Adventure' while the old version says 'Dr. Kick In Adventure'.\r\n\r\n- TIPS AND TRICKS -\r\n\r\nBy hitting the lonely idol statue in the opening screen with a headbonk, a secret message will be displayed: 'A short cut to a treasure room. Go into an upper or a lower entrance. And... Go on left!'. This obviously refers to the game map. As a side note, the older version of the game displays the same message in Japanese katakana characters, an eloquent proof that the older Mysterious Stones set was meant for use in Japan only.\r\n\r\n- CONTRIBUTE -\r\n\r\nEdit this entry: https://www.arcade-history.com/game/1714/?o=2",
+    "mameinfo": "$mame\r\n0.66 [David Haywood]\r\n\r\n0.25 [Nicola Salmoria]\r\n\r\n\r\nWIP:\r\n\r\n- 0.288: Added TODO note, vblank flag was wrong way around here too (eg. it started writing gfx at the start of active display area instead of at start of vblank). Assume it has 16 interrupts per frame. Added TODO note about vcount timing [hap]. Changed description to 'Mysterious Stones: Dr. John's Adventure' and clones 'Mysterious Stones - Dr. Kick in Adventure' to 'Mysterious Stones: Dr. Kick in Adventure' and 'Mysterious Stones - Dr. Kick in Adventure (Itisa PCB)' to 'Mysterious Stones: Dr. Kick in Adventure (Itisa PCB)'.\r\n\r\n- 0.247: Consolidate driver into single file. Minor cleanups [Osso].\r\n\r\n- 0.239: Correct rom labels for clone 'Mysterious Stones - Dr. Kick in Adventure' [The Dumping Union]. Cleanup driver. Fixed 'Lives' dipswitch for clone Mysterious Stones - Dr. Kick in Adventure (Itisa PCB) [Osso].\r\n\r\n- 0.222: READ/WRITE macros removal [Osso].\r\n\r\n- 0.208: Removed MACHINE_CONFIG macros [Osso].\r\n\r\n- 0.204: Removed AY8910 MCFG macros [Osso].\r\n\r\n- 0.199: Eliminated machine().device usage [AJR].\r\n\r\n- 0.149: Ricky2001 (from AUMAP) added clone Mysterious Stones - Dr. Kick in Adventure (Itisa PCB).\r\n\r\n- 0.141u1: Brian Troha added DIP locations to Mysterious Stones.\r\n\r\n- 0.135u4: Kold666 fixed Mysterious Stones music is faster than original PCB and VSYNC does not match original PCB. Changed VSync to 57.444853 Hz.\r\n\r\n- 0.133u1: Renamed (myststno) to (myststono).\r\n\r\n- 0.123u4: Mysterious Stones gets the \"full treatment\" [Zsolt Vasvari]. Changed VSync to 68.933824 Hz and palettesize to 64 colors.\r\n\r\n- 0.113u2: Changed VSync to 57.444853 Hz.\r\n\r\n- 0.105u3: David Haywood fixed missing gfx tiles in Mysterious Stones. Added 6x 'Unused' dipswitches.\r\n\r\n- 21st April 2006: David Haywood - Mysterious Stones has been broken since around MAME 0.77u2. There are a few bad tiles near the start of the first levels, and by the 2nd level it's apparently unplayable. I took a quick glance at the vidhrdw\\mystston.c file, the mystston_videoram2_w handler is broken. As an optimization the code is meant to check if the contents of videoram is the same as the value being written to it, and then only write it if it isn't the same. The mystston_videoram2_w handler is checking the wrong video ram. Fixing the bug was a_very_ simple one line fix.\r\n\r\n- 0.77u2: Curt Coder improved Mysterious Stone driver based on schematics. Changed VSync to 57.444855 Hz. Added 'Flip Screen' dipswitch and removed all 'Unknown' dipswitches. Changed description to 'Mysterious Stones - Dr. John's Adventure' and clone (set 2) to 'Mysterious Stones - Dr. Kick in Adventure'.\r\n\r\n- 25th November 2003: Curt Coder added correct video timings to the Mysterious Stones driver.\r\n\r\n- 0.66: David Haywood added Mysterious Stones (set 1). Changed 'Mysterious Stones' to clone 'Mysterious Stones (set 2)'. Renamed (mystston) to (myststno).\r\n\r\n-  6th January 2002: David Haywood added a newer version ROM set to the Mysterious Stones driver.\r\n\r\n- 24th August 2000: Zsolt Vasvari converted Exed Exes and Mysterious Stones to the tilemap system.\r\n\r\n- 0.36b4: Zsolt Vasvari fixed colors in Mysterious Stones (that's the game which has been broken for the longest time). Changed palettesize to 56 colors. Added color PROM ($0) and 'Demo Sounds' dipswitch.\r\n\r\n- 0.34b3: Nicola Salmoria added sound to Mysterious Stones. Added 2x AY-8910 sound.\r\n\r\n- 0.28: Mike Balfour added high score saving to Mysterious Stones.\r\n\r\n- 0.27: InputPorts now can automatically handle VBlank bits [Nicola Salmoria]. No more need to write custom code. Mysterious Stones use this feature.\r\n\r\n- 0.25: Nicola Salmoria added 'Mysterious Stones' (Technos 1984). Game is playable with accurate colors and no sound. Control: Arrows = Move around, CTRL = Fire and ALT = Kick.\r\n\r\n\r\nLEVELS: 3\r\n\r\n\r\nOther Emulators:\r\n\r\n* FB Neo\r\n\r\n\r\nRecommended Games (Adventure):\r\n\r\nTreasure Island\r\n\r\nTreasure Island (DECO Cassette)\r\n\r\nTutankham\r\n\r\nBongo\r\n\r\nMysterious Stones: Dr. John's Adventure\r\n\r\nGo Go Mr. Yamaguchi\r\n\r\nIndiana Jones and the Temple of Doom\r\n\r\nPitfall II\r\n\r\nSpelunker\r\n\r\nSpelunker II\r\n\r\nBaluba-louk no Densetsu\r\n\r\nSolomon's Key\r\n\r\nThe Cliffhanger - Edward Randy\r\n\r\nGrowl\r\n\r\nRail Chase\r\n\r\nRail Chase 2\r\n\r\nSpin Master / Miracle Adventure\r\n\r\nAction Hollywood (Temples of Chaos)\r\n\r\nMagical Truck Adventure\r\n\r\nThe Maze of the Kings\r\n\r\n\r\nRecommended Games (Maze Extra):\r\n\r\nTutankham\r\n\r\nCavelon\r\n\r\nMoney Money\r\n\r\nUncle Poo\r\n\r\nThe Berenstain Bears in Bigpaw's Cave\r\n\r\nHero\r\n\r\nMysterious Stones: Dr. John's Adventure\r\n\r\nPaperboy\r\n\r\nSpatter\r\n\r\nThe Tower of Druaga\r\n\r\nThe Return of Ishtar\r\n\r\nGauntlet\r\n\r\nGauntlet (PlayChoice-10)\r\n\r\nGauntlet II\r\n\r\nIndiana Jones and the Temple of Doom\r\n\r\nMetro-Cross\r\n\r\nShackled\r\n\r\nKid no Hore Hore Daisakusen\r\n\r\nBooby Kids (Magnet System)\r\n\r\nMustache Boy\r\n\r\nMarchen Maze\r\n\r\nPenguin Adventure\r\n\r\nUfo Senshi Yohko Chan\r\n\r\nDoraemon - Meikyuu Dai Sakusen (TourVision)\r\n\r\nBatman (TourVision)\r\n\r\nEvil Stone\r\n\r\nMagical Crystals\r\n\r\nMesopotamia (TourVision)\r\n\r\nPoizone\r\n\r\nSkweek (TourVision)\r\n\r\nSuper Duck\r\n\r\nPastel Island\r\n\r\nTwinkle Tale (bootleg of Mega Drive version)\r\n\r\nCheese Chase\r\n\r\nPrincess Clara Daisakusen\r\n\r\nBurglar X\r\n\r\nPanic Park\r\n\r\nMonkey Ball\r\n\r\nMonster Farm Jump\r\n\r\n\r\nRomset: 144 kb / 19 files / 82.9 zip\r\n\r\n$end",
+    "clone_status": {
+      "myststono": {
+        "status": "good",
+        "emulation": "good",
+        "savestate": "supported"
+      },
+      "myststonoi": {
+        "status": "good",
+        "emulation": "good",
+        "savestate": "supported"
+      }
+    }
+  },
+  "pcb": {
+    "board_count": 2,
+    "custom_chips": [],
+    "revisions": [
+      "TA-0010-P1-1 / TA-0010-P2-1 (Technos original)",
+      "Itisa PCB (unlicensed Spanish clone)"
+    ],
+    "notes": "No custom silicon identified; discrete TTL logic plus a 32-byte color PROM. Schematics.pdf reference exists but is a scanned image with no extractable text."
+  },
+  "jtframe_hints": {
+    "recommended_template": "No existing JTframe core matches this early discrete-logic Technos hardware closely enough to use as a template; build from the base jtframe scaffold using a generic 6502 + raster video pipeline.",
+    "reference_jtcore": "jt49 (AY-3-8910) for both sound chips; no CPU-core match in the current public registry",
+    "sdram_layout": {
+      "bank0": "maincpu program ROM (0x4000-0xffff region, 0x10000 total, only upper 48KB populated)",
+      "bank1": "fgtiles_sprites graphics ROM (0xc000, 3bpp planar, shared by fg tilemap and sprite layer)",
+      "bank2": "bgtiles graphics ROM (0xc000, 3bpp planar, background tilemap)",
+      "bank3": "unused — color PROM (0x20 bytes) is small enough to load into BRAM instead of SDRAM"
+    },
+    "ioctl_notes": "Color PROM (32B) and palette RAM (32B) are tiny — keep the whole 64-entry palette in BRAM/LUTs rather than SDRAM. No NVRAM/EEPROM in this design (no battery-backed high scores). DIP switches map straight to core status bits.",
+    "clock_requirements": "Single 12MHz master XTAL; CPU (M6502) and both AY8910s run at master/8 = 1.5MHz; pixel clock is master/2 = 6MHz driving the 384x272 total raster (256x240 visible, 57.44Hz refresh).",
+    "special_considerations": [
+      "No M6502 CPU core is present in the public JTframe module registry (fx68k, jtkcpu, HUC6280, jtdsp16, jt680x listed) — an external 6502-compatible core (e.g. T65) must be sourced separately.",
+      "Both AY8910s share a single 8-bit data bus (0x2030) and are selected via a latch (0x2040) that emulates discrete BDIR/BC1 pin toggling on each chip — implement as a small edge-detect FSM rather than simple chip-select decoding.",
+      "Palette is split: low 32 entries are CPU-writable RAM, high 32 entries are hardwired from the color PROM; both halves feed the same 3-3-2 resistor-weighted RGB DAC.",
+      "Background tilemap selects between two ROM-backed pages via video_control bit 2, and applies per-row Y flip based on tile_index bit 4 — an unusual per-row flip baked into the tile decode rather than a global flag.",
+      "Screen flip (video_control bit 7) is XORed against a DIP switch bit (DSW1 bit 5) rather than driven by either source alone — cocktail flip logic must combine both.",
+      "Interrupts are a software-timed 16-per-frame scanline chain (starting at line 8, spaced every 16 lines, cleared via a write to 0x2010) rather than a single vblank IRQ — the FPGA timing generator needs to reproduce this cadence, not just pulse once per frame."
+    ]
+  },
+  "_enrichment_summary": "Very little could be confidently added beyond what MAME Scout already extracted for this board. The only PCB documentation available (Mysterious Stones Schematics.pdf) is a scanned image with no text layer, so it could not be parsed for register maps, pinouts, or component values. The supplied 'Hardware Reference' material is the generic MAME netlist engine changelog (audio/nl_konami.cpp, solver internals, etc.) and does not reference Technos, the TA-0010 board, or any AY8910/discrete-logic circuitry used by this game — mystston's audio path is driven directly by two AY8910 PSGs via MAME's ay8910 device, not the netlist analog solver, so none of that changelog is applicable here. Enrichment below is limited to restructuring/clarifying facts already implicit in board_spec.json (clock fan-out, DAC topology) without introducing new unverified data. No custom ICs are enriched because board_spec.custom_ics is empty and no schematic text was available to identify any.",
+  "origin": "native"
+}

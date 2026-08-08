@@ -1,0 +1,9 @@
+[ARC]
+RBF=S16B
+MOD=0
+NAME=FANTZN2XP
+DEFAULT=0xFFFF0000
+CONF="P1,Switches"
+CONF="P1OQR,Lives,240,4,2,3"
+CONF="P1OUV,Difficulty,Hardest,Hard,Easy,Normal"
+BUTTONS="Shot,Bomb,-,-,-,Start,Coin,Core credits"

@@ -1,0 +1,30 @@
+squash:
+  - get:
+      - jtsquash_game.v
+      - squash_main.v
+      - squash_addr_decode.v
+      - squash_vram_decrypt.v
+      - squash_iolatch.v
+      - squash_oki.v
+      - squash_inputs.v
+      - squash_vmem.v
+      - squash_video_top.v
+      - squash_video.v
+      - squash_video_timing.v
+      - squash_tilemap.v
+      - squash_palette.v
+      - squash_gfx_decode.v
+      - squash_sprite_layer.v
+      - squash_sprite_engine.v
+      - squash_68kdtack.v
+jt6295: null
+fx68k:
+  - get:
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v

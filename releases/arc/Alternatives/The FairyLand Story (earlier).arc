@@ -1,0 +1,20 @@
+[ARC]
+RBF=FLSTORY
+MOD=0
+NAME=FLSTORYO
+DEFAULT=0xF800EC0000
+CONF="P1,Switches"
+CONF="P1OGH,Bonus Life,30k 100k,30k 150k,50k 150k,70k 150k"
+CONF="P1OI,Free Play,On,Off"
+CONF="P1OJK,Lives,Infinite,3,4,5"
+CONF="P1OL,Debug Mode,On,Off"
+CONF="P1OM,Flip Screen,On,Off"
+CONF="P1ON,Cabinet,Cocktail,Upright"
+CONF="P1OOR,Coin A,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OSV,Coin B,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OZ,Allow Continue,No,Yes"
+CONF="P1Oa,Attract Animation,Off,On"
+CONF="P1Ob,Leave Off,On,Off"
+CONF="P1Oc,Invulnerability,On,Off"
+CONF="P1Od,Coin Slots,1,2"
+BUTTONS="Shot,Jump,-,-,-,-,Start,Coin,Core credits"

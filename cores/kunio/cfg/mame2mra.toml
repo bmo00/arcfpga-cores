@@ -1,0 +1,37 @@
+[global]
+# info = [ {tag="mameversion", value="0229"} ]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "renegade.cpp" ]
+
+[Audio]
+volume = [
+    { machine="renegade", value=0xFF },
+]
+
+[buttons]
+Names = [
+    { names="Hit Left,Jump,Hit Right"},
+]
+
+[dipsw]
+# Flip screen not supported. Hard-wired as disabled in jtkunio_main
+delete = [{names=[ "Unused", "Unknown", "Flip Screen", "Cabinet" ]}]
+bitcnt = 16
+
+
+[ROM]
+# values starting with $ refer to macro definitions in the .def file
+# or arguments passed to mame2mra
+regions = [
+    { name="audiocpu", start="JTFRAME_BA1_START", No_offset=true },
+    { name="adpcm",    start="PCM_START"},
+    { name="chars",    start="JTFRAME_BA2_START" },
+    { name="sprites",  start="JTFRAME_BA3_START" },
+]
+
+order = [
+    "maincpu", "audiocpu", "adpcm", "chars",
+    "tiles", "sprites", "mcu:mcu"
+]

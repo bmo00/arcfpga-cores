@@ -1,0 +1,20 @@
+[ARC]
+RBF=FLSTORY
+MOD=0
+NAME=ONNA34ROA
+DEFAULT=0x8000C00000
+CONF="P1,Switches"
+CONF="P1OGH,Bonus Life,200k 200k,200k 300k,100k 200k,200k 100k"
+CONF="P1OI,Free Play,Off,On"
+CONF="P1OJK,Lives,3,2,1,Endless"
+CONF="P1OM,Flip Screen,On,Off"
+CONF="P1ON,Cabinet,Cocktail,Upright"
+CONF="P1OOR,Coin A,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OSV,Coin B,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OW,Invulnerability,Off,On"
+CONF="P1OX,Rack Test,Off,On"
+CONF="P1OZ,Freeze,Off,On"
+CONF="P1Oa,Coinage Display,On,Off"
+CONF="P1Obc,Difficulty,Normal,Easy,Difficult,Very Difficult"
+CONF="P1Od,Coinage,A only,A and B"
+BUTTONS="Hit,Throw,-,-,-,-,Start,Coin,Core credits"
