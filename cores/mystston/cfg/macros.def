@@ -1,0 +1,71 @@
+# Core identity
+# Uppercase core id per project convention -- no JT prefix (see GAMETOP note
+# below for why the generated SDRAM wrapper still needs one)
+CORENAME=MYSTSTON
+
+# mem.yaml is present for this core (SDRAM banks + BRAM), so jtframe's
+# auto-generated game_sdram.v wrapper hardcodes a "jt" prefix on both the
+# wrapper file itself (jtmystston_game_sdram.v) and the game_top module it
+# instantiates inside (jtmystston_game). GAMETOP must be set explicitly here,
+# otherwise jtframe derives it from CORENAME with no "jt" prefix, which will
+# not match and Quartus fails with an undefined-entity error on u_game.
+GAMETOP=jtmystston_game_sdram
+
+# Active video resolution (board_spec.video.screen: 256x240 visible pixels,
+# out of a 384x272 total raster, 57.44Hz refresh)
+JTFRAME_WIDTH=256
+JTFRAME_HEIGHT=240
+
+# Expected refresh rate for jtsim's frame-rate
+JTFRAME_RATE=57.44
+
+# Cabinet is vertically mounted (board_spec.board.orientation="vertical")
+JTFRAME_VERTICAL
+
+# Pixel clock is master/2 = 6MHz (board_spec.clocks.derived "pixel clock")
+JTFRAME_PXLCLK=6
+
+# Highest MAME button index the driver reads: Button 1 (Fire) and
+# Button 2 (Kick) are both wired, so JTFRAME_BUTTONS=2
+JTFRAME_BUTTONS=2
+
+# SDRAM bank 0 (maincpu): mame2mra.toml's own ROM merge pads this region out
+# to the FULL 0x10000-byte (64KB) CPU address space (0x4000 bytes of 0xFF
+# filler for the unused-by-SDRAM 0x0000-0x3fff range, matching workram/BRAM,
+# then the 6 program ROMs) -- NOT just the 0xC000 bytes of real ROM content
+# alone. Verified against the real .mra's total file size (0x28020) and each
+# region's real length; the previous 0xC000/0x18000/0x24000 values here
+# assumed no padding and put every later bank 0x4000 bytes too early,
+# silently reading CPU high addresses (incl. the reset vector at 0xfffc)
+# out of gfx1's tile data instead of the real program ROM.
+#
+# SDRAM bank 1: fgtiles_sprites graphics ROM (6 x 0x2000 = 0xC000 bytes),
+# shared by the foreground text tilemap and the sprite layer, right after
+# bank 0's full 0x10000 bytes.
+JTFRAME_BA1_START=0x10000
+
+# SDRAM bank 2: bgtiles graphics ROM (0xC000 bytes), placed right after
+# bank 1 ends (0x10000 + 0xC000 = 0x1c000)
+JTFRAME_BA2_START=0x1c000
+
+# The 32-byte color PROM is far too small to justify its own SDRAM bank, so
+# it is routed to BRAM instead (see jtframe_hints.ioctl_notes). This macro
+# only marks where its data lands in the ROM download stream / mame2mra.toml
+# region offset -- placed right after bank 2 ends (0x1c000 + 0xC000 = 0x28000)
+JTFRAME_PROM_START=0x28000
+
+# Build & OSD options
+JTFRAME_RELEASE=1
+JTFRAME_OSD_NOLOGO=1
+
+JTFRAME_OSD_NOCREDITS=0
+JTFRAME_OSD_TEST=0
+[mister]
+# JTFRAME_ARX/ARY declare the PRE-rotation (native/landscape) aspect ratio —
+# jtframe_dip.v's own hdmi_arx/hdmi_ary swap ARX and ARY for us once rotation
+# is actually engaged (`swap_ar = ~tate | ~vertical`, false when rotating, so
+# the ternaries pick the *other* declared value). Declaring 3,4 directly (as
+# if already portrait) got swapped a second time by that logic, landing back
+# on a 4:3 landscape aspect on MiSTer instead of the intended tall portrait.
+JTFRAME_ARX=4
+JTFRAME_ARY=3

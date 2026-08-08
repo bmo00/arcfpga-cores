@@ -1,0 +1,34 @@
+{
+  "enrichment_summary": "Very little could be confidently added beyond what MAME Scout already extracted for this board. The only PCB documentation available (Mysterious Stones Schematics.pdf) is a scanned image with no text layer, so it could not be parsed for register maps, pinouts, or component values. The supplied 'Hardware Reference' material is the generic MAME netlist engine changelog (audio/nl_konami.cpp, solver internals, etc.) and does not reference Technos, the TA-0010 board, or any AY8910/discrete-logic circuitry used by this game — mystston's audio path is driven directly by two AY8910 PSGs via MAME's ay8910 device, not the netlist analog solver, so none of that changelog is applicable here. Enrichment below is limited to restructuring/clarifying facts already implicit in board_spec.json (clock fan-out, DAC topology) without introducing new unverified data. No custom ICs are enriched because board_spec.custom_ics is empty and no schematic text was available to identify any.",
+  "clocks_enriched": {
+    "distribution": [
+      {
+        "source": "12MHz master XTAL",
+        "target": "maincpu (M6502)",
+        "path": "divide-by-8 (direct hardwired divider, per MAME driver clock config)"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "ay1 (AY8910)",
+        "path": "divide-by-8, shares the same derived 1.5MHz line as maincpu"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "ay2 (AY8910)",
+        "path": "divide-by-8, shares the same derived 1.5MHz line as maincpu and ay1"
+      },
+      {
+        "source": "12MHz master XTAL",
+        "target": "video timing/sync logic (pixel clock)",
+        "path": "divide-by-2 to 6MHz pixel clock driving the 384x272 raster"
+      }
+    ]
+  },
+  "video_enriched": {
+    "dac_type": "Resistor ladder (weighted-resistor network), not a dedicated DAC IC — consistent with pcb.notes stating no custom video silicon was identified, only discrete TTL plus the color PROM",
+    "dac_bit_depth": 3,
+    "sync_generation": "board_spec attributes video timing/sync to a chip labeled 'HMC20' from a driver source comment, but flags it as unconfirmed by schematic text; the schematic PDF available for this run is scanned with no OCR layer, so this could not be verified or contradicted",
+    "layer_priority_logic": "confidence: low — not independently derivable from the available (scanned, textless) schematic; board_spec's video_control register bits (fg text color, bg page select) suggest priority is likely register/CPU-controlled rather than a dedicated priority PROM, but no PROM beyond the 32-byte color PROM (ic61/82s123) appears in the ROM listing to support a hardware priority-encoder theory"
+  },
+  "additional_notes": "The 3-3-2 RGB DAC resistor values (R/G: 4.7k/3.3k/1.5k, B: 3.3k/1.5k) are already documented in board_spec.video.palette.notes and are not restated as new findings here beyond restructuring into the dac_type/dac_bit_depth fields. No mixing resistor, filter cap, or connector pinout data could be added for audio/pcb sections since the only PCB doc provided (schematic PDF) has no extractable text layer and the hardware reference document supplied is unrelated (generic netlist engine changelog, not board-specific and not applicable since this board's audio is emulated via the ay8910 device rather than MAME's netlist/discrete solver)."
+}

@@ -1,0 +1,19 @@
+[ARC]
+RBF=JTCPS1
+MOD=0
+NAME=FFIGHTU1
+DEFAULT=0x9FF4FF0000
+CONF="P1,Switches"
+CONF="P1OOQ,Difficulty Level 1,Hardest,Harder,Hard,Medium,Normal,Easy,Easier,Easiest"
+CONF="P1ORS,Difficulty Level 2,Hardest,Hard,Normal,Easy"
+CONF="P1OTU,Bonus,None,100k & *200k,200k,100k"
+CONF="P1OWX,Lives,1,4,3,2"
+CONF="P1OY,Free Play,On,Off"
+CONF="P1OZ,Freeze,On,Off"
+CONF="P1Oa,Flip Screen,On,Off"
+CONF="P1Ob,Demo Sounds,On,Off"
+CONF="P1Oc,Allow Continue,Yes,No"
+CONF="P1Od,Game Mode,Test,Game"
+CONF="P1Ok,Service Mode,On,Off"
+CONF="P1Oe,PCB type,88617A,89626A"
+BUTTONS="Attack,Jump,Evade,-,-,-,Start,Coin,Core credits"

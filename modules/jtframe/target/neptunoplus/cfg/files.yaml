@@ -1,0 +1,13 @@
+jtframe/target/mist:
+jtframe/target/neptunoplus:
+  - get:
+    - pll.qip
+    - neptunoplus.sdc
+    - jtframe_neptunoplus_top.sv
+jtframe:
+  - from: video
+    when: [ JTFRAME_LF_BUFFER ]
+    get:
+      - jtframe_lfbuf_bram.v
+      - jtframe_lfbuf_bram_ctrl.v
+      - jtframe_lfbuf_line.v
