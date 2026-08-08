@@ -964,10 +964,14 @@
         "commit": null
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
         "commit": null
       },
       "neptunoplus": {
+        "date": "2026-08-08",
+        "commit": null
+      },
+      "mister": {
         "date": "2026-08-08",
         "commit": null
       }
@@ -1140,6 +1144,14 @@
       "arc": {
         "date": "2026-08-08",
         "commit": null
+      },
+      "mister": {
+        "date": "2026-08-08",
+        "commit": null
+      },
+      "mra": {
+        "date": "2026-08-08",
+        "commit": null
       }
     }
   },
@@ -1163,7 +1175,11 @@
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       },
       "mra": {
-        "date": "2026-08-07",
+        "date": "2026-08-08",
+        "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
+      },
+      "mister": {
+        "date": "2026-08-08",
         "commit": "b3739ec05f65cd0481a4bebc5f5f62334a821abf"
       }
     }

@@ -25,28 +25,9 @@ Cores are listed per FPGA target. Core names follow the release `.rbf` filename 
 
 | Core | Parents | Description | Last update |
 |---|---|---|---|
-| [`1942`](cores/1942/README.md) | 1942 (Revision B) (`1942`)<br>Pirate Ship Higemaru (`higemaru`)<br>Vulgus (set 1) (`vulgus`) | Capcom, 1984 | 2026-08-08 |
-| [`1943`](cores/1943/README.md) | 1943 Kai: Midway Kaisen (Japan) (`1943kai`)<br>1943: The Battle of Midway (Euro) (`1943`)<br>1943: The Battle of Midway Mark II (US) (`1943mii`) | Capcom, 1987 | 2026-08-08 |
-| [`aliens`](cores/aliens/README.md) | Aliens (World set 1) (`aliens`)<br>Crime Fighters (World 2 players) (`crimfght`)<br>Gang Busters (set 1) (`gbusters`)<br>Super Contra (set 1) (`scontra`)<br>Thunder Cross (set 1) (`thunderx`) | Konami, 1988–1990 | 2026-08-08 |
-| [`asterix`](cores/asterix/) | Asterix (ver EAD) (jlrh) (`asterix`) | Konami, 1992 | 2026-08-08 |
-| [`biocom`](cores/biocom/README.md) | Bionic Commando (Euro) (`bionicc`) | Capcom, 1987 | 2026-08-08 |
-| [`btiger`](cores/btiger/README.md) | Black Tiger (`blktiger`) | Capcom, 1987 | 2026-08-08 |
-| [`circus`](cores/circus/) | Circus Charlie (level select, set 1) (`circusc`) | Konami, 1984 | 2026-08-08 |
-| [`commnd`](cores/commnd/README.md) | Commando (World) (`commando`) | Capcom, 1985 | 2026-08-08 |
-| [`comsc`](cores/comsc/README.md) | Combat School (joystick) (`combatsc`) | Konami, 1988 | 2026-08-08 |
-| [`contra`](cores/contra/README.md) | Contra (US - Asia, set 1) (`contra`) | Konami, 1987 | 2026-08-08 |
-| [`cop`](cores/cop/) | Hippodrome (US) (`hippodrm`)<br>Robocop (World, revision 4) (`robocop`) | Data East Corporation, 1988–1989 | 2026-08-08 |
-| [`cps15`](cores/cps15/README.md) | Cadillacs and Dinosaurs (World 930201) (`dino`)<br>Muscle Bomber Duo: Ultimate Team Battle (World 931206) (`mbombrd`)<br>Saturday Night Slam Masters (World 930713) (`slammast`)<br>Tenchi wo Kurau II: Sekiheki no Tatakai (CPS Changer, Japan 921031) (`wofch`)<br>The Punisher (World 930422) (`punisher`)<br>Warriors of Fate (World 921031) (`wof`) | Capcom, 1992–1994 | 2026-08-08 |
-| [`dd`](cores/dd/README.md) | Double Dragon (World set 1) (`ddragon`) | Technos Japan (Taito license), 1987 | 2026-08-08 |
-| [`dd2`](cores/dd2/README.md) | Double Dragon II: The Revenge (World) (`ddragon2`) | Technos Japan, 1988 | 2026-08-08 |
-| [`ddrbl`](cores/ddrbl/) | Double Dribble (`ddribble`) | Konami, 1986 | 2026-08-08 |
-| [`flane`](cores/flane/README.md) | Fast Lane (`fastlane`) | Konami, 1987 | 2026-08-08 |
-| [`flstory`](cores/flstory/README.md) | Bronx (bootleg of Cycle Shooting) (`bronx`)<br>Cycle Shooting (`cyclshtg`)<br>N.Y. Captor (rev 2) (`nycaptor`)<br>Onna Sanshirou - Typhoon Gal (rev 1) (`onna34ro`)<br>Rumba Lumber (rev 1) (`rumba`)<br>The FairyLand Story (`flstory`)<br>Victorious Nine (`victnine`) | Taito, 1984–1986 | 2026-08-08 |
-| [`fround`](cores/fround/README.md) | The Final Round (version M) (`fround`) | Konami, 1988 | 2026-08-08 |
-| [`gaiden`](cores/gaiden/README.md) | Raiga - Strato Fighter (US) (`stratof`)<br>Shadow Warriors (World, set 1) (`shadoww`)<br>Wild Fang - Tecmo Knight (World?) (`wildfang`) | Tecmo, 1988–1991 | 2026-08-08 |
-| [`jtajax`](cores/ajax/) | Ajax (`ajax`) | Konami, 1987 | 2026-08-08 |
-| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (bmo00) (`mystston`) | Technos Japan, 1984 | 2026-08-07 |
-| [`riders`](cores/riders/README.md) | Golfing Greats (World, version L) (`glfgreat`)<br>Lightning Fighters (World) (`lgtnfght`)<br>Sunset Riders (4 Players ver EAC) (`ssriders`)<br>Teenage Mutant Ninja Turtles: Turtles in Time (4 Players ver UAA) (`tmnt2`) | Konami, 1990–1991 | 2026-08-07 |
+| [`mystston`](cores/mystston/README.md) | Mysterious Stones: Dr. John's Adventure (bmo00) (`mystston`) | Technos Japan, 1984 | 2026-08-08 |
+| [`rastan`](cores/rastan/README.md) | Operation Wolf (World, rev 2, set 1) (`opwolf`)<br>Rainbow Islands (rev 1) (`rbisland`)<br>Rainbow Islands - Extra Version (`rbislande`)<br>Rastan (World Rev 1) (`rastan`) | Taito Corporation, 1987–1988 | 2026-08-08 |
+| [`riders`](cores/riders/README.md) | Golfing Greats (World, version L) (`glfgreat`)<br>Lightning Fighters (World) (`lgtnfght`)<br>Sunset Riders (4 Players ver EAC) (`ssriders`)<br>Teenage Mutant Ninja Turtles: Turtles in Time (4 Players ver UAA) (`tmnt2`) | Konami, 1990–1991 | 2026-08-08 |
 
 ### NeptUNO+
 
