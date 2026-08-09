@@ -415,11 +415,11 @@
     },
     "releases": {
       "arc": {
-        "date": "2026-08-08",
+        "date": "2026-08-09",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       },
       "neptunoplus": {
-        "date": "2026-08-08",
+        "date": "2026-08-09",
         "commit": "df6c5d9b2962c5b42a9272cfa24032382305fe9e"
       }
     }

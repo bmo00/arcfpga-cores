@@ -54,7 +54,7 @@ alternate/clone set.
 | [`jtcomsc`](cores/comsc/README.md) | [1](doc/game_list.md#comsc) | Konami, 1988 — JOTEGO port | 2026-08-08 |
 | [`jtcontra`](cores/contra/README.md) | [1](doc/game_list.md#contra) | Konami, 1987 — JOTEGO port | 2026-08-08 |
 | [`jtcop`](cores/cop/) | [2](doc/game_list.md#cop) | Data East Corporation, 1988–1989 — JOTEGO port | 2026-08-08 |
-| [`jtcps1`](cores/cps1/README.md) | [33](doc/game_list.md#cps1) | Capcom, 1988–1996 — JOTEGO port | 2026-08-08 |
+| [`jtcps1`](cores/cps1/README.md) | [33](doc/game_list.md#cps1) | Capcom, 1988–1996 — JOTEGO port | 2026-08-09 |
 | [`jtcps15`](cores/cps15/README.md) | [6](doc/game_list.md#cps15) | Capcom, 1992–1994 — JOTEGO port | 2026-08-08 |
 | [`jtcps2`](cores/cps2/README.md) | [44](doc/game_list.md#cps2) | Capcom, 1993–2004 — JOTEGO port | 2026-08-08 |
 | [`jtdd`](cores/dd/README.md) | [1](doc/game_list.md#dd) | Technos Japan (Taito license), 1987 — JOTEGO port | 2026-08-08 |
