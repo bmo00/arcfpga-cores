@@ -1,0 +1,12 @@
+--- hdl/rtl/m58715ip.v
++++ hdl/rtl/m58715ip.v
+@@ -121,7 +121,8 @@
+    .t1_i(I_T1),
+    .p2_i(I_P2),
+    .p2_o(O_P2),
+-   .p2_low_imp_o(),
++   .p2l_low_imp_o(),
++   .p2h_low_imp_o(),
+    .p1_i(I_P1),
+    .p1_o(O_P1),
+    .p1_low_imp_o(),

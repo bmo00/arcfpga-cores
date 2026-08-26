@@ -1,0 +1,84 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Quiz Sangokushi (Japan)</name>
+    <setname>qsangoku</setname>
+    <mameversion>0282</mameversion>
+    <year>1991</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <rbf>jtpang</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="qsangoku.zip" md5="None" asm_md5="65c583023229081e5bd29a61f88c38af">
+        <!--  -->
+        <part>
+            23 45 67 01 23 45 67 01
+            18 28 18 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
+        <part name="q4-05c.14f" crc="e1d010b4"/>
+        <part name="q4-06.15f" crc="a0301849"/>
+        <part name="q4-07.16f" crc="2941ef5b"/>
+        <part repeat="0x38000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- oki - starts at 0x80000 - length 0x80000 (19 bits) -->
+        <part name="q4-01.2d" crc="5d0d07d8"/>
+        <part repeat="0x60000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- chars - starts at 0x100000 - length 0x200000 (21 bits) -->
+        <interleave output="16">
+            <part name="q4-08.8h" crc="dc84c6cb" map="01"/>
+            <part name="q4-10.10h" crc="c20a27a8" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="q4-18.8j" crc="ca3acea5" map="01"/>
+            <part name="q4-20.10j" crc="b02dc6a1" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="q4-09.9h" crc="cbb6234c" map="01"/>
+            <part name="q4-11.11h" crc="4ff66aed" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="q4-19.9j" crc="1fd92b7d" map="01"/>
+            <part name="q4-21.11j" crc="432b1dc1" map="10"/>
+        </interleave>
+        <part repeat="0x100000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sprites - starts at 0x300000 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="q4-16.2j" crc="77342320" map="01"/>
+            <part name="q4-17.3j" crc="1275c436" map="10"/>
+        </interleave>
+        <!-- eeprom - starts at 0x340000 -->
+        <!-- Total 0x340000 bytes - 3328 kBytes -->
+    </rom>
+    <nvram index="2" size="128"/>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

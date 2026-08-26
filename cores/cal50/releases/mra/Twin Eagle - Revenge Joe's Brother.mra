@@ -1,0 +1,94 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>Twin Eagle - Revenge Joe's Brother</name>
+    <setname>twineagl</setname>
+    <mameversion>0282</mameversion>
+    <year>1988</year>
+    <manufacturer>Seta (Taito license)</manufacturer>
+    <players>2</players>
+    <rbf>jtcal50</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="twineagl.zip" md5="None" asm_md5="eef359395dbe7c24afc0fab2f2c87f91">
+        <!--  -->
+        <part>
+            00 00 00 00 00 00 00 00
+            00 00 00 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0xA0000 (20 bits) -->
+        <interleave output="16">
+            <part name="ua2-1" crc="5c3fe531" map="12"/>
+        </interleave>
+        <part repeat="0x20000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0xA0000 - length 0x40000 (18 bits) -->
+        <part name="ua2-2" crc="783ca84e"/>
+        <part repeat="0x3E000"> FF</part>
+        <!-- PCM_START -->
+        <!-- x1snd - starts at 0xE0000 - length 0x100000 (20 bits) -->
+        <part name="ua2-11" crc="624e6057"/>
+        <part name="ua2-12" crc="3068ff64"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- tiles - starts at 0x1E0000 - length 0x200000 (21 bits) -->
+        <interleave output="16">
+            <part name="ua2-8" crc="7d3a8d73" map="01"/>
+            <part name="ua2-7" crc="fce56907" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ua2-10" crc="5bbe1f56" map="01"/>
+            <part name="ua2-9" crc="a451eae9" map="10"/>
+        </interleave>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sprites - starts at 0x3E0000 - length 0x100000 (20 bits) -->
+        <interleave output="32">
+            <part name="ua2-4" crc="8b7532d6" map="0001"/>
+            <part name="ua2-3" crc="1124417a" map="0010"/>
+            <part name="ua2-6" crc="99d8dbba" map="0100"/>
+            <part name="ua2-5" crc="6e450d28" map="1000"/>
+        </interleave>
+        <!-- Total 0x4E0000 bytes - 4992 kBytes -->
+    </rom>
+    <nvram index="2" size="26636"/>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="f7,bf">
+        <DSW/>
+        <dip name="Flip Screen" bits="1" ids="On,Off"/>
+        <dip name="Service Mode" bits="2" ids="On,Off"/>
+        <dip name="Cabinet" bits="3" ids="Upright,Cocktail"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/6,1/4,1/3,1/2"/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Bonus Life" bits="10,11" ids="500K Every 1500K,1000K Only,500K Only,Never"/>
+        <dip name="Lives" bits="12,13" ids="2,1,5,3"/>
+        <dip name="Licensor Option" bits="14" ids="Option 2,Option 1"/>
+        <dip name="Coinage Type" bits="15" ids="Coin Mode 2,Coin Mode 1"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

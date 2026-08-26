@@ -1,0 +1,54 @@
+[global]
+author=["jotego"]
+beta = true
+
+[parse]
+sourcefile=[ "karnov.cpp" ]
+skip.bootlegs=true
+
+[Audio]
+volume = [
+    { machine="chelnov", value=0x48 },
+    { machine="karnov", value=0x82 },
+    { machine="wndrplnt", value=0x60 },
+]
+
+[buttons]
+Names = [ { machine="karnov",   names="Shoot,Jump,Twist"},
+          { machine="wndrplnt", names="Fire,Bomb"},
+          { machine="chelnov",  names="Shoot,Jump,Twist"} ]
+
+[rbf]
+name="jtkarnov"
+
+[dipsw]
+bitcnt = 16
+delete=[{names=["Unused","Unknown"]}]
+
+[ROM]
+regions = [
+    { name="maincpu", No_offset=true, width=16, reverse=true   },
+    { name="audiocpu", start="JTFRAME_BA1_START" },
+
+    { name="char", start="JTFRAME_BA2_START", width=32, No_offset=true, singleton=true },
+    { name="tiles", start="SCR_START", width=32, No_offset=true, sequence=[2,1,0,3] },
+
+    { machine="wndrplnt", name="sprites", start="JTFRAME_BA3_START", width=32, sequence=[
+        4, 2, 0, 6,
+        5, 3, 1, 7
+         ] },
+
+    { machine="chelnov", name="sprites", start="JTFRAME_BA3_START", width=32, sequence=[
+        2, 1, 0, 3 ] },
+    # on Karnov, the first half has 64kB-long ROMs, the second uses 32kB memories
+    { machine="karnov", name="sprites", start="JTFRAME_BA3_START", width=32, sequence=[
+        4, 2, 0, 6,
+        5, 3, 1, 7,
+        5, 3, 1, 7 ] },
+    { name="mcu",  start="JTFRAME_PROM_START" },
+]
+
+order = [
+    "maincpu", "audiocpu",
+    "char", "tiles", "sprites", "mcu", "proms"
+]

@@ -1,0 +1,95 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>DownTown / Mokugeki (joystick hack)</name>
+    <setname>downtownj</setname>
+    <mameversion>0282</mameversion>
+    <year>1989</year>
+    <manufacturer>Seta</manufacturer>
+    <players>2</players>
+    <rbf>jtcal50</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="downtownj.zip|downtown.zip" md5="None" asm_md5="7b324a3a36906ac25bb4a5659aacfe64">
+        <!--  -->
+        <part>
+            00 00 00 00 00 00 00 00
+            00 00 00 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0xA0000 (20 bits) -->
+        <interleave output="16">
+            <part name="ud2-001-003.11c" crc="e7d5fa5f" map="01"/>
+            <part name="ud2-001-000.3c" crc="f1965260" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="u31.8b" crc="6a050240" map="01"/>
+            <part name="u37.9b" crc="73047657" map="10"/>
+        </interleave>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0xA0000 - length 0x40000 (18 bits) -->
+        <part name="ud2-002-004.17c" crc="bbd538b1"/>
+        <!-- PCM_START -->
+        <!-- x1snd - starts at 0xE0000 - length 0x100000 (20 bits) -->
+        <part name="ud2-001-011-t07.14n" crc="9c9ff69f"/>
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- tiles - starts at 0x1E0000 - length 0x200000 (21 bits) -->
+        <interleave output="16">
+            <part name="ud2-001-009-t05.8n" crc="aee6c581" map="01"/>
+            <part name="ud2-001-010-t06.9n" crc="3d399d54" map="10"/>
+        </interleave>
+        <part repeat="0x100000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sprites - starts at 0x3E0000 - length 0x200000 (21 bits) -->
+        <interleave output="32">
+            <part name="ud2-001-005-t01.2n" crc="77e6d249" map="0001"/>
+            <part name="ud2-001-006-t02.3n" crc="6e381bf2" map="0010"/>
+            <part name="ud2-001-007-t03.5n" crc="737b4971" map="0100"/>
+            <part name="ud2-001-008-t04.6n" crc="99b9d757" map="1000"/>
+        </interleave>
+        <!-- Total 0x5E0000 bytes - 6016 kBytes -->
+    </rom>
+    <nvram index="2" size="26636"/>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="f6,bf">
+        <DSW/>
+        <dip name="Sales" bits="0" ids="World,Japan Only"/>
+        <dip name="Flip Screen" bits="1" ids="On,Off"/>
+        <dip name="Service Mode" bits="2" ids="On,Off"/>
+        <dip name="Demo Sounds" bits="3" ids="On,Off"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/6,1/4,1/3,1/2"/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Bonus Life" bits="10,11" ids="50K Every 150K,100K Only,50K Only,Never"/>
+        <dip name="Lives" bits="12,13" ids="4,2,5,3"/>
+        <dip name="World License" bits="14" ids="Taito,Romstar"/>
+        <dip name="Coinage Type" bits="15" ids="2,1"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

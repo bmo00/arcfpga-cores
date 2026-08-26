@@ -1,0 +1,63 @@
+bucky:
+  - get:
+      - bucky_colmix.v
+      - bucky_k053252.v
+      - bucky_k054000.v
+      - bucky_k054338.v
+      - bucky_k056832_romrd.v
+      - bucky_main.v
+      - bucky_video.v
+      - cowboys_k056832.v
+      - cowboys_lyro64.v
+      - cowboys_obj.v
+      - cowboys_sound.v
+      - jtbucky_game.v
+      - k053246_dma.v
+      - k053246_mmr.v
+      - k053247.v
+      - k053247_buffer.v
+      - k053247_draw.v
+      - k053247_gate.v
+      - k053251.v
+      - k054539.v
+      - k053246.sv
+      - k053246_scan.sv
+riders:
+  - get:
+      - jt054321.v
+jt51:
+  - get:
+      - files.yaml
+jteeprom:
+  - get:
+      - jt5911.sv
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_m68k.yaml
+      - jtframe_z80.yaml
+  - from: video
+    get:
+      - jtframe_vtimer.v
+  - from: ram
+    get:
+      - jtframe_dual_nvram16.v
+  - from: video/layouts
+    get:
+      - jtframe_8x8x4_packed_msb.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_rpwp_ram.v
+      - jtframe_obj_buffer.v
+      - jtframe_dual_ram16.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack.v
+      - jtframe_68kdtack_cen.v
+  - from: video
+    get:
+      - jtframe_objdraw.v
+fx68k:
+  - get:
+      - files.yaml

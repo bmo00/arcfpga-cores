@@ -1,0 +1,86 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="bmo00" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>Mysterious Stones: Dr. Kick in Adventure (Itisa PCB)</name>
+    <setname>myststonoi</setname>
+    <mameversion>0289</mameversion>
+    <year>1984</year>
+    <manufacturer>Technos Japan</manufacturer>
+    <players>2</players>
+    <rbf>mystston</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="myststonoi.zip|mystston.zip" md5="None" asm_md5="dd3c50b97cd93946a3744599d9a92a91">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part repeat="0x4000"> FF</part>
+        <part name="14.bin" crc="78bf2a58"/>
+        <part name="13.bin" crc="a3546df7"/>
+        <part name="12.bin" crc="43bc6182"/>
+        <part name="11.bin" crc="9322222b"/>
+        <part name="8.bin" crc="47cefe9b"/>
+        <part name="7.bin" crc="b37ae12b"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- fgtiles_sprites - starts at 0x10000 - length 0xC000 (16 bits) -->
+        <part name="18.bin" crc="85c83806"/>
+        <part name="15.bin" crc="b146c6ab"/>
+        <part name="19.bin" crc="d025f84d"/>
+        <part name="16.bin" crc="d85015b5"/>
+        <part name="20.bin" crc="53765d89"/>
+        <part name="17.bin" crc="919ee527"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- bgtiles - starts at 0x1C000 - length 0xC000 (16 bits) -->
+        <part name="1.bin" crc="72d8331d"/>
+        <part name="2.bin" crc="845a1f9b"/>
+        <part name="3.bin" crc="822874b0"/>
+        <part name="4.bin" crc="4594e53c"/>
+        <part name="5.bin" crc="2f470b0f"/>
+        <part name="6.bin" crc="38966d1b"/>
+        <!-- JTFRAME_PROM_START -->
+        <!-- proms - starts at 0x28000 - length 0x20 (5 bits) -->
+        <part name="82s123.bin" crc="e802d6cf"/>
+        <!-- pals - starts at 0x28020 - length 0x234 (10 bits) -->
+        <part name="pal10l8.bin" crc="2d4d034c"/>
+        <part name="pal16r4-1.bin" crc="c57555d0"/>
+        <part name="pal16r4-2.bin" crc="c57555d0"/>
+        <!-- Total 0x28254 bytes - 160 kBytes -->
+    </rom>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="fb,9f">
+        <DSW0/>
+        <dip name="Lives" bits="0" ids="5,3"/>
+        <dip name="Difficulty" bits="1" ids="Hard,Easy"/>
+        <dip name="Demo Sounds" bits="2" ids="On,Off"/>
+        <DSW1/>
+        <dip name="Coin A" bits="8,9" ids="2/1,1/3,1/2,1/1"/>
+        <dip name="Coin B" bits="10,11" ids="2/1,1/3,1/2,1/1"/>
+        <dip name="Flip Screen" bits="13" ids="Off,On"/>
+        <dip name="Cabinet" bits="14" ids="Upright,Cocktail"/>
+    </switches>
+    <buttons names="Fire,Kick,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

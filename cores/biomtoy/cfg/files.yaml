@@ -1,0 +1,26 @@
+biomtoy:
+  - get:
+      - jtbiomtoy_game.v
+      - biomtoy_main.v
+      - biomtoy_addr_decode.v
+      - biomtoy_vram_decrypt.v
+      - biomtoy_iolatch.v
+      - biomtoy_oki.v
+      - biomtoy_inputs.v
+      - biomtoy_vmem.v
+      - biomtoy_video_top.v
+      - biomtoy_video.v
+      - biomtoy_video_timing.v
+      - biomtoy_tilemap.v
+      - biomtoy_palette.v
+      - biomtoy_gfx_decode.v
+      - biomtoy_sprite_layer.v
+      - biomtoy_sprite_engine.v
+      - biomtoy_68kdtack.v
+jt6295: null
+fx68k: []
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v

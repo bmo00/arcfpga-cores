@@ -1,0 +1,5 @@
+[ARC]
+RBF=ASTERIX
+MOD=32
+NAME=ASTERIXEAC
+BUTTONS="Punch,Jump,Start,Coin,Core credits"

@@ -1,0 +1,341 @@
+/* SPDX-FileCopyrightText: 2026 Jose Tejada Gomez
+ * SPDX-License-Identifier: GPL-3.0-or-later
+ * Date: 17-8-2020 */
+
+`ifndef SIM_SCR1POS
+    `define SIM_SCR1POS 0
+`endif
+
+`ifndef SIM_SCR2POS
+    `define SIM_SCR2POS 0
+`endif
+
+module jtsf_game(
+    `include "jtframe_game_ports.inc" // see $JTFRAME/hdl/inc/jtframe_game_ports.inc
+);
+
+wire [ 8:0] V, H;
+
+wire [13:1] cpu_AB;
+wire        char_cs, col_uw,  col_lw;
+wire        charon, scr1on, scr2on, objon;
+wire        flip;
+wire [15:0] char_dout, cpu_dout;
+wire [15:0] scr1posh, scr2posh;
+wire        rd, cpu_cen;
+wire        char_busy;
+reg         vrom_reg;
+// MCU interface
+wire [15:0] mcu_din;
+wire [ 7:0] mcu_dout;
+wire        mcu_wr, mcu_acc;
+wire [15:1] mcu_addr;
+wire        mcu_brn, mcu_DMAONn, mcu_ds;
+
+
+reg snd_rst, video_rst, main_rst; // separate reset signals to aid recovery time
+reg cabcfg=0; // 1 for SFJ style inputs
+
+assign debug_view = {7'd0,cabcfg};
+assign dip_flip   = flip;
+assign vrom_cs    = vrom_reg;
+
+always @(negedge clk) begin
+    snd_rst   <= rst;
+end
+
+always @(negedge clk) begin
+    main_rst  <= rst;
+    video_rst <= rst;
+end
+
+always @(posedge clk) begin
+    vrom_reg <= LVBL || (V==9'hf0 || V==9'hf );
+end
+
+wire       RnW;
+// sound
+wire [7:0] snd_latch;
+wire       snd_nmi_n;
+
+// OBJ
+wire        OKOUT, blcnten, obj_br, bus_ack;
+wire [12:0] obj_AB;
+wire [15:0] oram_dout;
+reg         prog_obj;
+
+// This distinguishes the games using SFJ-style input from the rest
+localparam [2:0] CABCFG=1;
+
+always @(posedge clk) begin
+    if( header && prog_addr[2:0]==CABCFG && prog_we ) cabcfg  <= prog_data[0];
+end
+
+wire [15:0] scrposh, scrposv, dmaout;
+wire        UDSWn, LDSWn;
+
+jtsf_main u_main (
+    .rst        ( main_rst      ),
+    .clk        ( clk           ),
+    .cpu_cen    ( cpu_cen       ),
+    .cabcfg     ( debug_bus[7] ? debug_bus[0] : cabcfg ),
+    // Timing
+    .flip       ( flip          ),
+    .V          ( V             ),
+    .LHBL       ( LHBL          ),
+    .LVBL       ( LVBL          ),
+    // sound
+    .snd_latch  ( snd_latch     ),
+    .snd_nmi_n  ( snd_nmi_n     ),
+    // CPU data bus
+    .cpu_dout   ( cpu_dout      ),
+    // CHAR
+    .char_dout  ( char_dout     ),
+    .char_cs    ( char_cs       ),
+    .char_busy  ( char_busy     ),
+    .UDSWn      ( UDSWn         ),
+    .LDSWn      ( LDSWn         ),
+    // SCROLL
+    .scr1posh   ( scr1posh      ),
+    .scr2posh   ( scr2posh      ),
+    // GFX enable signals
+    .charon     ( charon        ),
+    .scr1on     ( scr1on        ),
+    .scr2on     ( scr2on        ),
+    .objon      ( objon         ),
+    // OBJ - bus sharing
+    .obj_AB     ( obj_AB        ),
+    .cpu_AB     ( cpu_AB        ),
+    .dmaout     ( dmaout        ),
+    .OKOUT      ( OKOUT         ),
+    .blcnten    ( blcnten       ),
+    .obj_br     ( obj_br        ),
+    .bus_ack    ( bus_ack       ),
+    .col_uw     ( col_uw        ),
+    .col_lw     ( col_lw        ),
+    // MCU interface
+    .mcu_din    ( mcu_din       ),
+    .mcu_dout   ( mcu_dout      ),
+    .mcu_wr     ( mcu_wr        ),
+    .mcu_acc    ( mcu_acc       ),
+    .mcu_addr   ( mcu_addr      ),
+    .mcu_brn    ( mcu_brn       ),
+    .mcu_DMAONn ( mcu_DMAONn    ),
+    .mcu_ds     ( mcu_ds        ),
+    // ROM
+    .addr       ( main_addr     ),
+    // RAM
+    .ram_cs     ( ram_cs        ),
+    .ram_addr   ( ram_addr      ),
+    .ram_data   ( ram_data      ),
+    .ram_din    ( ram_din       ),
+    .ram_dsn    ( ram_dsn       ),
+    .ram_we     ( ram_we        ),
+    .ram_ok     ( ram_ok        ),
+    // ROM
+    .rom_cs     ( main_cs       ),
+    .rom_data   ( main_data     ),
+    .rom_ok     ( main_ok       ),
+    // Cabinet input
+    .cab_1p     ( cab_1p[1:0]   ),
+    .coin       ( coin[1:0]     ),
+    .service    ( service       ),
+    .joystick1  ( joystick1     ),
+    .joystick2  ( joystick2     ),
+
+    .RnW        ( RnW           ),
+    // DIP switches
+    .dip_pause  ( dip_pause     ),
+    .dipsw_a    ( dipsw[31:16]  ),
+    .dipsw_b    ( dipsw[15: 0]  )
+);
+
+`ifndef NOMCU
+    jtsf_mcu u_mcu(
+        .rst        ( rst24     ),
+        .clk        ( clk24     ),
+        .clk_rom    ( clk       ),
+        .rst_cpu    ( rst       ),
+        .clk_cpu    ( clk       ),
+        // Main CPU interface
+        .mcu_din    ( mcu_din   ),
+        .mcu_dout   ( mcu_dout  ),
+        .mcu_wr     ( mcu_wr    ),
+        .mcu_acc    ( mcu_acc   ),
+        .mcu_addr   ( mcu_addr  ),
+        .mcu_brn    ( mcu_brn   ),
+        .mcu_DMAONn ( mcu_DMAONn),
+        .mcu_ds     ( mcu_ds    ),
+        .ram_ok     ( ram_ok    ),
+        // ROM programming
+        .prog_addr  ( prog_addr[11:0] ),
+        .prom_din   ( prog_data[7:0]  ),
+        .prom_we    ( prom_we         )
+    );
+`else
+    assign mcu_brn = 1;
+`endif
+
+jtsf_sound u_sound (
+    .rst            ( snd_rst        ),
+    .clk            ( clk            ),
+    // Interface with main CPU
+    .snd_latch      ( snd_latch      ),
+    .snd_nmi_n      ( snd_nmi_n      ),
+    // ROM
+    .rom_addr       ( snd1_addr      ),
+    .rom_data       ( snd1_data      ),
+    .rom_cs         ( snd1_cs        ),
+    .rom_ok         ( snd1_ok        ),
+    // ROM 2
+    .rom2_addr      ( snd2_addr      ),
+    .rom2_data      ( snd2_data      ),
+    .rom2_cs        ( snd2_cs        ),
+    .rom2_ok        ( snd2_ok        ),
+    // sound output
+    .fm_l           ( fm_l           ),
+    .fm_r           ( fm_r           ),
+    .pcm0           ( pcm0           ),
+    .pcm1           ( pcm1           )
+);
+
+`ifndef NOVIDEO
+jtsf_video u_video(
+    .rst        ( video_rst     ),
+    .clk        ( clk           ),
+    .pxl2_cen   ( pxl2_cen      ),
+    .pxl_cen    ( pxl_cen       ),
+    .cpu_cen    ( cpu_cen       ),
+    .cpu_AB     ( cpu_AB        ),
+    .V          ( V             ),
+    .H          ( H             ),
+    .RnW        ( RnW           ),
+    .UDSWn      ( UDSWn         ),
+    .LDSWn      ( LDSWn         ),
+    .flip       ( flip          ),
+    .cpu_dout   ( cpu_dout      ),
+    // GFX enable signals
+    .charon     ( charon        ),
+    .scr1on     ( scr1on        ),
+    .scr2on     ( scr2on        ),
+    .objon      ( objon         ),
+    // CHAR
+    .char_cs    ( char_cs       ),
+    .char_dout  ( char_dout     ),
+    .char_addr  ( char_addr     ),
+    .char_data  ( char_data     ),
+    .char_busy  ( char_busy     ),
+    .char_ok    ( char_ok       ),
+    // SCROLL 1
+    .map1_data  ( map1_data     ),
+    .map1_addr  ( map1_addr     ),
+    .map1_ok    ( map1_ok       ),
+    .scr1_addr  ( scr1_addr     ),
+    .scr1_data  ( scr1_data     ),
+    .scr1posh   ( scr1posh      ),
+    .scr1_ok    ( scr1_ok       ),
+    // SCROLL 2
+    .map2_data  ( map2_data     ),
+    .map2_addr  ( map2_addr     ),
+    .map2_ok    ( map2_ok       ),
+    .scr2_addr  ( scr2_addr     ),
+    .scr2_data  ( scr2_data     ),
+    .scr2posh   ( scr2posh      ),
+    .scr2_ok    ( scr2_ok       ),
+    // OBJ
+    .obj_AB     ( obj_AB        ),
+    .main_ram   ( dmaout        ),
+    .obj_addr   ( obj_addr      ),
+    .obj_data   ( obj_data      ),
+    .OKOUT      ( OKOUT         ),
+    .bus_req    ( obj_br        ), // Request bus
+    .bus_ack    ( bus_ack       ), // bus acknowledge
+    .blcnten    ( blcnten       ), // bus line counter enable
+    .col_uw     ( col_uw        ),
+    .col_lw     ( col_lw        ),
+    .obj_ok     ( obj_ok        ),
+    // PROMs
+    // .prog_addr    ( prog_addr[7:0]),
+    // .prom_prio_we ( prom_we[0]    ),
+    // .prom_din     ( prog_data[3:0]),
+    // Color Mix
+    .LHBL       ( LHBL          ),
+    .LVBL       ( LVBL          ),
+    .HS         ( HS            ),
+    .VS         ( VS            ),
+    .gfx_en     ( gfx_en        ),
+    // Pixel Output
+    .red        ( red           ),
+    .green      ( green         ),
+    .blue       ( blue          )
+);
+`else
+// Video module may be ommitted for SDRAM load simulation
+assign red       = 4'h0;
+assign green     = 4'h0;
+assign blue      = 4'h0;
+assign obj_addr  = 0;
+assign scr1_addr = {SCR1W{1'b0}};
+assign scr2_addr = {SCR2W{1'b0}};
+assign char_addr = {CHARW{1'b0}};
+assign blcnten   = 1'b0;
+assign obj_br    = 1'b0;
+assign char_busy = 1'b0;
+`endif
+
+endmodule
+
+`ifdef SIMULATION
+`ifdef OBJLOAD
+module jtsf_objload(
+    input             clk,
+    input             rst,
+    input      [12:0] obj_AB,
+    input             cen8,
+    input             LVBL,
+    output     [15:1] ram_addr,
+    output     [15:0] cpu_dout,
+    output     [15:0] dmaout,
+    input      [15:0] ram_data,
+    output            UDSWn,
+    output            LDSWn,
+    output            RnW,
+    output            ram_cs,
+    output reg        OKOUT
+);
+
+    integer   fobj,fobjcnt;
+
+    reg [ 7:0] objdebug[0:8192];
+    reg        last_LVBL;
+
+    initial begin
+        fobj=$fopen("sf-obj.bin","rb");
+        if( fobj==0 ) begin
+            $display("ERROR: cannot open sf-obj.bin");
+            $finish;
+        end
+        fobjcnt=$fread(objdebug, fobj);
+        $display("INFO: %d bytes read from sf-obj.bin",fobjcnt);
+        $fclose(fobj);
+    end
+
+    assign dmaout = { objdebug[{obj_AB[11:0],1'b0}], objdebug[{obj_AB[11:0],1'b1}] };
+
+    assign ram_cs = 0;
+    assign UDSWn  = 1;
+    assign LDSWn  = 1;
+    assign RnW    = 1;
+
+    always @(posedge clk, posedge rst) begin
+        if( rst ) begin
+            OKOUT   <= 1;
+        end else if(cen8) begin
+            last_LVBL <= LVBL;
+            OKOUT     <= !last_LVBL && LVBL;
+        end
+    end
+
+endmodule
+`endif
+`endif

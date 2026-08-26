@@ -1,0 +1,11 @@
+--- hdl/rtl/mario_roms.v
++++ hdl/rtl/mario_roms.v
+@@ -49,7 +49,7 @@
+ endmodule
+
+
+-module DLROMB #(parameter AW,parameter DW)
++module DLROMB #(parameter AW=12,parameter DW=8)
+ (
+    input                  CLK0,
+    input        [(AW-1):0]AD0,

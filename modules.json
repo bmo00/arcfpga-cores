@@ -1,0 +1,239 @@
+{
+  "HUC6280": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b336676fd98648c5b54487044f6913503e5ec060",
+      "bundle_path": "modules/HUC6280"
+    }
+  },
+  "fx68k": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jtfpga/fx68k",
+      "commit": "1217ab8dc600de070c6adb71ea6fe69de8855362"
+    }
+  },
+  "ikaopm": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "1312d91894ad5f5e12c12c988eab161312fb6367",
+      "bundle_path": "modules/ikaopm"
+    }
+  },
+  "jt007232": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+      "bundle_path": "modules/jt007232"
+    }
+  },
+  "jt053260": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+      "bundle_path": "modules/jt053260"
+    }
+  },
+  "jt12": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jotego/jt12",
+      "commit": "1aff35dc6611b2f842666ddacce40734896cb1a4"
+    }
+  },
+  "jt49": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jotego/jt49",
+      "commit": "47301ed51374d6d41db4db846b7643fecf75e417"
+    }
+  },
+  "jt51": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jotego/jt51",
+      "commit": "985a573dcfc1ff135553a39f7eae21d18ba57cbe"
+    }
+  },
+  "jt5205": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jotego/jt5205",
+      "commit": "cd3cb834764534c205b8e912b1bea26570a36f7d"
+    }
+  },
+  "jt5232": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+      "bundle_path": "modules/jt5232"
+    }
+  },
+  "jt6295": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jt6295",
+      "commit": "7d76b0be8cd8f85f3ae741178c9830b20e2071a1"
+    }
+  },
+  "jt680x": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+      "bundle_path": "modules/jt680x"
+    }
+  },
+  "jt7759": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jt7759",
+      "commit": "c23dc9fd3605cb183991ad3806a258a9e941041f"
+    }
+  },
+  "jt8051": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "ff1b8ffb795412d013ee9bbd18b877d52700ab26",
+      "bundle_path": "modules/jt8051"
+    }
+  },
+  "jt8255": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jt8255",
+      "commit": "3bb5f7ea461fc7d72b847ec55ce997e5d5bc1754"
+    }
+  },
+  "jt89": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "jotego/jt89",
+      "commit": "b688c5767f4b5910c43f4c2b3909142156a8f584"
+    }
+  },
+  "jtdsp16": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jtdsp16",
+      "commit": "71fa564ae143527001868b6fb6fb3e41df6a1eb1"
+    }
+  },
+  "jteeprom": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jteeprom",
+      "commit": "9c68ce841f4ec560ca6f228c8af6301129fd95fa"
+    }
+  },
+  "jtframe": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "bmo00",
+    "external": {
+      "repo": "bmo00/arcfpga-frame",
+      "commit": null
+    }
+  },
+  "jtkcpu": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jtkcpu",
+      "commit": "3876b722d79ce79271b1675da5b0b49e12cd7e7a"
+    }
+  },
+  "jtopl": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jtopl",
+      "commit": "7ac0c819ad274e208206f2acccbbde80aa06ed1a"
+    }
+  },
+  "jttc0030cmd": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "74fa325adda13e4338b1d5a19849c710fe21a325",
+      "bundle_path": "modules/jttc0030cmd"
+    }
+  },
+  "jtx1010": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+      "bundle_path": "modules/jtx1010"
+    }
+  },
+  "mist-common": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "author": "gyurco",
+    "external": {
+      "repo": "gyurco/Mist_FPGA",
+      "commit": "a0c20087982c384dd75c9696f45e3f3cd75c2385",
+      "bundle_path": "common"
+    }
+  },
+  "mist-modules": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "mist-devel/mist-modules",
+      "commit": "2dedb5a8171983b8fb3b04eb01aaf9be7a0a325a"
+    }
+  },
+  "mra-tools-c": {
+    "origin": "external",
+    "module_kind": "standalone",
+    "external": {
+      "repo": "mist-devel/mra-tools-c",
+      "commit": null
+    }
+  },
+  "vlm5030": {
+    "origin": "external",
+    "module_kind": "bundled",
+    "author": "jotego",
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "b336676fd98648c5b54487044f6913503e5ec060",
+      "bundle_path": "modules/vlm5030"
+    }
+  }
+}

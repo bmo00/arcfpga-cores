@@ -1,0 +1,75 @@
+JTFRAME_RELEASE=1
+CORENAME=JTOUTRUN
+JTFRAME_RATE=60.02
+GAMETOP=jtoutrun_game_sdram
+
+JTFRAME_PXLCLK=6
+
+JTFRAME_BUTTONS=4
+JTFRAME_NOMULTIWAY
+JTFRAME_STEREO
+
+JTFRAME_DIPBASE=24
+
+# This game is skipped for
+# all platforms except Pocket, MiSTer & family, NeptUNO and SiDi128
+JTFRAME_SKIP
+
+# The decrypter module is
+# omitted by default to save BRAM
+NODEC
+
+JTFRAME_HEADER=16
+# Use 64-bit bursts to speed up graphics
+JTFRAME_BA0_LEN=64
+JTFRAME_BA2_LEN=64
+JTFRAME_BA3_LEN=64
+
+# Screen parameters
+JTFRAME_PLL=jtframe_pll6293
+JTFRAME_COLORW=5
+JTFRAME_WIDTH=320
+JTFRAME_HEIGHT=224
+
+# NVRAM (32kB)
+JTFRAME_IOCTL_RD=32768
+# Debug
+JTFRAME_STATUS
+#JTFRAME_IOCTL_RD=18432
+
+# Clock domains
+JTFRAME_CLK48
+
+JTFRAME_OSD_TEST
+
+# ROM Regions
+JTFRAME_BA1_START    = 0x060000
+SND_START = 0x0C0000
+PCM_START = 0x0D0000
+JTFRAME_BA2_START = 0x130000
+JTFRAME_BA3_START = 0x170000
+ROAD_START   = 0x270000
+JTFRAME_PROM_START = 0x298000
+FD1089_START = 0x29A000
+JTFRAME_OSD_NOLOGO
+
+# Make it the same as KEY_START
+JTFRAME_PROM_START=0x298000
+
+[pocket|mister|sockit|de1soc|de10std|neptuno|sidi128|neptunoplus]
+-JTFRAME_SKIP
+# Take clock down to 50MHz and use the
+# line-based frame buffer for objects
+JTFRAME_LF_BUFFER
+-JTFRAME_OSD_NOLOGO
+-NODEC
+JTFRAME_CREDITS_PAGES=3
+JTFRAME_CREDITS_HSTART=32
+
+[mister|sockit|de1soc|de10std|sidi128]
+# Controller options have only been tested on MiSTer
+CORE_OSD=OKM,Control Type,A.Stick,A.Triggers,A.Wheel;
+#JTFRAME_CHEAT
+
+[sidi128]
+JTFRAME_LF_SDRAM_BUFFER

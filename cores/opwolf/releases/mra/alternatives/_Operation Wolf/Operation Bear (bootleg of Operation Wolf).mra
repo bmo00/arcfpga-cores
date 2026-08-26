@@ -1,0 +1,120 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Operation Bear (bootleg of Operation Wolf)</name>
+    <setname>opwolfb</setname>
+    <mameversion>0289</mameversion>
+    <year>1987</year>
+    <manufacturer>Taito</manufacturer>
+    <players>1</players>
+    <rbf>opwolf</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="opwolfb.zip|opwolf.zip" md5="None" asm_md5="7f3389c9dd81b72db775e6bb1a9be5bd">
+        <!-- maincpu - starts at 0x0 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="opwlfb.10" crc="9ab6f75c" map="01"/>
+            <part name="opwlfb.12" crc="d87e4405" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.11" crc="342e318d" map="01"/>
+            <part name="opwlfb.13" crc="61230c6e" map="10"/>
+        </interleave>
+        <!-- JTFRAME_BA1_START -->
+        <!-- audiocpu - starts at 0x40000 - length 0x10000 (16 bits) -->
+        <part name="opwlfb.30" crc="0669b94c"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- PCM_START -->
+        <!-- adpcm - starts at 0x50000 - length 0x88000 (20 bits) -->
+        <part name="opwlfb.29" crc="05a9eac0"/>
+        <part name="opwlfb.25" crc="85b87f58"/>
+        <part name="opwlfb.28" crc="281b2175"/>
+        <part name="opwlfb.24" crc="8efc5d4d"/>
+        <part name="opwlfb.27" crc="441211a6"/>
+        <part name="opwlfb.23" crc="a874c703"/>
+        <part name="opwlfb.26" crc="86d1d42d"/>
+        <part name="opwlfb.22" crc="9228481f"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- pc080sn - starts at 0xD8000 - length 0x80000 (19 bits) -->
+        <interleave output="16">
+            <part name="opwlfb.08" crc="134d294e" map="01"/>
+            <part name="opwlfb.04" crc="de0ca98d" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.06" crc="317d0e66" map="01"/>
+            <part name="opwlfb.02" crc="6231fdd0" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.07" crc="e1c4095e" map="01"/>
+            <part name="opwlfb.03" crc="ccf8ba80" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.05" crc="fd9e72c8" map="01"/>
+            <part name="opwlfb.01" crc="0a65f256" map="10"/>
+        </interleave>
+        <!-- JTFRAME_BA3_START -->
+        <!-- pc090oj - starts at 0x158000 - length 0x80000 (19 bits) -->
+        <interleave output="16">
+            <part name="opwlfb.14" crc="663786eb" map="01"/>
+            <part name="opwlfb.18" crc="de9ab08e" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.15" crc="315b8aa9" map="01"/>
+            <part name="opwlfb.19" crc="645cf85e" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.16" crc="e01099e3" map="01"/>
+            <part name="opwlfb.20" crc="d80b9cc6" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="opwlfb.17" crc="56fbe61d" map="01"/>
+            <part name="opwlfb.21" crc="97d25157" map="10"/>
+        </interleave>
+        <!-- JTFRAME_PROM_START -->
+        <!-- sub - starts at 0x1D8000 - length 0x8000 (15 bits) -->
+        <part name="opwlfb.09" crc="ab27a3dd"/>
+        <!-- Total 0x1E0000 bytes - 1920 kBytes -->
+    </rom>
+    <nvram index="2" size="1024"/>
+    <rom index="1">
+        <part>00 71</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,3f">
+        <DSWA/>
+        <dip name="Allow Continue" bits="1" ids="Yes,No"/>
+        <dip name="Service Mode" bits="2" ids="On,Off"/>
+        <dip name="Demo Sounds" bits="3" ids="Off,On"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/6,1/4,1/3,1/2"/>
+        <DSWB/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Medium"/>
+        <dip name="Ammo Magazines at Start" bits="10,11" ids="4,5,7,6"/>
+        <dip name="Discount When Continuing" bits="14" ids="Yes,No"/>
+        <dip name="Language" bits="15" ids="English,Japanese"/>
+    </switches>
+    <buttons names="Slash,Jump,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

@@ -1,0 +1,117 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jlrodriguez" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Empire City: 1931 (France)</name>
+    <setname>empcityfr</setname>
+    <mameversion>0289</mameversion>
+    <year>1986</year>
+    <manufacturer>Seibu Kaihatsu (Norad license)</manufacturer>
+    <players>2</players>
+    <rbf>empirecity</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="empcityfr.zip|empcity.zip" md5="None" asm_md5="ac97c77df9342be06bd1d7368b33b3a3">
+        <!--  -->
+        <part>
+            00 00 00 00 00 00 00 00
+            00 00 00 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x30000 (18 bits) -->
+        <part name="pr.4t" crc="aa1f84ac"/>
+        <part repeat="0x8000"> FF</part>
+        <part name="pr.2t" crc="af381247"/>
+        <part repeat="0x18000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="092-5c" crc="6a8cb7a6"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- ADPCM_START -->
+        <!-- adpcm - starts at 0x40000 - length 0xA000 (16 bits) -->
+        <part name="091.5j" crc="1b8d0c07"/>
+        <part repeat="0x2000"> FF</part>
+        <!-- FGMAP_START -->
+        <!-- stfight_vid:fg_map - starts at 0x4A000 - length 0x10000 (16 bits) -->
+        <part name="117.7c" crc="8ceaf4fe"/>
+        <part name="118.8c" crc="5a1a227a"/>
+        <!-- BGMAP_START -->
+        <!-- stfight_vid:bg_map - starts at 0x5A000 - length 0x10000 (16 bits) -->
+        <part name="111.7j" crc="27a310bc"/>
+        <part name="112.8j" crc="3d19ce18"/>
+        <!-- FGGFX_START -->
+        <!-- stfight_vid:fg_gfx - starts at 0x6A000 - length 0x20000 (17 bits) -->
+        <part name="113.2c" crc="0c099a31"/>
+        <part name="114.3c" crc="3cc77c31"/>
+        <part name="115.4c" crc="2c6caa5f"/>
+        <part name="116.5c" crc="e11ded31"/>
+        <!-- BGGFX_START -->
+        <!-- stfight_vid:bg_gfx - starts at 0x8A000 - length 0x20000 (17 bits) -->
+        <part name="097.2j" crc="8261ecfe"/>
+        <part name="108.3j" crc="71137301"/>
+        <part name="109.4j" crc="0ae48dd3"/>
+        <part name="110.5j" crc="debf5d76"/>
+        <!-- SPRGFX_START -->
+        <!-- stfight_vid:spr_gfx - starts at 0xAA000 - length 0x20000 (17 bits) -->
+        <part name="093.6w" crc="68acd627"/>
+        <part name="094.7w" crc="5170a057"/>
+        <part name="095.8w" crc="8299f247"/>
+        <part name="096.9w" crc="b57dc037"/>
+        <!-- JTFRAME_PROM_START -->
+        <!-- mcu - starts at 0xCA000 - length 0x800 (11 bits) -->
+        <part name="empcityfr_68705.3j" crc="d66ac61f"/>
+        <!-- stfight_vid:tx_gfx - starts at 0xCA800 - length 0x2000 (13 bits) -->
+        <part name="17.2n" crc="1b3706b5"/>
+        <!-- stfight_vid:tx_clut - starts at 0xCC800 - length 0x100 (8 bits) -->
+        <part name="82s129.006" crc="f9424b5b"/>
+        <!-- stfight_vid:fg_clut - starts at 0xCC900 - length 0x200 (9 bits) -->
+        <part name="82s129.002" crc="c883d49b"/>
+        <part name="82s129.003" crc="af81882a"/>
+        <!-- stfight_vid:bg_clut - starts at 0xCCB00 - length 0x200 (9 bits) -->
+        <part name="82s129.004" crc="1831ce7c"/>
+        <part name="82s129.005" crc="96cb6293"/>
+        <!-- stfight_vid:spr_clut - starts at 0xCCD00 - length 0x200 (9 bits) -->
+        <part name="82s129.052" crc="3d915ffc"/>
+        <part name="82s129.066" crc="51e8832f"/>
+        <!-- Total 0xCCF00 bytes - 819 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="3f,4d">
+        <DSW0/>
+        <dip name="Coin A" bits="0,2" ids="5/1,1/5,3/1,1/2,4/1,1/3,2/1,1/1"/>
+        <dip name="Coin B" bits="3,4" ids="2/3,1/2,2/1,1/1"/>
+        <dip name="Service Mode" bits="5" ids="On,Off"/>
+        <dip name="Allow Continue" bits="6" ids="Yes,No"/>
+        <dip name="Bullet Colour" bits="7" ids="Red,Blue"/>
+        <DSW1/>
+        <dip name="Cabinet" bits="8" ids="Cocktail,Upright"/>
+        <dip name="Difficulty" bits="9,10" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Lives" bits="11,12" ids="4,3,2,1"/>
+        <dip name="Bonus Life" bits="13,14" ids="40k 80k,30k 60k,20k 40k,10k 30k"/>
+        <dip name="Demo Sounds" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

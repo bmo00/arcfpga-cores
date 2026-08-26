@@ -1,0 +1,6 @@
+# -------------------------------------------------------------------------- #
+# Quartus II Project File for mariobros_neptunoplus
+# All project settings live in mariobros_neptunoplus.qsf — see that file.
+# -------------------------------------------------------------------------- #
+
+PROJECT_REVISION = "mariobros_neptunoplus"

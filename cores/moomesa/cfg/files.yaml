@@ -1,0 +1,25 @@
+moomesa:
+  - get:
+      - '*.v'
+      - '*.sv'
+riders:
+  - get:
+      - common.yaml
+jtframe:
+  - from: video/layouts
+    get:
+      - jtframe_8x8x4_packed_msb.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_rpwp_ram.v
+      - jtframe_obj_buffer.v
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_objdraw.v
+  - from: cpu
+    get:
+      - jtframe_m68k.v
+      - jtframe_68kdtack.v
+      - jtframe_68kdtack_cen.v

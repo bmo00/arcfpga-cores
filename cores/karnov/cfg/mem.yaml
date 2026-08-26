@@ -1,0 +1,92 @@
+params:
+  - { name: RAM_OFFSET, value: "32'h100000" }
+  - { name: SCR_OFFSET, value: "32'h4000" }
+clocks:
+  clk24:
+    - freq: 8M
+      outputs:
+        - cen_mcu
+        - cen_nc
+    - freq: 6M
+      gate: [ snd ]
+      outputs:
+        - cen6
+        - cen_opl
+        - cen_opn
+audio:
+  rsum: 56k
+  missing_info: true  # psg gain should be calculated better
+  channels:
+    - { name: opn, module: jt03_fm, rsum: 56k }
+    - { name: opl, module: jtopl2,  rsum: 56k }
+    # three channels joined after 1kOhm x 3 res, then 470 Ohm to ground
+    - { name: psg, module: jt03_psg,   rsum: 56.5k, att: 0.047ay }
+sdram:
+  banks:
+    - buses:
+        - name: main
+          data_width: 16
+          addr_width: 19
+          cache_size: 1kB
+    - buses:
+        - name: snd
+          data_width: 8
+          addr_width: 16
+    - buses:
+        - name: fix
+          data_width: 32
+          addr_width: 15
+        - name: scr
+          data_width: 32
+          addr_width: 18
+          offset: SCR_OFFSET
+    - buses:
+        - name: ram
+          data_width: 16
+          addr_width: 14
+          addr: "main_addr[13:1]"
+          rw: true
+          offset: RAM_OFFSET
+          # Rename some signals
+          din: main_dout
+          dsn: main_dsn
+        - name: obj
+          data_width: 32
+          addr_width: 19
+bram:
+  - name: vram
+    data_width: 16
+    addr_width: 11
+    simfile: {}
+
+    ioctl: { save: true, order: 0 }
+    dual_port: { name: main, we: vram_we, rw: true }
+
+  - name: scrram
+    data_width: 16
+    addr_width: 11
+    simfile: {}
+
+    ioctl: { save: true, order: 1 }
+    dual_port: { name: main, we: scrram_we, rw: true }
+
+  - name: objram
+    data_width: 16
+    addr_width: 12
+    addr: dma_addr
+    simfile: {}
+
+    ioctl: { save: true, order: 2 }
+    dual_port: { name: main, we: objram_we, rw: true }
+
+  - name: objbuf
+    data_width: 16
+    addr_width: 12
+    dual_port: { name: dma, din: objram_dout, rw: true }
+
+
+  # - name: objram
+  #   data_width: 16
+  #   addr_width: 12
+  #   simfile: {}
+  #   dual_port: { name: main, cs: objram_cs, rw: true, dmacopy: true }

@@ -1,0 +1,5 @@
+[ARC]
+RBF=SSRIDERS
+MOD=0
+NAME=SSRIDERSJAD
+BUTTONS="Fire,Jump,Start,Coin,Core credits"

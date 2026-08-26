@@ -1,0 +1,7 @@
+[ARC]
+RBF=ALIGATOR
+MOD=0
+NAME=ALIGATOR
+DEFAULT=0xFFFF0000
+CONF="OV,Service Mode,On,Off"
+BUTTONS="Fire,Jump,Button 3,Start,Coin,Pause"

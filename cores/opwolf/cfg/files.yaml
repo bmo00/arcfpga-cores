@@ -1,0 +1,48 @@
+opwolf:
+  - get:
+      - jtopwolf_game.v
+      - opwolf_main.v
+      - opwolf_video.v
+      - opwolf_colmix.v
+      - opwolf_scr.v
+      - opwolf_tilemap.v
+      - opwolf_obj.v
+      - opwolf_snd.v
+      - opwolf_pc060.v
+      - opwolf_adpcm.v
+      - opwolf_dca.v
+      - opwolf_vol.v
+      - opwolf_cchip.v
+      - opwolf_cchip78.v
+      - upd7810.v
+      - opwolf_gun.v
+jtframe:
+  - from: ram
+    get:
+      - jtframe_dual_ram.v
+      - jtframe_dual_nvram.v
+      - jtframe_dual_ram16.v
+      - jtframe_dual_nvram16.v
+      - jtframe_obj_buffer.v
+  - from: clocking
+    get:
+      - jtframe_sync.v
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_blank.v
+  - from: cpu
+    get:
+      - jtframe_z80.yaml
+      - jtframe_m68k.yaml
+  - from: clocking
+    get:
+      - jtframe_frac_cen.v
+  - from: ram
+    get:
+      - jtframe_ram.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+jt51: null
+jt5205: null

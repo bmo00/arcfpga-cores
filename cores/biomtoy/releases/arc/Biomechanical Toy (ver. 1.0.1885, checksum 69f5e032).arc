@@ -1,0 +1,12 @@
+[ARC]
+RBF=BIOMTOY
+MOD=0
+NAME=BIOMTOY
+DEFAULT=0xFFFF0000
+CONF="OGJ,Coin A,4C/1C,3C/1C,2C/1C,1C/1C,1C/2C,1C/3C,1C/4C,1C/6C"
+CONF="OKN,Coin B,4C/1C,3C/1C,2C/1C,1C/1C,1C/2C,1C/3C,1C/4C,1C/6C"
+CONF="OO,Service Mode,On,Off"
+CONF="OR,Demo Sounds,Off,On"
+CONF="OST,Lives,4,3,2,1"
+CONF="OUV,Difficulty,Hardest,Hard,Normal,Easy"
+BUTTONS="Button 1,Button 2,Start,Coin,Pause"

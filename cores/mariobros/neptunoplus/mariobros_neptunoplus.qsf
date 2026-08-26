@@ -1,0 +1,194 @@
+# -------------------------------------------------------------------------- #
+# mariobros_neptunoplus.qsf — NeptUNO+ (EP4CGX150DF27I7) bridge for Mario Bros
+# Upstream: MiSTer-devel/Arcade-MarioBros_MiSTer @ a934eecfb83a18f68b14c52380f3bfda153dcc99
+# See doc/porting-a-native-core.md §6a for the canonical section order.
+# -------------------------------------------------------------------------- #
+
+# ---- Project / device ----
+set_global_assignment -name FAMILY "Cyclone IV GX"
+set_global_assignment -name DEVICE EP4CGX150DF27I7
+set_global_assignment -name TOP_LEVEL_ENTITY mariobros_neptunoplus
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION "22.1std.2 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name SMART_RECOMPILE ON
+
+# ---- Analysis & Synthesis ----
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name FORCE_SYNCH_CLEAR ON
+set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION OFF
+set_global_assignment -name DSP_BLOCK_BALANCING "DSP BLOCKS"
+
+# ---- Fitter ----
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+
+# ---- Assembler ----
+set_global_assignment -name GENERATE_RBF_FILE ON
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+
+# ---- Configuration ----
+set_global_assignment -name CYCLONEIII_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+
+# ---- I/O standard ----
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# ---- Power ----
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+
+# Pin & Location Assignments
+# ==========================
+
+# LED
+set_location_assignment PIN_A24 -to LED
+
+# CLOCK
+set_location_assignment PIN_B14 -to CLOCK_27[0]
+set_instance_assignment -name VIRTUAL_PIN ON -to CLOCK_27[1]
+
+# VGA/RGB
+set_location_assignment PIN_AE19 -to VGA_R[7]
+set_location_assignment PIN_AD19 -to VGA_R[6]
+set_location_assignment PIN_AC19 -to VGA_R[5]
+set_location_assignment PIN_AF18 -to VGA_R[4]
+set_location_assignment PIN_AE18 -to VGA_R[3]
+set_location_assignment PIN_AC18 -to VGA_R[2]
+set_location_assignment PIN_AD16 -to VGA_R[1]
+set_location_assignment PIN_AE15 -to VGA_R[0]
+set_location_assignment PIN_AF24 -to VGA_B[7]
+set_location_assignment PIN_AC21 -to VGA_B[6]
+set_location_assignment PIN_AE23 -to VGA_B[5]
+set_location_assignment PIN_AE22 -to VGA_B[4]
+set_location_assignment PIN_AD20 -to VGA_B[3]
+set_location_assignment PIN_AF20 -to VGA_B[2]
+set_location_assignment PIN_AF15 -to VGA_B[1]
+set_location_assignment PIN_AC16 -to VGA_B[0]
+set_location_assignment PIN_AD21 -to VGA_G[7]
+set_location_assignment PIN_AF23 -to VGA_G[6]
+set_location_assignment PIN_AF22 -to VGA_G[5]
+set_location_assignment PIN_AE21 -to VGA_G[4]
+set_location_assignment PIN_AF21 -to VGA_G[3]
+set_location_assignment PIN_AF19 -to VGA_G[2]
+set_location_assignment PIN_AD17 -to VGA_G[1]
+set_location_assignment PIN_AF16 -to VGA_G[0]
+set_location_assignment PIN_AD18 -to VGA_VS
+set_location_assignment PIN_AE17 -to VGA_HS
+
+# AUDIO L/R
+set_location_assignment PIN_AF17 -to AUDIO_L
+set_location_assignment PIN_AC17 -to AUDIO_R
+
+# SPI
+set_location_assignment PIN_AC14 -to SPI_DO
+set_location_assignment PIN_AF12 -to SPI_DI
+set_location_assignment PIN_AF11 -to SPI_SCK
+set_location_assignment PIN_AC10 -to SPI_SS2
+set_location_assignment PIN_AD10 -to SPI_SS3
+set_location_assignment PIN_AE9  -to SPI_SS4
+
+# CONF
+set_location_assignment PIN_AD14 -to CONF_DATA0
+
+# microSD passthrough
+set_location_assignment PIN_A4 -to SD_MISO
+set_location_assignment PIN_B4 -to SD_SCK
+
+# Joystick
+set_location_assignment PIN_AD4 -to JOY_CLK
+set_location_assignment PIN_AC4 -to JOY_LOAD
+set_location_assignment PIN_AD3 -to JOY_DATA
+set_location_assignment PIN_A19 -to JOY_SELECT
+set_location_assignment PIN_AF4 -to XJOY_CLK
+set_location_assignment PIN_AE3 -to XJOY_LOAD
+set_location_assignment PIN_AF5 -to XJOY_DATA
+
+# ---- Macro definitions ----
+# (none — VGA_BITS/etc. are all resolved directly in mariobros_neptunoplus.sv, not `ifdef-gated
+# the way the vendored upstream MiST wrappers of other cores are)
+
+# ---- PLL location (bridge-owned, mario_top has no PLL of its own — see pll.v) ----
+set_location_assignment PLL_1 -to "pll:pll|altpll:altpll_component"
+
+# ---- Source files ----
+# Adapter
+set_global_assignment -name SYSTEMVERILOG_FILE mariobros_neptunoplus.sv
+
+# Bridge-owned PLL (mario_top itself has no internal PLL, unlike every SDRAM-backed core bridged so
+# far — see pll.v's own header comment: same 50MHz-in/48MHz-out ratio as upstream, only the
+# device-family IP primitive changes, altera_pll -> altpll)
+set_global_assignment -name VERILOG_FILE pll.v
+
+# Upstream game logic (vendored, pinned at a934eecf), never mario_top.v's own hdl/rtl/pll.v or
+# hdl/rtl/pll/pll_0002.v[.qip] (superseded by pll.v above), never hdl/rtl/dkong3_sub.v or
+# hdl/rtl/hiscore.v (both genuinely unused — dkong3_sub.v is dead code nothing instantiates, and
+# hiscore.dat autosave is not wired in this bridge, see neptunoplus/NOTES.md).
+# build_id.v: static placeholder next to this adapter's own `include "build_id.v"`
+# (build_id.v) — same-directory resolution, no separate compile-unit declaration needed.
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_top.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_main.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_video.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_vram.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_obj.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_col_pal.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_adec.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_dma.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_logic.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_input.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_bram.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_roms.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_hv_generator.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_sound.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_sound_digital.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_sound_analog.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_sound_mixer.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_wav_sound.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/mario_iir_filter.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/m58715ip.v
+set_global_assignment -name VERILOG_FILE ../hdl/rtl/pause.v
+set_global_assignment -name VHDL_FILE ../hdl/dpram.vhd
+
+# Shared CPU IP (vendored per-core directly under hdl/rtl/, as originally imported — T80.qip/T48.qip
+# each list their own VHDL sources via Quartus's own qip_path mechanism)
+set_global_assignment -name QIP_FILE ../hdl/rtl/T80/T80.qip
+set_global_assignment -name QIP_FILE ../hdl/rtl/t48/T48.qip
+
+# MiST IO-protocol pipeline (shared, pinned at 2dedb5a — do not re-vendor)
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/user_io.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/data_io.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/arcade_inputs.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/mist_dual_video.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/osd.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../modules/mist-modules/cofi.sv
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/video_cleaner.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/rgb2ypbpr.v
+set_global_assignment -name VHDL_FILE ../../../modules/mist-modules/dac.vhd
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/frac_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/pixel_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/unsigned_division.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_linedouble.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_rgb_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_rotate.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_framing.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_scaledepth.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_sdram.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler.v
+
+# ---- Misc / incremental compilation ----
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

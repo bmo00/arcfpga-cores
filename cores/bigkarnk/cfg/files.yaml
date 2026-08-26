@@ -1,0 +1,33 @@
+bigkarnk:
+  - get:
+      - jtbigkarnk_game.v
+      - bigkarnk_main.v
+      - bigkarnk_addr_decode.v
+      - bigkarnk_inputs.v
+      - bigkarnk_vmem.v
+      - bigkarnk_sound.v
+      - bigkarnk_video_top.v
+      - bigkarnk_video.v
+      - bigkarnk_video_timing.v
+      - bigkarnk_tilemap.v
+      - bigkarnk_palette.v
+      - bigkarnk_gfx_decode.v
+      - bigkarnk_sprite_layer.v
+      - bigkarnk_sprite_engine.v
+      - bigkarnk_68kdtack.v
+jt6295: null
+fx68k: []
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_6809.yaml
+  - get:
+      - jtframe_ff.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v
+      - jtframe_sys6809.v
+jtopl:
+  - get:
+      - jtopl2.yaml

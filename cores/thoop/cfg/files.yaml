@@ -1,0 +1,26 @@
+thoop:
+  - get:
+      - jtthoop_game.v
+      - thoop_main.v
+      - thoop_addr_decode.v
+      - thoop_vram_decrypt.v
+      - thoop_iolatch.v
+      - thoop_oki.v
+      - thoop_inputs.v
+      - thoop_vmem.v
+      - thoop_video_top.v
+      - thoop_video.v
+      - thoop_video_timing.v
+      - thoop_tilemap.v
+      - thoop_palette.v
+      - thoop_gfx_decode.v
+      - thoop_sprite_layer.v
+      - thoop_sprite_engine.v
+      - thoop_68kdtack.v
+jt6295: null
+fx68k: []
+jtframe:
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v

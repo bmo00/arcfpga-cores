@@ -1,0 +1,20 @@
+[ARC]
+RBF=JTFLSTORY
+MOD=5
+NAME=RUMBA
+DEFAULT=0xE300FC0000
+CONF="P1,Switches"
+CONF="P1OGH,Bonus Life,20k 50k,10k 60k,10k 40k,10k 20k"
+CONF="P1OI,Free Play,On,Off"
+CONF="P1OJK,Lives,6,5,4,3"
+CONF="P1ON,Cabinet,Upright,Cocktail"
+CONF="P1OOR,Coin A,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OSV,Coin B,1/1,1/2,1/3,1/4,1/5,1/6,1/7,1/8,2/1,3/1,4/1,5/1,6/1,7/1,8/1,9/1"
+CONF="P1OW,Training Stage,Off,On"
+CONF="P1OY,Language,English,Japanese"
+CONF="P1OZ,Attract Sound,On,Off"
+CONF="P1Oa,Coinage Display,On,Off"
+CONF="P1Ob,Release year,hide,show"
+CONF="P1Oc,Infinite Lives,On,Off"
+CONF="P1Oe,Flip,Off,On"
+BUTTONS="Chop,Throw,-,-,-,-,Start,Coin,Core credits"

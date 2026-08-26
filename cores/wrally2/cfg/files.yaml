@@ -1,0 +1,31 @@
+wrally2:
+  - get:
+      - jtwrally2_game.v
+      - wrally2_main.v
+      - wrally2_dbg_uart.v
+      - wrally2_addr_decode.v
+      - wrally2_inputs.v
+      - wrally2_adc.v
+      - wrally2_vmem.v
+      - wrally2_video_timing.v
+      - wrally2_video_top.v
+      - wrally2_gae1_video.v
+      - wrally2_gae1_tilemap.v
+      - wrally2_gae1_sprite.v
+      - wrally2_gae1_palette.v
+      - wrally2_gae1_sound.v
+      - wrally2_68kdtack.v
+      - wrally2_mcu.v
+      - mc8051_regen.v
+fx68k: []
+jtframe:
+  - from: ram
+    get:
+      - jtframe_ram_rst.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v

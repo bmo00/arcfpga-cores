@@ -1,0 +1,21 @@
+<misterromdescription>
+	<name>Test Groups</name>
+	<mameversion>1234</mameversion>
+	<mratimestamp>202001230000</mratimestamp>
+	<year>2020</year>
+	<manufacturer>Seb, Inc.</manufacturer>
+	<category>Tests</category>
+	<rbf>test_groups</rbf>
+	<rom index="0" zip="tests.zip" md5="e76af27013c4eed390b671eab41db93b" type="merged|nonmerged">
+		<part name="s16.dat" />
+		<group width="16" interleaved="0">
+			<part name="01.dat"/>
+			<part name="02.dat"/>
+		</group>
+		<part name="s16.dat" />
+		<group width="16" repeat="2">
+			<part name="03.dat"/>
+			<part name="01.dat"/>
+		</group>
+	</rom>
+</misterromdescription>

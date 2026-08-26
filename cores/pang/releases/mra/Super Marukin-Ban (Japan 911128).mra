@@ -1,0 +1,69 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Super Marukin-Ban (Japan 911128)</name>
+    <setname>marukin</setname>
+    <mameversion>0282</mameversion>
+    <year>1990</year>
+    <manufacturer>Yuga</manufacturer>
+    <players>2</players>
+    <rbf>jtpang</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="marukin.zip" md5="None" asm_md5="d0984f3592f9bb4585363a895f425329">
+        <!--  -->
+        <part>
+            54 32 10 76 54 32 10 76
+            48 54 4F 00 00 00 01 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
+        <part name="mg3-01b.9d" crc="529d4389"/>
+        <part name="mg3-02b.10d" crc="e8a8f14e"/>
+        <part repeat="0x58000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- oki - starts at 0x80000 - length 0x80000 (19 bits) -->
+        <part name="mg3-e.1d" crc="106c2fa9"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- chars - starts at 0x100000 - length 0x200000 (21 bits) -->
+        <part name="mg3-a.3k" crc="420f1de7"/>
+        <part name="mg3-b.4k" crc="d8de13fa"/>
+        <part name="mg3-c.6k" crc="fbeb66e8"/>
+        <part name="mg3-d.7k" crc="8f6bd831"/>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sprites - starts at 0x300000 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="mg3-05.2g" crc="7a738d2d" map="01"/>
+            <part name="mg3-04.1g" crc="56f30515" map="10"/>
+        </interleave>
+        <!-- eeprom - starts at 0x340000 -->
+        <!-- Total 0x340000 bytes - 3328 kBytes -->
+    </rom>
+    <nvram index="2" size="128"/>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

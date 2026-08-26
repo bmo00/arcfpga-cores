@@ -1,0 +1,70 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Mahjong Gakuen 2 Gakuen-chou no Fukushuu</name>
+    <setname>mgakuen2</setname>
+    <mameversion>0282</mameversion>
+    <year>1989</year>
+    <manufacturer>Face</manufacturer>
+    <players>2</players>
+    <rbf>jtpang</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="mgakuen2.zip" md5="None" asm_md5="3bd024e409f0e51d3b6a4758b3d7f801">
+        <!--  -->
+        <part>
+            76 54 32 10 01 23 45 67
+            AA 55 A5 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
+        <part name="mg2-xf.1j" crc="c8165d2d"/>
+        <part name="mg2-y.1l" crc="75bbcc14"/>
+        <part name="mg2-z.3l" crc="bfdba961"/>
+        <part repeat="0x38000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- oki - starts at 0x80000 - length 0x80000 (19 bits) -->
+        <part name="mg2-e.1c" crc="70fd0809"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- chars - starts at 0x100000 - length 0x200000 (21 bits) -->
+        <part name="mg2-a.13h" crc="31a0c55e"/>
+        <part name="mg2-b.14h" crc="c18488fa"/>
+        <part name="mg2-c.16h" crc="9425b364"/>
+        <part name="mg2-d.17h" crc="6cc9eeba"/>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sprites - starts at 0x300000 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="mg2-f.4l" crc="3172c9fe" map="01"/>
+            <part name="mg2-g.6l" crc="19b8b61c" map="10"/>
+        </interleave>
+        <!-- eeprom - starts at 0x340000 -->
+        <!-- Total 0x340000 bytes - 3328 kBytes -->
+    </rom>
+    <nvram index="2" size="128"/>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

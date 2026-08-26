@@ -1,0 +1,65 @@
+CORENAME=BUCKY
+GAMETOP=jtbucky_game_sdram
+
+# Run the shared SDRAM/video service path at 96 MHz while retaining the
+# JTframe-provided 48 MHz game clock for the CPU and sound domains.  The
+# tile-line producer is deadline-bound; this is the documented JTframe split,
+# not a game-specific delay or cache hack.
+JTFRAME_SDRAM96
+JTFRAME_CLK48
+# Bucky does not advertise the optional Villena DB15 adapter.  Removing its
+# clocked interface also removes the otherwise-unconstrained DB15 clock path.
+JTFRAME_NO_DB15
+
+JTFRAME_HEADER=16
+# El 3er boton fisico (B3) es un IPT_BUTTON3 real en moo.cpp para el set "bucky" (moo.cpp:704-713);
+# es Moo Mesa quien lo deja como IPT_UNKNOWN, no al reves. BUTTONS=3 es el valor correcto de Bucky por
+# derecho propio, no un aislamiento de un bug ajeno (ese comentario venia copiado del donante moomesa).
+JTFRAME_BUTTONS=3
+JTFRAME_JOY_DURL
+# Sin esto el overlay de debug (jtframe_debug, `ifndef JTFRAME_RELEASE) queda SIEMPRE compilado.
+JTFRAME_RELEASE
+# Video configuration
+# JTFRAME_PXLCLK: genera pxl_cen/pxl2_cen (jtframe_pxlcen). SIN esto pxl_cen queda UNDRIVEN ->
+# el vtimer del K056832 nunca avanza -> ni LVBL/VS ni frames -> el full-core sim gira infinito.
+# (Se perdio al adaptar el core desde xmen, que usa 6 porque su dot clock es 6MHz.)
+# moomesa = 8MHz: moo.cpp K053252(config, m_k053252, 32_MHz_XTAL/4) // 8MHz. -> pxl_cen 8M, pxl2_cen 16M.
+# El vtimer del K056832 usa HTOTAL=512/VTOTAL=264, la aproximacion representable del K053252
+# GX173 (8MHz / 512 / 264 = ~59.19Hz). La geometria fina sigue siendo un gate de la prueba HW.
+JTFRAME_PXLCLK=8
+JTFRAME_COLORW=8
+JTFRAME_WIDTH=384
+JTFRAME_HEIGHT=224
+JTFRAME_STEREO
+# Expose JTFRAME's keyboard/OSD test control as the active-low dip_test input.
+JTFRAME_OSD_TEST
+
+JTFRAME_CREDITS_HSTART=24
+JTFRAME_MR_DDRLOAD
+
+# More RAM needed
+SND_RAMW=13
+
+# The sprite line cache consumes four 16-bit beats per aligned row. Keep only
+# bank 3 doubled: forcing doubled caches on main, byte-wide PCM/Z80 and tile
+# banks wastes shared SDRAM service time without increasing useful payload.
+JTFRAME_BA3_LEN=64
+
+# default EEPROM needed to prevent game from booting upside down with error
+JTFRAME_IOCTL_RD=128
+
+[mister|neptunoplus]
+JTFRAME_ARX=4
+JTFRAME_ARY=3
+JTFRAME_OSD_NOLOGO
+# JTFRAME_NOCROP REMOVED: it stripped jtframe's "Vertical Crop"/"Crop Offset" OSD
+# entries (target/mister/cfgstr), which feed video_freak's VIDEO_ARX/ARY reshape.
+# Donor moomesa and sibling asterix (same WIDTH=384/HEIGHT=224, ARX=4/ARY=3) both
+# keep this enabled. The prior justification ("only applies at 1080p") was an
+# unverified guess (tier-5), and disabling it left the OSD without the crop/AR
+# correction path -- symptom reported: sides of the picture symmetrically cut
+# ("zoomed in", card boxes at both screen edges clipped) on real HW. Restored to
+# match the working donor config. Reintroduce only with real HW evidence.
+
+[mist|sidi]
+JTFRAME_SKIP

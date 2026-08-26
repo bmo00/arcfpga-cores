@@ -1,0 +1,83 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "bublbobl.cpp" ]
+skip.setnames=[
+    # Blank screen
+    "boblbobl", "bbredux", "bub68705", "bublboblb",
+    # Garbled graphics, ripoff
+    "dland",
+    # No graphics
+    "boblcave",
+    # 8749 MCU - doesn't boot on MAME
+    "bub8749",
+    # Tokio hardware - Nees MCU support
+    # "tokio",
+    # "tokioo",
+    # "tokiou",
+    # wrong inputs and no MCU?
+    "sboblbobl",
+    "sboblbobla",
+    "sboblboblb",
+    "sboblboblc",
+    "sboblbobld",
+    # untested
+    "sboblboble",
+    "sboblboblf"
+]
+
+[Audio]
+volume = [
+    { machine="bublbobl", value=0x83 },
+    { machine="tokio", value=0xB2 },
+]
+
+[header]
+info = """ Header to identify the PCB type
+        Byte 0 = 0 for Bubble Bobble (MC6801 MCU)
+                 1 for Tokio (MC68705 MCU)
+                 3 for Tokio bootleg (no MCU but a fixed value fed into CPU)
+"""
+data = [
+    { machine="bublbobl", offset=0, data="00" },
+    { machine="tokio",    offset=0, data="01" },
+    { setname="tokiob",   offset=0, data="03" },
+    { setname="bublboblp",offset=0, data="01" },
+]
+
+[buttons]
+names=[
+    { names="Jump,Shoot" }
+]
+
+[dipsw]
+bitcnt = 16
+delete = [{names=[ "Unused", "Unknown", "Mode" ]}]
+defaults = [
+    { value="ff,ff" },
+]
+extra = [
+    { machine="bublbobl", name="Language", Options="English,Japanese", Bits="0" },
+    { machine="bublbobl", name="Operation", Options="Test,Game", Bits="2" },
+]
+Rename = [
+    {Name="ROM Type",To="Type"},
+]
+
+[ROM]
+regions = [
+    { name="maincpu", No_offset=true },
+    { name="subcpu", No_offset=true,   start="SUB_START" },
+    { name="audiocpu", No_offset=true, start="JTFRAME_BA1_START" },
+    { machine="bublbobl", name="mcu", No_offset=true,      start="MCU_START" },
+    { machine="tokio", name="bmcu:mcu", rename="mcu", No_offset=true,      start="MCU_START" },
+    { name="gfx1", width=16, start="JTFRAME_BA2_START", sequence=[6,0,7,1,8,2,9,3,10,4,11,5] },
+    { name="gfx1", width=16, start="JTFRAME_BA2_START", machines=["tokio","tokiob"], sequence=[8,0,9,1,10,2,11,3,12,4,13,5,14,6,15,7] },
+    { name="proms", start="JTFRAME_PROM_START"},
+    { name="plds", skip=true },
+]
+
+order = [
+    "maincpu", "subcpu", "audiocpu", "gfx1", "mcu", "proms"
+]

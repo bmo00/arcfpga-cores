@@ -1,0 +1,29 @@
+aligator:
+  - get:
+      - jtaligator_game.v
+      - aligator_main.v
+      - aligator_addr_decode.v
+      - aligator_inputs.v
+      - aligator_vmem.v
+      - aligator_video_timing.v
+      - aligator_video_top.v
+      - aligator_gae1_video.v
+      - aligator_gae1_tilemap.v
+      - aligator_gae1_sprite.v
+      - aligator_gae1_palette.v
+      - aligator_gae1_sound.v
+      - aligator_68kdtack.v
+      - aligator_mcu.v
+      - mc8051_regen.v
+fx68k: []
+jtframe:
+  - from: ram
+    get:
+      - jtframe_ram_rst.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+      - jtframe_68kdtack.v
+  - from: ram
+    get:
+      - jtframe_dual_ram.v

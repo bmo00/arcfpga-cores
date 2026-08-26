@@ -1,0 +1,46 @@
+params:
+  - { name: SUB_OFFSET, value: "22'h2_8000 >> 1" }
+clocks:
+  clk48:
+    - freq: 6M
+      gate: [ "main", "sub", "snd" ]
+      outputs:
+        - cen6
+        - cen3
+    - freq: 4M
+      gate: [ "main", "sub", "snd" ]
+      outputs:
+        - cen4
+audio:
+  rsum: 10k
+  rc: { r: 1.3k, c: 10n }
+  channels:
+    - { name: fm03, module: jt03_fm,  rsum: 6.2k, rc: [{ r: 1rout, c: 1n }] }
+    - { name: fm26, module: jtopl,    rsum: 6.2k, rc: [{ r: 1rout, c: 1n }] }
+    - { name: psg,  module: jt03_psg, rsum: 8.2k }
+sdram:
+  banks:
+    - buses:
+        - name: main
+          addr_width: 18
+          data_width: 8
+        - name: sub
+          addr_width: 15
+          data_width: 8
+          offset: SUB_OFFSET
+    - buses:
+        - name: snd
+          addr_width: 15
+          data_width: 8
+    - buses:
+        - name: gfx
+          addr_width: 19
+          data_width: 32
+bram:
+  - name: mcu
+    addr_width: 12
+    data_width: 8
+    simfile: {}
+
+    rom:
+      offset: "((`MCU_START-`JTFRAME_BA2_START)>>1)|24'h800000"

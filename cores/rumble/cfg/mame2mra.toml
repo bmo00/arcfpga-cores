@@ -1,0 +1,41 @@
+[global]
+author=["jotego"]
+
+[parse]
+sourcefile=[ "srumbler.cpp" ]
+
+[Audio]
+volume = [
+    { machine="srumbler", value=0x1C },
+]
+
+[buttons]
+names=[
+    { names="Fire,Escape" }
+]
+
+[header]
+info = """ Header to identify the game
+"""
+data = [
+    { setname="srumbler",  offset=0, data="01" },
+    { setnames=["srumbler2","srumbler3","rushcrsh"], offset=0, data="00" },
+]
+
+[dipsw]
+rename=[ {name="Bonus Life", to="Bonus"} ]
+
+[ROM]
+regions=[
+    { name="maincpu", no_offset=true},
+    { name="audiocpu" },
+    { name="chars", reverse=true, no_offset=true },
+    { name="tiles", width=16, sequence=[4,0,5,1,6,2,7,3], no_offset=true },
+    { name="sprites", width=32, sequence=[6,4,2,0,7,5,3,1], no_offset=true },
+    { name="proms" }
+]
+
+order=[
+    "maincpu", "audiocpu", "chars",
+    "tiles", "sprites", "proms"
+]

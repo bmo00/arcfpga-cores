@@ -1,0 +1,10 @@
+--- hdl/rtl/mario_top.v
++++ hdl/rtl/mario_top.v
+@@ -274,7 +274,6 @@
+    .I_SND_CTRL({W_4C_Q[1:0],W_7M_Q}),
+    .I_ANLG_VOL(I_ANLG_VOL),
+    .I_DS_FILTER(),
+-   .I_ANLG_VOL(),
+    .I_H_CNT(W_H_CNT[3:0]),
+    .I_DLADDR(dn_addr), 
+    .I_DLDATA(dn_data),
