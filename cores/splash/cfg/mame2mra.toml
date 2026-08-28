@@ -1,0 +1,45 @@
+[global]
+author=[ "javi" ]
+webpage="https://github.com/javi-ivaj"
+twitter="-"
+# core no oficial: el RBF se llama jvsplash.rbf, sin el prefijo jt
+# (requiere el campo global.rbf del tool mra parcheado)
+rbf="jvsplash"
+
+[parse]
+sourcefile=[ "splash.cpp" ]
+mustbe.machines=[ "splash" ]
+
+[parse.skip]
+# New Splash / Painted Lady: same driver, cloneof=splash in MAME, but their gfx ROMs are
+# NOT merge= aliases of the parent's (different names AND CRCs - genuinely redrawn/censored
+# graphics, not just a regional maincpu revision). The `gfx` region's `parts` above are
+# hardcoded to the World parent's ROM crc's, so jtframe mra aborts with "Unknown ROM length"
+# the moment it reaches one of these in mame.xml, before ever parsing "splash" itself.
+setnames=[ "nsplashkr", "nsplashkra", "paintlad" ]
+
+[buttons]
+names=[
+    { machine="splash", names="Paint,Jump" },
+]
+
+[dipsw]
+bitcnt=16
+
+[ROM]
+regions=[
+    # program 256kB + gap (filled with FF up to 0x100000) + 3MB bitmap gfx data
+    { name="maincpu", width=16, reverse=true },
+    # 4bpp planar tiles: one ROM per plane. Rightmost map digit = data[7:0].
+    # jtframe_tilemap expects byte 0 = plane of pixel bit 0 (i13 = MAME plane 3 = LSB)
+    { name="gfx", start="JTFRAME_BA1_START", width=32, parts=[
+        { name="splash_10.i13", crc="febb9893", map="0001" },
+        { name="splash_12.i16", crc="21aeff2c", map="0010" },
+        { name="splash_11.i14", crc="2a8cb830", map="0100" },
+        { name="splash_13.i17", crc="028a4a68", map="1000" },
+    ] },
+    { name="audiocpu", start="JTFRAME_BA2_START" },
+    { name="plds", skip=true },
+]
+
+order=[ "maincpu", "gfx", "audiocpu" ]

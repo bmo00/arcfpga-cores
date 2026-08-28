@@ -1,0 +1,9 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -1,5 +1,6 @@
+ JTFRAME_RELEASE=1
+ CORENAME=MOMOKO
++GAMETOP=jtmomoko_game_sdram
+ 
+ # Core no oficial: nombre visible del OSD sin el prefijo JT
+ # (CORENAME se mantiene intacto: los generadores dependen de el)

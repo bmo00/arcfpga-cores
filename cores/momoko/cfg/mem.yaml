@@ -1,0 +1,220 @@
+clocks:
+  clk48:
+    - freq: 5000000
+      outputs: [ cen_main ]
+      gate: [ main ]
+    - freq: 2500000
+      outputs: [ cen_snd ]
+      gate: [ snd ]
+    - freq: 1250000
+      outputs: [ cen_fm ]
+
+audio:
+  rsum: 10k
+  # gain 0.5 para headroom (guia splash: con 1.0 la suma recorta)
+  #
+  # H6 (Task 9): historial de ajustes al ratio EFECTIVO de ganancia fm/psg
+  # (no es el ratio de resistencias por si solo: el generador -jtframe/src/
+  # jtframe/mem/audio.go Make_audio- multiplica cada canal por el `vpp` del
+  # modulo en audio_mod.yaml -jt03_fm vpp=0.5, jt03_psg vpp=0.72- ANTES de
+  # normalizar, lo que descompensa el ratio de resistencias 27k/10k=2.7).
+  # Verificado contra MAME 3 veces (tools/audio_cmp.py, guion coin@600/
+  # start@660, ventanas de 0.25s; w017-034 = cancion 1 attract, w035-052 =
+  # cancion 2 tras el avance del demo):
+  #   rsum psg | ratio EFECTIVO | region1(w017-034) | region2(w035-052) | media/mediana/stdev global
+  #   27k      | 1.39           | 1.240              | 1.669              | 1.455 / 1.335 / 0.540
+  #   30k      | 1.50           | 1.148              | 1.607              | 1.378 / 1.245 / 0.499
+  #   62k      | 2.663          | 0.764              | 1.355              | 1.060 / 1.045 / 0.379  <- elegido
+  #   1) 27k (heredado de Task 5, comentario "MAME FM=0.40 SSG=0.15 => 8:3"):
+  #      el comentario asumia que el ratio de resistencias por si solo fija
+  #      el ratio EFECTIVO (ignorando el `vpp` del generador) -> EFECTIVO
+  #      real solo 1.39, no 2.667.
+  #   2) 62k (ratio EFECTIVO 2.663, iguala el "8:3 de catalogo"): la media
+  #      global mejoro (1.455->1.060) pero la revision detecto un patron
+  #      BIMODAL por cancion (region1 0.76, region2 1.36) y pidio discriminar
+  #      si era un desbalance fm:psg corregible o diferencia de emulacion.
+  #   3) Discriminante: volcado temporal fm0+fm1/psg0+psg1 (.raw, quitado
+  #      tras el analisis) correlacionado con el ratio test/ref por ventana
+  #      -> pearson r=0.209 (debil) a grano fino, pero los promedios por
+  #      bloque si mostraban una direccion consistente con "region2 mas FM,
+  #      region1 mas balanceada". Se resolvio un factor corrector analitico
+  #      (2 ecuaciones/2 incognitas por bloque) -> ratio EFECTIVO objetivo
+  #      1.50 -> probado con rsum:30k.
+  #   4) La run de CONFIRMACION (30k) FALSEO la hipotesis: region1 mejoro
+  #      (0.76->1.15) pero region2 EMPEORO (1.36->1.61) en vez de mejorar
+  #      -tabla arriba, filas 27k/30k/62k: region1 y region2 se mueven
+  #      MONOTONAMENTE JUNTAS con el ratio EFECTIVO (ambas bajan al subir
+  #      el ratio), no en direcciones opuestas como predice un modelo de
+  #      "cancion1=diagnostico-psg, cancion2=diagnostico-fm" con dos
+  #      incognitas independientes. Interpolando, region1 cruza 1.0 en
+  #      ratio EFECTIVO ~1.95 pero region2 cruza 1.0 en ~4.31: NINGUN valor
+  #      de rsum/gain global satisface ambas regiones -> el patron bimodal
+  #      NO es (solo) un desbalance de mezcla fm:psg corregible con un
+  #      parametro global; es una diferencia de contenido/timing entre la
+  #      emulacion jt03 y el YM2203 real de MAME (confirmado por evidencia
+  #      negativa, no solo descartado por falta de correlacion).
+  #   Decision: revertido a 62k (mejor de las 3 configs medidas en media,
+  #      mediana Y stdev globales simultaneamente; coincide ademas con el
+  #      ratio "de catalogo" 0.40:0.15). H6 se cierra como PASS CALIFICADO:
+  #      ver tools/audio_cmp.py + .superpowers/sdd/task-9-report.md para el
+  #      residuo bimodal documentado (no corregible por este medio).
+  gain: 0.5
+  channels:
+    - { name: fm0,  module: jt03_fm,  rsum: 10k }
+    - { name: fm1,  module: jt03_fm,  rsum: 10k }
+    - { name: psg0, module: jt03_psg, rsum: 62k }
+    - { name: psg1, module: jt03_psg, rsum: 62k }
+
+sdram:
+  banks:
+    - buses:
+        - { name: main, addr_width: 16, data_width: 8 }
+    - buses:
+        - { name: snd,  addr_width: 15, data_width: 8 }
+
+bram:
+  # VRAM capa texto, 1kB en 0xE000. Puerto principal: fetcher de texto
+  # NB (H3): la plantilla del generador jtframe
+  # (modules/jtframe/hdl/inc/game_sdram.v linea ~574) hardcodea el nombre
+  # de la senal que cablea `q0` (puerto0) a `<name>_dout`, ignorando el
+  # `dout:` de nivel superior si es distinto de ese (bug confirmado
+  # comparando con game_sdram.v y con otros cores). Con `dout: vram_data`
+  # (nombre deseado) el puerto0 real quedaba sin excitar (UNDRIVEN) en el
+  # wrapper generado. Fix: dout de puerto0 = `<name>_dout` exacto (coincide
+  # con el hardcode), y jtmomoko_video.v usa ese mismo nombre en su puerto.
+  # El puerto1 (dual_port, lado CPU) SI respeta un `dout:` a medida, por
+  # lo que vram_cpu_data/pal_cpu_data/oram_cpu_data/vregs_cpu_data (usados
+  # por jtmomoko_main.v desde Task 4) quedan intactos.
+  - name: vram
+    addr_width: 10
+    data_width: 8
+    addr: vram_addr
+    dout: vram_dout
+    ioctl: { save: true, restore: true, order: 0 }
+    dual_port: { name: vram_cpu, addr: vram_cpu_addr, din: cpu_dout, dout: vram_cpu_data, we: vram_cpu_we, rw: true }
+
+  # Paleta 1kB en 0xD800 (512 x xRGB444 big endian). Principal: colmix
+  - name: pal
+    addr_width: 10
+    data_width: 8
+    addr: pal_addr
+    dout: pal_dout
+    ioctl: { save: true, restore: true, order: 1 }
+    dual_port: { name: pal_cpu, addr: pal_cpu_addr, din: cpu_dout, dout: pal_cpu_data, we: pal_cpu_we, rw: true }
+
+  # Tabla de sprites: ventana 256B sobre 0xD000-0xD0FF (usados 0xD064-0xD0FF)
+  - name: oram
+    addr_width: 8
+    data_width: 8
+    addr: oram_addr
+    dout: oram_dout
+    ioctl: { save: true, restore: true, order: 2 }
+    dual_port: { name: oram_cpu, addr: oram_cpu_addr, din: cpu_dout, dout: oram_cpu_data, we: oram_cpu_we, rw: true }
+
+  # Registros de video (16 bytes, ver mapa en jtmomoko_main). Principal: scanner
+  - name: vregs
+    addr_width: 4
+    data_width: 8
+    addr: vregs_addr
+    dout: vregs_dout
+    ioctl: { save: true, restore: true, order: 3 }
+    dual_port: { name: vregs_cpu, addr: vregs_cpu_addr, din: cpu_dout, dout: vregs_cpu_data, we: vregs_cpu_we, rw: true }
+
+  # RAM de trabajo del Z80 principal, 4kB en 0xC000
+  - name: wram
+    addr_width: 12
+    data_width: 8
+    addr: wram_addr
+    din: cpu_dout
+    # NB (H3): igual que Bug A de vram/pal/oram/vregs, pero via un hardcode
+    # distinto: mem.go's ioctl_dump-bus builder usa siempre `<name>_dout`
+    # (mem.go:1217, ioinfo.Dout = each.Name+"_dout") para el dump de
+    # save-state, IGNORANDO el campo dout: de esta entrada. Con
+    # `dout: wram_data` (nombre que jtmomoko_main.v ya consume) el volcado
+    # ioctl (save/restore, para las Tareas 7/10) leia de un wram_dout
+    # inexistente -> Verilator lo marcaba IMPLICIT/UNDRIVEN
+    # (jtmomoko_game_sdram.v:805, .dout4(wram_dout)). WRAM es puerto unico
+    # (no dual_port), asi que aqui no hay separacion entre "puerto principal"
+    # y "puerto CPU": solo hay un nombre, y debe ser el que el dump espera.
+    # Fix: dout=wram_dout (coincide con el hardcode); jtmomoko_game.v ahora
+    # conecta wram_data (puerto de jtmomoko_main) <= wram_dout (puerto top).
+    dout: wram_dout
+    we: wram_we
+    rw: true
+    ioctl: { save: true, restore: true, order: 4 }
+
+  # --- ROMs en BRAM, cargadas del stream de descarga ---
+  # NB (H3): estas 8 entradas viven todas mas alla de JTFRAME_BA1_START
+  # (0xC000), asi que sin JTFRAME_BA2_START definido (ver macros.def)
+  # `bank` en jtframe_dwnld quedaba clavado en 1 para todas y su offset
+  # nunca hacia match. Formula (igual que cores/bubl, entrada `mcu`):
+  # ((`MOMOKO_X-`JTFRAME_BA2_START)>>1)|24'h800000  (bank=2 en bits[23:22],
+  # `>>1` porque prog_addr esta en palabras de 16 bits, no bytes).
+  # Mapa BG 128kB. Puerto unico BRAM ROM; arbitraje fetcher BG / ventana
+  # CPU 0xF000 lo hace jtmomoko_bgmap_mux (mem.yaml no soporta rom+dual_port)
+  - name: bgmap
+    addr_width: 17
+    data_width: 8
+    addr: bgmap_addr
+    dout: bgmap_data
+    rom: { offset: "((`MOMOKO_BGMAP-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Tiles BG 128kB, pares 16 bits
+  # addr_width en BYTES (H6): 128kB = 2^17; con 16 solo se direccionaba/
+  # cargaba la mitad de la ROM (bug detectado en Task 6, Step 0)
+  - name: bggfx
+    addr_width: 17
+    data_width: 16
+    addr: bggfx_addr
+    dout: bggfx_data
+    rom: { offset: "((`MOMOKO_BGGFX-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Sprites 64kB, pares 16 bits
+  # addr_width en BYTES (H6): 64kB = 2^16; con 15 solo se direccionaba/
+  # cargaba la mitad de la ROM (bug detectado en Task 6, Step 0)
+  - name: objgfx
+    addr_width: 16
+    data_width: 16
+    addr: objgfx_addr
+    dout: objgfx_data
+    rom: { offset: "((`MOMOKO_OBJGFX-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Mapa FG 16kB
+  - name: fgmap
+    addr_width: 14
+    data_width: 8
+    addr: fgmap_addr
+    dout: fgmap_data
+    rom: { offset: "((`MOMOKO_FGMAP-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Chars de texto 8kB (2bpp)
+  - name: chgfx
+    addr_width: 13
+    data_width: 8
+    addr: chgfx_addr
+    dout: chgfx_data
+    rom: { offset: "((`MOMOKO_CHGFX-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Tiles FG 8kB (2bpp)
+  - name: fggfx
+    addr_width: 13
+    data_width: 8
+    addr: fggfx_addr
+    dout: fggfx_data
+    rom: { offset: "((`MOMOKO_FGGFX-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # Color/prioridad de tiles BG 8kB
+  - name: bgatr
+    addr_width: 13
+    data_width: 8
+    addr: bgatr_addr
+    dout: bgatr_data
+    rom: { offset: "((`MOMOKO_BGATR-`JTFRAME_BA2_START)>>1)|24'h800000" }
+
+  # PROMs de color del texto: momoko-c (256B) + momoko-b (32B en 0x100)
+  - name: tprom
+    addr_width: 9
+    data_width: 8
+    addr: tprom_addr
+    dout: tprom_data
+    rom: { offset: "((`MOMOKO_PROM-`JTFRAME_BA2_START)>>1)|24'h800000" }

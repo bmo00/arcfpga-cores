@@ -1,0 +1,17 @@
+--- a/cfg/mame2mra.toml
++++ b/cfg/mame2mra.toml
+@@ -10,6 +10,14 @@ rbf="jvsplash"
+ sourcefile=[ "splash.cpp" ]
+ mustbe.machines=[ "splash" ]
+ 
++[parse.skip]
++# New Splash / Painted Lady: same driver, cloneof=splash in MAME, but their gfx ROMs are
++# NOT merge= aliases of the parent's (different names AND CRCs - genuinely redrawn/censored
++# graphics, not just a regional maincpu revision). The `gfx` region's `parts` above are
++# hardcoded to the World parent's ROM crc's, so jtframe mra aborts with "Unknown ROM length"
++# the moment it reaches one of these in mame.xml, before ever parsing "splash" itself.
++setnames=[ "nsplashkr", "nsplashkra", "paintlad" ]
++
+ [buttons]
+ names=[
+     { machine="splash", names="Paint,Jump" },

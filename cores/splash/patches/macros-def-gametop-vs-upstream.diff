@@ -1,0 +1,9 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -1,5 +1,6 @@
+ JTFRAME_RELEASE=1
+ CORENAME=SPLASH
++GAMETOP=jtsplash_game_sdram
+
+ # Core no oficial: el OSD muestra SPLASH, sin el prefijo JT, sin logo ni creditos JT
+ JTFRAME_OSD_NAME=SPLASH

@@ -1425,6 +1425,32 @@
       }
     }
   },
+  "momoko": {
+    "origin": "external",
+    "core_author": "javi-ivaj",
+    "framework": "jtframe",
+    "mra_author": "javi",
+    "beta": false,
+    "external": {
+      "repo": "javi-ivaj/momoko120-fpga",
+      "commit": "69b3e9e4f97b29cfdbd676ecaee0056728d44aa7"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-28",
+        "commit": "69b3e9e4f97b29cfdbd676ecaee0056728d44aa7"
+      },
+      "mra": {
+        "date": "2026-08-28",
+        "commit": "69b3e9e4f97b29cfdbd676ecaee0056728d44aa7"
+      },
+      "arc": {
+        "date": "2026-08-28",
+        "commit": "69b3e9e4f97b29cfdbd676ecaee0056728d44aa7"
+      }
+    }
+  },
   "moomesa": {
     "origin": "external",
     "core_author": "jlrh",
@@ -2325,6 +2351,32 @@
       }
     }
   },
+  "splash": {
+    "origin": "external",
+    "core_author": "javi-ivaj",
+    "mra_author": "javi",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "javi-ivaj/splash-fpga",
+      "commit": "0b5464142fb5cc73b2cb18689024bd43ee4abd10"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-08-28",
+        "commit": "0b5464142fb5cc73b2cb18689024bd43ee4abd10"
+      },
+      "mra": {
+        "date": "2026-08-28",
+        "commit": "0b5464142fb5cc73b2cb18689024bd43ee4abd10"
+      },
+      "arc": {
+        "date": "2026-08-28",
+        "commit": "0b5464142fb5cc73b2cb18689024bd43ee4abd10"
+      }
+    }
+  },
   "squash": {
     "origin": "external",
     "core_author": "jlrh",
@@ -2858,8 +2910,8 @@
   "yiear": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego",
+    "framework": "jtframe",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",

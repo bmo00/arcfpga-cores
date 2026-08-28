@@ -173,9 +173,11 @@ alternate/clone set.
 | [`jtxmen`](cores/xmen/) | [1](doc/game_list.md#xmen) | Konami, 1992 — JOTEGO port | 2026-08-21 |
 | [`jtyiear`](cores/yiear/README.md) | [1](doc/game_list.md#yiear) | Konami, 1985 — JOTEGO port | 2026-08-21 |
 | [`mariobros`](cores/mariobros/README.md) | [2](doc/game_list.md#mariobros) | Nintendo, 1983 | 2026-08-26 |
+| [`momoko`](cores/momoko/) | [1](doc/game_list.md#momoko) | Jaleco, 1986 | 2026-08-28 |
 | [`moomesa`](cores/moomesa/) | [2](doc/game_list.md#moomesa) | Konami, 1992 — jlrh port | 2026-08-26 |
 | [`mystston`](cores/mystston/README.md) | [1](doc/game_list.md#mystston) | Technos Japan, 1984 | 2026-08-26 |
 | [`opwolf`](cores/opwolf/) | [1](doc/game_list.md#opwolf) | Taito, 1987 — jlrh port | 2026-08-26 |
+| [`splash`](cores/splash/) | [1](doc/game_list.md#splash) | Gaelco / OMK Software, 1992 | 2026-08-28 |
 | [`squash`](cores/squash/) | [1](doc/game_list.md#squash) | Gaelco, 1992 — jlrh port | 2026-08-26 |
 | [`ssriders`](cores/ssriders/) | [1](doc/game_list.md#ssriders) | Konami, 1991 — jlrh port | 2026-08-26 |
 | [`thoop`](cores/thoop/) | [1](doc/game_list.md#thoop) | Gaelco, 1992 — jlrh port | 2026-08-26 |
@@ -207,6 +209,7 @@ obtained MAME ROM dump with a `.mra` into the `.rom` a core actually loads.
   alongside other public sources when building this project's own neptUNO+ target.
 - [gyurco](https://github.com/gyurco) — 2 ported cores in this collection and 1 shared module
   under `modules/`.
+- [javi-ivaj](https://github.com/javi-ivaj) — 2 ported cores in this collection.
 - [jlrh](https://github.com/jlrh) — 14 ported cores in this collection.
 - [jtfpga](https://github.com/jtfpga) — 1 shared module under `modules/`.
 - [meathax](https://github.com/meathax) — 1 ported core in this collection.

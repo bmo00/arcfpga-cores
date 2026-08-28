@@ -1,0 +1,30 @@
+momoko:
+  - get:
+      - jtmomoko_game.v
+      - jtmomoko_main.v
+      - jtmomoko_snd.v
+      - jtmomoko_bgmap_mux.v
+      - jtmomoko_vregs.v
+      - jtmomoko_text.v
+      - jtmomoko_bg.v
+      - jtmomoko_fg.v
+      - jtmomoko_obj.v
+      - jtmomoko_colmix.v
+      - jtmomoko_video.v
+jtframe:
+  - get:
+      - jtframe_edge.v
+      - jtframe_ff.v
+  - from: cpu
+    get:
+      - jtframe_z80.yaml
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_obj.yaml
+  - from: ram
+    get:
+      - jtframe_obj_buffer.v
+jt12:
+  - get:
+      - jt03.yaml

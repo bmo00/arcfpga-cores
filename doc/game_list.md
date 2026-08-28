@@ -4,7 +4,7 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 ## Index
 
-[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`squash`](#squash), [`ssriders`](#ssriders), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
+[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
 
 ## aligator
 
@@ -1706,6 +1706,14 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Mario Bros. (Japan, older) (`marioja`)
   - Mario Bros. (Japan, revision C) (`marioj`)
 
+## momoko
+
+**Jaleco, 1986**
+
+- **Momoko 120% (Japanese text)** (`momoko`)
+  - Momoko 120% (English text) (`momokoe`)
+  - Momoko 120% (bootleg) (`momokob`)
+
 ## moomesa
 
 **Konami, 1992**
@@ -1740,6 +1748,17 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Operation Wolf (Japan, rev 2) (`opwolfj`)
   - Operation Wolf (US, rev 2) (`opwolfu`)
   - Operation Wolf (World, rev 2, set 2) (`opwolfa`)
+
+## splash
+
+**Gaelco / OMK Software, 1992**
+
+- **Splash! (ver. 1.3, checksum E7BEF3FA, World)** (`splash`)
+  - Splash! (ver. 1.0, checksum 2FC9AE1D, non North America) (`splash10`)
+  - Splash! (ver. 1.1, checksum 4697D2BF, non North America) (`splash11`)
+  - Splash! (ver. 1.2, checksum 5071804D, non North America) (`splash12`)
+  - Splash! (ver. 1.3, checksum E7BEEBFA, Korea) (`splashkr`)
+  - Splash! (ver. 1.3, checksum E7BEEEFA, North America) (`splashna`)
 
 ## squash
 

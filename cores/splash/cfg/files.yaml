@@ -1,0 +1,38 @@
+splash:
+  - get:
+      - jtsplash_game.v
+      - jtsplash_main.v
+      - jtsplash_snd.v
+      - jtsplash_video.v
+      - jtsplash_char.v
+      - jtsplash_scroll.v
+      - jtsplash_obj.v
+      - jtsplash_bitmap.v
+      - jtsplash_colmix.v
+jtframe:
+  - get:
+      - jtframe_edge.v
+      - jtframe_ff.v
+  - from: cpu
+    get:
+      - jtframe_m68k.yaml
+      - jtframe_z80.yaml
+  - from: video
+    get:
+      - jtframe_vtimer.v
+      - jtframe_obj.yaml
+  - from: video/tilemap
+    get:
+      - jtframe_scroll.v
+      - jtframe_scroll_offset.v
+      - jtframe_tilemap.v
+  - from: cpu
+    get:
+      - jtframe_68kdtack_cen.v
+  - from: video
+    get:
+      - jtframe_objdraw.v
+jtopl:
+  - get:
+      - jtopl2.yaml
+jt5205: null

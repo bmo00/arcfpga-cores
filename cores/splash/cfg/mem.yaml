@@ -1,0 +1,80 @@
+clocks:
+  clk48:
+    - freq: 3750000   # 30 MHz/8 on the PCB: Z80 and YM3812
+      outputs:
+        - cen_fm
+    - freq: 384000    # MSM5205 oscillator
+      outputs:
+        - cen_pcm
+
+audio:
+  rsum: 10k
+  # jtframe normaliza el canal mas alto a la ganancia global. MAME mezcla
+  # ambos chips a 0.80 (balance 1:1). Con 1.0 la suma FM+PCM saturaba el 41%
+  # de las muestras; 0.5 deja la suma sin clipping y ~nivel MAME
+  gain: 0.5
+  channels:
+    - { name: fm,  module: jtopl2, rsum: 10k }
+    - { name: pcm, module: jt5205, rsum: 10k }
+
+sdram:
+  banks:
+    - buses:
+        - { name: main, addr_width: 22, data_width: 16 }
+    - buses:
+        - { name: char, addr_width: 19, data_width: 32 }
+        - { name: scr,  addr_width: 19, data_width: 32 }
+        - { name: obj,  addr_width: 19, data_width: 32 }
+    - buses:
+        - { name: snd,  addr_width: 16, data_width: 8 }
+
+bram:
+  # 68000 work RAM, 16kB at 0xFFC000
+  - name: wram
+    addr_width: 14
+    data_width: 16
+    addr: wram_addr
+    din: cpu_dout
+    dout: wram_dout
+    we: wram_we
+    rw: true
+
+  # pixel layer frame buffer, 256kB at 0x800000
+  # 512x256 16-bit words, one pixel per word (lower byte)
+  # main port: video read. dual port: CPU r/w
+  - name: pxl
+    addr_width: 18
+    data_width: 16
+    latch: outputs
+    ioctl: { save: true, restore: true, order: 4 }
+    dual_port: { name: pxl_cpu, addr: pxl_cpu_addr, din: cpu_dout, dout: pxl_cpu_dout, we: pxl_we, rw: true }
+
+  # VRAM 8kB at 0x880000: tilemap0 (8x8), tilemap1 (16x16), vregs and spare work RAM
+  # duplicated so char and scroll layers can read at the same time
+  - name: vram0
+    addr_width: 13
+    data_width: 16
+    latch: outputs
+    ioctl: { save: true, restore: true, order: 0 }
+    dual_port: { name: vram_cpu, addr: vram_cpu_addr, din: cpu_dout, dout: vram0_cpu_dout, we: vram_we, rw: true }
+  - name: vram1
+    addr_width: 13
+    data_width: 16
+    latch: outputs
+    ioctl: { save: true, restore: true, order: 1 }
+    dual_port: { name: vram1_cpu, addr: vram_cpu_addr, din: cpu_dout, dout: vram1_cpu_dout, we: vram_we, rw: true }
+
+  # palette 4kB at 0x8C0000, 2048 x xRGB555
+  - name: pal
+    addr_width: 12
+    data_width: 16
+    latch: outputs
+    ioctl: { save: true, restore: true, order: 2 }
+    dual_port: { name: pal_cpu, addr: pal_cpu_addr, din: cpu_dout, dout: pal_cpu_dout, we: pal_we, rw: true }
+
+  # sprite RAM 4kB at 0x900000
+  - name: oram
+    addr_width: 12
+    data_width: 16
+    ioctl: { save: true, restore: true, order: 3 }
+    dual_port: { name: oram_cpu, addr: oram_cpu_addr, din: cpu_dout, dout: oram_cpu_dout, we: oram_we, rw: true }

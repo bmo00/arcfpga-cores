@@ -1,0 +1,46 @@
+[global]
+author=[ "javi" ]
+webpage="https://github.com/javi-ivaj"
+twitter="-"
+# core no oficial: el RBF lleva las iniciales del autor (jv) en lugar de jt
+# (requiere el campo global.rbf del tool mra parcheado)
+rbf="jvmomoko"
+
+[parse]
+sourcefile=[ "momoko.cpp" ]
+
+[buttons]
+names=[
+    { machine="momoko", names="Attack,Jump" },
+]
+
+[dipsw]
+bitcnt=16
+# DSW0 bit7 is not a DIP switch (it is IPT_COIN1 read through the same port,
+# see momoko.cpp PORT_START("DSW0") ... PORT_BIT(0x80,...,IPT_COIN1)), so the
+# highest declared DSW0 dip bit is bit6. mame2mra infers the next tag's bit
+# offset as (previous tag's highest declared bit)+1, so DSW1 was placed at
+# bit 7 instead of byte-aligned bit 8, shifting every DSW1 dip switch down by
+# one bit (Cabinet mask=0x10 landed on global bit 11 instead of bit 12, and
+# Bonus Life mask=0x03 straddled bits 7-8 instead of 8-9). Force DSW1 to
+# start at bit 8 so the assembled default (and each dip's "bits" attribute)
+# match the real hardware byte layout: default becomes ff,ef instead of ff,f7.
+offset=[
+    { name="DSW1", value=8 },
+]
+
+[ROM]
+regions=[
+    { name="maincpu" },
+    { name="audiocpu",   start="JTFRAME_BA1_START" },
+    { name="bg_map",     start="MOMOKO_BGMAP" },
+    { name="bg_gfx",     start="MOMOKO_BGGFX", width=16 },
+    { name="spr_gfx",    start="MOMOKO_OBJGFX", width=16 },
+    { name="fg_map",     start="MOMOKO_FGMAP" },
+    { name="text",       start="MOMOKO_CHGFX" },
+    { name="fg_gfx",     start="MOMOKO_FGGFX" },
+    { name="bg_col_map", start="MOMOKO_BGATR" },
+    { name="proms",      start="MOMOKO_PROM" },
+]
+
+order=[ "maincpu", "audiocpu", "bg_map", "bg_gfx", "spr_gfx", "fg_map", "text", "fg_gfx", "bg_col_map", "proms" ]
