@@ -2451,7 +2451,8 @@
     "releases": {
       "neptunoplus": {
         "date": "2026-08-30",
-        "commit": "120fd5aa637f9b06e5cd3475b2dc321b68f1c326"
+        "commit": "120fd5aa637f9b06e5cd3475b2dc321b68f1c326",
+        "tested": "yes"
       },
       "mra": {
         "date": "2026-08-30",
