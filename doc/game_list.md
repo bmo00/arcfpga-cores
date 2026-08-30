@@ -4,7 +4,7 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 ## Index
 
-[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
+[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
 
 ## aligator
 
@@ -1516,6 +1516,21 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Sly Spy (US, revision 3) (`slyspy3`)
   - Sly Spy (US, revision 4) (`slyspy`)
 
+## taitox
+
+**East Technology, 1988–1992**
+
+- Balloon Brothers (`ballbros`)
+- Daisenpu (Japan) (`daisenpu`)
+- Gigandes (`gigandes`)
+- Gigandes (earlier) (`gigandesa`)
+- Last Striker / Kyuukyoku no Striker (`kyustrkr`)
+- Superman (Japan) (`supermanj`)
+- Superman (US) (`supermanu`)
+- Superman (World) (`superman`)
+- Twin Hawk (US) (`twinhawku`)
+- Twin Hawk (World) (`twinhawk`)
+
 ## thundr
 
 **Namco, 1985–1987**
@@ -1701,7 +1716,6 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 **Nintendo, 1983**
 
-- Mario Bros. (US, revision E) (`mario`)
 - **Mario Bros. (US, revision E)** (`mario`)
   - Mario Bros. (Japan, older) (`marioja`)
   - Mario Bros. (Japan, revision C) (`marioj`)

@@ -159,6 +159,7 @@ alternate/clone set.
 | [`jtshouse`](cores/shouse/README.md) | [19](doc/game_list.md#shouse) | Namco, 1987–1991 — JOTEGO port | 2026-08-21 |
 | [`jtsimson`](cores/simson/README.md) | [3](doc/game_list.md#simson) | Konami, 1991 — JOTEGO port | 2026-08-21 |
 | [`jtslyspy`](cores/slyspy/) | [2](doc/game_list.md#slyspy) | Data East Corporation, 1989–1990 — JOTEGO port | 2026-08-21 |
+| [`jttaitox`](cores/taitox/README.md) | [10](doc/game_list.md#taitox) | East Technology, 1988–1992 — JOTEGO port | 2026-08-30 |
 | [`jtthundr`](cores/thundr/) | [8](doc/game_list.md#thundr) | Namco, 1985–1987 — JOTEGO port | 2026-08-21 |
 | [`jttmnt`](cores/tmnt/README.md) | [4](doc/game_list.md#tmnt) | Konami, 1989–1991 — JOTEGO port | 2026-08-21 |
 | [`jttoki`](cores/toki/README.md) | [2](doc/game_list.md#toki) | TAD Corporation, 1988–1989 — JOTEGO port | 2026-08-21 |
@@ -172,7 +173,7 @@ alternate/clone set.
 | [`jtwwfss`](cores/wwfss/README.md) | [1](doc/game_list.md#wwfss) | Technos Japan, 1989 — JOTEGO port | 2026-08-21 |
 | [`jtxmen`](cores/xmen/) | [1](doc/game_list.md#xmen) | Konami, 1992 — JOTEGO port | 2026-08-21 |
 | [`jtyiear`](cores/yiear/README.md) | [1](doc/game_list.md#yiear) | Konami, 1985 — JOTEGO port | 2026-08-21 |
-| [`mariobros`](cores/mariobros/README.md) | [2](doc/game_list.md#mariobros) | Nintendo, 1983 | 2026-08-26 |
+| [`mariobros`](cores/mariobros/README.md) | [1](doc/game_list.md#mariobros) | Nintendo, 1983 | 2026-08-26 |
 | [`momoko`](cores/momoko/) | [1](doc/game_list.md#momoko) | Jaleco, 1986 | 2026-08-28 |
 | [`moomesa`](cores/moomesa/) | [2](doc/game_list.md#moomesa) | Konami, 1992 — jlrh port | 2026-08-26 |
 | [`mystston`](cores/mystston/README.md) | [1](doc/game_list.md#mystston) | Technos Japan, 1984 | 2026-08-26 |
@@ -204,7 +205,7 @@ obtained MAME ROM dump with a `.mra` into the `.rom` a core actually loads.
 - [Jose Tejada (jotego)](https://github.com/jotego) —
   [JTFRAME](https://github.com/jotego/jtframe) and
   [jtcores](https://github.com/jotego/jtcores), the framework and core collection this project
-  builds on (78 ported cores, 22 shared modules in this repo).
+  builds on (79 ported cores, 22 shared modules in this repo).
 - [somhi](https://github.com/somhi) — reference work on JTFRAME-based neptUNO+ targets, used
   alongside other public sources when building this project's own neptUNO+ target.
 - [gyurco](https://github.com/gyurco) — 2 ported cores in this collection and 1 shared module
