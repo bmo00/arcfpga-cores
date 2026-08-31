@@ -77,9 +77,9 @@
         <!-- Total 0x4E0000 bytes - 4992 kBytes -->
     </rom>
     <nvram index="2" size="26636"/>
-    <!-- Vertical screen. Orientation reversed. -->
+    <!-- Vertical screen. Orientation reversed. 8-line black frame on top/bottom. -->
     <rom index="1">
-        <part>05 80</part>
+        <part>25 80</part>
     </rom>
     <switches page_id="1" page_name="Switches" base="16" default="ff,f1">
         <DSW/>

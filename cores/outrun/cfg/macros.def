@@ -66,7 +66,7 @@ JTFRAME_LF_BUFFER
 JTFRAME_CREDITS_PAGES=3
 JTFRAME_CREDITS_HSTART=32
 
-[mister|sockit|de1soc|de10std|sidi128]
+[mister|sockit|de1soc|de10std|sidi128|neptunoplus]
 # Controller options have only been tested on MiSTer
 CORE_OSD=OKM,Control Type,A.Stick,A.Triggers,A.Wheel;
 #JTFRAME_CHEAT
