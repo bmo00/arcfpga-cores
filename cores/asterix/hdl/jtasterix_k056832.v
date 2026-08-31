@@ -89,8 +89,13 @@ jtframe_vtimer #(
     // Era el dx=3 / shift L=3 que rgbdiff barria y el HANDOFF tenia anotado como calibracion de timing HW.
     //   HB_START 0x182(386)->0x122(290): activo 3..290 = 288 px exactos = visarea real (antes 384).
     //   HB_END   0x002(2)               : LHBL sube en H=3. Blanking 291..383,0,1,2 (wrap ok).
-    //   HS_START 0x193(403)->0x12C(300) : el 403 ya no existe con HTOTAL=384; 300 = front porch de 9 px.
-    .HB_START(9'h122), .HB_END(9'h002), .HS_START(9'h12C),
+    //   HS_START 0x193(403)->0x13B(315) : el 403 ya no existe con HTOTAL=384; 315 = front porch de 24 px
+    //   (antes 300 = front porch de 9 px). ⭐ SESION 24: front 9 / sync 28 / back 59 era muy asimetrico
+    //   (back porch ~9.8us) y provocaba imagen desplazada a la derecha en CRT real (columnas de la
+    //   izquierda perdidas fuera del area visible, p.ej. "JAPAN" salia "APAN"). Retrasar HS_START alarga
+    //   el front porch y recorta el back porch en la misma cantidad (front 24 / sync 28 / back 44),
+    //   desplazando la imagen a la izquierda. Pendiente de validar en CRT real; puede necesitar ajuste fino.
+    .HB_START(9'h122), .HB_END(9'h002), .HS_START(9'h13B),
     .V_START(9'h0FA), .VB_START(9'h1EF), .VB_END(9'h10F),
     .VS_START(9'h1FF), .VS_END(9'h0FF), .VCNT_END(9'h1FF)
 ) u_vtimer(

@@ -89,7 +89,7 @@ alternate/clone set.
 | Core | Games | Description | Last update |
 |---|---|---|---|
 | [`aligator`](cores/aligator/) | [1](doc/game_list.md#aligator) | Gaelco, 1994 — jlrh port | 2026-08-26 |
-| [`asterix`](cores/asterix/) | [1](doc/game_list.md#asterix) | Konami, 1992 — jlrh port | 2026-08-26 |
+| [`asterix`](cores/asterix/) | [1](doc/game_list.md#asterix) | Konami, 1992 — jlrh port | 2026-08-31 |
 | [`bigkarnk`](cores/bigkarnk/) | [1](doc/game_list.md#bigkarnk) | Gaelco, 1991 — jlrh port | 2026-08-26 |
 | [`biomtoy`](cores/biomtoy/) | [1](doc/game_list.md#biomtoy) | Gaelco, 1995 — jlrh port | 2026-08-26 |
 | [`bucky`](cores/bucky/) | [1](doc/game_list.md#bucky) | Konami, 1992 | 2026-08-26 |

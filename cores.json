@@ -168,8 +168,8 @@
   "asterix": {
     "origin": "external",
     "core_author": "jlrh",
-    "mra_author": "konami-fpga",
     "framework": "jtframe",
+    "mra_author": "konami-fpga",
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
@@ -181,17 +181,17 @@
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
+        "date": "2026-08-31",
         "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984",
         "notes": "EEPROM bit check bad",
         "tested": "failed"
       },
       "arc": {
-        "date": "2026-08-26",
+        "date": "2026-08-31",
         "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984"
       },
       "mra": {
-        "date": "2026-08-26",
+        "date": "2026-08-31",
         "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984"
       }
     }
@@ -2938,8 +2938,8 @@
   "xmen": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego",
+    "framework": "jtframe",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
