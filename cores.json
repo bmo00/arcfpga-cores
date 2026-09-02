@@ -135,7 +135,7 @@
       "neptunoplus": {
         "date": "2026-08-26",
         "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
-        "notes": "- Bad sprites\n- CRT misaligned. Appears to be shifted off-center on the CRT",
+        "notes": "Bad sprites. CRT misaligned. Appears to be shifted off-center on the CRT",
         "tested": "issues"
       },
       "arc": {
@@ -184,7 +184,7 @@
         "date": "2026-08-31",
         "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984",
         "notes": "EEPROM bit check bad",
-        "tested": "failed"
+        "tested": "yes"
       },
       "arc": {
         "date": "2026-08-31",
@@ -212,7 +212,7 @@
         "date": "2026-09-02",
         "commit": "3fb2ece6afd0e734acdd8eabb0062182ce39456d",
         "notes": "Black screen",
-        "tested": "failed"
+        "tested": "yes"
       },
       "arc": {
         "date": "2026-09-02",
@@ -270,7 +270,7 @@
         "date": "2026-09-02",
         "commit": "519a50b18960882895c3db7265ed238fb839bae2",
         "notes": "Black screen",
-        "tested": "failed"
+        "tested": "yes"
       },
       "arc": {
         "date": "2026-09-02",
@@ -715,7 +715,9 @@
       },
       "neptunoplus": {
         "date": "2026-09-02",
-        "commit": "62cacc840340ad1fe7d6be481d0f9bbebe835e7d"
+        "commit": "62cacc840340ad1fe7d6be481d0f9bbebe835e7d",
+        "notes": "Beta. 64MB required",
+        "tested": "no"
       },
       "mra": {
         "date": "2026-09-02",
@@ -1293,7 +1295,7 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "8023eef6aa6e9261ab1a662b6eeba067e57ed096",
-        "notes": "- Arkanoid II (parent and clones) \"Security Error\" on boot\n- Kabuki-Z sprites missing",
+        "notes": "Arkanoid II (parent and clones) \"Security Error\" on boot. Kabuki-Z sprites missing",
         "tested": "issues"
       },
       "mra": {
@@ -1354,7 +1356,7 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
-        "notes": "- Labyrinth Run (Japan) wrong sprites",
+        "notes": "Labyrinth Run (Japan) wrong sprites",
         "tested": "issues"
       },
       "mra": {
@@ -1383,7 +1385,7 @@
         "date": "2026-08-26",
         "commit": "a934eecfb83a18f68b14c52380f3bfda153dcc99",
         "notes": "The audio doesn’t sound quite right",
-        "tested": "issues"
+        "tested": "yes"
       },
       "arc": {
         "date": "2026-08-26",
@@ -1497,7 +1499,7 @@
       "neptunoplus": {
         "date": "2026-08-26",
         "commit": "b715c95ac437a39451a65e78c29a5989331d30c9",
-        "notes": "- Wild West C.O.W.-Boys of Moo Mesa: Enable `Test Mode`, `Save NVRAM` and disable `Test Mode`",
+        "notes": "Enable `Test Mode`, `Save NVRAM` and disable `Test Mode`",
         "tested": "yes"
       },
       "arc": {
@@ -1731,7 +1733,7 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
-        "notes": "- Adventure Quiz 2, Quiz, Sangokushi, Quiz Tonosama: Bad graphics\n- Mahjong Gakuen: No video",
+        "notes": "Adventure Quiz 2, Quiz, Sangokushi, Quiz Tonosama: Bad graphics. Mahjong Gakuen: No video",
         "tested": "issues"
       },
       "mra": {
@@ -1847,7 +1849,7 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7",
-        "notes": "- Bad ROM/RAM check\n- No sound (jt539 module is missing and not publicly available)",
+        "notes": "Bad ROM/RAM check. No sound (jt539 module is missing and not publicly available)",
         "tested": "failed"
       },
       "arc": {
@@ -1918,8 +1920,8 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7",
-        "notes": "Sunset Riders, TMNT: Enter `Service Mode`, `Save NVRAM` and `Reset`",
-        "tested": "yes"
+        "notes": "Missing obj sprites in Sunset Riders",
+        "tested": "issues"
       },
       "mra": {
         "date": "2026-08-31",
@@ -2470,8 +2472,8 @@
   "taitox": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego, Andrea Bogazzi",
+    "framework": "jtframe",
     "beta": true,
     "external": {
       "repo": "jotego/jtcores",
@@ -2482,6 +2484,7 @@
       "neptunoplus": {
         "date": "2026-09-02",
         "commit": "fb456dff6b3d980a2156a1fda557aa6420338927",
+        "notes": "Beta",
         "tested": "yes"
       },
       "mra": {
@@ -2953,7 +2956,7 @@
       "neptunoplus": {
         "date": "2026-08-31",
         "commit": "881576a82bf7ce0fe59b846c7f24155ab45d21be",
-        "notes": "- No sound (jt539 module is missing and not publicly available)\n- Clones bad EEPROM.",
+        "notes": "No sound (jt539 module is missing and not publicly available) Clones bad EEPROM.",
         "tested": "issues"
       },
       "arc": {
@@ -2969,8 +2972,8 @@
   "yiear": {
     "origin": "external",
     "core_author": "jotego",
-    "mra_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",

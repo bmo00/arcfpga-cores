@@ -48,7 +48,7 @@
     "module_kind": "standalone",
     "external": {
       "repo": "jotego/jt12",
-      "commit": "1aff35dc6611b2f842666ddacce40734896cb1a4"
+      "commit": "dc9be7c1ff75d5b9a7f9d89da1b7fba212af1257"
     }
   },
   "jt49": {
@@ -187,7 +187,7 @@
     "module_kind": "bundled",
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "74fa325adda13e4338b1d5a19849c710fe21a325",
+      "commit": "d071770fd6521481b0eb18527d7bf61533d512e8",
       "bundle_path": "modules/jttc0030cmd"
     }
   },
