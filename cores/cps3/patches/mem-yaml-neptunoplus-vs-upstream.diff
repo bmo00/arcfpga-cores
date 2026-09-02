@@ -1,0 +1,51 @@
+--- a/cfg/mem.yaml
++++ b/cfg/mem.yaml
+@@ -46,19 +46,35 @@
+       blocks: { count: 32, size: 32 }
+     # 3. Character DMA uses tiles_wr
+     - name: tiles_wr
++      unless: [ NEPTUNOPLUS ]
+       data_width: 32
+       rw: true
+       flush:  { enable: true, invalidates: [tiles] }
+       blocks: { count: 4, size: 512 }
+       at:     { chip: 1, bank: 3, length: 8MB }
++    - name: tiles_wr
++      when: [ NEPTUNOPLUS ]
++      data_width: 32
++      rw: true
++      flush:  { enable: true, invalidates: [tiles] }
++      blocks: { count: 4, size: 512 }
++      at:     { bank: 2, length: 8MB }
+     # 4. SIMM 2
+     - name: simm2
++      unless: [ NEPTUNOPLUS ]
+       data_width: 32
+       rw: true
+       blocks: { count: 64, size: 64 }
+       at:     { bank: 0, length: 8MB, chip: 1 }
++    - name: simm2
++      when: [ NEPTUNOPLUS ]
++      data_width: 32
++      rw: true
++      blocks: { count: 64, size: 64 }
++      at:     { bank: 3, length: 8MB }
+     # 5. Video uses tiles
+     - name: tiles
++      unless: [ NEPTUNOPLUS ]
+       data_width: 128
+       blocks:
+         size: 128
+@@ -68,6 +84,12 @@
+             count: 256
+       at:     { chip: 1, bank: 3, length: 8MB }
+       simfile: { name: tilechar.bin }
++    - name: tiles
++      when: [ NEPTUNOPLUS ]
++      data_width: 128
++      blocks: { size: 128, count: 512 }
++      at:     { bank: 2, length: 8MB }
++      simfile: { name: tilechar.bin }
+     # 6. Scene DMA reads
+     - name: scndma
+       data_width: 32

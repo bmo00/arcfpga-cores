@@ -36,7 +36,7 @@
     <rom index="0" zip="gigandesa.zip|gigandes.zip|cchip.zip" md5="None" asm_md5="be2751848ea481b7952342122251c46a">
         <!-- 
   0[0]: cchip      Taito P0-039A (C-chip)
-  0[1]: hawk       Taito P0-051A (PC060HA + YM2151) -->
+  0[1]: ym2151     Taito P0-051A (PC060HA + YM2151) -->
         <part>
             00 00 00 00 00 00 00 00
             00 00 00 00 00 00 00 00
@@ -71,8 +71,8 @@
         <!-- JTFRAME_BA3_START -->
         <!-- adpcmb - starts at 0x400000 - length 0x80000 (19 bits) -->
         <part name="east-11.16f" crc="92111f96"/>
-        <!-- JTFRAME_PROM_START -->
         <!-- CCHIP_START -->
+        <!-- JTFRAME_PROM_START -->
         <!-- cchip_bios - starts at 0x480000 -->
         <!-- cchip_eprom - starts at 0x480000 -->
         <!-- Total 0x480000 bytes - 4608 kBytes -->

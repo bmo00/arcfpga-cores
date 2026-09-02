@@ -36,7 +36,7 @@
     <rom index="0" zip="gigandes.zip|cchip.zip" md5="None" asm_md5="d1ce8e659498950ccde5884c108e5064">
         <!-- 
   0[0]: cchip      Taito P0-039A (C-chip)
-  0[1]: hawk       Taito P0-051A (PC060HA + YM2151) -->
+  0[1]: ym2151     Taito P0-051A (PC060HA + YM2151) -->
         <part>
             00 00 00 00 00 00 00 00
             00 00 00 00 00 00 00 00

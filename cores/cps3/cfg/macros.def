@@ -34,16 +34,15 @@ JTFRAME_SDRAM96
 JTFRAME_CREDITS_HSTART=64
 
 JTFRAME_EASY_STA
-
-[mister]
-JTFRAME_SDRAM_XL
-
-[neptunoplus]
-JTFRAME_LF_SDRAM_BUFFER
-JTFRAME_SDRAM_LARGE
-
 [mist|sidi|pocket|sidi128]
 # Not enough BRAM
 # sidi128: unstable due to timing errors inside SH-2 CPU see cps3/issues/67
 # sidi128: support for 128MB SDRAM not done
 JTFRAME_SKIP
+
+[neptunoplus]
+JTFRAME_LF_SDRAM_BUFFER
+JTFRAME_SDRAM_LARGE
+
+[mister]
+JTFRAME_SDRAM_XL

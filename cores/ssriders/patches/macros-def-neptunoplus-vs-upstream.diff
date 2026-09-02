@@ -1,0 +1,11 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -23,7 +23,7 @@
+ 
+ JTFRAME_IOCTL_RD=128
+ 
+-[mister]
++[mister|neptunoplus]
+ JTFRAME_ARX=4
+ JTFRAME_ARY=3
+ JTFRAME_OSD_NOLOGO

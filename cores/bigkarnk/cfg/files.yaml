@@ -14,9 +14,18 @@ bigkarnk:
       - bigkarnk_gfx_decode.v
       - bigkarnk_sprite_layer.v
       - bigkarnk_sprite_engine.v
+      - jt6295.v
+      - jt6295_acc.v
+      - jt6295_adpcm.v
+      - jt6295_ctrl.v
+      - jt6295_rom.v
+      - jt6295_serial.v
+      - jt6295_sh_rst.v
+      - jt6295_timing.v
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
       - bigkarnk_68kdtack.v
-jt6295: null
-fx68k: []
 jtframe:
   - from: cpu
     get:
@@ -25,8 +34,6 @@ jtframe:
       - jtframe_ff.v
   - from: cpu
     get:
-      - jtframe_68kdtack_cen.v
-      - jtframe_68kdtack.v
       - jtframe_sys6809.v
 jtopl:
   - get:

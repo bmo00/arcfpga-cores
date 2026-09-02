@@ -45,12 +45,6 @@ sdram:
       flush: { enable: true }
       blocks: { count: 32, size: 32 }
     # 3. Character DMA uses tiles_wr
-    # neptunoplus has no dual-chip SDRAM_XL implementation yet (see cfg/macros.def's own
-    # comment on this) — chip 1 there is a single-purpose line-buffer SDRAM
-    # (JTFRAME_LF_SDRAM_BUFFER), not a general-purpose ROM/RAM chip, so its own variant of
-    # this lane (and simm2/tiles below) stays on chip 0, in the two banks (2-3) that
-    # cpuba0 (bank 0) and pcm (bank 1) leave free — only fits ROM sets small enough for a
-    # single 64MB chip (JTFRAME_SDRAM_LARGE); bigger sets still need the real dual-chip work.
     - name: tiles_wr
       unless: [ NEPTUNOPLUS ]
       data_width: 32

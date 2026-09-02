@@ -1,0 +1,21 @@
+--- hdl/rtl/mario_hv_generator.v
++++ hdl/rtl/mario_hv_generator.v
+@@ -43,8 +43,16 @@
+ parameter H_count = 768;
+ parameter H_BL_P  = 511;
+ parameter H_BL_W  = 767;
+-parameter V_CL_P  = 576;
+-parameter V_CL_W  = 640;
++// NeptUNO+-specific tuning, not an upstream bug: shifts HSync later inside the unchanged
++// H_BL_P..H_BL_W blanking window (back porch 127->71 H_CNT counts), sync pulse width (64) and
++// the active video window (0..H_BL_P-1) both untouched. Upstream's 576/640 (front porch 65,
++// back porch 127) left the image landing ~3cm right-of-center on a real CRT via NeptUNO+'s
++// analog output -- confirmed on real hardware, and independently reproduced by a second,
++// unrelated MiST-based bridge of this same core, so it's this timing/output-chain combination,
++// not a bug in either bridge. Tune by moving both numbers together by the same delta (larger =
++// less back porch = image moves further left); 576/640 is upstream's native value.
++parameter V_CL_P  = 632;
++parameter V_CL_W  = 696;
+ parameter V_BL_P  = 239;
+ parameter V_BL_W  = 15;
+ 

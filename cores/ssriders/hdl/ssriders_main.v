@@ -406,7 +406,7 @@ always @(*) begin
     if( p4_cs       ) port_in = { 8'hff, konami_player(joystick4, cab_1p[3]) };
     if( coins_cs    ) port_in = { 8'hff, service[3:0], coin[3:0] };
 
-    if( eepromr_cs  ) port_in = { 8'hff, service[0], 2'b00, 1'b0, ~LVBL, 1'b0, eep_rdy, eep_do };
+    if( eepromr_cs  ) port_in = { 8'hff, dip_test, 2'b00, 1'b0, ~LVBL, 1'b0, eep_rdy, eep_do };
     if( sndmain_cs  ) port_in = { 8'hff, snd2main };
 end
 
@@ -453,7 +453,6 @@ end
 reg HALTn;
 always @(posedge clk) HALTn <= dip_pause & ~rst;
 
-`ifdef SIMULATION
 reg s80_rst_l=1, s80_haltn_l=0, s80_asn_l=1;
 integer s80_cen_cnt=0, s80_cenb_cnt=0;
 always @(posedge clk) begin
@@ -477,7 +476,6 @@ always @(posedge clk) begin
     s80_haltn_l <= HALTn;
     s80_asn_l   <= ASn;
 end
-`endif
 
 jt5911 #(.SIMFILE("nvram.bin")) u_eeprom(
     .rst        ( rst       ),

@@ -1,0 +1,25 @@
+diff --git a/hdl/jtcps3_game.v b/hdl/jtcps3_game.v
+index 9cd5b5ba..0b4e6af5 100644
+--- a/hdl/jtcps3_game.v
++++ b/hdl/jtcps3_game.v
+@@ -84,10 +84,16 @@ assign pal_we      = paldma_busy ? paldma_we   : cpu_pal_we_l;
+ assign cram_data   = { 16'd0, pal_dout };
+ assign gfxdma_rd   = gfxdma_active_owner == GFXDMA_CPU   ? main_gfxflash_rd  :
+                      gfxdma_active_owner == GFXDMA_VIDEO ? video_gfxdma_rd   : 1'b0;
+-// Physical map: SIMM3–5 occupy 16–64 MiB, SIMM2 occupies 64–80 MiB,
+-// and SIMM6 follows at 80–96 MiB. All requesters use contiguous m_user5.
+-assign gfxdma_addr = 25'h0400000 + { 1'b0, gfxdma_user5_addr } +
+-                     (gfxdma_user5_addr[25:22] >= 4'd12 ? 25'h0400000 : 25'd0);
++// Physical map: bios+SIMM1 occupy 0-8.5MiB (0x880000 bytes, verified against the
++// generated .mra header's own region table: 0x0008/0x0088/0x0188/0x0288 in 64kB units for
++// bios/simm1/simm3/simm4 is constant across every set), and SIMM3/4/5/2/6 are packed back to
++// back with no padding right after, in that order, matching m_user5's own concatenation
++// order - so a single contiguous offset from that base is correct for every requester, with
++// no extra jump: the previous 16MiB-based formula (and its "+4MiB past 48MiB" jump, which
++// assumed SIMM3-5 were each padded out to a fixed 16MiB) didn't match this real, tightly
++// packed layout, at any size combination - it fed the character/tile DMA (jtcps3_chardma)
++// wrong source bytes for every set, not just ones with SIMM2 populated.
++assign gfxdma_addr = 25'h0220000 + { 1'b0, gfxdma_user5_addr };
+ assign main_gfxflash_ok = gfxdma_owner == GFXDMA_CPU   && gfxdma_ok;
+ assign video_gfxdma_ok  = gfxdma_owner == GFXDMA_VIDEO && gfxdma_ok;
+ // gfxdma write port — read-only in practice, tied inactive

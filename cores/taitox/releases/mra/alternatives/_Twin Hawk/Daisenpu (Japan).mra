@@ -36,7 +36,7 @@
     <rom index="0" zip="daisenpu.zip|twinhawk.zip|cchip.zip" md5="None" asm_md5="c852766451d759bcd00e45b5a23ef0c8">
         <!-- 
   0[0]: cchip      Taito P0-039A (C-chip)
-  0[1]: hawk       Taito P0-051A (PC060HA + YM2151) -->
+  0[1]: ym2151     Taito P0-051A (PC060HA + YM2151) -->
         <part>
             02 00 00 00 00 00 00 00
             00 00 00 00 00 00 00 00

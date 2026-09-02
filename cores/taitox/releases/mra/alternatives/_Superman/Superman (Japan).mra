@@ -36,7 +36,7 @@
     <rom index="0" zip="supermanj.zip|superman.zip|cchip.zip" md5="None" asm_md5="3e624088692906a9595a00b82953ff27">
         <!-- 
   0[0]: cchip      Taito P0-039A (C-chip)
-  0[1]: hawk       Taito P0-051A (PC060HA + YM2151) -->
+  0[1]: ym2151     Taito P0-051A (PC060HA + YM2151) -->
         <part>
             01 00 00 00 00 00 00 00
             00 00 00 00 00 00 00 00
@@ -71,8 +71,8 @@
         <!-- JTFRAME_BA3_START -->
         <!-- adpcmb - starts at 0x400000 - length 0x80000 (19 bits) -->
         <part repeat="0x80000"> FF</part>
-        <!-- CCHIP_START -->
         <!-- JTFRAME_PROM_START -->
+        <!-- CCHIP_START -->
         <!-- cchip_bios - starts at 0x480000 - length 0x1000 (12 bits) -->
         <part name="cchip_upd78c11.bin" crc="43021521" length="0x1000"/>
         <!-- cchip_eprom - starts at 0x481000 - length 0x2000 (13 bits) -->

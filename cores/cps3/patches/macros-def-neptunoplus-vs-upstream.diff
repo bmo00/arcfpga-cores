@@ -1,0 +1,21 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -4,7 +4,6 @@
+ JTFRAME_SKIP_RATE_TEST
+ 
+ JTFRAME_MR_DDRLOAD
+-JTFRAME_SDRAM_XL
+ JTFRAME_180SHIFT
+ JTFRAME_NOHQ2X
+ JTFRAME_NOMULTIWAY
+@@ -40,3 +39,10 @@
+ # sidi128: unstable due to timing errors inside SH-2 CPU see cps3/issues/67
+ # sidi128: support for 128MB SDRAM not done
+ JTFRAME_SKIP
++
++[neptunoplus]
++JTFRAME_LF_SDRAM_BUFFER
++JTFRAME_SDRAM_LARGE
++
++[mister]
++JTFRAME_SDRAM_XL

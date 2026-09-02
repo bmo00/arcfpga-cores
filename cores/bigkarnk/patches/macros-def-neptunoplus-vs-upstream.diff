@@ -1,0 +1,11 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -15,7 +15,7 @@
+ JTFRAME_BA2_START=0x280000
+ JTFRAME_BA3_START=0x2C0000
+ 
+-[mister]
++[mister|neptunoplus]
+ JTFRAME_ARX=4
+ JTFRAME_ARY=3
+ 

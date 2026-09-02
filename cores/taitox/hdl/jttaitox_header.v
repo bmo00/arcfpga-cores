@@ -7,7 +7,7 @@ module jttaitox_header(
                      header, prog_we,
     
     output reg       cchip=0,
-    output reg       hawk=0,
+    output reg       ym2151=0,
     input      [3:0] prog_addr,
     input      [7:0] prog_data
 );
@@ -16,7 +16,7 @@ always @(posedge clk) begin
     if( header && prog_addr[3:0]==0 && prog_we )
         cchip <= prog_data[0];
     if( header && prog_addr[3:0]==0 && prog_we )
-        hawk <= prog_data[1];
+        ym2151 <= prog_data[1];
 end
 
 endmodule
