@@ -127,6 +127,7 @@ alternate/clone set.
 | [`jtgng`](cores/gng/README.md) | [1](doc/game_list.md#gng) | Capcom, 1985 — JOTEGO port | 2026-08-26 |
 | [`jtgrad3`](cores/grad3/README.md) | [1](doc/game_list.md#grad3) | Konami, 1989 — JOTEGO port | 2026-09-02 |
 | [`jtgunsmk`](cores/gunsmk/README.md) | [1](doc/game_list.md#gunsmk) | Capcom, 1985 — JOTEGO port | 2026-08-26 |
+| [`jtharier`](cores/harier/README.md) | [2](doc/game_list.md#harier) | Sega, 1985–1986 — JOTEGO port | 2026-09-06 |
 | [`jtkarnov`](cores/karnov/) | [3](doc/game_list.md#karnov) | Data East Corporation, 1987–1988 — JOTEGO port | 2026-08-31 |
 | [`jtkchamp`](cores/kchamp/README.md) | [2](doc/game_list.md#kchamp) | Data East USA, 1984 — JOTEGO port | 2026-08-31 |
 | [`jtkicker`](cores/kicker/README.md) | [1](doc/game_list.md#kicker) | Konami, 1985 — JOTEGO port | 2026-08-31 |
@@ -208,7 +209,7 @@ obtained MAME ROM dump with a `.mra` into the `.rom` a core actually loads.
 - [Jose Tejada (jotego)](https://github.com/jotego) —
   [JTFRAME](https://github.com/jotego/jtframe) and
   [jtcores](https://github.com/jotego/jtcores), the framework and core collection this project
-  builds on (80 ported cores, 22 shared modules in this repo).
+  builds on (81 ported cores, 22 shared modules in this repo).
 - [somhi](https://github.com/somhi) — reference work on JTFRAME-based neptUNO+ targets, used
   alongside other public sources when building this project's own neptUNO+ target.
 - [gyurco](https://github.com/gyurco) — 2 ported cores in this collection and 1 shared module

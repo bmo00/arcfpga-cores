@@ -1167,6 +1167,32 @@
       }
     }
   },
+  "harier": {
+    "origin": "external",
+    "core_author": "jotego",
+    "framework": "jtframe",
+    "mra_author": "jotego, niknak",
+    "beta": true,
+    "external": {
+      "repo": "jotego/jtcores",
+      "commit": "65056144c0d7d3c185748f69b5d87760b40047de"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-09-06",
+        "commit": "65056144c0d7d3c185748f69b5d87760b40047de"
+      },
+      "mra": {
+        "date": "2026-09-06",
+        "commit": "65056144c0d7d3c185748f69b5d87760b40047de"
+      },
+      "arc": {
+        "date": "2026-09-06",
+        "commit": "65056144c0d7d3c185748f69b5d87760b40047de"
+      }
+    }
+  },
   "inferno": {
     "origin": "external",
     "core_author": "MiSTer-devel",
@@ -2499,8 +2525,8 @@
   "taitox": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego, Andrea Bogazzi",
+    "framework": "jtframe",
     "beta": true,
     "external": {
       "repo": "jotego/jtcores",

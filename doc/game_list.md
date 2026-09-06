@@ -4,7 +4,7 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 ## Index
 
-[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`systemc2`](#systemc2), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
+[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`harier`](#harier), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`systemc2`](#systemc2), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
 
 ## aligator
 
@@ -925,6 +925,17 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Gun.Smoke (USA and Canada, 1985-11-15, set 2) (`gunsmokeuc`)
   - Gun.Smoke (USA and Canada, 1986-04-08) (`gunsmokeu`)
   - Gun.Smoke (World, 1985-11-15) (bootleg) (`gunsmokeb`)
+
+## harier
+
+**Sega, 1985–1986**
+
+- **Enduro Racer (Rev A, YM2151, FD1089B 317-0013A)** (`enduror`)
+  - Enduro Racer (Rev A, YM2151, mask ROM sprites, FD1089B 317-0013A) (`endurora`)
+  - Enduro Racer (YM2151, FD1089B 317-0013A) (`endurorb`)
+  - Enduro Racer (YM2203, FD1089B 317-0013A) (`enduror1`)
+- **Space Harrier (Rev A, 8751 315-5163A)** (`sharrier`)
+  - Space Harrier (8751 315-5163) (`sharrier1`)
 
 ## karnov
 
