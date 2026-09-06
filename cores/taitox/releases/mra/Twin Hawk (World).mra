@@ -73,7 +73,7 @@
     <nvram index="2" size="21504"/>
     <!-- Vertical screen. Orientation reversed. 8-line black frame on top/bottom. -->
     <rom index="1">
-        <part>25 80</part>
+        <part>0D 80</part>
     </rom>
     <switches page_id="1" page_name="Switches" base="16" default="ff,7f">
         <DSWA/>

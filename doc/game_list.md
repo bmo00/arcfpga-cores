@@ -4,7 +4,7 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 ## Index
 
-[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
+[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`systemc2`](#systemc2), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
 
 ## aligator
 
@@ -1819,6 +1819,68 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Sunset Riders (4 Players ver UAB) (`ssridersuab`)
   - Sunset Riders (4 Players ver UAC) (`ssridersuac`)
   - Sunset Riders (4 Players ver UDA) (`ssridersuda`)
+
+## systemc2
+
+**Sega, 1989–1996**
+
+- Bloxeed (US, C System, Rev A) (`bloxeedu`)
+- Bloxeed (World, C System) (`bloxeedc`)
+- **Borench (set 1)** (`borench`)
+  - Borench (Japan) (`borenchj`)
+  - Borench (set 2) (`borencha`)
+- Columns (Japan) (`columnsj`)
+- Columns (US, cocktail, Rev A) (`columnsu`)
+- Columns (World) (`columns`)
+- Columns II: The Voyage Through Time (Japan) (`column2j`)
+- Columns II: The Voyage Through Time (World) (`columns2`)
+- Monita to Rimoko no Head On Channel (prototype, hack) (`headonch`)
+- OOPArts (prototype, joystick hack) (`ooparts`)
+- Poto Poto (Japan, Rev A) (`potopoto`)
+- Print Club (Japan Vol.1) (`pclubj`)
+- Print Club (Japan Vol.2) (`pclubjv2`)
+- Print Club (Japan Vol.3) (`pclubjv3`)
+- Print Club (Japan Vol.4) (`pclubjv4`)
+- Print Club (Japan Vol.5) (`pclubjv5`)
+- Print Club (World) (`pclub`)
+- Puyo Puyo (Japan, Rev A) (`puyoja`)
+- Puyo Puyo (Japan, Rev B) (`puyoj`)
+- **Puyo Puyo (World)** (`puyo`)
+  - Puyo Puyo (World, bootleg) (`puyobl`)
+- Puyo Puyo 2 (Japan) (`puyopuy2`)
+- **Puzzle & Action: Ichidant-R (World)** (`ichir`)
+  - Puzzle & Action: Ichidant-R (Japan) (`ichirj`)
+  - Puzzle & Action: Ichidant-R (Japan) (bootleg) (`ichirjbl`)
+  - Puzzle & Action: Ichidant-R (Korea) (`ichirk`)
+  - Puzzle & Action: Ichidant-R (World) (bootleg) (`ichirbl`)
+- **Puzzle & Action: Tant-R (Japan)** (`tantr`)
+  - Puzzle & Action: Tant-R (Japan) (bootleg set 1) (`tantrbl`)
+  - Puzzle & Action: Tant-R (Japan) (bootleg set 2) (`tantrbl2`)
+  - Puzzle & Action: Tant-R (Japan) (bootleg set 3) (`tantrbl3`)
+  - Puzzle & Action: Tant-R (Japan) (bootleg set 4) (`tantrbl4`)
+  - Puzzle & Action: Tant-R (Korea) (`tantrkor`)
+- **Ribbit!** (`ribbit`)
+  - Ribbit! (Japan) (`ribbitj`)
+- SegaSonic Bros. (prototype, hack) (`ssonicbr`)
+- **SegaSonic Cosmo Fighter (World)** (`sonicfgt`)
+  - SegaSonic Cosmo Fighter (Japan) (`sonicfgtj`)
+- SegaSonic Popcorn Shop (Rev B) (`sonicpop`)
+- **Soreike! Anpanman Popcorn Koujou (Rev B)** (`anpanman`)
+  - Soreike! Anpanman Popcorn Koujou (Rev A) (`anpanmana`)
+- **Stack Columns (World)** (`stkclmns`)
+  - Stack Columns (Japan) (`stkclmnsj`)
+- **Thunder Force AC** (`tfrceac`)
+  - Thunder Force AC (Japan) (`tfrceacj`)
+  - Thunder Force AC (bootleg) (`tfrceacb`)
+- Thunder Force AC (Japan, prototype, bootleg) (`tfrceacjpb`)
+- Twin Squash (`twinsqua`)
+- **Waku Waku Anpanman (Rev A)** (`wwanpanm`)
+  - Waku Waku Anpanman (`wwanpanmo`)
+- Waku Waku Jumbo (Rev A) (`wwjumbo`)
+- Waku Waku Marine (`wwmarine`)
+- Waku Waku Pajero (`wwpajero`)
+- Waku Waku Sonic Patrol Car (`soniccar`)
+- Zunzunkyou no Yabou (Japan) (`zunkyou`)
 
 ## thoop
 

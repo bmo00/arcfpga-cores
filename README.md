@@ -80,7 +80,7 @@ alternate/clone set.
 
 | Core | Games | Description | Last update |
 |---|---|---|---|
-| [`jtcps3`](cores/cps3/README.md) | [17](doc/game_list.md#cps3) | Capcom, 1996–1999 — JOTEGO port | 2026-09-02 |
+| [`jtcps3`](cores/cps3/README.md) | [17](doc/game_list.md#cps3) | Capcom, 1996–1999 — JOTEGO port | 2026-09-06 |
 | [`jtrastan`](cores/rastan/README.md) | [19](doc/game_list.md#rastan) | Taito Corporation, 1987–1988 — JOTEGO port | 2026-08-21 |
 | [`mystston`](cores/mystston/README.md) | [1](doc/game_list.md#mystston) | Technos Japan, 1984 | 2026-08-26 |
 
@@ -97,7 +97,7 @@ alternate/clone set.
 | [`glass`](cores/glass/) | [1](doc/game_list.md#glass) | Gaelco, 1993 — jlrh port | 2026-08-26 |
 | [`jt1942`](cores/1942/README.md) | [3](doc/game_list.md#1942) | Capcom, 1984 — JOTEGO port | 2026-08-31 |
 | [`jt1943`](cores/1943/README.md) | [3](doc/game_list.md#1943) | Capcom, 1987 — JOTEGO port | 2026-08-26 |
-| [`jtajax`](cores/ajax/) | [1](doc/game_list.md#ajax) | Konami, 1987 — JOTEGO port | 2026-08-31 |
+| [`jtajax`](cores/ajax/) | [1](doc/game_list.md#ajax) | Konami, 1987 — JOTEGO port | 2026-09-06 |
 | [`jtaliens`](cores/aliens/README.md) | [5](doc/game_list.md#aliens) | Konami, 1988–1990 — JOTEGO port | 2026-08-31 |
 | [`jtbiocom`](cores/biocom/README.md) | [1](doc/game_list.md#biocom) | Capcom, 1987 — JOTEGO port | 2026-08-31 |
 | [`jtblkout`](cores/blkout/README.md) | [1](doc/game_list.md#blkout) | Technos Japan / California Dreams, 1989 — JOTEGO port | 2026-08-31 |
@@ -110,10 +110,10 @@ alternate/clone set.
 | [`jtcomsc`](cores/comsc/README.md) | [1](doc/game_list.md#comsc) | Konami, 1988 — JOTEGO port | 2026-08-31 |
 | [`jtcontra`](cores/contra/README.md) | [1](doc/game_list.md#contra) | Konami, 1987 — JOTEGO port | 2026-08-31 |
 | [`jtcop`](cores/cop/) | [2](doc/game_list.md#cop) | Data East Corporation, 1988–1989 — JOTEGO port | 2026-08-31 |
-| [`jtcps1`](cores/cps1/README.md) | [33](doc/game_list.md#cps1) | Capcom, 1988–1996 — JOTEGO port | 2026-08-31 |
+| [`jtcps1`](cores/cps1/README.md) | [33](doc/game_list.md#cps1) | Capcom, 1988–1996 — JOTEGO port | 2026-09-06 |
 | [`jtcps15`](cores/cps15/README.md) | [19](doc/game_list.md#cps15) | Capcom, 1992–1994 — JOTEGO port | 2026-08-31 |
-| [`jtcps2`](cores/cps2/README.md) | [320](doc/game_list.md#cps2) | Capcom, 1993–2004 — JOTEGO port | 2026-08-31 |
-| [`jtcps3`](cores/cps3/README.md) | [17](doc/game_list.md#cps3) | Capcom, 1996–1999 — JOTEGO port | 2026-09-02 |
+| [`jtcps2`](cores/cps2/README.md) | [320](doc/game_list.md#cps2) | Capcom, 1993–2004 — JOTEGO port | 2026-09-06 |
+| [`jtcps3`](cores/cps3/README.md) | [17](doc/game_list.md#cps3) | Capcom, 1996–1999 — JOTEGO port | 2026-09-06 |
 | [`jtdd`](cores/dd/README.md) | [1](doc/game_list.md#dd) | Technos Japan (Taito license), 1987 — JOTEGO port | 2026-08-31 |
 | [`jtdd2`](cores/dd2/README.md) | [1](doc/game_list.md#dd2) | Technos Japan, 1988 — JOTEGO port | 2026-08-31 |
 | [`jtddrbl`](cores/ddrbl/) | [1](doc/game_list.md#ddrbl) | Konami, 1986 — JOTEGO port | 2026-08-31 |
@@ -138,19 +138,19 @@ alternate/clone set.
 | [`jtmx5k`](cores/mx5k/README.md) | [1](doc/game_list.md#mx5k) | Konami, 1987 — JOTEGO port | 2026-08-31 |
 | [`jtninja`](cores/ninja/README.md) | [2](doc/game_list.md#ninja) | Data East Corporation, 1987–1988 — JOTEGO port | 2026-08-21 |
 | [`jtoutrun`](cores/outrun/README.md) | [2](doc/game_list.md#outrun) | Sega, 1986–1989 — JOTEGO port | 2026-09-02 |
-| [`jtpaclan`](cores/paclan/) | [1](doc/game_list.md#paclan) | Namco, 1984 — JOTEGO port | 2026-08-31 |
+| [`jtpaclan`](cores/paclan/) | [1](doc/game_list.md#paclan) | Namco, 1984 — JOTEGO port | 2026-09-06 |
 | [`jtpang`](cores/pang/README.md) | [13](doc/game_list.md#pang) | Capcom, 1988–1991 — JOTEGO port | 2026-08-31 |
 | [`jtparoda`](cores/paroda/) | [2](doc/game_list.md#paroda) | Konami, 1990 — JOTEGO port | 2026-08-31 |
 | [`jtpinpon`](cores/pinpon/README.md) | [1](doc/game_list.md#pinpon) | Konami, 1985 — JOTEGO port | 2026-08-31 |
 | [`jtpktgal`](cores/pktgal/README.md) | [1](doc/game_list.md#pktgal) | Data East Corporation, 1987 — JOTEGO port | 2026-08-31 |
 | [`jtprmr`](cores/prmr/README.md) | [1](doc/game_list.md#prmr) | Konami, 1993 — JOTEGO port | 2026-08-31 |
-| [`jtrastan`](cores/rastan/README.md) | [19](doc/game_list.md#rastan) | Taito Corporation, 1987–1988 — JOTEGO port | 2026-09-02 |
+| [`jtrastan`](cores/rastan/README.md) | [19](doc/game_list.md#rastan) | Taito Corporation, 1987–1988 — JOTEGO port | 2026-09-06 |
 | [`jtriders`](cores/riders/README.md) | [4](doc/game_list.md#riders) | Konami, 1990–1991 — JOTEGO port | 2026-08-31 |
 | [`jtroadf`](cores/roadf/README.md) | [2](doc/game_list.md#roadf) | Konami, 1984 — JOTEGO port | 2026-08-26 |
 | [`jtroc`](cores/roc/README.md) | [1](doc/game_list.md#roc) | Konami, 1983 — JOTEGO port | 2026-08-31 |
 | [`jtrumble`](cores/rumble/README.md) | [1](doc/game_list.md#rumble) | Capcom, 1986 — JOTEGO port | 2026-08-26 |
 | [`jtrungun`](cores/rungun/) | [1](doc/game_list.md#rungun) | Konami, 1993 — JOTEGO port | 2026-08-31 |
-| [`jts16`](cores/s16/README.md) | [19](doc/game_list.md#s16) | Sega, 1985–1988 — JOTEGO port | 2026-08-31 |
+| [`jts16`](cores/s16/README.md) | [19](doc/game_list.md#s16) | Sega, 1985–1988 — JOTEGO port | 2026-09-06 |
 | [`jts16b`](cores/s16b/README.md) | [38](doc/game_list.md#s16b) | Sega, 1986–2008 — JOTEGO port | 2026-08-31 |
 | [`jts18`](cores/s18/README.md) | [11](doc/game_list.md#s18) | Sega, 1989–2021 — JOTEGO port | 2026-08-31 |
 | [`jtsarms`](cores/sarms/README.md) | [1](doc/game_list.md#sarms) | Capcom, 1986 — JOTEGO port | 2026-08-26 |
@@ -161,7 +161,7 @@ alternate/clone set.
 | [`jtshouse`](cores/shouse/README.md) | [19](doc/game_list.md#shouse) | Namco, 1987–1991 — JOTEGO port | 2026-08-31 |
 | [`jtsimson`](cores/simson/README.md) | [3](doc/game_list.md#simson) | Konami, 1991 — JOTEGO port | 2026-08-31 |
 | [`jtslyspy`](cores/slyspy/) | [2](doc/game_list.md#slyspy) | Data East Corporation, 1989–1990 — JOTEGO port | 2026-08-31 |
-| [`jttaitox`](cores/taitox/README.md) | [10](doc/game_list.md#taitox) | East Technology, 1988–1992 — JOTEGO port | 2026-09-02 |
+| [`jttaitox`](cores/taitox/README.md) | [10](doc/game_list.md#taitox) | East Technology, 1988–1992 — JOTEGO port | 2026-09-06 |
 | [`jtthundr`](cores/thundr/) | [8](doc/game_list.md#thundr) | Namco, 1985–1987 — JOTEGO port | 2026-08-31 |
 | [`jttmnt`](cores/tmnt/README.md) | [4](doc/game_list.md#tmnt) | Konami, 1989–1991 — JOTEGO port | 2026-08-31 |
 | [`jttoki`](cores/toki/README.md) | [2](doc/game_list.md#toki) | TAD Corporation, 1988–1989 — JOTEGO port | 2026-08-31 |
@@ -183,6 +183,7 @@ alternate/clone set.
 | [`splash`](cores/splash/) | [1](doc/game_list.md#splash) | Gaelco / OMK Software, 1992 | 2026-08-28 |
 | [`squash`](cores/squash/) | [1](doc/game_list.md#squash) | Gaelco, 1992 — jlrh port | 2026-09-02 |
 | [`ssriders`](cores/ssriders/) | [1](doc/game_list.md#ssriders) | Konami, 1991 — jlrh port | 2026-09-02 |
+| [`systemc2`](cores/systemc2/README.md) | [38](doc/game_list.md#systemc2) | Sega, 1989–1996 | 2026-09-06 |
 | [`thoop`](cores/thoop/) | [1](doc/game_list.md#thoop) | Gaelco, 1992 — jlrh port | 2026-09-02 |
 | [`thoop2`](cores/thoop2/) | [1](doc/game_list.md#thoop2) | Gaelco, 1994 — jlrh port | 2026-08-26 |
 | [`wrally`](cores/wrally/) | [1](doc/game_list.md#wrally) | Gaelco, 1993 — jlrh port | 2026-08-26 |
@@ -216,6 +217,7 @@ obtained MAME ROM dump with a `.mra` into the `.rom` a core actually loads.
 - [jlrh](https://github.com/jlrh) — 14 ported cores in this collection.
 - [jtfpga](https://github.com/jtfpga) — 1 shared module under `modules/`.
 - [meathax](https://github.com/meathax) — 1 ported core in this collection.
+- [Mezzow](https://github.com/Mezzow) — 1 ported core in this collection.
 - [mist-devel](https://github.com/mist-devel) — 2 shared modules under `modules/`.
 - [MiSTer-devel](https://github.com/MiSTer-devel) — 2 ported cores in this collection.
 - The MiSTer/MiST/SiDi open-source FPGA arcade community.

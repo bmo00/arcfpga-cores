@@ -1,0 +1,245 @@
+# -------------------------------------------------------------------------- #
+# systemc2_neptunoplus.qsf — NeptUNO+ (EP4CGX150DF27I7) bridge for Sega System C / System C-2
+# Upstream: Mezzow/Arcade-SystemC2_MiSTer @ 36a01d4d08cc54d5ea8d6e4f9438c1df4568dfeb
+# See doc/porting-a-native-core.md §7 for the canonical section order.
+# -------------------------------------------------------------------------- #
+
+# ---- Project / device ----
+set_global_assignment -name FAMILY "Cyclone IV GX"
+set_global_assignment -name DEVICE EP4CGX150DF27I7
+set_global_assignment -name TOP_LEVEL_ENTITY systemc2_neptunoplus
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.1
+set_global_assignment -name LAST_QUARTUS_VERSION 13.1
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name NUM_PARALLEL_PROCESSORS ALL
+set_global_assignment -name SMART_RECOMPILE ON
+
+# ---- Analysis & Synthesis ----
+set_global_assignment -name CYCLONEII_OPTIMIZATION_TECHNIQUE SPEED
+set_global_assignment -name SYNTH_TIMING_DRIVEN_SYNTHESIS ON
+set_global_assignment -name FORCE_SYNCH_CLEAR ON
+set_global_assignment -name AUTO_SHIFT_REGISTER_RECOGNITION OFF
+set_global_assignment -name DSP_BLOCK_BALANCING "DSP BLOCKS"
+set_global_assignment -name VHDL_INPUT_VERSION VHDL_1993
+
+# ---- Fitter ----
+set_global_assignment -name FITTER_EFFORT "STANDARD FIT"
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "ALL PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+
+# ---- Assembler ----
+set_global_assignment -name GENERATE_RBF_FILE ON
+set_global_assignment -name USE_CONFIGURATION_DEVICE OFF
+
+# ---- Configuration ----
+set_global_assignment -name CYCLONEIII_CONFIGURATION_SCHEME "PASSIVE SERIAL"
+set_global_assignment -name FORCE_CONFIGURATION_VCCIO ON
+set_global_assignment -name CRC_ERROR_OPEN_DRAIN OFF
+set_global_assignment -name RESERVE_DATA0_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DATA1_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_FLASH_NCE_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name RESERVE_DCLK_AFTER_CONFIGURATION "USE AS REGULAR IO"
+set_global_assignment -name CYCLONEII_RESERVE_NCEO_AFTER_CONFIGURATION "USE AS REGULAR IO"
+
+# ---- I/O standard ----
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+
+# ---- Power ----
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+
+# ---- Pin assignments ----
+
+# LED
+set_location_assignment PIN_A24 -to LED
+
+# CLOCK
+set_location_assignment PIN_B14 -to CLOCK_27[0]
+set_instance_assignment -name VIRTUAL_PIN ON -to CLOCK_27[1]
+
+# VGA/RGB
+set_location_assignment PIN_AE19 -to VGA_R[7]
+set_location_assignment PIN_AD19 -to VGA_R[6]
+set_location_assignment PIN_AC19 -to VGA_R[5]
+set_location_assignment PIN_AF18 -to VGA_R[4]
+set_location_assignment PIN_AE18 -to VGA_R[3]
+set_location_assignment PIN_AC18 -to VGA_R[2]
+set_location_assignment PIN_AD16 -to VGA_R[1]
+set_location_assignment PIN_AE15 -to VGA_R[0]
+set_location_assignment PIN_AF24 -to VGA_B[7]
+set_location_assignment PIN_AC21 -to VGA_B[6]
+set_location_assignment PIN_AE23 -to VGA_B[5]
+set_location_assignment PIN_AE22 -to VGA_B[4]
+set_location_assignment PIN_AD20 -to VGA_B[3]
+set_location_assignment PIN_AF20 -to VGA_B[2]
+set_location_assignment PIN_AF15 -to VGA_B[1]
+set_location_assignment PIN_AC16 -to VGA_B[0]
+set_location_assignment PIN_AD21 -to VGA_G[7]
+set_location_assignment PIN_AF23 -to VGA_G[6]
+set_location_assignment PIN_AF22 -to VGA_G[5]
+set_location_assignment PIN_AE21 -to VGA_G[4]
+set_location_assignment PIN_AF21 -to VGA_G[3]
+set_location_assignment PIN_AF19 -to VGA_G[2]
+set_location_assignment PIN_AD17 -to VGA_G[1]
+set_location_assignment PIN_AF16 -to VGA_G[0]
+set_location_assignment PIN_AD18 -to VGA_VS
+set_location_assignment PIN_AE17 -to VGA_HS
+
+# AUDIO L/R
+set_location_assignment PIN_AF17 -to AUDIO_L
+set_location_assignment PIN_AC17 -to AUDIO_R
+
+# SPI
+set_location_assignment PIN_AC14 -to SPI_DO
+set_location_assignment PIN_AF12 -to SPI_DI
+set_location_assignment PIN_AF11 -to SPI_SCK
+set_location_assignment PIN_AC10 -to SPI_SS2
+set_location_assignment PIN_AD10 -to SPI_SS3
+set_location_assignment PIN_AE9  -to SPI_SS4
+
+# CONF
+set_location_assignment PIN_AD14 -to CONF_DATA0
+
+# microSD passthrough
+set_location_assignment PIN_A4 -to SD_MISO
+set_location_assignment PIN_B4 -to SD_SCK
+
+# Joystick
+set_location_assignment PIN_AD4 -to JOY_CLK
+set_location_assignment PIN_AC4 -to JOY_LOAD
+set_location_assignment PIN_AD3 -to JOY_DATA
+set_location_assignment PIN_A19 -to JOY_SELECT
+set_location_assignment PIN_AF4 -to XJOY_CLK
+set_location_assignment PIN_AE3 -to XJOY_LOAD
+set_location_assignment PIN_AF5 -to XJOY_DATA
+
+# SDRAM (real physical SDRAM — 3-port controller: ROM loader writes, 68000 program-ROM reads,
+# uPD7759 sample reads; see systemc2_neptunoplus.sv's own header comment)
+set_location_assignment PIN_L25 -to SDRAM_A[0]
+set_location_assignment PIN_L26 -to SDRAM_A[1]
+set_location_assignment PIN_M25 -to SDRAM_A[2]
+set_location_assignment PIN_M26 -to SDRAM_A[3]
+set_location_assignment PIN_N22 -to SDRAM_A[4]
+set_location_assignment PIN_N23 -to SDRAM_A[5]
+set_location_assignment PIN_N24 -to SDRAM_A[6]
+set_location_assignment PIN_M22 -to SDRAM_A[7]
+set_location_assignment PIN_M24 -to SDRAM_A[8]
+set_location_assignment PIN_L23 -to SDRAM_A[9]
+set_location_assignment PIN_K26 -to SDRAM_A[10]
+set_location_assignment PIN_L24 -to SDRAM_A[11]
+set_location_assignment PIN_K23 -to SDRAM_A[12]
+set_location_assignment PIN_B25 -to SDRAM_DQ[0]
+set_location_assignment PIN_B26 -to SDRAM_DQ[1]
+set_location_assignment PIN_C25 -to SDRAM_DQ[2]
+set_location_assignment PIN_C26 -to SDRAM_DQ[3]
+set_location_assignment PIN_D25 -to SDRAM_DQ[4]
+set_location_assignment PIN_D26 -to SDRAM_DQ[5]
+set_location_assignment PIN_E25 -to SDRAM_DQ[6]
+set_location_assignment PIN_E26 -to SDRAM_DQ[7]
+set_location_assignment PIN_H23 -to SDRAM_DQ[8]
+set_location_assignment PIN_G24 -to SDRAM_DQ[9]
+set_location_assignment PIN_G22 -to SDRAM_DQ[10]
+set_location_assignment PIN_F24 -to SDRAM_DQ[11]
+set_location_assignment PIN_F23 -to SDRAM_DQ[12]
+set_location_assignment PIN_E24 -to SDRAM_DQ[13]
+set_location_assignment PIN_D24 -to SDRAM_DQ[14]
+set_location_assignment PIN_C24 -to SDRAM_DQ[15]
+set_location_assignment PIN_J25 -to SDRAM_BA[0]
+set_location_assignment PIN_J26 -to SDRAM_BA[1]
+set_location_assignment PIN_G26 -to SDRAM_nCAS
+set_location_assignment PIN_E22 -to SDRAM_CLK
+set_location_assignment PIN_K24 -to SDRAM_CKE
+set_location_assignment PIN_H26 -to SDRAM_nCS
+set_location_assignment PIN_G25 -to SDRAM_nWE
+set_location_assignment PIN_H25 -to SDRAM_nRAS
+set_location_assignment PIN_H24 -to SDRAM_DQMH
+set_location_assignment PIN_F26 -to SDRAM_DQML
+set_instance_assignment -name CURRENT_STRENGTH_NEW 8MA -to SDRAM_*
+set_instance_assignment -name FAST_OUTPUT_REGISTER ON -to SDRAM_*
+set_instance_assignment -name FAST_OUTPUT_ENABLE_REGISTER ON -to SDRAM_DQ[*]
+set_instance_assignment -name FAST_INPUT_REGISTER ON -to SDRAM_DQ[*]
+
+# ---- Macro definitions ----
+# (none)
+
+# ---- PLL location ----
+# Bridge-local retuned pll.v, instantiated as `pll pll(...)` inside the adapter, no top-level
+# hierarchy prefix — same convention as every other bridge in this repo.
+set_location_assignment PLL_1 -to "pll:pll|altpll:altpll_component"
+
+# ---- Source files ----
+# Adapter (bridge-local)
+set_global_assignment -name SYSTEMVERILOG_FILE systemc2_neptunoplus.sv
+# Retuned PLL replacement (bridge-local, 50MHz input -> 53.693175/107.38635MHz, see pll.v's own
+# header comment) — referenced instead of ../hdl/rtl/pll.v (an altera_pll wrapper the vendored top
+# used), which stays pinned/untouched and is not referenced here at all.
+set_global_assignment -name VERILOG_FILE pll.v
+# Static build_id.v placeholder (bridge-local)
+set_global_assignment -name VERILOG_FILE build_id.v
+
+# Upstream game logic (vendored ../hdl/rtl/, unmodified except via neptunoplus/patches/ — see
+# §2.1). Arcade-SystemC2.sv (the upstream MiSTer top) is NOT listed here: the adapter clones its
+# board-glue content directly, so also compiling the original would duplicate the modules below.
+# mlab.vhd is dead weight left over from Genesis_MiSTer's rtl/system.sv, which c2_system.sv fully
+# replaces (see that file's own header comment) — no `mlab` instance anywhere in the vendored
+# tree, confirmed while lint-checking this core; simply not referenced. bram.vhd IS needed (its
+# `dpram`/`dpram_dif` entities back c2_system.sv's own work/video RAM instances).
+set_global_assignment -name VHDL_FILE ../hdl/rtl/bram.vhd
+set_global_assignment -name VHDL_FILE ../hdl/rtl/vdp_common.vhd
+set_global_assignment -name VHDL_FILE ../hdl/rtl/vdp.vhd
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/c2_system.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/c2_io.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/c2_palette.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/c2_prot.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/c2_romload.sv
+# sdram.sv needs neptunoplus/patches/sdram-cyclone-iv-device-family.patch applied (Cyclone V ->
+# Cyclone IV GX altddio_out family fix) — see patches/README.md. Referenced at its pinned path;
+# the patch is applied to a staged copy at lint/build time, never to this file in place.
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/sdram.sv
+
+# 68000 (FX68K), vendored per-core directly under hdl/rtl/, as originally imported (same
+# "reference the pinned copy, not modules/fx68k or modules/mist-common's own FX68k" convention
+# mariobros_neptunoplus.qsf already established for its own T80/T48). SEARCH_PATH lets Quartus
+# resolve fx68k.sv's own bare `$readmemb("microrom.mem", ...)`/`$readmemb("nanorom.mem", ...)`
+# calls, which are otherwise only resolved relative to the project directory (neptunoplus/, not
+# ../hdl/rtl/FX68K/hdl/ where the .mem files actually live) — same technique
+# alpha68k_neptunoplus.qsf already uses for its own bare `include "defs.v"`.
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/FX68K/hdl/fx68k.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/FX68K/hdl/fx68kAlu.sv
+set_global_assignment -name SYSTEMVERILOG_FILE ../hdl/rtl/FX68K/hdl/uaddrPla.sv
+set_global_assignment -name SEARCH_PATH ../hdl/rtl/FX68K/hdl
+
+# Sound IP (jotego's jt12/jt7759/jt89, vendored per-core directly under hdl/rtl/, as originally
+# imported — same convention as FX68K above).
+set_global_assignment -name QIP_FILE ../hdl/rtl/jt12/jt12.qip
+set_global_assignment -name QIP_FILE ../hdl/rtl/jt7759/hdl/jt7759.qip
+set_global_assignment -name QIP_FILE ../hdl/rtl/jt89/jt89.qip
+
+# Shared MiST IO-protocol pipeline (modules/mist-modules/, never re-vendored — see
+# doc/porting-a-native-core.md §2.3).
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/user_io.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/data_io.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/mist_dual_video.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/osd.v
+set_global_assignment -name SYSTEMVERILOG_FILE ../../../modules/mist-modules/cofi.sv
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/video_cleaner.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/rgb2ypbpr.v
+set_global_assignment -name VHDL_FILE ../../../modules/mist-modules/dac.vhd
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/frac_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/pixel_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/unsigned_division.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_linedouble.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_rgb_interp.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_rotate.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_framing.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_scaledepth.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler_sdram.v
+set_global_assignment -name VERILOG_FILE ../../../modules/mist-modules/scandoubler/scandoubler.v
+
+# ---- Misc / incremental compilation ----
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

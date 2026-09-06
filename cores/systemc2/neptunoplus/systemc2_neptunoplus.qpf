@@ -1,0 +1,6 @@
+# -------------------------------------------------------------------------- #
+# Quartus II Project File for systemc2_neptunoplus
+# All project settings live in systemc2_neptunoplus.qsf — see that file.
+# -------------------------------------------------------------------------- #
+
+PROJECT_REVISION = "systemc2_neptunoplus"

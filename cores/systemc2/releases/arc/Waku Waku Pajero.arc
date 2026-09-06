@@ -1,0 +1,6 @@
+[ARC]
+RBF=SYSTEMC2
+MOD=0
+NAME=WWPAJERO
+DEFAULT=0xFFFF
+BUTTONS="Button 1,Button 2,Button 3,Start,Coin,Service,Test"
