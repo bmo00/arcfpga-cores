@@ -31,9 +31,6 @@ jtframe:
   - from: cpu
     get:
       - jtframe_z80wait.v
-  - from: sound
-    get:
-      - jtframe_mixer.v
   - from: ram
     get:
       - jtframe_rpwp_ram.v

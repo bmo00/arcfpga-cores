@@ -59,6 +59,32 @@
       }
     }
   },
+  "aerofgt": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "TODO",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/videosystem-fpga",
+      "commit": "b1f0cd5bf745fbc749b86eff08c97252a3ce3023"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "b1f0cd5bf745fbc749b86eff08c97252a3ce3023"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "b1f0cd5bf745fbc749b86eff08c97252a3ce3023"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "b1f0cd5bf745fbc749b86eff08c97252a3ce3023"
+      }
+    }
+  },
   "ajax": {
     "origin": "external",
     "core_author": "jotego",
@@ -128,23 +154,50 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "notes": "Bad sprites. CRT misaligned. Appears to be shifted off-center on the CRT",
         "tested": "issues"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
+      }
+    }
+  },
+  "altair": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "native",
+    "external": {
+      "repo": "jlrh/cidelsa-fpga",
+      "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+    },
+    "system": "arcade",
+    "target_fpgas": [
+      "5CSEBA6U23I7"
+    ],
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
       }
     }
   },
@@ -173,7 +226,7 @@
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
-      "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984"
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
     },
     "platform": [
       "Konami Asterix hardware"
@@ -181,18 +234,44 @@
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984",
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1",
         "notes": "EEPROM bit check bad",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-31",
-        "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "2672a2295fca3911e825df8ca16ea3a2ea228984"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      }
+    }
+  },
+  "bbusters": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "snk-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/snk-fpga",
+      "commit": "b2de276a92466c4279f192d7935ef2a089a7a0dc"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "b2de276a92466c4279f192d7935ef2a089a7a0dc"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "b2de276a92466c4279f192d7935ef2a089a7a0dc"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "b2de276a92466c4279f192d7935ef2a089a7a0dc"
       }
     }
   },
@@ -204,23 +283,23 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "3fb2ece6afd0e734acdd8eabb0062182ce39456d"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-09-02",
-        "commit": "3fb2ece6afd0e734acdd8eabb0062182ce39456d",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "notes": "Black screen",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-09-02",
-        "commit": "3fb2ece6afd0e734acdd8eabb0062182ce39456d"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-09-02",
-        "commit": "3fb2ece6afd0e734acdd8eabb0062182ce39456d"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -262,23 +341,23 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "519a50b18960882895c3db7265ed238fb839bae2"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-09-02",
-        "commit": "519a50b18960882895c3db7265ed238fb839bae2",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "notes": "Black screen",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-09-02",
-        "commit": "519a50b18960882895c3db7265ed238fb839bae2"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-09-02",
-        "commit": "519a50b18960882895c3db7265ed238fb839bae2"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -307,6 +386,35 @@
       "mra": {
         "date": "2026-08-31",
         "commit": "881576a82bf7ce0fe59b846c7f24155ab45d21be"
+      }
+    }
+  },
+  "blswhstl": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "blswhstl",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+    },
+    "platform": [
+      "Konami TMNT 2 based"
+    ],
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       }
     }
   },
@@ -453,6 +561,32 @@
       "mra": {
         "date": "2026-08-31",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      }
+    }
+  },
+  "chequeredflag": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "1a59e9b1c1cee63183f7d0e83eac07d074955b36"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "1a59e9b1c1cee63183f7d0e83eac07d074955b36"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "1a59e9b1c1cee63183f7d0e83eac07d074955b36"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "1a59e9b1c1cee63183f7d0e83eac07d074955b36"
       }
     }
   },
@@ -816,6 +950,86 @@
       }
     }
   },
+  "deadang": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "jlrodriguez",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/seibu-fpga",
+      "commit": "b6a605b0d9c8026f1849d29f81035f299a6810de"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "b6a605b0d9c8026f1849d29f81035f299a6810de"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "b6a605b0d9c8026f1849d29f81035f299a6810de"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "b6a605b0d9c8026f1849d29f81035f299a6810de"
+      }
+    }
+  },
+  "destroyer": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "native",
+    "external": {
+      "repo": "jlrh/cidelsa-fpga",
+      "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+    },
+    "system": "arcade",
+    "target_fpgas": [
+      "5CSEBA6U23I7"
+    ],
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      }
+    }
+  },
+  "draco": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "native",
+    "external": {
+      "repo": "jlrh/cidelsa-fpga",
+      "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+    },
+    "system": "arcade",
+    "target_fpgas": [
+      "5CSEBA6U23I7"
+    ],
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "8e65f3a460e5d436293fafb702bcd89db4c64722"
+      }
+    }
+  },
   "empirecity": {
     "origin": "external",
     "core_author": "jlrh",
@@ -824,23 +1038,23 @@
     "beta": false,
     "external": {
       "repo": "jlrh/seibu-fpga",
-      "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+      "commit": "c7c32379f4466dfe4b6eb7398f51cc7cd9cf4a3d"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa",
+        "date": "2026-10-15",
+        "commit": "c7c32379f4466dfe4b6eb7398f51cc7cd9cf4a3d",
         "notes": "Delete .arc:  Empire City (US, Bootleg)",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+        "date": "2026-10-15",
+        "commit": "c7c32379f4466dfe4b6eb7398f51cc7cd9cf4a3d"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "4ab09d0ca072f947ef0aa73cc3d8dc23dba2f1fa"
+        "date": "2026-10-15",
+        "commit": "c7c32379f4466dfe4b6eb7398f51cc7cd9cf4a3d"
       }
     }
   },
@@ -1059,23 +1273,23 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "notes": "It launches and is playable, but it keeps freezing",
         "tested": "failed"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -1167,11 +1381,40 @@
       }
     }
   },
+  "gwar": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "snk-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/snk-fpga",
+      "commit": "2875c4d9969aedf2d056854aa50cf28aa924f701"
+    },
+    "platform": [
+      "SNK Triple Z80"
+    ],
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "2875c4d9969aedf2d056854aa50cf28aa924f701"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "2875c4d9969aedf2d056854aa50cf28aa924f701"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "2875c4d9969aedf2d056854aa50cf28aa924f701"
+      }
+    }
+  },
   "harier": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego, niknak",
+    "framework": "jtframe",
     "beta": true,
     "external": {
       "repo": "jotego/jtcores",
@@ -1190,6 +1433,32 @@
       "arc": {
         "date": "2026-09-06",
         "commit": "65056144c0d7d3c185748f69b5d87760b40047de"
+      }
+    }
+  },
+  "hotchase": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       }
     }
   },
@@ -1330,6 +1599,32 @@
       }
     }
   },
+  "konamigt": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "jlrh",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "863d697519f73969791ae793b881fe4a90a0945d"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "863d697519f73969791ae793b881fe4a90a0945d"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "863d697519f73969791ae793b881fe4a90a0945d"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "863d697519f73969791ae793b881fe4a90a0945d"
+      }
+    }
+  },
   "kunio": {
     "origin": "external",
     "core_author": "jotego",
@@ -1420,6 +1715,32 @@
       "mra": {
         "date": "2026-08-26",
         "commit": "a934eecfb83a18f68b14c52380f3bfda153dcc99"
+      }
+    }
+  },
+  "mechatt": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "snk-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/snk-fpga",
+      "commit": "37333320deafee67ea8fa8158421059be933b75c"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "37333320deafee67ea8fa8158421059be933b75c"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "37333320deafee67ea8fa8158421059be933b75c"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "37333320deafee67ea8fa8158421059be933b75c"
       }
     }
   },
@@ -1518,23 +1839,49 @@
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
-      "commit": "b715c95ac437a39451a65e78c29a5989331d30c9"
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "b715c95ac437a39451a65e78c29a5989331d30c9",
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1",
         "notes": "Enable `Test Mode`, `Save NVRAM` and disable `Test Mode`",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "b715c95ac437a39451a65e78c29a5989331d30c9"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "b715c95ac437a39451a65e78c29a5989331d30c9"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      }
+    }
+  },
+  "mtlchamp": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "konami-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       }
     }
   },
@@ -1597,6 +1944,32 @@
       }
     }
   },
+  "mystwarr": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "konami-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      }
+    }
+  },
   "ninja": {
     "origin": "external",
     "core_author": "jotego",
@@ -1636,23 +2009,23 @@
     "beta": false,
     "external": {
       "repo": "jlrh/taito-fpga",
-      "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+      "commit": "73d06054e90246096064682b069c22a7a906e469"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "405a68eac741918e627cda563cc1a0c219ed18fd",
+        "date": "2026-10-15",
+        "commit": "73d06054e90246096064682b069c22a7a906e469",
         "notes": "Freeze on boot",
         "tested": "failed"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+        "date": "2026-10-15",
+        "commit": "73d06054e90246096064682b069c22a7a906e469"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "405a68eac741918e627cda563cc1a0c219ed18fd"
+        "date": "2026-10-15",
+        "commit": "73d06054e90246096064682b069c22a7a906e469"
       }
     }
   },
@@ -2287,6 +2660,32 @@
       }
     }
   },
+  "shadfrce": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "mra_author": "technos-fpga",
+    "framework": "jtframe",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/technos-fpga",
+      "commit": "b33735ffe8e261ee59468caa68bc4260bebbdc5f"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "b33735ffe8e261ee59468caa68bc4260bebbdc5f"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "b33735ffe8e261ee59468caa68bc4260bebbdc5f"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "b33735ffe8e261ee59468caa68bc4260bebbdc5f"
+      }
+    }
+  },
   "shanon": {
     "origin": "external",
     "core_author": "jotego",
@@ -2445,22 +2844,22 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "d4d634512a2e0c67255b2db96ef86be5914212e0"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-09-02",
-        "commit": "d4d634512a2e0c67255b2db96ef86be5914212e0",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-09-02",
-        "commit": "d4d634512a2e0c67255b2db96ef86be5914212e0"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-09-02",
-        "commit": "d4d634512a2e0c67255b2db96ef86be5914212e0"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -2472,7 +2871,7 @@
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
-      "commit": "1a6838f75d613234a1f57c5e053df1d8b63a3876"
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
     },
     "platform": [
       "Konami TMNT 2 based"
@@ -2480,18 +2879,18 @@
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-09-02",
-        "commit": "1a6838f75d613234a1f57c5e053df1d8b63a3876",
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1",
         "notes": "Only parent boots without EEPROM CRC OK.",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-09-02",
-        "commit": "1a6838f75d613234a1f57c5e053df1d8b63a3876"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       },
       "mra": {
-        "date": "2026-09-02",
-        "commit": "1a6838f75d613234a1f57c5e053df1d8b63a3876"
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       }
     }
   },
@@ -2558,22 +2957,22 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "0c15713ba76be87442dc94805d23954865d5cde0"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-09-02",
-        "commit": "0c15713ba76be87442dc94805d23954865d5cde0",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-09-02",
-        "commit": "0c15713ba76be87442dc94805d23954865d5cde0"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-09-02",
-        "commit": "0c15713ba76be87442dc94805d23954865d5cde0"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -2585,22 +2984,22 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -2915,22 +3314,22 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -2942,22 +3341,22 @@
     "beta": false,
     "external": {
       "repo": "jlrh/gaelco-fpga",
-      "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+      "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad",
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372",
         "tested": "failed"
       },
       "arc": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       },
       "mra": {
-        "date": "2026-08-26",
-        "commit": "47d24e707950ee43dbbd7826e56ac701d9c273ad"
+        "date": "2026-10-15",
+        "commit": "174483c486ff3355adabf3c87cdeb869f4100372"
       }
     }
   },
@@ -2988,6 +3387,32 @@
       "mra": {
         "date": "2026-08-31",
         "commit": "881576a82bf7ce0fe59b846c7f24155ab45d21be"
+      }
+    }
+  },
+  "xexex": {
+    "origin": "external",
+    "core_author": "jlrh",
+    "framework": "jtframe",
+    "mra_author": "konami-fpga",
+    "beta": false,
+    "external": {
+      "repo": "jlrh/konami-fpga",
+      "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+    },
+    "system": "arcade",
+    "releases": {
+      "neptunoplus": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "mra": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
+      },
+      "arc": {
+        "date": "2026-10-15",
+        "commit": "9e9817dada52c04ea3285cd16fe775b8759799f1"
       }
     }
   },

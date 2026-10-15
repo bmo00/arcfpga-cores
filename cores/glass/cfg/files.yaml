@@ -19,20 +19,24 @@ glass:
       - glass_bitmap.v
       - glass_blitter.v
       - glass_dbg_uart.v
+      - jt6295.v
+      - jt6295_acc.v
+      - jt6295_adpcm.v
+      - jt6295_ctrl.v
+      - jt6295_rom.v
+      - jt6295_serial.v
+      - jt6295_sh_rst.v
+      - jt6295_timing.v
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
       - glass_68kdtack.v
       - glass_mcu.v
       - mc8051_regen.v
+      - jtframe_ram_rst.v
       - glass_clk48_96.sdc
-jt6295: null
-fx68k: []
 jtframe:
   - from: ram
     get:
-      - jtframe_ram_rst.v
-  - from: cpu
-    get:
-      - jtframe_68kdtack_cen.v
-      - jtframe_68kdtack.v
-  - from: ram
-    get:
       - jtframe_dual_ram.v
+      - jtframe_ram.v

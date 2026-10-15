@@ -1,0 +1,5 @@
+[ARC]
+RBF=BLSWHSTL
+MOD=1
+NAME=BLSWHSTLA
+BUTTONS="Shot,Bomb,Start,Coin,Core credits"

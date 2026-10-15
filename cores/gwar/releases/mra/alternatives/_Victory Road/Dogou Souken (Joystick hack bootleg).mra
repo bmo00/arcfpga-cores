@@ -1,0 +1,107 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>Dogou Souken (Joystick hack bootleg)</name>
+    <setname>dogosokb</setname>
+    <mameversion>0289</mameversion>
+    <year>1986</year>
+    <manufacturer>bootleg</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="dogosokb.zip|victroad.zip" md5="None" asm_md5="98ba1dfc8d0fd3b981216c6ae56548e7">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="01.4p" crc="53b0ad90"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="p2.8p" crc="907fac83"/>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x20000 (17 bits) -->
+        <part name="p4.5e" crc="5b43fe9f"/>
+        <part name="p5.5g" crc="aae30cd6"/>
+        <!-- BG_START -->
+        <!-- audiocpu - starts at 0x40000 - length 0x10000 (16 bits) -->
+        <part name="p3.7k" crc="173fa571"/>
+        <!-- bg_tiles - starts at 0x50000 - length 0x30000 (18 bits) -->
+        <part name="p17.4c" crc="19d4518c"/>
+        <part name="p18.2c" crc="d818be43"/>
+        <part name="p19.4b" crc="d64e0f89"/>
+        <part name="p20.2b" crc="edba0f31"/>
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="p8.3d" crc="d43044f8" map="0001"/>
+            <part name="p9.3f" crc="365ed2d8" map="0010"/>
+            <part name="p10.3h" crc="92579bf3" map="0100"/>
+            <part name="p10.3h" crc="92579bf3" map="1000"/>
+        </interleave>
+        <part repeat="0x20000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <interleave output="32">
+            <part name="p11.4m" crc="668b25a4" map="0001"/>
+            <part name="p12.4p" crc="f44e95fa" map="0010"/>
+            <part name="p13.4r" crc="980ca3d8" map="0100"/>
+            <part name="p11.4m" crc="668b25a4" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="p14.2m" crc="a7031d4a" map="0001"/>
+            <part name="p15.2p" crc="120d2450" map="0010"/>
+            <part name="p16.2r" crc="9f820e8a" map="0100"/>
+            <part name="p11.4m" crc="668b25a4" map="1000"/>
+        </interleave>
+        <part repeat="0x40000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x4000 (14 bits) -->
+        <part name="p7.3b" crc="51a4ec83"/>
+        <!-- proms - starts at 0x144000 - length 0xC00 (12 bits) -->
+        <part name="c1.1k" crc="10a2ce2b"/>
+        <part name="c2.2l" crc="99dc9792"/>
+        <part name="c3.1l" crc="e7213160"/>
+        <!-- Total 0x144C00 bytes - 1299 kBytes -->
+    </rom>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,d9,fd">
+        <BONUS/>
+        <dip name="Bonus Life" bits="2" ids="None,-,-,-,100k 200k,100k 200k 200k+,-,-,60k 120k,60k 120k 120k+,-,-,50k 100k,50k 100k 100k+"/>
+        <DSW1/>
+        <dip name="Kill friend &amp; walk everywhere (Cheat)" bits="3" ids="Yes,No"/>
+        <dip name="P1 &amp; P2 Fire Buttons" bits="4" ids="Common,Separate"/>
+        <dip name="Lives" bits="6" ids="5,3"/>
+        <dip name="Coin A" bits="7,8" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="9,10" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="11,12" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Game Mode" bits="13,14" ids="Freeze,Infinite Lives,Demo Sounds On,Demo Sounds Off"/>
+        <dip name="Allow Continue" bits="17" ids="Yes,No"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

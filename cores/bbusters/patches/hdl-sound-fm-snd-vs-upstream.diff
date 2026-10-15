@@ -1,0 +1,10 @@
+--- a/hdl/jtbbusters_sound.v
++++ b/hdl/jtbbusters_sound.v
+@@ -136,7 +136,6 @@
+     .psg_A          (               ),
+     .psg_B          (               ),
+     .psg_C          (               ),
+-    .fm_snd         (               ),
+     .psg_snd        (               ),
+     .snd_right      ( snd_right     ),
+     .snd_left       ( snd_left      ),

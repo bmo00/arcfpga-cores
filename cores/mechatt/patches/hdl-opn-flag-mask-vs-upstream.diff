@@ -1,0 +1,19 @@
+--- a/hdl/jtmechatt_opn.v
++++ b/hdl/jtmechatt_opn.v
+@@ -97,7 +97,7 @@
+ wire [ 1:0] alr_b;
+ wire [15:0] astart_b, aend_b, adeltan_b;
+ wire [ 7:0] aeg_b;
+-wire [ 6:0] flag_ctl, flag_mask;
++wire [ 6:0] flag_ctl;
+ wire [ 1:0] div_setting;
+ wire        clk_en_2, clk_en_666, clk_en_111, clk_en_55;
+ wire        flag_A;
+@@ -162,7 +162,6 @@
+     .adeltan_b  ( adeltan_b ),
+     .aeg_b      ( aeg_b     ),
+     .flag_ctl   ( flag_ctl  ),
+-    .flag_mask  ( flag_mask ),
+     .xuse_prevprev1 ( xuse_prevprev1 ),
+     .xuse_internal  ( xuse_internal  ),
+     .yuse_internal  ( yuse_internal  ),

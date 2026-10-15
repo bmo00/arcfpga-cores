@@ -1,0 +1,6 @@
+# -------------------------------------------------------------------------- #
+# Quartus II Project File for destroyer_neptunoplus
+# All project settings live in destroyer_neptunoplus.qsf — see that file.
+# -------------------------------------------------------------------------- #
+
+PROJECT_REVISION = "destroyer_neptunoplus"

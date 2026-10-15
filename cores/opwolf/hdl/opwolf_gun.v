@@ -40,9 +40,9 @@
 //   principal). TODO Fase 5: pasarlos por CABECERA de la .mra (JTFRAME_HEADER) para soportar los dos
 //   sets con el mismo .rbf, y calibrar en HW.
 
-module opwolf_gun #( parameter
-    signed XOFFS = -2,      // opwolfb
-    signed YOFFS = 17
+module opwolf_gun #(
+    parameter signed XOFFS = -2,      // opwolfb
+    parameter signed YOFFS = 17
 )(
     input             rst,
     input             clk,

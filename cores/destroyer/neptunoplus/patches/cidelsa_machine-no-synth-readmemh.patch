@@ -1,0 +1,17 @@
+--- hdl/rtl/cidelsa_machine.v
++++ hdl/rtl/cidelsa_machine.v
+@@ -192,10 +192,11 @@
+ 
+ `ifdef SIM
+     initial $readmemh("../../roms/destryer_prog.hex", rom);
+-`else
+-
+-    initial $readmemh("destryer_prog.hex", rom);
+ `endif
++// NeptUNO+ bridge (arcfpga-cores-develop): the real ROM always arrives at runtime over
++// ioctl_rom_we from the .mra — no synthesis-time $readmemh needed or wanted outside SIM (this repo
++// never commits ROM data, and Quartus can't find a file that doesn't exist). See
++// neptunoplus/patches/README.md for the patch this hunk comes from.
+ 
+ `ifdef CHARTRACE
+ 

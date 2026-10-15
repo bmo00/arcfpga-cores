@@ -1,0 +1,11 @@
+--- a/cfg/mame2mra.toml
++++ b/cfg/mame2mra.toml
+@@ -6,7 +6,7 @@
+ 
+ skip.setnames = [ "nemesis", "nemesisuk", "twinbee", "gradius", "gwarrior", "salamand", "salamandj", "lifefrce",
+                   "lifefrcej", "blkpnthr", "citybomb", "citybombj", "kittenk", "nyanpani", "hcrash", "hcrashc",
+-                  "bubsys", "twinbeeb", "gradiusb", "rf2", "salamandt", "lifefrceb", "gwarriorb" ]
++                  "bubsys", "bs_twinbee", "twinbeeb", "gradiusb", "rf2", "salamandt", "lifefrceb", "gwarriorb" ]
+ rename = [
+     { setname="konamigt", name="Konami GT (FF, Konami, 1985)" },
+ ]

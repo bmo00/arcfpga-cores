@@ -68,7 +68,7 @@
         <!-- Total 0xDC0000 bytes - 14080 kBytes -->
     </rom>
     <nvram index="2" size="128"/>
-    <!--  8-pxl black frame on sides. -->
+    <!-- 8-pxl black frame on sides. -->
     <rom index="1">
         <part>20 80</part>
     </rom>

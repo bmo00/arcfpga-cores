@@ -1,0 +1,101 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>HAL21 (Japan)</name>
+    <setname>hal21j</setname>
+    <mameversion>0289</mameversion>
+    <year>1985</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="hal21j.zip|hal21.zip" md5="None" asm_md5="9044db08bba6c4c39e0c34d5f80c5c4d">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="p1.1a" crc="9d193830"/>
+        <part name="p2.2a" crc="c1f00350"/>
+        <part name="p3.3a" crc="881d22a6"/>
+        <part name="p4.4a" crc="ce692534"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="p5.1c" crc="3ce0684a"/>
+        <part name="p6.2c" crc="878ef798"/>
+        <part name="p7.3c" crc="72ebbe95"/>
+        <part name="p8.4c" crc="17e22ad3"/>
+        <part name="p9.6c" crc="b146f891"/>
+        <part repeat="0x6000"> FF</part>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="p10.3j" crc="a182b3f0"/>
+        <part repeat="0xC000"> FF</part>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="p11.2b" crc="24abc57e"/>
+        <part repeat="0x3C000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="p13.3j" crc="052b4f4f" map="0001"/>
+            <part name="p14.3k" crc="da0cb670" map="0010"/>
+            <part name="p15.3l" crc="5c5ea945" map="0100"/>
+            <part name="p15.3l" crc="5c5ea945" map="1000"/>
+        </interleave>
+        <part repeat="0x30000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x2000 (13 bits) -->
+        <part name="p12.2d" crc="9839a7cd"/>
+        <!-- proms - starts at 0x142000 - length 0xC00 (12 bits) -->
+        <part name="3.7k" crc="605afff8"/>
+        <part name="2.8k" crc="c5d84225"/>
+        <part name="1.9k" crc="195768fc"/>
+        <!-- Total 0x142C00 bytes - 1291 kBytes -->
+    </rom>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,bb">
+        <BONUS/>
+        <dip name="Bonus Life" bits="0" ids="None,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,50k 120k,50k 120k 120k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,40k 90k,40k 90k 90k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,20k 60k,20k 60k 60k+"/>
+        <DSW1/>
+        <dip name="Cabinet" bits="2" ids="Cocktail,Upright"/>
+        <dip name="Lives" bits="3" ids="5,3"/>
+        <dip name="Coinage" bits="4,6" ids="Free Play,-,-,2/1,3/1,1/3,1/2,1/1"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Game mode" bits="10,11" ids="Freeze,Infinite Lives,Demo Sounds On,Demo Sounds Off"/>
+        <dip name="Flip Screen" bits="12" ids="On,Off"/>
+        <dip name="Allow Continue" bits="14" ids="Yes,No"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

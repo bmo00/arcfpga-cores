@@ -1,0 +1,105 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Lee Trevino's Fighting Golf (World?)</name>
+    <setname>fitegolf</setname>
+    <mameversion>0289</mameversion>
+    <year>1988</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="fitegolf.zip" md5="None" asm_md5="151bbf5fdf804d3d45f0daebdb122e28">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="gu2.4p" crc="19be7ad6"/>
+        <part name="gu1.4m" crc="bc32568f"/>
+        <part repeat="0x4000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="gu6.8p" crc="2b9978c5"/>
+        <part name="gu5.8m" crc="ea3d138c"/>
+        <part repeat="0x4000"> FF</part>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="gu3.6g" crc="811b87d7"/>
+        <part name="gu4.6k" crc="2d998e2b"/>
+        <part repeat="0x4000"> FF</part>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="gu7.2b" crc="4655f94e"/>
+        <part repeat="0x38000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="gu9.2p" crc="d4957ec5" map="0001"/>
+            <part name="gu10.2rs" crc="b3acdac2" map="0010"/>
+            <part name="gu11.2t" crc="b99cf73b" map="0100"/>
+            <part name="gu11.2t" crc="b99cf73b" map="1000"/>
+        </interleave>
+        <part repeat="0x20000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x4000 (14 bits) -->
+        <part name="gu8.2d" crc="f1628dcf"/>
+        <!-- proms - starts at 0x144000 - length 0xC00 (12 bits) -->
+        <part name="3.2c" crc="6e4c7836"/>
+        <part name="1.1b" crc="29e7986f"/>
+        <part name="2.1c" crc="27ba9ff9"/>
+        <!-- plds - starts at 0x144C00 - length 0x544 (11 bits) -->
+        <part name="a6001-1.6c" crc="de291f4e"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="a6001-3.3f" crc="c5f1c1da"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="a6001-2.6r" crc="0f011673"/>
+        <!-- Total 0x145144 bytes - 1300 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="37,ff">
+        <DSW1/>
+        <dip name="Language" bits="0" ids="Japanese,English"/>
+        <dip name="Flip Screen" bits="1" ids="On,Off"/>
+        <dip name="Cabinet" bits="2" ids="Cocktail,Upright"/>
+        <dip name="Gameplay" bits="3" ids="Basic Player,Avid Golfer"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Shot Time" bits="8" ids="Short,Long"/>
+        <dip name="Bonus Holes" bits="9" ids="Less,More"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Demo Sounds Off,Infinite Holes,Demo Sounds On"/>
+        <dip name="Play Holes" bits="12,13" ids="5,4,3,2"/>
+        <dip name="Allow Continue" bits="14" ids="No,Yes"/>
+        <dip name="Service Mode" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

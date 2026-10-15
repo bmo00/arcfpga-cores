@@ -1,0 +1,78 @@
+# ==== Artefactos de Quartus (no son fuente) ====
+db/
+incremental_db/
+output_files/
+hc_output/
+greybox_tmp/
+timing/
+*.qws
+*.rpt
+*.summary
+*.smsg
+*.jdi
+*.pin
+*.sof
+*.pof
+*.sld
+*.done
+*.qarlog
+*.bak
+*.orig
+c5_pin_model_dump.txt
+
+# ==== Artefactos de simulación (Verilator / iverilog) ====
+sim/**/obj_*/
+sim/**/obj_dir/
+**/obj_dir/
+*.o
+*.vvp
+*.vcd
+*.fst
+
+# ==== Logs y ficheros generados ====
+*.log
+mister/build_id.v
+
+# ==== Editor / local ====
+.claude/
+*.swp
+Thumbs.db
+.DS_Store
+
+# ==== COPYRIGHT: ROMs del juego (NUNCA se suben) ====
+*.hex
+*.rom
+*.bin
+*.zip
+roms/
+
+# ==== COPYRIGHT: documentación del fabricante ====
+*.pdf
+
+# ==== Terceros: fuentes de MAME usadas como referencia (no redistribuir) ====
+reference/
+
+# ==== Debug: capturas y trazas del juego (se conservan .lua/.py/.md del oráculo) ====
+debug/**/*.png
+debug/**/*.ppm
+debug/**/*.txt
+nvram/
+golden/
+
+# ==== Solo se publica el CORE (rtl/ + mister/); el resto queda en local ====
+/quartus/
+/sim/
+/debug/
+/tools/
+/cfg/
+/docs/*
+!/docs/screens/
+/HANDOFF_*.md
+/altair_chips.md
+/cdp1869_signal_map.md
+
+# ==== Framework MiSTer (boilerplate upstream; el usuario lo copia de Template_MiSTer) ====
+mister/sys/
+
+# ==== jt49 (AY-3-8910 de jotego): upstream, el usuario lo copia de github.com/jotego/jt49 ====
+rtl/jt49/

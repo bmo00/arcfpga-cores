@@ -1,0 +1,104 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Psycho Soldier (Japan)</name>
+    <setname>psychosj</setname>
+    <mameversion>0289</mameversion>
+    <year>1987</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="psychosj.zip|psychos.zip" md5="None" asm_md5="b7f75dd837da1f3e265314a670f32e0e">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="ps7.4m" crc="05dfb409"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="ps6.8m" crc="5f426ddb"/>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x40000 (18 bits) -->
+        <part name="ps1.5b" crc="0f8e8276"/>
+        <part name="ps2.5c" crc="34e41dfb"/>
+        <part name="ps3.5d" crc="aa583c5e"/>
+        <part name="ps4.5f" crc="7e8bce7a"/>
+        <!-- audiocpu - starts at 0x60000 - length 0x10000 (16 bits) -->
+        <part name="ps5.6j" crc="bbd0a8e3"/>
+        <!-- bg_tiles - starts at 0x70000 - length 0x40000 (18 bits) -->
+        <part name="ps16.1f" crc="167e5765"/>
+        <part name="ps15.1d" crc="8b0fe8d0"/>
+        <part name="ps14.1c" crc="f4361c50"/>
+        <part name="ps13.1a" crc="e4b0b95e"/>
+        <!-- sp16_tiles - starts at 0xB0000 - length 0x20000 (17 bits) -->
+        <interleave output="32">
+            <part name="ps12.3g" crc="f96f82db" map="0001"/>
+            <part name="ps11.3e" crc="2b007733" map="0010"/>
+            <part name="ps10.3c" crc="efa830e1" map="0100"/>
+            <part name="ps9.3b" crc="24559ee1" map="1000"/>
+        </interleave>
+        <!-- sp32_tiles - starts at 0xD0000 - length 0x80000 (19 bits) -->
+        <interleave output="32">
+            <part name="ps17.10f" crc="2bac250e" map="0001"/>
+            <part name="ps19.10j" crc="9ff91a97" map="0010"/>
+            <part name="ps21.10m" crc="df283b67" map="0100"/>
+            <part name="ps23.10r" crc="c4488472" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="ps18.10h" crc="5e1ba353" map="0001"/>
+            <part name="ps20.10l" crc="ae1965ef" map="0010"/>
+            <part name="ps22.10n" crc="914f051f" map="0100"/>
+            <part name="ps24.10s" crc="8ec7fe18" map="1000"/>
+        </interleave>
+        <!-- tx_tiles - starts at 0x150000 - length 0x8000 (15 bits) -->
+        <part name="ps8.3a" crc="11a71919"/>
+        <!-- proms - starts at 0x158000 - length 0x1400 (13 bits) -->
+        <part name="psc1.1k" crc="27b8ca8c"/>
+        <part name="psc3.1l" crc="40e78c9e"/>
+        <part name="psc2.2k" crc="d845d5ac"/>
+        <part name="horizon.8j" crc="c20b197b"/>
+        <part name="vertical.8k" crc="5d0c617f"/>
+        <!-- Total 0x159400 bytes - 1381 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="fb,f9,fd">
+        <BONUS/>
+        <dip name="Bonus Life" bits="2" ids="None,-,-,-,100k 200k 200k+,100k,-,-,60k 120k 120k+,60k,-,-,50k 100k 100k+,50k"/>
+        <DSW1/>
+        <dip name="Service Mode" bits="3" ids="On,Off"/>
+        <dip name="Flip Screen" bits="4" ids="On,Off"/>
+        <dip name="Lives" bits="6" ids="5,3"/>
+        <dip name="Coin A" bits="7,8" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="9,10" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="11,12" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Demo Sounds" bits="13" ids="Off,On"/>
+        <dip name="Freeze" bits="14" ids="On,Off"/>
+        <dip name="Allow Continue" bits="17" ids="Yes,No"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

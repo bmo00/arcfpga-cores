@@ -1,0 +1,104 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>Jumping Cross (set 1)</name>
+    <setname>jcross</setname>
+    <mameversion>0289</mameversion>
+    <year>1984</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="jcross.zip" md5="None" asm_md5="f5441773fe3a9de34c109b924c04b5e0">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="p1.10b" crc="0e79bbcd"/>
+        <part name="p2.12b" crc="999b2bcc"/>
+        <part name="p3.13b" crc="ac89e49c"/>
+        <part name="p4.14b" crc="4fd7848d"/>
+        <part name="p5.15b" crc="8500575d"/>
+        <part repeat="0x6000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="p6.15a" crc="77ed51e7"/>
+        <part name="p7.14a" crc="23cf0f70"/>
+        <part name="p8.13a" crc="5bed3118"/>
+        <part name="p9.12a" crc="cd75dc95"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="p10.1f" crc="9ae8ea93"/>
+        <part name="p11.1g" crc="83785601"/>
+        <part repeat="0xC000"> FF</part>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="p15.2a" crc="ea3dfbc9"/>
+        <part repeat="0x3E000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="p12.2l" crc="4532509b" map="0001"/>
+            <part name="p13.2k" crc="70d219bf" map="0010"/>
+            <part name="p14.2j" crc="42a12b9d" map="0100"/>
+            <part name="p14.2j" crc="42a12b9d" map="1000"/>
+        </interleave>
+        <part repeat="0x38000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x4000 (14 bits) -->
+        <part name="p16.10a" crc="08ad93fe"/>
+        <part name="p17.2d" crc="3ebb5beb"/>
+        <!-- proms - starts at 0x144000 - length 0xC00 (12 bits) -->
+        <part name="2.7j" crc="b72a96a5"/>
+        <part name="1.8j" crc="35650448"/>
+        <part name="0.9j" crc="99f54d48"/>
+        <!-- Total 0x144C00 bytes - 1299 kBytes -->
+    </rom>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="fb,fb">
+        <BONUS/>
+        <dip name="Bonus Life" bits="0" ids="None,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,60k,60k 160k 100k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,40k,40k 120k 80k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,20k,20k 60k 40k+"/>
+        <DSW1/>
+        <dip name="Upright Controls" bits="1" ids="Dual,Single"/>
+        <dip name="Cabinet" bits="2" ids="Upright,Cocktail"/>
+        <dip name="Lives" bits="3" ids="5,3"/>
+        <dip name="Coinage" bits="4,6" ids="Free Play,-,-,1/2,1/3,3/1,2/1,1/1"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Game mode" bits="10,11" ids="Freeze,Infinite Lives,Demo Sounds On,Demo Sounds Off"/>
+        <dip name="Flip Screen" bits="12" ids="On,Off"/>
+        <dip name="No BG Collision (Cheat)" bits="14" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

@@ -1,0 +1,100 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (ccw)</rotation>
+    <name>Marvin's Maze</name>
+    <setname>marvins</setname>
+    <mameversion>0289</mameversion>
+    <year>1983</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="marvins.zip" md5="None" asm_md5="638c120041244d2016d547d1a2ff8b8b">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="pa1" crc="0008d791"/>
+        <part name="pa2" crc="9457003c"/>
+        <part name="pa3" crc="54c33ecb"/>
+        <part repeat="0xA000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="pb1" crc="3b6941a5"/>
+        <part repeat="0xE000"> FF</part>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="m1" crc="2314c696"/>
+        <part name="m2" crc="74ba5799"/>
+        <part repeat="0xC000"> FF</part>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="b2" crc="e528bc60"/>
+        <part repeat="0x3E000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="f1" crc="0bd6b4e5" map="0001"/>
+            <part name="f2" crc="8fc2b081" map="0010"/>
+            <part name="f3" crc="e55c9b83" map="0100"/>
+            <part name="f3" crc="e55c9b83" map="1000"/>
+        </interleave>
+        <part repeat="0x38000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x2000 (13 bits) -->
+        <part name="s1" crc="327f70f3"/>
+        <!-- proms - starts at 0x142000 - length 0xC00 (12 bits) -->
+        <part name="marvmaze.j1" crc="92f5b06d"/>
+        <part name="marvmaze.j2" crc="d2b25665"/>
+        <part name="marvmaze.j3" crc="df9e6005"/>
+        <!-- fg_tiles - starts at 0x142C00 - length 0x2000 (13 bits) -->
+        <part name="b1" crc="e528bc60"/>
+        <!-- Total 0x144C00 bytes - 1299 kBytes -->
+    </rom>
+    <!-- Vertical screen. Orientation reversed. -->
+    <rom index="1">
+        <part>05 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="c6,a8">
+        <DSW1/>
+        <dip name="Lives" bits="0,1" ids="1,2,3,5"/>
+        <dip name="Infinite Lives (Cheat)" bits="2" ids="On,Off"/>
+        <dip name="Coinage" bits="3,5" ids="1/1,1/2,1/3,1/5,1/6,2/1,3/1,5/1"/>
+        <dip name="Free Play" bits="6" ids="On,Off"/>
+        <dip name="Freeze" bits="7" ids="On,Off"/>
+        <DSW2/>
+        <dip name="1st Bonus Life" bits="8,10" ids="10k,20k,30k,40k,50k,60k,70k,80k"/>
+        <dip name="2nd Bonus Life" bits="11,12" ids="None,1st bonus*2,1st bonus*3,1st bonus*4"/>
+        <dip name="Demo Sounds" bits="13" ids="Off,On"/>
+        <dip name="Cabinet" bits="14" ids="Upright,Cocktail"/>
+        <dip name="Flip Screen" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

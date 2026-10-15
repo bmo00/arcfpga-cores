@@ -1,0 +1,159 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jlrh" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Hot Chase (set 2)</name>
+    <setname>hotchasea</setname>
+    <mameversion>0289</mameversion>
+    <year>1988</year>
+    <manufacturer>Konami</manufacturer>
+    <players>1</players>
+    <rbf>hotchase</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="hotchasea.zip|hotchase.zip" md5="None" asm_md5="34f9194cafc07167026a4f6452b6c2f0">
+        <!-- maincpu - starts at 0x0 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="763r04.p16" crc="b732ee2c" map="01"/>
+            <part name="763r05.r16" crc="c880d5e4" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="763r02.p14" crc="6cd1a18e" map="01"/>
+            <part name="763r03.r14" crc="13dd71de" map="10"/>
+        </interleave>
+        <!-- SUB_START -->
+        <!-- sub - starts at 0x40000 - length 0x20000 (17 bits) -->
+        <interleave output="16">
+            <part name="763d06.e18" crc="b77e0c07" map="01"/>
+            <part name="763d07.h18" crc="ae12fa90" map="10"/>
+        </interleave>
+        <!-- JTFRAME_BA1_START -->
+        <!-- audiocpu - starts at 0x60000 - length 0x8000 (15 bits) -->
+        <part name="763p01.r10" crc="15dbca7b"/>
+        <!-- PCM1_START -->
+        <!-- k007232_1 - starts at 0x68000 - length 0x40000 (18 bits) -->
+        <part name="763e11a" crc="a60a93c8"/>
+        <part name="763e11b" crc="7750feb5"/>
+        <part name="763e11c" crc="78b89bf8"/>
+        <part name="763e11d" crc="5f38d054"/>
+        <!-- PCM2_START -->
+        <!-- k007232_2 - starts at 0xA8000 - length 0x40000 (18 bits) -->
+        <part name="763e10a" crc="2b1cbefc"/>
+        <part name="763e10b" crc="8209c950"/>
+        <part name="763e10c" crc="b91d6c07"/>
+        <part name="763e10d" crc="5b465d20"/>
+        <!-- PCM3_START -->
+        <!-- k007232_3 - starts at 0xE8000 - length 0x100000 (20 bits) -->
+        <part name="763e08a" crc="02e4e7ef"/>
+        <part name="763e08b" crc="94edde2f"/>
+        <part name="763e08c" crc="b1ab1529"/>
+        <part name="763e08d" crc="ee8d14db"/>
+        <part name="763e09a" crc="1e6628ec"/>
+        <part name="763e09b" crc="f0c2feb8"/>
+        <part name="763e09c" crc="a0ade3e4"/>
+        <part name="763e09d" crc="c74e484d"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- sprites - starts at 0x1E8000 - length 0x300000 (22 bits) -->
+        <part name="763e17a" crc="8542d7d7"/>
+        <part name="763e17e" crc="4b4d919c"/>
+        <part name="763e17b" crc="ba9d7e72"/>
+        <part name="763e17f" crc="582400bb"/>
+        <part name="763e17c" crc="0ed292f8"/>
+        <part name="763e17g" crc="35b27ed7"/>
+        <part name="763e17d" crc="0166d00d"/>
+        <part name="763e17h" crc="e5b8e8e6"/>
+        <part name="763e20a" crc="256fe63c"/>
+        <part name="763e20e" crc="ee8ca7e1"/>
+        <part name="763e20b" crc="b6714c24"/>
+        <part name="763e20f" crc="9dbc4b21"/>
+        <part name="763e20c" crc="5173ad9b"/>
+        <part name="763e20g" crc="b8c77f99"/>
+        <part name="763e20d" crc="4ebdba32"/>
+        <part name="763e20h" crc="0a428654"/>
+        <part name="763e18a" crc="09748099"/>
+        <part name="763e18e" crc="049d4fcf"/>
+        <part name="763e18b" crc="ed0c3369"/>
+        <part name="763e18f" crc="b596a9ce"/>
+        <part name="763e18c" crc="5a278291"/>
+        <part name="763e18g" crc="aa7263cd"/>
+        <part name="763e18d" crc="b0b79a71"/>
+        <part name="763e18h" crc="a18b9127"/>
+        <part name="763e21a" crc="60788c29"/>
+        <part name="763e21e" crc="844799ff"/>
+        <part name="763e21b" crc="1eefed61"/>
+        <part name="763e21f" crc="3aacfb10"/>
+        <part name="763e21c" crc="97e48b37"/>
+        <part name="763e21g" crc="74fefb12"/>
+        <part name="763e21d" crc="dd41569e"/>
+        <part name="763e21h" crc="7ea52bf6"/>
+        <part name="763e19a" crc="8c912c46"/>
+        <part name="763e19e" crc="0eb34787"/>
+        <part name="763e19b" crc="79960729"/>
+        <part name="763e19f" crc="1764ec5f"/>
+        <part name="763e19c" crc="f13377ac"/>
+        <part name="763e19g" crc="f2102e89"/>
+        <part name="763e19d" crc="0b2a19f4"/>
+        <part name="763e19h" crc="cd6d08a5"/>
+        <part name="763e22a" crc="16eec250"/>
+        <part name="763e22e" crc="c184b1c0"/>
+        <part name="763e22b" crc="1afe4b0c"/>
+        <part name="763e22f" crc="61f27c98"/>
+        <part name="763e22c" crc="c19b4b63"/>
+        <part name="763e22g" crc="5bcbaf29"/>
+        <part name="763e22d" crc="fd5b669d"/>
+        <part name="763e22h" crc="9a9f45d8"/>
+        <!-- PSAC1_START -->
+        <!-- k051316_1 - starts at 0x4E8000 - length 0x20000 (17 bits) -->
+        <part name="763a14" crc="60392aa1"/>
+        <!-- PSAC2_START -->
+        <!-- k051316_2 - starts at 0x508000 - length 0x10000 (16 bits) -->
+        <part name="763a13" crc="8bed8e0d"/>
+        <!-- JTFRAME_BA3_START -->
+        <!-- road - starts at 0x518000 - length 0x20000 (17 bits) -->
+        <part name="763a15" crc="7110aa43"/>
+        <!-- USER1_START -->
+        <!-- user1 - starts at 0x538000 - length 0x8000 (15 bits) -->
+        <part name="763a12" crc="05f1e553"/>
+        <!-- user2 - starts at 0x540000 - length 0x200 (9 bits) -->
+        <part name="763a23.b17" crc="81c30352"/>
+        <!-- Total 0x540200 bytes - 5376 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,73">
+        <DSW1/>
+        <dip name="Coin A" bits="0,3" ids="Free Play,5/3,5/1,4/3,4/1,3/4,3/2,3/1,2/5,2/3,2/1,1/5,1/4,1/3,1/2,1/1"/>
+        <dip name="Coin B" bits="4,7" ids="1/99,5/3,5/1,4/3,-,3/4,3/2,3/1,2/5,2/3,2/1,1/5,1/4,1/3,1/2,1/1"/>
+        <DSW2/>
+        <dip name="Speed Unit" bits="8" ids="M.P.H.,KM"/>
+        <dip name="Motor Control" bits="9" ids="On,Off"/>
+        <dip name="Driving Technique" bits="10" ids="High Technique Required,Normal"/>
+        <dip name="Difficulty" bits="11,12" ids="Very Difficult,Difficult,Normal,Easy"/>
+        <dip name="Steering and Seat Vibration" bits="13" ids="On,Off"/>
+        <dip name="Demo Sounds" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="Accelerator,Brake,Shift,Start,Coin,Core credits" default="A,B,X,Start,Select,-" count="3"/>
+</misterromdescription>

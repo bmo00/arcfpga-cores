@@ -1,0 +1,14 @@
+set_global_assignment -name SEARCH_PATH ../roms
+
+set_global_assignment -name VERILOG_FILE ../rtl/altair_machine.v
+
+set_global_assignment -name VERILOG_FILE ../rtl/cpu/cdp1802_jl.v
+
+set_global_assignment -name VERILOG_FILE ../rtl/vis_video.v
+set_global_assignment -name VERILOG_FILE ../rtl/vis_video_timing.v
+set_global_assignment -name VERILOG_FILE ../rtl/vis_vram.v
+set_global_assignment -name VERILOG_FILE ../rtl/vis_palette.v
+set_global_assignment -name VERILOG_FILE ../rtl/vis_regs.v
+set_global_assignment -name VERILOG_FILE ../rtl/vis_sound.v
+
+set_global_assignment -name VERILOG_FILE ../rtl/coin_debounce.v

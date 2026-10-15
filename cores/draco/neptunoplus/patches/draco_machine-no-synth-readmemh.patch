@@ -1,0 +1,16 @@
+--- hdl/rtl/draco_machine.v
++++ hdl/rtl/draco_machine.v
+@@ -186,9 +186,11 @@
+ 
+ `ifdef SIM
+     initial $readmemh("../../roms/draco_prog.hex", rom);
+-`else
+-    initial $readmemh("draco_prog.hex", rom);
+ `endif
++// NeptUNO+ bridge (arcfpga-cores-develop): the real ROM always arrives at runtime over
++// ioctl_rom_we from the .rom — no synthesis-time $readmemh needed or wanted outside SIM (this repo
++// never commits ROM data, and Quartus can't find a file that doesn't exist). See
++// neptunoplus/patches/README.md for the patch this hunk comes from.
+ endmodule
+ 
+ `default_nettype wire

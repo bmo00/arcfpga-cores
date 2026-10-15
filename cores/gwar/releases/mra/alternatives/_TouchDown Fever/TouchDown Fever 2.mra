@@ -1,0 +1,97 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (cw)</rotation>
+    <name>TouchDown Fever 2</name>
+    <setname>tdfever2</setname>
+    <mameversion>0289</mameversion>
+    <year>1988</year>
+    <manufacturer>SNK</manufacturer>
+    <players>4</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="tdfever2.zip|tdfever.zip" md5="None" asm_md5="a9d9546ef1ed47e92dbf2568fd104d57">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="tdii2.6c" crc="9e3eaed8"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="tdii1.1c" crc="0ec294c0"/>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x40000 (18 bits) -->
+        <part name="td5.7p" crc="e332e41f"/>
+        <part name="td4.7n" crc="98af6d2d"/>
+        <part name="td22.7l" crc="34b4bce9"/>
+        <part name="td21.7k" crc="f5a96d8e"/>
+        <!-- audiocpu - starts at 0x60000 - length 0x10000 (16 bits) -->
+        <part name="tdii3.2j" crc="4092f16c"/>
+        <!-- bg_tiles - starts at 0x70000 - length 0x60000 (19 bits) -->
+        <part name="td15.8d" crc="ad6e0927"/>
+        <part name="td16.8e" crc="181db036"/>
+        <part name="td17.8f" crc="c5decca3"/>
+        <part name="tdii18.8g" crc="1a5a2200"/>
+        <part name="tdii19.8j" crc="f1081329"/>
+        <part name="tdii20.8k" crc="86cbb2e6"/>
+        <!-- sp16_tiles - starts at 0xD0000 -->
+        <!-- sp32_tiles - starts at 0xD0000 - length 0x80000 (19 bits) -->
+        <interleave output="32">
+            <part name="td13.2t" crc="88e2e819" map="0001"/>
+            <part name="td11.2r" crc="a0d53fbd" map="0010"/>
+            <part name="td9.2n" crc="a8979657" map="0100"/>
+            <part name="td7.2k" crc="72a5590d" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="tdii14.2s" crc="c9bb9138" map="0001"/>
+            <part name="tdii12.2p" crc="d43abc81" map="0010"/>
+            <part name="tdii10.2l" crc="c93b6cd3" map="0100"/>
+            <part name="tdii8.2j" crc="4845e78b" map="1000"/>
+        </interleave>
+        <!-- tx_tiles - starts at 0x150000 - length 0x8000 (15 bits) -->
+        <part name="tdii6.4n" crc="d6521b0d"/>
+        <!-- proms - starts at 0x158000 - length 0xC00 (12 bits) -->
+        <part name="1.8e" crc="1593c302"/>
+        <part name="2.8d" crc="ac9df947"/>
+        <part name="3.9e" crc="73cdf192"/>
+        <!-- Total 0x158C00 bytes - 1379 kBytes -->
+    </rom>
+    <!-- Vertical screen. -->
+    <rom index="1">
+        <part>01 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="33,fb">
+        <DSW1/>
+        <dip name="Allow Continue" bits="0" ids="No,Yes"/>
+        <dip name="Cabinet" bits="1" ids="4 Player Cocktail,2 Player Upright"/>
+        <dip name="1st Down Bonus Time" bits="2,3" ids="Every 1st Down,Every 4 1st Downs,Every 6 1st Downs,Every 8 1st Downs"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Never Finish,Demo Sound On,Demo Sound Off"/>
+        <dip name="Play Time (Type A)" bits="12,14" ids="2:10,2:00,1:50,1:40,1:30,1:20,1:10,1:00"/>
+        <dip name="Flip Screen" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

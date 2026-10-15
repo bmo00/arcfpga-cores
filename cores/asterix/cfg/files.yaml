@@ -18,7 +18,6 @@ jtframe:
       - jtframe_ram16.v
       - jtframe_dual_ram16.v
       - jtframe_rpwp_ram.v
-      - jtframe_obj_buffer.v
   - from: video
     get:
       - jtframe_vtimer.v

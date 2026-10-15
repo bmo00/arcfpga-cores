@@ -1,0 +1,11 @@
+--- a/hdl/jthotchase_sub.v
++++ b/hdl/jthotchase_sub.v
+@@ -130,8 +130,6 @@
+     pf_clk = pf_clk+1;
+     if( cpu_cen ) pf_cen = pf_cen+1;
+     if( cpu_cen && !ASn && DTACKn ) pf_wcen = pf_wcen+1;
+-    if( u_dtack.delayed && (cpu_cen|cpu_cenb) ) pf_del = pf_del+1;
+-    if( u_dtack.recover ) pf_rec = pf_rec+1;
+     if( pf_asl && !ASn ) begin pf_bus = pf_bus+1; if( rom_cs ) pf_rom = pf_rom+1; end
+     if( pf_clk==819200 ) begin
+         pf_n = pf_n+1;

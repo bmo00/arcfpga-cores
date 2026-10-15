@@ -88,13 +88,23 @@ alternate/clone set.
 
 | Core | Games | Description | Last update |
 |---|---|---|---|
-| [`aligator`](cores/aligator/) | [1](doc/game_list.md#aligator) | Gaelco, 1994 — jlrh port | 2026-08-26 |
-| [`asterix`](cores/asterix/) | [1](doc/game_list.md#asterix) | Konami, 1992 — jlrh port | 2026-08-31 |
-| [`bigkarnk`](cores/bigkarnk/) | [1](doc/game_list.md#bigkarnk) | Gaelco, 1991 — jlrh port | 2026-09-02 |
-| [`biomtoy`](cores/biomtoy/) | [1](doc/game_list.md#biomtoy) | Gaelco, 1995 — jlrh port | 2026-09-02 |
+| [`aerofgt`](cores/aerofgt/) | [1](doc/game_list.md#aerofgt) | Video System Co., 1992 — jlrh port | 2026-10-15 |
+| [`aligator`](cores/aligator/) | [1](doc/game_list.md#aligator) | Gaelco, 1994 — jlrh port | 2026-10-15 |
+| [`altair`](cores/altair/README.md) | [4](doc/game_list.md#altair) | Cidelsa, 1980–198? — jlrh port | 2026-10-15 |
+| [`asterix`](cores/asterix/) | [1](doc/game_list.md#asterix) | Konami, 1992 — jlrh port | 2026-10-15 |
+| [`bbusters`](cores/bbusters/) | [1](doc/game_list.md#bbusters) | SNK, 1989 — jlrh port | 2026-10-15 |
+| [`bigkarnk`](cores/bigkarnk/) | [1](doc/game_list.md#bigkarnk) | Gaelco, 1991 — jlrh port | 2026-10-15 |
+| [`biomtoy`](cores/biomtoy/) | [1](doc/game_list.md#biomtoy) | Gaelco, 1995 — jlrh port | 2026-10-15 |
+| [`blswhstl`](cores/blswhstl/) | [1](doc/game_list.md#blswhstl) | Konami, 1991 — jlrh port | 2026-10-15 |
 | [`bucky`](cores/bucky/) | [1](doc/game_list.md#bucky) | Konami, 1992 | 2026-08-26 |
-| [`empirecity`](cores/empirecity/) | [1](doc/game_list.md#empirecity) | Seibu Kaihatsu, 1986 — jlrh port | 2026-08-26 |
-| [`glass`](cores/glass/) | [1](doc/game_list.md#glass) | Gaelco, 1993 — jlrh port | 2026-08-26 |
+| [`chequeredflag`](cores/chequeredflag/) | [1](doc/game_list.md#chequeredflag) | Konami, 1988 — jlrh port | 2026-10-15 |
+| [`deadang`](cores/deadang/) | [2](doc/game_list.md#deadang) | Seibu Kaihatsu, 1987–1988 — jlrh port | 2026-10-15 |
+| [`destroyer`](cores/destroyer/README.md) | [4](doc/game_list.md#destroyer) | Cidelsa, 1980–198? — jlrh port | 2026-10-15 |
+| [`draco`](cores/draco/README.md) | [4](doc/game_list.md#draco) | Cidelsa, 1980–198? — jlrh port | 2026-10-15 |
+| [`empirecity`](cores/empirecity/) | [1](doc/game_list.md#empirecity) | Seibu Kaihatsu, 1986 — jlrh port | 2026-10-15 |
+| [`glass`](cores/glass/) | [1](doc/game_list.md#glass) | Gaelco, 1993 — jlrh port | 2026-10-15 |
+| [`gwar`](cores/gwar/) | [22](doc/game_list.md#gwar) | SNK, 1983–1988 — jlrh port | 2026-10-15 |
+| [`hotchase`](cores/hotchase/) | [1](doc/game_list.md#hotchase) | Konami, 1988 — jlrh port | 2026-10-15 |
 | [`jt1942`](cores/1942/README.md) | [3](doc/game_list.md#1942) | Capcom, 1984 — JOTEGO port | 2026-08-31 |
 | [`jt1943`](cores/1943/README.md) | [3](doc/game_list.md#1943) | Capcom, 1987 — JOTEGO port | 2026-08-26 |
 | [`jtajax`](cores/ajax/) | [1](doc/game_list.md#ajax) | Konami, 1987 — JOTEGO port | 2026-09-06 |
@@ -127,7 +137,7 @@ alternate/clone set.
 | [`jtgng`](cores/gng/README.md) | [1](doc/game_list.md#gng) | Capcom, 1985 — JOTEGO port | 2026-08-26 |
 | [`jtgrad3`](cores/grad3/README.md) | [1](doc/game_list.md#grad3) | Konami, 1989 — JOTEGO port | 2026-09-02 |
 | [`jtgunsmk`](cores/gunsmk/README.md) | [1](doc/game_list.md#gunsmk) | Capcom, 1985 — JOTEGO port | 2026-08-26 |
-| [`jtharier`](cores/harier/README.md) | [2](doc/game_list.md#harier) | Sega, 1985–1986 — JOTEGO port | 2026-09-06 |
+| [`jtharier`](cores/harier/README.md) | [3](doc/game_list.md#harier) | Sega, 1985–1986 — JOTEGO port | 2026-09-06 |
 | [`jtkarnov`](cores/karnov/) | [3](doc/game_list.md#karnov) | Data East Corporation, 1987–1988 — JOTEGO port | 2026-08-31 |
 | [`jtkchamp`](cores/kchamp/README.md) | [2](doc/game_list.md#kchamp) | Data East USA, 1984 — JOTEGO port | 2026-08-31 |
 | [`jtkicker`](cores/kicker/README.md) | [1](doc/game_list.md#kicker) | Konami, 1985 — JOTEGO port | 2026-08-31 |
@@ -176,19 +186,25 @@ alternate/clone set.
 | [`jtwwfss`](cores/wwfss/README.md) | [1](doc/game_list.md#wwfss) | Technos Japan, 1989 — JOTEGO port | 2026-08-31 |
 | [`jtxmen`](cores/xmen/) | [1](doc/game_list.md#xmen) | Konami, 1992 — JOTEGO port | 2026-08-31 |
 | [`jtyiear`](cores/yiear/README.md) | [1](doc/game_list.md#yiear) | Konami, 1985 — JOTEGO port | 2026-08-31 |
+| [`konamigt`](cores/konamigt/) | [4](doc/game_list.md#konamigt) | Konami, 1985 — jlrh port | 2026-10-15 |
 | [`mariobros`](cores/mariobros/README.md) | [1](doc/game_list.md#mariobros) | Nintendo, 1983 | 2026-08-26 |
+| [`mechatt`](cores/mechatt/) | [1](doc/game_list.md#mechatt) | SNK, 1989 — jlrh port | 2026-10-15 |
 | [`momoko`](cores/momoko/) | [1](doc/game_list.md#momoko) | Jaleco, 1986 | 2026-08-28 |
-| [`moomesa`](cores/moomesa/) | [2](doc/game_list.md#moomesa) | Konami, 1992 — jlrh port | 2026-08-26 |
+| [`moomesa`](cores/moomesa/) | [2](doc/game_list.md#moomesa) | Konami, 1992 — jlrh port | 2026-10-15 |
+| [`mtlchamp`](cores/mtlchamp/) | [1](doc/game_list.md#mtlchamp) | Konami, 1993 — jlrh port | 2026-10-15 |
 | [`mystston`](cores/mystston/README.md) | [1](doc/game_list.md#mystston) | Technos Japan, 1984 | 2026-08-26 |
-| [`opwolf`](cores/opwolf/) | [1](doc/game_list.md#opwolf) | Taito, 1987 — jlrh port | 2026-08-26 |
+| [`mystwarr`](cores/mystwarr/) | [1](doc/game_list.md#mystwarr) | Konami, 1993 — jlrh port | 2026-10-15 |
+| [`opwolf`](cores/opwolf/) | [1](doc/game_list.md#opwolf) | Taito, 1987 — jlrh port | 2026-10-15 |
+| [`shadfrce`](cores/shadfrce/) | [1](doc/game_list.md#shadfrce) | Technos Japan, 1993 — jlrh port | 2026-10-15 |
 | [`splash`](cores/splash/) | [1](doc/game_list.md#splash) | Gaelco / OMK Software, 1992 | 2026-08-28 |
-| [`squash`](cores/squash/) | [1](doc/game_list.md#squash) | Gaelco, 1992 — jlrh port | 2026-09-02 |
-| [`ssriders`](cores/ssriders/) | [1](doc/game_list.md#ssriders) | Konami, 1991 — jlrh port | 2026-09-02 |
+| [`squash`](cores/squash/) | [1](doc/game_list.md#squash) | Gaelco, 1992 — jlrh port | 2026-10-15 |
+| [`ssriders`](cores/ssriders/) | [1](doc/game_list.md#ssriders) | Konami, 1991 — jlrh port | 2026-10-15 |
 | [`systemc2`](cores/systemc2/README.md) | [38](doc/game_list.md#systemc2) | Sega, 1989–1996 | 2026-09-06 |
-| [`thoop`](cores/thoop/) | [1](doc/game_list.md#thoop) | Gaelco, 1992 — jlrh port | 2026-09-02 |
-| [`thoop2`](cores/thoop2/) | [1](doc/game_list.md#thoop2) | Gaelco, 1994 — jlrh port | 2026-08-26 |
-| [`wrally`](cores/wrally/) | [1](doc/game_list.md#wrally) | Gaelco, 1993 — jlrh port | 2026-08-26 |
-| [`wrally2`](cores/wrally2/) | [1](doc/game_list.md#wrally2) | Gaelco, 1995 — jlrh port | 2026-08-26 |
+| [`thoop`](cores/thoop/) | [1](doc/game_list.md#thoop) | Gaelco, 1992 — jlrh port | 2026-10-15 |
+| [`thoop2`](cores/thoop2/) | [1](doc/game_list.md#thoop2) | Gaelco, 1994 — jlrh port | 2026-10-15 |
+| [`wrally`](cores/wrally/) | [1](doc/game_list.md#wrally) | Gaelco, 1993 — jlrh port | 2026-10-15 |
+| [`wrally2`](cores/wrally2/) | [1](doc/game_list.md#wrally2) | Gaelco, 1995 — jlrh port | 2026-10-15 |
+| [`xexex`](cores/xexex/) | [1](doc/game_list.md#xexex) | Konami, 1991 — jlrh port | 2026-10-15 |
 
 *This table is updated as cores are added — see each core's own README for build/hardware notes.*
 
@@ -215,7 +231,7 @@ obtained MAME ROM dump with a `.mra` into the `.rom` a core actually loads.
 - [gyurco](https://github.com/gyurco) — 2 ported cores in this collection and 1 shared module
   under `modules/`.
 - [javi-ivaj](https://github.com/javi-ivaj) — 2 ported cores in this collection.
-- [jlrh](https://github.com/jlrh) — 14 ported cores in this collection.
+- [jlrh](https://github.com/jlrh) — 30 ported cores in this collection.
 - [jtfpga](https://github.com/jtfpga) — 1 shared module under `modules/`.
 - [meathax](https://github.com/meathax) — 1 ported core in this collection.
 - [Mezzow](https://github.com/Mezzow) — 1 ported core in this collection.

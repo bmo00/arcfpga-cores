@@ -1,0 +1,105 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jlrodriguez" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Pop'n Run: The Video Game (set 1)</name>
+    <setname>popnrun</setname>
+    <mameversion>0289</mameversion>
+    <year>1987</year>
+    <manufacturer>Seibu Kaihatsu</manufacturer>
+    <players>2</players>
+    <rbf>deadang</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="popnrun.zip" md5="None" asm_md5="bf4e1eba1c63f617b8ee296bc97c3970">
+        <!-- maincpu - starts at 0x0 - length 0x40000 (18 bits) -->
+        <interleave output="16">
+            <part name="popnrun-27512-2-6h.bin" crc="bad47dc4" map="01"/>
+            <part name="popnrun-27512-1-6e.bin" crc="cf800494" map="10"/>
+        </interleave>
+        <part repeat="0x20000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x40000 - length 0x20000 (17 bits) -->
+        <interleave output="16">
+            <part name="popnrun-27256-4-17h.bin" crc="8fe0c064" map="01"/>
+            <part name="popnrun-27256-3-17e.bin" crc="93f811aa" map="10"/>
+        </interleave>
+        <part repeat="0x10000"> FF</part>
+        <!-- SND_START -->
+        <!-- audiocpu - starts at 0x60000 - length 0x20000 (17 bits) -->
+        <part name="popnrun-2764-5-22c.bin" crc="768a2ec7"/>
+        <part repeat="0xE000"> FF</part>
+        <part name="popnrun-27512-6-20c.bin" crc="47d168ce"/>
+        <!-- PCM0_START -->
+        <!-- adpcm1 - starts at 0x80000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- PCM1_START -->
+        <!-- adpcm2 - starts at 0x90000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- tiles1 - starts at 0xA0000 - length 0x100000 (20 bits) -->
+        <!-- Skipping region tiles1 because there is no dump known -->
+        <part repeat="0x100000"> FF</part>
+        <!-- OBJ_START -->
+        <!-- sprites - starts at 0x1A0000 - length 0x80000 (19 bits) -->
+        <!-- Skipping region sprites because there is no dump known -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- tiles2 - starts at 0x220000 - length 0x40000 (18 bits) -->
+        <!-- Skipping region tiles2 because there is no dump known -->
+        <part repeat="0x40000"> FF</part>
+        <!-- PF3_START -->
+        <!-- tiles3 - starts at 0x260000 - length 0x40000 (18 bits) -->
+        <!-- Skipping region tiles3 because there is no dump known -->
+        <part repeat="0x40000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- chars - starts at 0x2A0000 - length 0x2000 (13 bits) -->
+        <part name="popnrun-2764-7-1a.bin" crc="5e508b8e"/>
+        <!-- bgmap1 - starts at 0x2A2000 -->
+        <!-- Skipping region bgmap1 because there is no dump known -->
+        <!-- bgmap2 - starts at 0x2A2000 -->
+        <!-- Skipping region bgmap2 because there is no dump known -->
+        <!-- prom - starts at 0x2A2000 - length 0x100 (8 bits) -->
+        <part name="popnrun-63s281-9b.bin" crc="208d17ca"/>
+        <!-- Total 0x2A2100 bytes - 2696 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,ff">
+        <DSW/>
+        <dip name="Coin A" bits="0,2" ids="5/1,1/5,3/1,1/2,4/1,1/3,2/1,1/1"/>
+        <dip name="Coin B" bits="3,4" ids="2/3,1/2,2/1,1/1"/>
+        <dip name="Service Mode" bits="5" ids="On,Off"/>
+        <dip name="Flip Screen" bits="6" ids="On,Off"/>
+        <dip name="Cabinet" bits="7" ids="Cocktail,Upright"/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Bonus Life" bits="10,11" ids="100K 200K,50K 150K,20K 50K,30K 100K"/>
+        <dip name="Lives" bits="12,13" ids="4,2,1,3"/>
+        <dip name="Demo Sounds" bits="14" ids="Off,On"/>
+        <dip name="User Mode" bits="15" ids="Japan,Overseas"/>
+    </switches>
+    <buttons names="button 1,button 2,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

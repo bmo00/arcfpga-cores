@@ -1,0 +1,97 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Gladiator 1984</name>
+    <setname>sgladiat</setname>
+    <mameversion>0289</mameversion>
+    <year>1984</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="sgladiat.zip" md5="None" asm_md5="a940bf65102fefaac9bb94ea67af4b5c">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="glad.005" crc="4bc60f0b"/>
+        <part name="glad.004" crc="db557f46"/>
+        <part name="glad.003" crc="55ce82b4"/>
+        <part repeat="0x6000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="glad.002" crc="8350261c"/>
+        <part name="glad.001" crc="5ee9d3fb"/>
+        <part repeat="0x8000"> FF</part>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part repeat="0x10000"> FF</part>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="glad.007" crc="c25b6731"/>
+        <part name="glad.006" crc="2024d716"/>
+        <part repeat="0xC000"> FF</part>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="glad.012" crc="b7dd519f"/>
+        <part repeat="0x3E000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <interleave output="32">
+            <part name="glad.008" crc="bcf42587" map="0001"/>
+            <part name="glad.009" crc="912a20e0" map="0010"/>
+            <part name="glad.010" crc="8b1db3a5" map="0100"/>
+            <part name="glad.010" crc="8b1db3a5" map="1000"/>
+        </interleave>
+        <part repeat="0x38000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <part repeat="0x80000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x2000 (13 bits) -->
+        <part name="glad.011" crc="305bb294"/>
+        <!-- proms - starts at 0x142000 - length 0xC00 (12 bits) -->
+        <part name="82s137.001" crc="d9184823"/>
+        <part name="82s137.002" crc="1a6b0953"/>
+        <part name="82s137.003" crc="c0e70308"/>
+        <!-- Total 0x142C00 bytes - 1291 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="fb,fb">
+        <BONUS/>
+        <dip name="Bonus Life" bits="0" ids="None,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,50k 120k,50k 120k 120k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,40k 90k,40k 90k 90k+,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,-,20k 60k,20k 60k 60k+"/>
+        <DSW1/>
+        <dip name="Cabinet" bits="2" ids="Upright,Cocktail"/>
+        <dip name="Lives" bits="3" ids="5,3"/>
+        <dip name="Coinage" bits="4,6" ids="Free Play,-,5/1,2/1,3/1,1/3,1/2,1/1"/>
+        <DSW2/>
+        <dip name="Time" bits="8" ids="Less,More"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Infinite Lives,Demo Sounds On,Demo Sounds Off"/>
+        <dip name="Flip Screen" bits="12" ids="On,Off"/>
+        <dip name="No Opponents (Cheat)" bits="14" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

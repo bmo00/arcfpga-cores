@@ -4,13 +4,28 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 ## Index
 
-[`aligator`](#aligator), [`asterix`](#asterix), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`bucky`](#bucky), [`empirecity`](#empirecity), [`glass`](#glass), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`harier`](#harier), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`mariobros`](#mariobros), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mystston`](#mystston), [`opwolf`](#opwolf), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`systemc2`](#systemc2), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2)
+[`aerofgt`](#aerofgt), [`aligator`](#aligator), [`altair`](#altair), [`asterix`](#asterix), [`bbusters`](#bbusters), [`bigkarnk`](#bigkarnk), [`biomtoy`](#biomtoy), [`blswhstl`](#blswhstl), [`bucky`](#bucky), [`chequeredflag`](#chequeredflag), [`deadang`](#deadang), [`destroyer`](#destroyer), [`draco`](#draco), [`empirecity`](#empirecity), [`glass`](#glass), [`gwar`](#gwar), [`hotchase`](#hotchase), [`1942`](#1942), [`1943`](#1943), [`ajax`](#ajax), [`aliens`](#aliens), [`biocom`](#biocom), [`blkout`](#blkout), [`btiger`](#btiger), [`bubl`](#bubl), [`cal50`](#cal50), [`castle`](#castle), [`circus`](#circus), [`commnd`](#commnd), [`comsc`](#comsc), [`contra`](#contra), [`cop`](#cop), [`cps1`](#cps1), [`cps15`](#cps15), [`cps2`](#cps2), [`cps3`](#cps3), [`dd`](#dd), [`dd2`](#dd2), [`ddrbl`](#ddrbl), [`exed`](#exed), [`flane`](#flane), [`flstory`](#flstory), [`fround`](#fround), [`gae1`](#gae1), [`gaiden`](#gaiden), [`gals`](#gals), [`gng`](#gng), [`grad3`](#grad3), [`gunsmk`](#gunsmk), [`harier`](#harier), [`karnov`](#karnov), [`kchamp`](#kchamp), [`kicker`](#kicker), [`kiwi`](#kiwi), [`kunio`](#kunio), [`labrun`](#labrun), [`midres`](#midres), [`mikie`](#mikie), [`mx5k`](#mx5k), [`ninja`](#ninja), [`outrun`](#outrun), [`paclan`](#paclan), [`pang`](#pang), [`paroda`](#paroda), [`pinpon`](#pinpon), [`pktgal`](#pktgal), [`prmr`](#prmr), [`rastan`](#rastan), [`riders`](#riders), [`roadf`](#roadf), [`roc`](#roc), [`rumble`](#rumble), [`rungun`](#rungun), [`s16`](#s16), [`s16b`](#s16b), [`s18`](#s18), [`sarms`](#sarms), [`sbaskt`](#sbaskt), [`sectnz`](#sectnz), [`sf`](#sf), [`shanon`](#shanon), [`shouse`](#shouse), [`simson`](#simson), [`slyspy`](#slyspy), [`taitox`](#taitox), [`thundr`](#thundr), [`tmnt`](#tmnt), [`toki`](#toki), [`tora`](#tora), [`track`](#track), [`trojan`](#trojan), [`twin16`](#twin16), [`vigil`](#vigil), [`vlfied`](#vlfied), [`wc`](#wc), [`wwfss`](#wwfss), [`xmen`](#xmen), [`yiear`](#yiear), [`konamigt`](#konamigt), [`mariobros`](#mariobros), [`mechatt`](#mechatt), [`momoko`](#momoko), [`moomesa`](#moomesa), [`mtlchamp`](#mtlchamp), [`mystston`](#mystston), [`mystwarr`](#mystwarr), [`opwolf`](#opwolf), [`shadfrce`](#shadfrce), [`splash`](#splash), [`squash`](#squash), [`ssriders`](#ssriders), [`systemc2`](#systemc2), [`thoop`](#thoop), [`thoop2`](#thoop2), [`wrally`](#wrally), [`wrally2`](#wrally2), [`xexex`](#xexex)
+
+## aerofgt
+
+**Video System Co., 1992**
+
+- Aero Fighters (World / USA + Canada / Korea / Hong Kong / Taiwan) (newer hardware) (`aerofgt`)
 
 ## aligator
 
 **Gaelco, 1994**
 
 - Alligator Hunt (World, protected, checksum 2B34128B) (`aligator`)
+
+## altair
+
+**Cidelsa, 1980–198?**
+
+- Altair (`altair`)
+- Altair II (`altair2`)
+- Destroyer (Cidelsa, set 1) (`destryer`)
+- Draco (`draco`)
 
 ## asterix
 
@@ -21,6 +36,16 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Asterix (ver EAA) (`asterixeaa`)
   - Asterix (ver EAC) (`asterixeac`)
   - Asterix (ver JAD) (`asterixj`)
+
+## bbusters
+
+**SNK, 1989**
+
+- **Beast Busters (World)** (`bbusters`)
+  - Beast Busters (Japan, Version 2, 2 Player) (`bbustersja`)
+  - Beast Busters (Japan, Version 2, 3 Player) (`bbustersj`)
+  - Beast Busters (US, Version 2) (`bbustersua`)
+  - Beast Busters (US, Version 3) (`bbustersu`)
 
 ## bigkarnk
 
@@ -34,6 +59,14 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 
 - Biomechanical Toy (ver. 1.0.1885, checksum 69f5e032) (`biomtoy`)
 
+## blswhstl
+
+**Konami, 1991**
+
+- **Bells & Whistles (World, version L)** (`blswhstl`)
+  - Bells & Whistles (Asia, version M) (`blswhstla`)
+  - Detana!! Twin Bee (Japan, version J) (`detatwin`)
+
 ## bucky
 
 **Konami, 1992**
@@ -44,6 +77,42 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Bucky O'Hare (ver EA) (`buckyea`)
   - Bucky O'Hare (ver JAA) (`buckyjaa`)
   - Bucky O'Hare (ver UAB) (`buckyuab`)
+
+## chequeredflag
+
+**Konami, 1988**
+
+- **Chequered Flag** (`chqflag`)
+  - Chequered Flag (Japan) (`chqflagj`)
+
+## deadang
+
+**Seibu Kaihatsu, 1987–1988**
+
+- **Dead Angle** (`deadang`)
+  - Gang Hunter / Dead Angle (`ghunter`)
+  - Gang Hunter / Dead Angle (Spain) (`ghunters`)
+  - Lead Angle (Japan) (`leadang`)
+- **Pop'n Run: The Video Game (set 1)** (`popnrun`)
+  - Pop'n Run: The Video Game (set 2) (`popnruna`)
+
+## destroyer
+
+**Cidelsa, 1980–198?**
+
+- Altair (`altair`)
+- Altair II (`altair2`)
+- Destroyer (Cidelsa, set 1) (`destryer`)
+- Draco (`draco`)
+
+## draco
+
+**Cidelsa, 1980–198?**
+
+- Altair (`altair`)
+- Altair II (`altair2`)
+- Destroyer (Cidelsa, set 1) (`destryer`)
+- Draco (`draco`)
 
 ## empirecity
 
@@ -64,6 +133,75 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 **Gaelco, 1993**
 
 - Glass (ver 1.1, Break Edition, checksum 49D5E66B, Version 1994, set 2) (`glassa`)
+
+## gwar
+
+**SNK, 1983–1988**
+
+- **ASO - Armored Scrum Object** (`aso`)
+  - Alpha Mission (`alphamis`)
+  - Arian Mission (`arian`)
+- **Athena** (`athena`)
+  - Athena (bootleg) (`athenab`)
+  - Super Athena (bootleg) (`sathena`)
+- **Bermuda Triangle (World?)** (`bermudat`)
+  - Bermuda Triangle (Japan) (`bermudatj`)
+- Canvas Croquis (`canvas`)
+- **Chopper I (US Ver 2)** (`chopper`)
+  - Chopper I (US Ver 1?) (`choppera`)
+  - Chopper I (US) (`chopperb`)
+  - Koukuu Kihei Monogatari - The Legend of Air Cavalry (Japan) (`legofair`)
+- Country Club (`countryc`)
+- **Fighting Soccer (version 4)** (`fsoccer`)
+  - Fighting Soccer (Japan) (`fsoccerj`)
+  - Fighting Soccer (Joystick hack bootleg) (`fsoccerb`)
+  - Fighting Soccer (Joystick hack bootleg, alt) (`fsoccerba`)
+- Gladiator 1984 (`sgladiat`)
+- **Guerrilla War (US)** (`gwar`)
+  - Guerrilla War (Joystick hack bootleg) (`gwarb`)
+  - Guerrilla War (Version 1, set 1) (`gwara`)
+  - Guerrilla War (Version 1, set 2) (`gwarab`)
+  - Guevara (Japan) (`gwarj`)
+- **HAL21** (`hal21`)
+  - HAL21 (Japan) (`hal21j`)
+- **Ikari Warriors (US JAMMA)** (`ikari`)
+  - Ikari (Japan No Continues) (`ikarijp`)
+  - Ikari (Joystick hack bootleg) (`ikarijpb`)
+  - Ikari Warriors (US No Continues) (`ikarinc`)
+  - Ikari Warriors (US, set 1) (`ikaria`)
+  - Ikari Warriors (US, set 2) (`ikaria2`)
+  - Rambo 3 (bootleg of Ikari, Joystick hack) (`ikariram`)
+- **Jumping Cross (set 1)** (`jcross`)
+  - Jumping Cross (set 2) (`jcrossa`)
+- **Lee Trevino's Fighting Golf (World?)** (`fitegolf`)
+  - Lee Trevino's Fighting Golf (US, Ver 2, set 1) (`fitegolfu`)
+  - Lee Trevino's Fighting Golf (US, Ver 2, set 2) (`fitegolfua`)
+- **Mad Crasher** (`madcrash`)
+  - Mad Crusher (Japan) (`madcrush`)
+- Main Event (1984) (`mainsnk`)
+- Marvin's Maze (`marvins`)
+- **Psycho Soldier (US)** (`psychos`)
+  - Psycho Soldier (Japan) (`psychosj`)
+- **T.N.K III (US)** (`tnk3`)
+  - T.A.N.K (Japan) (`tnk3j`)
+  - T.A.N.K (bootleg, 8-way joystick) (`tnk3b`)
+- **TouchDown Fever (US)** (`tdfever`)
+  - TouchDown Fever (Japan) (`tdfeverj`)
+  - TouchDown Fever 2 (`tdfever2`)
+  - TouchDown Fever 2 (bootleg) (`tdfever2b`)
+- Vanguard II (`vangrd2`)
+- **Victory Road** (`victroad`)
+  - Dogou Souken (Japan) (`dogosoke`)
+  - Dogou Souken (Joystick hack bootleg) (`dogosokb`)
+- **World Wars (World?)** (`worldwar`)
+  - Bermuda Triangle (World Wars) (US) (`bermudata`)
+
+## hotchase
+
+**Konami, 1988**
+
+- **Hot Chase (set 1)** (`hotchase`)
+  - Hot Chase (set 2) (`hotchasea`)
 
 ## 1942
 
@@ -934,6 +1072,9 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Enduro Racer (Rev A, YM2151, mask ROM sprites, FD1089B 317-0013A) (`endurora`)
   - Enduro Racer (YM2151, FD1089B 317-0013A) (`endurorb`)
   - Enduro Racer (YM2203, FD1089B 317-0013A) (`enduror1`)
+- **Hang-On (Rev A)** (`hangon`)
+  - Hang-On (`hangon1`)
+  - Hang-On (Rev A, ride-on) (`hangon2`)
 - **Space Harrier (Rev A, 8751 315-5163A)** (`sharrier`)
   - Space Harrier (8751 315-5163) (`sharrier1`)
 
@@ -1745,13 +1886,29 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 - **Yie Ar Kung-Fu (version I)** (`yiear`)
   - Yie Ar Kung-Fu (version G) (`yiear2`)
 
+## konamigt
+
+**Konami, 1985**
+
+- Galactic Warriors (Bubble System) (`bs_gwarrior`)
+- Gradius (Bubble System) (`bs_gradius`)
+- Konami GT (`konamigt`)
+- Konami RF2: Red Fighter (Bubble System) (`bs_rf2`)
+
 ## mariobros
 
 **Nintendo, 1983**
 
-- **Mario Bros. (US, revision E)** (`mario`)
-  - Mario Bros. (Japan, older) (`marioja`)
-  - Mario Bros. (Japan, revision C) (`marioj`)
+- Mario Bros. (US, revision E) (`mario`)
+
+## mechatt
+
+**SNK, 1989**
+
+- **Mechanized Attack (World)** (`mechatt`)
+  - Mechanized Attack (Japan) (`mechattj`)
+  - Mechanized Attack (US) (`mechattu`)
+  - Mechanized Attack (US, Version 1, Single Player) (`mechattu1`)
 
 ## momoko
 
@@ -1776,6 +1933,12 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Wild West C.O.W.-Boys of Moo Mesa (ver UAB) (`moomesauab`)
   - Wild West C.O.W.-Boys of Moo Mesa (ver UAC) (`moomesauac`)
 
+## mtlchamp
+
+**Konami, 1993**
+
+- Martial Champion (ver EAB) (`mtlchamp`)
+
 ## mystston
 
 **Technos Japan, 1984**
@@ -1783,6 +1946,16 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 - **Mysterious Stones: Dr. John's Adventure** (`mystston`)
   - Mysterious Stones: Dr. Kick in Adventure (`myststono`)
   - Mysterious Stones: Dr. Kick in Adventure (Itisa PCB) (`myststonoi`)
+
+## mystwarr
+
+**Konami, 1993**
+
+- **Mystic Warriors (ver EAA)** (`mystwarr`)
+  - Mystic Warriors (ver AAA) (`mystwarraa`)
+  - Mystic Warriors (ver AAB) (`mystwarra`)
+  - Mystic Warriors (ver JAA) (`mystwarrj`)
+  - Mystic Warriors (ver UAA) (`mystwarru`)
 
 ## opwolf
 
@@ -1795,6 +1968,13 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
   - Operation Wolf (Japan, rev 2) (`opwolfj`)
   - Operation Wolf (US, rev 2) (`opwolfu`)
   - Operation Wolf (World, rev 2, set 2) (`opwolfa`)
+
+## shadfrce
+
+**Technos Japan, 1993**
+
+- **Shadow Force (World, Version 3)** (`shadfrce`)
+  - Shadow Force - Henshin Ninja (Japan, Version 2) (`shadfrcej`)
 
 ## splash
 
@@ -1917,3 +2097,12 @@ Full ROM-set coverage per core: every parent game and its supported alternate/cl
 **Gaelco, 1995**
 
 - World Rally 2: Twin Racing (version 20-07, checksum B1B8) (`wrally2`)
+
+## xexex
+
+**Konami, 1991**
+
+- **Xexex (ver EAA)** (`xexex`)
+  - Orius (ver UAA) (`orius`)
+  - Xexex (ver AAA) (`xexexa`)
+  - Xexex (ver JAA) (`xexexj`)

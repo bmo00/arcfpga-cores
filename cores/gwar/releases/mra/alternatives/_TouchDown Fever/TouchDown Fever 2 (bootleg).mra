@@ -1,0 +1,107 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (cw)</rotation>
+    <name>TouchDown Fever 2 (bootleg)</name>
+    <setname>tdfever2b</setname>
+    <mameversion>0289</mameversion>
+    <year>1988</year>
+    <manufacturer>bootleg</manufacturer>
+    <players>4</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="tdfever2b.zip|tdfever.zip" md5="None" asm_md5="7e6e0c9d2ff0ba3906934d8429ce1692">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="fa-3.h8" crc="09647773"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="fa-1.m3" crc="6ecfe4f1"/>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x40000 (18 bits) -->
+        <part name="fa-5.c13" crc="e332e41f"/>
+        <part name="fa-4.c12" crc="98af6d2d"/>
+        <part name="fa-22.c11" crc="34b4bce9"/>
+        <part name="fa-21.c10" crc="1b52357b"/>
+        <!-- audiocpu - starts at 0x60000 - length 0x10000 (16 bits) -->
+        <part name="fa-2.d3" crc="d14eb61a"/>
+        <!-- bg_tiles - starts at 0x70000 - length 0x60000 (19 bits) -->
+        <part name="fa-15.b5" crc="ad6e0927"/>
+        <part name="fa-16.b7" crc="181db036"/>
+        <part name="fa-17.b9" crc="c5decca3"/>
+        <part name="fa-18.b10" crc="1f275a1c"/>
+        <part name="fa-19.b12" crc="f1081329"/>
+        <part name="fa-20.b12" crc="cb152997"/>
+        <!-- sp16_tiles - starts at 0xD0000 -->
+        <!-- sp32_tiles - starts at 0xD0000 - length 0x80000 (19 bits) -->
+        <interleave output="32">
+            <part name="fa-13.h23" crc="88e2e819" map="0001"/>
+            <part name="fa-11.h19" crc="a0d53fbd" map="0010"/>
+            <part name="fa-9.h16" crc="a8979657" map="0100"/>
+            <part name="fa-7.h14" crc="72a5590d" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="fa-12.h21" crc="047e618f" map="0001"/>
+            <part name="fa-10.h18" crc="0efe5da6" map="0010"/>
+            <part name="fa-8.h15" crc="1aa38303" map="0100"/>
+            <part name="fa-6.h13" crc="8cdc19cb" map="1000"/>
+        </interleave>
+        <!-- tx_tiles - starts at 0x150000 - length 0x8000 (15 bits) -->
+        <part name="fa-14.f17" crc="d6521b0d"/>
+        <!-- proms - starts at 0x158000 - length 0xC00 (12 bits) -->
+        <part name="82s137-1.8e" crc="1593c302"/>
+        <part name="82s137-2.8d" crc="ac9df947"/>
+        <part name="82s137-3.9e" crc="73cdf192"/>
+        <!-- plds - starts at 0x158C00 - length 0x904 (12 bits) -->
+        <part name="pal16l8a.c1" crc="9282d039"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="pal16l8a.h3" crc="4ae59346"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="pal16r8a.f2" crc="311e5ae6"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="pal16l8a.e7" crc="4c2d02b3"/>
+        <part repeat="0xFC"> FF</part>
+        <part name="pal16l8a.h11" crc="e9a0efca"/>
+        <!-- Total 0x159504 bytes - 1381 kBytes -->
+    </rom>
+    <!-- Vertical screen. -->
+    <rom index="1">
+        <part>01 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="33,fb">
+        <DSW1/>
+        <dip name="Allow Continue" bits="0" ids="No,Yes"/>
+        <dip name="Cabinet" bits="1" ids="4 Player Cocktail,2 Player Upright"/>
+        <dip name="1st Down Bonus Time" bits="2,3" ids="Every 1st Down,Every 4 1st Downs,Every 6 1st Downs,Every 8 1st Downs"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Normal,Easy"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Never Finish,Demo Sound On,Demo Sound Off"/>
+        <dip name="Play Time (Type A)" bits="12,14" ids="2:10,2:00,1:50,1:40,1:30,1:20,1:10,1:00"/>
+        <dip name="Flip Screen" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

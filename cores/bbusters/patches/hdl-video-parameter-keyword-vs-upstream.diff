@@ -1,0 +1,13 @@
+--- a/hdl/jtbbusters_video.v
++++ b/hdl/jtbbusters_video.v
+@@ -4,8 +4,8 @@
+     PF_COLW  = 7,
+     PF_VAW   = 12,
+     PALW     = 11,
+-    [10:0] PF1_BASE = 11'd768,  PF2_BASE = 11'd1280,
+-    [10:0] OBJ1_BASE = 11'd256, OBJ2_BASE = 11'd512
++    parameter [10:0] PF1_BASE = 11'd768,  PF2_BASE = 11'd1280,
++    parameter [10:0] OBJ1_BASE = 11'd256, OBJ2_BASE = 11'd512
+ )(
+     input             rst,
+     input             clk,

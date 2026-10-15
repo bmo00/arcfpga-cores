@@ -1,0 +1,31 @@
+--- hdl/rtl/draco_machine.v
++++ hdl/rtl/draco_machine.v
+@@ -166,10 +166,26 @@
+                        (cpu_io_port == 3'd2) ? in1 :
+                        (cpu_io_port == 3'd4) ? in2 : 8'hff;
+ 
+-    wire [7:0] rom_q = rom[address[13:0]];
++    // NeptUNO+ (Cyclone IV GX) has no MLAB, so an asynchronous read of the 16KB rom / 1KB dram is
++    // synthesized as registers and the design no longer fits (174k registers vs 150k available).
++    // Registered read, same MEM_ASYNC idiom as altair_machine.v / cidelsa_machine.v (whose
++    // upstream MiSTer builds never define MEM_ASYNC either): the CDP1802 samples data_in only on
++    // ce_cpu (554kHz), many clk cycles after the address settles. See neptunoplus/patches/README.md.
++    reg [7:0] rom_q, dram_q;
++`ifdef MEM_ASYNC
++    always @(*) begin
++        rom_q  = rom[address[13:0]];
++        dram_q = dram[address[9:0]];
++    end
++`else
++    always @(posedge clk) begin
++        rom_q  <= rom[address[13:0]];
++        dram_q <= dram[address[9:0]];
++    end
++`endif
+ 
+     wire [7:0] mem_q = sel_rom  ? rom_q :
+-                       sel_ram  ? dram[address[9:0]] :
++                       sel_ram  ? dram_q :
+                        sel_char ? cpu_crd_q :
+                        sel_page ? cpu_prd_q : 8'hff;
+ 

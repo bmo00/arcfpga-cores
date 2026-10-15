@@ -1,0 +1,85 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="blswhstl" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>vertical (cw)</rotation>
+    <name>Bells &amp; Whistles (Asia, version M)</name>
+    <setname>blswhstla</setname>
+    <mameversion>0289</mameversion>
+    <year>1991</year>
+    <manufacturer>Konami</manufacturer>
+    <players>2</players>
+    <rbf>blswhstl</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="blswhstla.zip|blswhstl.zip" md5="None" address="0x30000000" asm_md5="5cc783731fd9a72c19c5b5a2cb120b08">
+        <!-- Offsets for each ROM region. -->
+        <part>
+            00 00 80 00 90 01 90 02
+            FF FF 00 00 00 00 00 00
+        </part>
+        <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
+        <interleave output="16">
+            <part name="060_m03.g09" crc="7b6ee4a4" map="01"/>
+            <part name="060_m02.e09" crc="bc9dd08f" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="060_m10.g11" crc="f738ad4a" map="01"/>
+            <part name="060_m09.e11" crc="14628736" map="10"/>
+        </interleave>
+        <!-- audiocpu - starts at 0x80000 - length 0x10000 (16 bits) -->
+        <part name="060j01.f3" crc="f9d9a673"/>
+        <!-- pcm - starts at 0x90000 - length 0x100000 (20 bits) -->
+        <part name="060e04.d1" crc="c680395d"/>
+        <!-- k052109 - starts at 0x190000 - length 0x100000 (20 bits) -->
+        <interleave output="32">
+            <part name="060e07.k16" crc="c400edf3" map="0021"/>
+            <part name="060e08.k12" crc="70dddba1" map="2100"/>
+        </interleave>
+        <!-- obj - starts at 0x290000 - length 0x100000 (20 bits) -->
+        <interleave output="32">
+            <part name="060e06.k7" crc="09381492" map="0021"/>
+            <part name="060e05.k3" crc="32454241" map="2100"/>
+        </interleave>
+        <!-- Total 0x390000 bytes - 3648 kBytes -->
+    </rom>
+    <rom index="2">
+        <part>
+00 81 82 83 15 85 86 87 88 89 8A 8B 8C 8D 8E 8F
+15 91 92 93 94 95 96 97 98 99 9A 9B 9C 9D 9E 9F
+A0 A1 A2 A3 A4 A5 A6 A7 A8 A9 AA AB AC AD AE AF
+B0 B1 B2 B3 B4 B5 B6 B7 B8 B9 BA BB BC BD BE BF
+C0 C1 C2 C3 C4 C5 C6 C7 C8 C9 CA CB CC CD CE CF
+D0 D1 D2 D3 D4 D5 D6 D7 D8 D9 DA DB DC DD DE DF
+E0 E1 E2 E3 E4 E5 E6 E7 E8 E9 EA EB EC ED EE EF
+F0 F1 F2 F3 F4 F5 F6 F7 F8 F9 FA FB FC FD FE FF
+</part>
+    </rom>
+    <nvram index="2" size="128"/>
+    <!-- Vertical screen. -->
+    <rom index="1">
+        <part>01 80</part>
+    </rom>
+    <buttons names="Shot,Bomb,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

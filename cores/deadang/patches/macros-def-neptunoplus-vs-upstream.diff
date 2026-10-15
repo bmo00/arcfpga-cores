@@ -1,0 +1,11 @@
+--- a/cfg/macros.def	2026-10-15 13:11:31.604590920 +0200
++++ b/cfg/macros.def	2026-10-15 13:11:31.606811542 +0200
+@@ -21,7 +21,7 @@
+ PF3_START=0x260000
+ JTFRAME_PROM_START=0x2A0000
+ 
+-[mister]
++[mister|neptunoplus]
+ 
+ SYNTHESIS
+ JTFRAME_ARX=4

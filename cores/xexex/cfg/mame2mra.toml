@@ -1,0 +1,69 @@
+[global]
+author=["konami-fpga"]
+
+[parse]
+sourcefile=[ "xexex.cpp" ]
+
+skip = { bootlegs=true }
+rename = [
+    { setname="xexex",  name="Xexex (FF ver EAA)" },
+    { setname="orius",  name="Orius (FF ver UAA)" },
+    { setname="xexexa", name="Xexex (FF ver AAA)" },
+    { setname="xexexj", name="Xexex (FF ver JAA)" },
+]
+
+[buttons]
+names = [
+    { machine="xexex", names="Shot,Flint" },
+    { machine="orius", names="Shot,Flint" },
+    { machine="xexexa", names="Shot,Flint" },
+    { machine="xexexj", names="Shot,Flint" },
+]
+
+[ROM]
+regions = [
+    { name="maincpu",  width=16, reverse=true },
+    { name="audiocpu", start="JTFRAME_BA1_START" },
+    { name="k054539",  start="PCM_START", rename="pcm" },
+    { name="k056832",  start="JTFRAME_BA2_START", width=32 },
+    { name="k053250",  start="LVC_START", rename="lvc" },
+    { name="k053246",  start="JTFRAME_BA3_START", width=64, rename="obj" },
+    { name="eeprom",   skip=true }
+]
+order=["maincpu","audiocpu","pcm","lvc","k056832","obj"]
+
+nvram={ Defaults=[
+    { setname="xexex", data="""\
+    05 6d fa 92 90 67 45 41 41 00 00 00 00 00 00 00
+    00 d9 d8 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"""},
+    { setname="orius", data="""\n    05 7d fa 82 90 67 55 41 41 00 00 00 00 00 00 00
+    00 d9 d8 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"""},
+    { setname="xexexa", data="""\n    05 69 fa 96 90 67 41 41 41 00 00 00 00 00 00 00
+    00 d9 d8 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"""},
+    { setname="xexexj", data="""\n    05 76 fa 89 90 67 4a 41 41 00 00 00 00 00 00 00
+    00 dd d8 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+    00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00"""},
+]}

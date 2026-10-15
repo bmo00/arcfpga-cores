@@ -1,0 +1,15 @@
+--- a/cfg/mame2mra.toml
++++ b/cfg/mame2mra.toml
+@@ -30,10 +30,9 @@
+     { name="tx_tiles",            start="JTFRAME_BA1_START" },
+     { name="bg1_tiles",           start="BG1_START" },
+     { name="bg2_tiles",           start="BG2_START" },
+-    { name="sprites",             start="JTFRAME_BA2_START" },
++    { name="sprites",             start="JTFRAME_BA2_START", width=16 },
+     { name="ymsnd",               start="JTFRAME_BA3_START" },
+-    { name="ymsnd:internal",      start="RHY_START" },
+     { name="sprites:scale_table", start="JTFRAME_PROM_START", files=[ {name="ma_8.f10", crc="61f3de03", size=0x10000} ] },
+ ]
+-order = [ "maincpu", "audiocpu", "tx_tiles", "bg1_tiles", "bg2_tiles", "sprites", "ymsnd", "ymsnd:internal",
++order = [ "maincpu", "audiocpu", "tx_tiles", "bg1_tiles", "bg2_tiles", "sprites", "ymsnd",
+           "sprites:scale_table" ]

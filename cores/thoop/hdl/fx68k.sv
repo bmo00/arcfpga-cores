@@ -9,6 +9,8 @@
 
 `timescale 1 ns / 1 ns
 
+// verilator lint_off BLKANDNBLK
+
 localparam CF = 0, VF = 1, ZF = 2, NF = 3, XF = 4, SF = 13;
 
 localparam UADDR_WIDTH = 10;

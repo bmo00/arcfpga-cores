@@ -1,0 +1,10 @@
+[ARC]
+RBF=DESTROYER
+MOD=0
+NAME=ALTAIR
+DEFAULT=0xFF0000
+CONF="OGH,Difficulty,Very Hard,Hard,Easy,Very Easy"
+CONF="OIJ,Bonus Life,14000,10000,7000,5000"
+CONF="OKL,Lives,4,3,2,1"
+CONF="OMN,Coinage,A2.5/B5,A2/B4,A1.5/B3,A1/B2"
+BUTTONS="Fire,Fire 2,Start 1P,Start 2P,Coin"

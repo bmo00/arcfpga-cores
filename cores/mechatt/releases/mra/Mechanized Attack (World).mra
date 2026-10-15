@@ -1,0 +1,90 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Mechanized Attack (World)</name>
+    <setname>mechatt</setname>
+    <mameversion>0289</mameversion>
+    <year>1989</year>
+    <manufacturer>SNK</manufacturer>
+    <players>2</players>
+    <rbf>mechatt</rbf>
+    <joystick/>
+    <region>World</region>
+    <rom index="0" zip="mechatt.zip" md5="None" asm_md5="7e92878e58af1996fb5762e6b01be7c7">
+        <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
+        <interleave output="16">
+            <part name="ma4.l12" crc="0d414918" map="01"/>
+            <part name="ma5-e.n12" crc="9bbb852a" map="10"/>
+        </interleave>
+        <interleave output="16">
+            <part name="ma6-f.l13" crc="4055fe8d" map="01"/>
+            <part name="ma7.n13" crc="61d85e1b" map="10"/>
+        </interleave>
+        <!-- SND_START -->
+        <!-- audiocpu - starts at 0x80000 - length 0x10000 (16 bits) -->
+        <part name="ma_3.e13" crc="c06cc8e1"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- tx_tiles - starts at 0x90000 - length 0x20000 (17 bits) -->
+        <part name="ma_1.l2" crc="24766917"/>
+        <part repeat="0x10000"> FF</part>
+        <!-- BG1_START -->
+        <!-- bg1_tiles - starts at 0xB0000 - length 0x80000 (19 bits) -->
+        <part name="mab189a2.bin" crc="e1c8b4d0"/>
+        <!-- BG2_START -->
+        <!-- bg2_tiles - starts at 0x130000 - length 0x80000 (19 bits) -->
+        <part name="mab289c2.bin" crc="14f97ceb"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- sprites - starts at 0x1B0000 - length 0x200000 (21 bits) -->
+        <part name="mao89p13.bin" crc="8bcb16cf"/>
+        <part name="ma189p15.bin" crc="b84d9658"/>
+        <part name="ma289p17.bin" crc="6cbe08ac"/>
+        <part name="ma389m15.bin" crc="34d4585e"/>
+        <!-- JTFRAME_BA3_START -->
+        <!-- ymsnd - starts at 0x3B0000 - length 0x22000 (18 bits) -->
+        <part name="ma_2.d10" crc="ea4cc30d"/>
+        <part repeat="0x2000"> FF</part>
+        <!-- JTFRAME_PROM_START -->
+        <!-- sprites:scale_table - starts at 0x3D2000 - length 0x10000 (16 bits) -->
+        <part name="ma_8.f10" crc="61f3de03"/>
+        <!-- Total 0x3E2000 bytes - 3976 kBytes -->
+    </rom>
+    <!-- Light gun -->
+    <rom index="1">
+        <part>02 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="ff,ff">
+        <DSW1/>
+        <dip name="Coin Slots" bits="0" ids="Individual,Common"/>
+        <dip name="Allow Continue" bits="1" ids="No,Yes"/>
+        <dip name="Magazine / Grenade" bits="2,3" ids="8 / 5,7 / 4,5 / 2,6 / 3"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/4,1/3,1/2,1/1"/>
+        <dip name="Difficulty" bits="8,9" ids="Hardest,Hard,Easy,Normal"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Infinite Energy,Demo Sounds Off,Demo Sounds On"/>
+        <dip name="Service Mode" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="Disparo,Granada,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

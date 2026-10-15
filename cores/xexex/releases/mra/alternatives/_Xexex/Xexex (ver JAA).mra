@@ -1,0 +1,91 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="konami-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Xexex (ver JAA)</name>
+    <setname>xexexj</setname>
+    <mameversion>0289</mameversion>
+    <year>1991</year>
+    <manufacturer>Konami</manufacturer>
+    <players>2</players>
+    <rbf>xexex</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="xexexj.zip|xexex.zip" md5="None" address="0x30000000" asm_md5="6fc9f4efe74fd3e1988488f88929e64f">
+        <!-- maincpu - starts at 0x0 - length 0x1C0000 (21 bits) -->
+        <interleave output="16">
+            <part name="067jaa02.16f" crc="30ae5bc4" map="01"/>
+            <part name="067jaa01.16d" crc="06e99784" map="10"/>
+        </interleave>
+        <part repeat="0x80000"> FF</part>
+        <interleave output="16">
+            <part name="067b04.13f" crc="26ec5dc8" map="01"/>
+            <part name="067b03.13d" crc="97833086" map="10"/>
+        </interleave>
+        <part repeat="0x40000"> FF</part>
+        <!-- JTFRAME_BA1_START -->
+        <!-- audiocpu - starts at 0x1C0000 - length 0x20000 (17 bits) -->
+        <part name="067jaa05.4e" crc="2f4dd0a8"/>
+        <!-- PCM_START -->
+        <!-- pcm - starts at 0x1E0000 - length 0x300000 (22 bits) -->
+        <part name="067b06.3e" crc="3b12fce4"/>
+        <part name="067b07.1e" crc="ec87fe1b"/>
+        <!-- LVC_START -->
+        <!-- lvc - starts at 0x4E0000 - length 0x80000 (19 bits) -->
+        <part name="067b08.22f" crc="ca816b7b"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- k056832 - starts at 0x560000 - length 0x200000 (21 bits) -->
+        <interleave output="32">
+            <part name="067b14.1n" crc="02a44bfa" map="0021"/>
+            <part name="067b13.2n" crc="633c8eb5" map="2100"/>
+        </interleave>
+        <!-- JTFRAME_BA3_START -->
+        <!-- obj - starts at 0x760000 - length 0x400000 (22 bits) -->
+        <interleave output="64">
+            <part name="067b12.17n" crc="08d611b0" map="00000021"/>
+            <part name="067b11.19n" crc="a26f7507" map="00002100"/>
+            <part name="067b10.20n" crc="ee31db8d" map="00210000"/>
+            <part name="067b09.22n" crc="88f072ef" map="21000000"/>
+        </interleave>
+        <!-- Total 0xB60000 bytes - 11648 kBytes -->
+    </rom>
+    <rom index="2">
+        <part>
+05 76 FA 89 90 67 4A 41 41 00 00 00 00 00 00 00
+00 DD D8 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+</part>
+    </rom>
+    <nvram index="2" size="128"/>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <buttons names="Shot,Flint,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

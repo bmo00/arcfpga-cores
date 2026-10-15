@@ -1,0 +1,96 @@
+<!--          FPGA arcade hardware for arcfpga, by bmo00
+
+              Built on JTFRAME (GPLv2) by Jose Tejada / Jotego
+              https://github.com/bmo00/arcfpga-cores
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not maintained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) bmo00, 2026
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with compatible
+              software. This software can be homebrew projects or legally
+              obtained memory dumps of compatible games.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="snk-fpga" source="https://github.com/bmo00/arcfpga-cores"/>
+    <rotation>horizontal</rotation>
+    <name>Fighting Soccer (Joystick hack bootleg, alt)</name>
+    <setname>fsoccerba</setname>
+    <mameversion>0289</mameversion>
+    <year>1988</year>
+    <manufacturer>bootleg</manufacturer>
+    <players>4</players>
+    <rbf>gwar</rbf>
+    <joystick>8</joystick>
+    <region>World</region>
+    <rom index="0" zip="fsoccerba.zip|fsoccer.zip" md5="None" asm_md5="5362d28e54fdaaad2a0ba9a663b32984">
+        <!-- maincpu - starts at 0x0 - length 0x10000 (16 bits) -->
+        <part name="fs3.6c" crc="e644d207"/>
+        <!-- JTFRAME_BA1_START -->
+        <!-- sub - starts at 0x10000 - length 0x10000 (16 bits) -->
+        <part name="fs1_ver4.2c" crc="97830108"/>
+        <!-- PCM_START -->
+        <!-- ym2 - starts at 0x20000 - length 0x10000 (16 bits) -->
+        <part name="fs4.7p" crc="435c3716"/>
+        <!-- JTFRAME_BA2_START -->
+        <!-- audiocpu - starts at 0x30000 - length 0x10000 (16 bits) -->
+        <part name="fs2.3j" crc="9ee54ea1"/>
+        <!-- BG_START -->
+        <!-- bg_tiles - starts at 0x40000 - length 0x40000 (18 bits) -->
+        <part name="fs14.8d" crc="38c38b40"/>
+        <part name="fs15.8e" crc="a614834f"/>
+        <part repeat="0x20000"> FF</part>
+        <!-- JTFRAME_BA3_START -->
+        <!-- sp16_tiles - starts at 0x80000 - length 0x40000 (18 bits) -->
+        <part repeat="0x40000"> FF</part>
+        <!-- SP32_START -->
+        <!-- sp32_tiles - starts at 0xC0000 - length 0x80000 (19 bits) -->
+        <interleave output="32">
+            <part name="fs12.2t" crc="b2442c30" map="0001"/>
+            <part name="fs10.2r" crc="e42864d8" map="0010"/>
+            <part name="fs8.2n" crc="11156a7d" map="0100"/>
+            <part name="fs6.2k" crc="588d14b3" map="1000"/>
+        </interleave>
+        <interleave output="32">
+            <part name="fs11.2s" crc="022f3e96" map="0001"/>
+            <part name="fs9.2p" crc="d8112aa6" map="0010"/>
+            <part name="fs7.2l" crc="d584964b" map="0100"/>
+            <part name="fs5.2j" crc="def2f1d8" map="1000"/>
+        </interleave>
+        <!-- JTFRAME_PROM_START -->
+        <!-- tx_tiles - starts at 0x140000 - length 0x8000 (15 bits) -->
+        <part name="fs13.4n" crc="0de7b7ad"/>
+        <!-- proms - starts at 0x148000 - length 0xC00 (12 bits) -->
+        <part name="2.8e" crc="bf4ac706"/>
+        <part name="1.8d" crc="1bac8010"/>
+        <part name="3.9e" crc="dbeddb14"/>
+        <!-- Total 0x148C00 bytes - 1315 kBytes -->
+    </rom>
+    <rom index="1">
+        <part>00 80</part>
+    </rom>
+    <switches page_id="1" page_name="Switches" base="16" default="37,ff">
+        <DSW1/>
+        <dip name="Cabinet" bits="0,1" ids="Cocktail,Cocktail,Upright,Upright"/>
+        <dip name="Version" bits="2,3" ids="USA,Europe,Japan,-"/>
+        <dip name="Coin A" bits="4,5" ids="4/1,3/1,2/1,1/1"/>
+        <dip name="Coin B" bits="6,7" ids="1/2,1/3,1/4,1/6"/>
+        <DSW2/>
+        <dip name="Allow Continue" bits="8" ids="No,Yes"/>
+        <dip name="Flip Screen" bits="9" ids="On,Off"/>
+        <dip name="Game Mode" bits="10,11" ids="Freeze,Win Match Against CPU,Demo Sound Off,Demo Sound On"/>
+        <dip name="Play Time (Type A)" bits="12,14" ids="2:10,1:00,1:50,1:40,1:30,1:20,1:10,2:00"/>
+        <dip name="Service Mode" bits="15" ids="On,Off"/>
+    </switches>
+    <buttons names="button 1,button 2,-,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+</misterromdescription>

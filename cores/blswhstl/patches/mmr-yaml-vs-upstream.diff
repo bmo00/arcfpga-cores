@@ -1,0 +1,6 @@
+--- /dev/null
++++ b/cfg/mmr.yaml
+@@ -0,0 +1,3 @@
++- include:
++    core: simson
++    name: k054000

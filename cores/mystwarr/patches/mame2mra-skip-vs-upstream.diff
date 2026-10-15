@@ -1,0 +1,39 @@
+--- a/cfg/mame2mra.toml
++++ b/cfg/mame2mra.toml
+@@ -6,10 +6,32 @@
+ 
+ sourcefile=[ "mystwarr.cpp" ]
+ skip = { bootlegs=true, setnames=[
+-    "metamrph","metamrphe","metamrphj","metamrphu",
+-    "viostorm","viostorma","viostormab","viostormb","viostorme","viostormj","viostormu","viostormub",
+-    "martchmp","martchmpa","martchmpc","martchmpj","martchmpj1","martchmpu","martchmpu1",
+-    "dadandrn","dadandarn","gaiapols","gaiapolsj","gaiapolsu"
++    "dadandrn",
++    "gaiapols",
++    "gaiapolsj",
++    "gaiapolsu",
++    "metamrph",
++    "metamrpha",
++    "metamrphe",
++    "metamrphj",
++    "metamrphu",
++    "mmaulers",
++    "mmaulersu",
++    "mtlchamp",
++    "mtlchamp1",
++    "mtlchampa",
++    "mtlchampj",
++    "mtlchampu",
++    "mtlchampu1",
++    "viostorm",
++    "viostorma",
++    "viostormab",
++    "viostormabbl",
++    "viostormeb",
++    "viostormj",
++    "viostormu",
++    "viostormub",
++    "viostormubbl"
+ ] }
+ 
+ rename = [

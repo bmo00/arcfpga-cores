@@ -15,19 +15,24 @@ thoop2:
       - thoop2_gfx_decode.v
       - thoop2_sprite_layer.v
       - thoop2_sprite_engine.v
+      - jt6295.v
+      - jt6295_acc.v
+      - jt6295_adpcm.v
+      - jt6295_ctrl.v
+      - jt6295_rom.v
+      - jt6295_serial.v
+      - jt6295_sh_rst.v
+      - jt6295_timing.v
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
       - thoop2_68kdtack.v
       - thoop2_mcu.v
       - mc8051_regen.v
-jt6295: null
-fx68k: []
+      - jtframe_ram_rst.v
+      - thoop2_clk48_96.sdc
 jtframe:
   - from: ram
     get:
-      - jtframe_ram_rst.v
-  - from: cpu
-    get:
-      - jtframe_68kdtack_cen.v
-      - jtframe_68kdtack.v
-  - from: ram
-    get:
+      - jtframe_ram.v
       - jtframe_dual_ram.v

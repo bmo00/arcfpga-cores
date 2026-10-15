@@ -12,18 +12,16 @@ aligator:
       - aligator_gae1_sprite.v
       - aligator_gae1_palette.v
       - aligator_gae1_sound.v
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
       - aligator_68kdtack.v
       - aligator_mcu.v
       - mc8051_regen.v
-fx68k: []
+      - jtframe_ram_rst.v
+      - aligator_clk48_96.sdc
 jtframe:
   - from: ram
     get:
-      - jtframe_ram_rst.v
-  - from: cpu
-    get:
-      - jtframe_68kdtack_cen.v
-      - jtframe_68kdtack.v
-  - from: ram
-    get:
       - jtframe_dual_ram.v
+      - jtframe_ram.v

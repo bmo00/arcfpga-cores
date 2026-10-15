@@ -1,0 +1,10 @@
+--- a/hdl/jtaerofgt_sound.v
++++ b/hdl/jtaerofgt_sound.v
+@@ -154,7 +154,6 @@
+     .psg_A          (               ),
+     .psg_B          (               ),
+     .psg_C          (               ),
+-    .fm_snd         (               ),
+     .psg_snd        (               ),
+     .snd_right      ( jt10_r        ),
+     .snd_left       ( jt10_l        ),

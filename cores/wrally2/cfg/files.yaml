@@ -14,18 +14,15 @@ wrally2:
       - wrally2_gae1_sprite.v
       - wrally2_gae1_palette.v
       - wrally2_gae1_sound.v
+      - fx68k.sv
+      - fx68kAlu.sv
+      - uaddrPla.sv
       - wrally2_68kdtack.v
       - wrally2_mcu.v
       - mc8051_regen.v
-fx68k: []
+      - jtframe_ram_rst.v
 jtframe:
   - from: ram
     get:
-      - jtframe_ram_rst.v
-  - from: cpu
-    get:
-      - jtframe_68kdtack_cen.v
-      - jtframe_68kdtack.v
-  - from: ram
-    get:
+      - jtframe_ram.v
       - jtframe_dual_ram.v

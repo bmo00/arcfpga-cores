@@ -1,0 +1,16 @@
+--- hdl/rtl/altair_machine.v
++++ hdl/rtl/altair_machine.v
+@@ -187,9 +187,11 @@
+ 
+ `ifdef SIM
+     initial $readmemh("../../roms/altair_prog.hex", rom);
+-`else
+-    initial $readmemh("altair_prog.hex", rom);
+ `endif
++// NeptUNO+ bridge (arcfpga-cores-develop): the real ROM always arrives at runtime over
++// ioctl_rom_we from the .rom — no synthesis-time $readmemh needed or wanted outside SIM (this repo
++// never commits ROM data, and Quartus can't find a file that doesn't exist). See
++// neptunoplus/patches/README.md for the patch this hunk comes from.
+ 
+ `ifdef WRITETRACE
+     always @(posedge clk) if (ce_cpu && mem_write)

@@ -30,3 +30,9 @@ elaborate at all. Without them, simulation/synthesis of `fx68k.sv` fails outrigh
 independent of upstream's own commit).
 
 Pinned base: `jlrh/gaelco-fpga` commit `519a50b18960882895c3db7265ed238fb839bae2`.
+
+## `hdl-fx68k-lint-vs-upstream.diff`
+
+Adds `// verilator lint_off BLKANDNBLK` at the top of `hdl/fx68k.sv`.
+
+**Why**: Upstream's `fx68k.sv` drives fields of the `Nanod` struct both with `assign` and with non-blocking assignments inside `always_ff`; the Verilator used by `lint-one.sh` rejects that as `%Error-BLKANDNBLK` and the whole core fails lint. The logic itself is correct (disjoint fields) and synthesizes fine, so the warning is waived file-wide, same as `cores/squash/hdl/fx68k.sv` already does.

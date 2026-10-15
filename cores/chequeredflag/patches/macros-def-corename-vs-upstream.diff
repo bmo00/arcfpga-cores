@@ -1,0 +1,9 @@
+--- a/cfg/macros.def
++++ b/cfg/macros.def
+@@ -1,5 +1,5 @@
+ JTFRAME_RELEASE=1
+-CORENAME=CHEQFLAG
++CORENAME=CHEQUEREDFLAG
+ 
+ GAMETOP=jtchequeredflag_game_sdram
+ JTFRAME_MR_DDRLOAD
