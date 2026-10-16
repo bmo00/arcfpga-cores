@@ -1,5 +1,5 @@
 {
-  "1942": {
+  "jotego/1942": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -29,7 +29,7 @@
       }
     }
   },
-  "1943": {
+  "jotego/1943": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -59,7 +59,7 @@
       }
     }
   },
-  "aerofgt": {
+  "jlrh/aerofgt": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "TODO",
@@ -85,7 +85,7 @@
       }
     }
   },
-  "ajax": {
+  "jotego/ajax": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -115,7 +115,7 @@
       }
     }
   },
-  "aliens": {
+  "jotego/aliens": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -146,7 +146,7 @@
       }
     }
   },
-  "aligator": {
+  "jlrh/aligator": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -174,7 +174,7 @@
       }
     }
   },
-  "altair": {
+  "jlrh/altair": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "native",
@@ -201,7 +201,7 @@
       }
     }
   },
-  "arkanoid": {
+  "gyurco/arkanoid": {
     "origin": "external",
     "core_author": "gyurco",
     "framework": "native",
@@ -218,7 +218,7 @@
       "10CL120YF484C8G"
     ]
   },
-  "asterix": {
+  "jlrh/asterix": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "konami-fpga",
@@ -249,7 +249,7 @@
       }
     }
   },
-  "bbusters": {
+  "jlrh/bbusters": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "snk-fpga",
@@ -275,7 +275,7 @@
       }
     }
   },
-  "bigkarnk": {
+  "jlrh/bigkarnk": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -303,7 +303,7 @@
       }
     }
   },
-  "biocom": {
+  "jotego/biocom": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -333,7 +333,7 @@
       }
     }
   },
-  "biomtoy": {
+  "jlrh/biomtoy": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -361,7 +361,7 @@
       }
     }
   },
-  "blkout": {
+  "jotego/blkout": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "Andrea Bogazzi",
@@ -389,7 +389,7 @@
       }
     }
   },
-  "blswhstl": {
+  "jlrh/blswhstl": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "blswhstl",
@@ -418,7 +418,7 @@
       }
     }
   },
-  "btiger": {
+  "jotego/btiger": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -452,7 +452,7 @@
       }
     }
   },
-  "bubl": {
+  "jotego/bubl": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -482,7 +482,7 @@
       }
     }
   },
-  "bucky": {
+  "meathax/bucky": {
     "origin": "external",
     "core_author": "meathax",
     "mra_author": "Bucky MiSTer contributors",
@@ -510,7 +510,7 @@
       }
     }
   },
-  "cal50": {
+  "jotego/cal50": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -538,7 +538,7 @@
       }
     }
   },
-  "castle": {
+  "jotego/castle": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -568,7 +568,7 @@
       }
     }
   },
-  "chequeredflag": {
+  "jlrh/chequeredflag": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -594,7 +594,7 @@
       }
     }
   },
-  "circus": {
+  "jotego/circus": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -624,7 +624,7 @@
       }
     }
   },
-  "commnd": {
+  "jotego/commnd": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -654,7 +654,7 @@
       }
     }
   },
-  "comsc": {
+  "jotego/comsc": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -684,7 +684,7 @@
       }
     }
   },
-  "contra": {
+  "jotego/contra": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -714,7 +714,7 @@
       }
     }
   },
-  "cop": {
+  "jotego/cop": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -748,7 +748,7 @@
       }
     }
   },
-  "cps1": {
+  "jotego/cps1": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -783,7 +783,7 @@
       }
     }
   },
-  "cps15": {
+  "jotego/cps15": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -813,7 +813,7 @@
       }
     }
   },
-  "cps2": {
+  "jotego/cps2": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -843,7 +843,7 @@
       }
     }
   },
-  "cps3": {
+  "jotego/cps3": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -878,7 +878,7 @@
       "mister": 2
     }
   },
-  "dd": {
+  "jotego/dd": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -912,7 +912,7 @@
       }
     }
   },
-  "dd2": {
+  "jotego/dd2": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -946,7 +946,7 @@
       }
     }
   },
-  "ddrbl": {
+  "jotego/ddrbl": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -973,7 +973,7 @@
       }
     }
   },
-  "deadang": {
+  "jlrh/deadang": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrodriguez",
@@ -999,7 +999,7 @@
       }
     }
   },
-  "destroyer": {
+  "jlrh/destroyer": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "native",
@@ -1026,7 +1026,7 @@
       }
     }
   },
-  "draco": {
+  "jlrh/draco": {
     "origin": "external",
     "core_author": "jlrh",
     "framework": "native",
@@ -1053,7 +1053,7 @@
       }
     }
   },
-  "empirecity": {
+  "jlrh/empirecity": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrodriguez",
@@ -1081,7 +1081,7 @@
       }
     }
   },
-  "exed": {
+  "jotego/exed": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1111,7 +1111,7 @@
       }
     }
   },
-  "flane": {
+  "jotego/flane": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1145,7 +1145,7 @@
       }
     }
   },
-  "flstory": {
+  "jotego/flstory": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1176,7 +1176,7 @@
       }
     }
   },
-  "fround": {
+  "jotego/fround": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1210,7 +1210,7 @@
       }
     }
   },
-  "gae1": {
+  "jotego/gae1": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1238,7 +1238,7 @@
       }
     }
   },
-  "gaiden": {
+  "jotego/gaiden": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1268,7 +1268,7 @@
       }
     }
   },
-  "gals": {
+  "jotego/gals": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1300,7 +1300,7 @@
       }
     }
   },
-  "glass": {
+  "jlrh/glass": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -1328,7 +1328,7 @@
       }
     }
   },
-  "gng": {
+  "jotego/gng": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1358,7 +1358,7 @@
       }
     }
   },
-  "grad3": {
+  "jotego/grad3": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "Fulvio Venturelli",
@@ -1386,7 +1386,7 @@
       }
     }
   },
-  "gunsmk": {
+  "jotego/gunsmk": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1416,7 +1416,7 @@
       }
     }
   },
-  "gwar": {
+  "jlrh/gwar": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "snk-fpga",
@@ -1445,7 +1445,7 @@
       }
     }
   },
-  "harier": {
+  "jotego/harier": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego, niknak",
@@ -1471,7 +1471,7 @@
       }
     }
   },
-  "hotchase": {
+  "jlrh/hotchase": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -1497,7 +1497,7 @@
       }
     }
   },
-  "inferno": {
+  "MiSTer-devel/inferno": {
     "origin": "external",
     "core_author": "MiSTer-devel",
     "framework": "native",
@@ -1513,7 +1513,7 @@
       "5CSEBA6U23I7"
     ]
   },
-  "karnov": {
+  "jotego/karnov": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1543,7 +1543,7 @@
       }
     }
   },
-  "kchamp": {
+  "jotego/kchamp": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1573,7 +1573,7 @@
       }
     }
   },
-  "kicker": {
+  "jotego/kicker": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1607,7 +1607,7 @@
       }
     }
   },
-  "kiwi": {
+  "jotego/kiwi": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1638,7 +1638,7 @@
       }
     }
   },
-  "konamigt": {
+  "jlrh/konamigt": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -1664,7 +1664,7 @@
       }
     }
   },
-  "kunio": {
+  "jotego/kunio": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1694,7 +1694,7 @@
       }
     }
   },
-  "labrun": {
+  "jotego/labrun": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1725,7 +1725,7 @@
       }
     }
   },
-  "mariobros": {
+  "MiSTer-devel/mariobros": {
     "origin": "external",
     "core_author": "MiSTer-devel",
     "framework": "native",
@@ -1757,7 +1757,7 @@
       }
     }
   },
-  "mechatt": {
+  "jlrh/mechatt": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "snk-fpga",
@@ -1783,7 +1783,7 @@
       }
     }
   },
-  "midres": {
+  "jotego/midres": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1813,7 +1813,7 @@
       }
     }
   },
-  "mikie": {
+  "jotego/mikie": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1843,7 +1843,7 @@
       }
     }
   },
-  "momoko": {
+  "javi-ivaj/momoko": {
     "origin": "external",
     "core_author": "javi-ivaj",
     "mra_author": "javi",
@@ -1870,7 +1870,7 @@
       }
     }
   },
-  "moomesa": {
+  "jlrh/moomesa": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "konami-fpga",
@@ -1898,7 +1898,7 @@
       }
     }
   },
-  "mtlchamp": {
+  "jlrh/mtlchamp": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "konami-fpga",
@@ -1924,7 +1924,7 @@
       }
     }
   },
-  "mx5k": {
+  "jotego/mx5k": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -1958,7 +1958,7 @@
       }
     }
   },
-  "mystston": {
+  "bmo00/mystston": {
     "origin": "internal",
     "core_author": "bmo00",
     "mra_author": "bmo00",
@@ -1987,7 +1987,7 @@
       }
     }
   },
-  "mystwarr": {
+  "jlrh/mystwarr": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "konami-fpga",
@@ -2013,7 +2013,7 @@
       }
     }
   },
-  "ninja": {
+  "jotego/ninja": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2044,7 +2044,7 @@
       }
     }
   },
-  "opwolf": {
+  "jlrh/opwolf": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jotego",
@@ -2072,7 +2072,7 @@
       }
     }
   },
-  "outrun": {
+  "jotego/outrun": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2103,7 +2103,7 @@
       }
     }
   },
-  "paclan": {
+  "jotego/paclan": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2133,7 +2133,7 @@
       }
     }
   },
-  "pacman": {
+  "gyurco/pacman": {
     "origin": "external",
     "core_author": "gyurco",
     "framework": "native",
@@ -2153,7 +2153,7 @@
       "10CL120YF484C8G"
     ]
   },
-  "pang": {
+  "jotego/pang": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2184,7 +2184,7 @@
       }
     }
   },
-  "paroda": {
+  "jotego/paroda": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2215,7 +2215,7 @@
       }
     }
   },
-  "pinpon": {
+  "jotego/pinpon": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2245,7 +2245,7 @@
       }
     }
   },
-  "pktgal": {
+  "jotego/pktgal": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2273,7 +2273,7 @@
       }
     }
   },
-  "prmr": {
+  "jotego/prmr": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2304,7 +2304,7 @@
       }
     }
   },
-  "rastan": {
+  "jotego/rastan": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2340,7 +2340,7 @@
       }
     }
   },
-  "riders": {
+  "jotego/riders": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2371,7 +2371,7 @@
       }
     }
   },
-  "roadf": {
+  "jotego/roadf": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2401,7 +2401,7 @@
       }
     }
   },
-  "roc": {
+  "jotego/roc": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2431,7 +2431,7 @@
       }
     }
   },
-  "rumble": {
+  "jotego/rumble": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2461,7 +2461,7 @@
       }
     }
   },
-  "rungun": {
+  "jotego/rungun": {
     "origin": "external",
     "core_author": "jotego",
     "framework": "jtframe",
@@ -2499,7 +2499,7 @@
       }
     }
   },
-  "s16": {
+  "jotego/s16": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2529,7 +2529,7 @@
       }
     }
   },
-  "s16b": {
+  "jotego/s16b": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2559,7 +2559,7 @@
       }
     }
   },
-  "s18": {
+  "jotego/s18": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2589,7 +2589,7 @@
       }
     }
   },
-  "sarms": {
+  "jotego/sarms": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2620,7 +2620,7 @@
       }
     }
   },
-  "sbaskt": {
+  "jotego/sbaskt": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2650,7 +2650,7 @@
       }
     }
   },
-  "sectnz": {
+  "jotego/sectnz": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2680,7 +2680,7 @@
       }
     }
   },
-  "sf": {
+  "jotego/sf": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2710,7 +2710,7 @@
       }
     }
   },
-  "shadfrce": {
+  "jlrh/shadfrce": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "technos-fpga",
@@ -2736,7 +2736,7 @@
       }
     }
   },
-  "shanon": {
+  "jotego/shanon": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2766,7 +2766,7 @@
       }
     }
   },
-  "shouse": {
+  "jotego/shouse": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2797,7 +2797,7 @@
       }
     }
   },
-  "simson": {
+  "jotego/simson": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2833,7 +2833,7 @@
       }
     }
   },
-  "slyspy": {
+  "jotego/slyspy": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -2863,7 +2863,7 @@
       }
     }
   },
-  "splash": {
+  "javi-ivaj/splash": {
     "origin": "external",
     "core_author": "javi-ivaj",
     "mra_author": "javi",
@@ -2890,7 +2890,7 @@
       }
     }
   },
-  "squash": {
+  "jlrh/squash": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -2917,7 +2917,7 @@
       }
     }
   },
-  "ssriders": {
+  "jlrh/ssriders": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "ssriders",
@@ -2948,7 +2948,7 @@
       }
     }
   },
-  "systemc2": {
+  "Mezzow/systemc2": {
     "origin": "external",
     "core_author": "Mezzow",
     "framework": "native",
@@ -2975,7 +2975,7 @@
       }
     }
   },
-  "taitox": {
+  "jotego/taitox": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego, Andrea Bogazzi",
@@ -3003,7 +3003,7 @@
       }
     }
   },
-  "thoop": {
+  "jlrh/thoop": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -3030,7 +3030,7 @@
       }
     }
   },
-  "thoop2": {
+  "jlrh/thoop2": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -3057,7 +3057,7 @@
       }
     }
   },
-  "thundr": {
+  "jotego/thundr": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3088,7 +3088,7 @@
       }
     }
   },
-  "tmnt": {
+  "jotego/tmnt": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3120,7 +3120,7 @@
       }
     }
   },
-  "toki": {
+  "jotego/toki": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "Solal Jacob",
@@ -3150,7 +3150,7 @@
       }
     }
   },
-  "tora": {
+  "jotego/tora": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3180,7 +3180,7 @@
       }
     }
   },
-  "track": {
+  "jotego/track": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3211,7 +3211,7 @@
       }
     }
   },
-  "trojan": {
+  "jotego/trojan": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3246,7 +3246,7 @@
       }
     }
   },
-  "twin16": {
+  "jotego/twin16": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3276,7 +3276,7 @@
       }
     }
   },
-  "vigil": {
+  "jotego/vigil": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3306,7 +3306,7 @@
       }
     }
   },
-  "vlfied": {
+  "jotego/vlfied": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3334,7 +3334,7 @@
       }
     }
   },
-  "wc": {
+  "jotego/wc": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3364,7 +3364,7 @@
       }
     }
   },
-  "wrally": {
+  "jlrh/wrally": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -3391,7 +3391,7 @@
       }
     }
   },
-  "wrally2": {
+  "jlrh/wrally2": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "jlrh",
@@ -3418,7 +3418,7 @@
       }
     }
   },
-  "wwfss": {
+  "jotego/wwfss": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3448,7 +3448,7 @@
       }
     }
   },
-  "xexex": {
+  "jlrh/xexex": {
     "origin": "external",
     "core_author": "jlrh",
     "mra_author": "konami-fpga",
@@ -3474,7 +3474,7 @@
       }
     }
   },
-  "xmen": {
+  "jotego/xmen": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
@@ -3505,7 +3505,7 @@
       }
     }
   },
-  "yiear": {
+  "jotego/yiear": {
     "origin": "external",
     "core_author": "jotego",
     "mra_author": "jotego",
