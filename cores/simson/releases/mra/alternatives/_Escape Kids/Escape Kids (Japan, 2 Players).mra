@@ -33,13 +33,14 @@
     <rbf>jtsimson</rbf>
     <joystick>8</joystick>
     <region>World</region>
-    <rom index="0" zip="esckidsj.zip|esckids.zip" md5="None" address="0x30000000" asm_md5="35ec73d3b7f2205ab702e7e5cc4e1a42">
+    <rom index="0" zip="esckidsj.zip|esckids.zip" md5="None" address="0x30000000" asm_md5="64ddf0697bedcd7f4b53d4690dacc3b8">
         <!--  Header to identify the PCB type
         Byte 0 = 0 - The Simpsons
                  1 - Reserved (Parodius)
-                 2 - Vendetta -->
+                 2 - Vendetta
+                 3 - Escape Kids -->
         <part>
-            00 00 00 00 </part>
+            03 00 00 00 </part>
         <!-- maincpu - starts at 0x0 - length 0x80000 (19 bits) -->
         <part name="975r01" crc="7b5c5572"/>
         <part repeat="0x60000"> FF</part>
@@ -67,9 +68,21 @@
         </interleave>
         <!-- Total 0x6E0000 bytes - 7040 kBytes -->
     </rom>
+    <rom index="2">
+        <part>
+57 41 44 30 00 49 53 48 30 00 49 55 43 30 00 42
+41 44 30 00 4B 4F 59 30 00 4F 4F 55 30 00 41 44
+43 30 00 57 41 44 30 00 49 53 48 30 00 49 55 43
+30 00 42 41 44 30 00 4B 4F 59 30 00 4F 4F 55 30
+00 41 44 43 30 00 57 41 44 30 00 49 53 48 30 00
+49 55 43 30 00 42 41 44 30 00 4B 4F 59 30 00 4F
+4F 55 30 00 41 44 43 30 00 00 00 00 02 01 01 00
+01 01 FF FF FF FF FF FF FF FF FF FF FF FF 22 2C
+</part>
+    </rom>
     <nvram index="2" size="28833"/>
     <rom index="1">
         <part>00 80</part>
     </rom>
-    <buttons names="button 1,button 2,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
+    <buttons names="Jump,Dash,-,Start,Coin,Core credits" default="A,B,Start,Select,-" count="2"/>
 </misterromdescription>

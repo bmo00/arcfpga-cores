@@ -434,16 +434,20 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
+        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       }
     }
@@ -718,7 +722,7 @@
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
     },
     "platform": [
       "Data East MEC-M1"
@@ -726,17 +730,21 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
       }
     }
   },
@@ -748,7 +756,7 @@
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "f09d1a53ee1bf0bac9b2fb947bf818b4d92df07e"
+      "commit": "927f6e5232a033c98f85970018a5f47aaed5f1aa"
     },
     "platform": [
       "Capcom CPS-1",
@@ -757,17 +765,21 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-09-06",
-        "commit": "f09d1a53ee1bf0bac9b2fb947bf818b4d92df07e"
+        "date": "2026-10-16",
+        "commit": "927f6e5232a033c98f85970018a5f47aaed5f1aa"
       },
       "neptunoplus": {
-        "date": "2026-09-06",
-        "commit": "f09d1a53ee1bf0bac9b2fb947bf818b4d92df07e",
+        "date": "2026-10-16",
+        "commit": "927f6e5232a033c98f85970018a5f47aaed5f1aa",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-09-06",
-        "commit": "f09d1a53ee1bf0bac9b2fb947bf818b4d92df07e"
+        "date": "2026-10-16",
+        "commit": "927f6e5232a033c98f85970018a5f47aaed5f1aa"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "927f6e5232a033c98f85970018a5f47aaed5f1aa"
       }
     }
   },
@@ -879,16 +891,20 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
+        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       }
     }
@@ -901,7 +917,7 @@
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      "commit": "da1ce62dd6c2f2f74ad324673fd7c77479cfd653"
     },
     "platform": [
       "Technos 6309 based"
@@ -909,17 +925,21 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+        "date": "2026-10-16",
+        "commit": "da1ce62dd6c2f2f74ad324673fd7c77479cfd653"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
+        "date": "2026-10-16",
+        "commit": "da1ce62dd6c2f2f74ad324673fd7c77479cfd653",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+        "date": "2026-10-16",
+        "commit": "da1ce62dd6c2f2f74ad324673fd7c77479cfd653"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "da1ce62dd6c2f2f74ad324673fd7c77479cfd653"
       }
     }
   },
@@ -1104,16 +1124,20 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
+        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       }
     }
@@ -1157,7 +1181,7 @@
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "df1965d2ac099beeff9ffc577961a6584b532d36"
+      "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
     },
     "platform": [
       "Konami Twin16 hardware"
@@ -1165,17 +1189,21 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
-        "commit": "df1965d2ac099beeff9ffc577961a6584b532d36"
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "df1965d2ac099beeff9ffc577961a6584b532d36",
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "df1965d2ac099beeff9ffc577961a6584b532d36"
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "51feb8871b5d9919eb21061d2132f824fe1101d5"
       }
     }
   },
@@ -1242,26 +1270,30 @@
     "core_author": "jotego",
     "mra_author": "jotego",
     "framework": "jtframe",
-    "beta": true,
+    "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "c4ace4f1456ff1f50518263c8bd1817364f32de0"
+      "commit": "c68f02ea27b20040ad30407ef595c49d2dd72ef1"
     },
     "system": "arcade",
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "c4ace4f1456ff1f50518263c8bd1817364f32de0",
+        "date": "2026-10-16",
+        "commit": "c68f02ea27b20040ad30407ef595c49d2dd72ef1",
         "notes": "Beta",
         "tested": "yes"
       },
       "arc": {
-        "date": "2026-08-31",
-        "commit": "c4ace4f1456ff1f50518263c8bd1817364f32de0"
+        "date": "2026-10-16",
+        "commit": "c68f02ea27b20040ad30407ef595c49d2dd72ef1"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "c4ace4f1456ff1f50518263c8bd1817364f32de0"
+        "date": "2026-10-16",
+        "commit": "c68f02ea27b20040ad30407ef595c49d2dd72ef1"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "c68f02ea27b20040ad30407ef595c49d2dd72ef1"
       }
     }
   },
@@ -1554,16 +1586,20 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
+        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       }
     }
@@ -1901,16 +1937,20 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994",
         "tested": "yes"
       },
       "mra": {
-        "date": "2026-08-31",
+        "date": "2026-10-16",
+        "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "3278a82b948a91c23a8d2165a5ae545a6dae8994"
       }
     }
@@ -2752,10 +2792,10 @@
     "core_author": "jotego",
     "mra_author": "jotego",
     "framework": "jtframe",
-    "beta": false,
+    "beta": true,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+      "commit": "eb5f4d865d1d3e7e37921269a7b5fcf22d07ed49"
     },
     "platform": [
       "Konami Vendetta hardware",
@@ -2764,18 +2804,22 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+        "date": "2026-10-16",
+        "commit": "eb5f4d865d1d3e7e37921269a7b5fcf22d07ed49"
       },
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7",
+        "date": "2026-10-16",
+        "commit": "eb5f4d865d1d3e7e37921269a7b5fcf22d07ed49",
         "notes": "Escape Kids: Black screen",
         "tested": "issues"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+        "date": "2026-10-16",
+        "commit": "eb5f4d865d1d3e7e37921269a7b5fcf22d07ed49"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "eb5f4d865d1d3e7e37921269a7b5fcf22d07ed49"
       }
     }
   },
@@ -3160,8 +3204,8 @@
   "trojan": {
     "origin": "external",
     "core_author": "jotego",
-    "mra_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
@@ -3173,17 +3217,21 @@
     "system": "arcade",
     "releases": {
       "arc": {
-        "date": "2026-08-26",
+        "date": "2026-10-16",
         "commit": "f85d04c8945288d1f9badc7cc063ad4e8cdc31fb"
       },
       "neptunoplus": {
-        "date": "2026-08-26",
+        "date": "2026-10-16",
         "commit": "f85d04c8945288d1f9badc7cc063ad4e8cdc31fb",
         "notes": "Avengers (and clones) Some background sprites are missing",
         "tested": "issues"
       },
       "mra": {
-        "date": "2026-08-26",
+        "date": "2026-10-16",
+        "commit": "f85d04c8945288d1f9badc7cc063ad4e8cdc31fb"
+      },
+      "mister": {
+        "date": "2026-10-16",
         "commit": "f85d04c8945288d1f9badc7cc063ad4e8cdc31fb"
       }
     }
@@ -3393,8 +3441,8 @@
   "xexex": {
     "origin": "external",
     "core_author": "jlrh",
-    "framework": "jtframe",
     "mra_author": "konami-fpga",
+    "framework": "jtframe",
     "beta": false,
     "external": {
       "repo": "jlrh/konami-fpga",
