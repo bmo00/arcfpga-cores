@@ -1,0 +1,20 @@
+[ARC]
+RBF=JTSKYKID
+MOD=0
+NAME=DRGNBSTR
+DEFAULT=0xFFFFFF0000
+CONF="P1,Switches"
+CONF="P1OX,Cabinet,Cocktail,Upright"
+CONF="P1OGH,Coin B,3/1,2/1,1/2,1/1"
+CONF="P1OI,Freeze,On,Off"
+CONF="P1OJ,Round Skip,On,Off"
+CONF="P1OK,Demo Sounds,Off,On"
+CONF="P1OLM,Coin A,3/1,2/1,1/2,1/1"
+CONF="P1ON,Service Mode,On,Off"
+CONF="P1OO,Allow Continue,No,Yes"
+CONF="P1OP,Bonus Level,Partial,Full"
+CONF="P1OQR,Bonus Vitality,64,32/64,48/64,None"
+CONF="P1OST,Starting Vitality,160,96,64,128"
+CONF="P1OU,Level of Monster,Difficult,Normal"
+CONF="P1OV,Spurt Time,Difficult,Normal"
+BUTTONS="Attack,Jump,Start,Coin,Core credits"
