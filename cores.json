@@ -856,23 +856,26 @@
     "system": "arcade",
     "releases": {
       "mister": {
-        "date": "2026-09-06",
+        "date": "2026-10-16",
         "commit": "70884b5347d99c706158152da47f1dc46afe668f"
       },
       "neptunoplus": {
-        "date": "2026-09-06",
+        "date": "2026-10-16",
         "commit": "70884b5347d99c706158152da47f1dc46afe668f",
         "notes": "Beta. 64MB required",
         "tested": "no"
       },
       "mra": {
-        "date": "2026-09-06",
+        "date": "2026-10-16",
         "commit": "70884b5347d99c706158152da47f1dc46afe668f"
       },
       "arc": {
-        "date": "2026-09-06",
+        "date": "2026-10-16",
         "commit": "70884b5347d99c706158152da47f1dc46afe668f"
       }
+    },
+    "synth_seed": {
+      "mister": 2
     }
   },
   "dd": {
@@ -2461,31 +2464,38 @@
   "rungun": {
     "origin": "external",
     "core_author": "jotego",
-    "mra_author": "jotego",
     "framework": "jtframe",
+    "mra_author": "jotego",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",
-      "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+      "commit": "b672aca509474559def2f6caec51fcd52cceee62"
     },
     "platform": [
       "Konami Run and Gun hardware"
     ],
     "system": "arcade",
+    "synth_seed": {
+      "mister": 2
+    },
     "releases": {
       "neptunoplus": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7",
+        "date": "2026-10-16",
+        "commit": "b672aca509474559def2f6caec51fcd52cceee62",
         "notes": "No sound (jt539 module is missing and not publicly available)",
         "tested": "issues"
       },
       "arc": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+        "date": "2026-10-16",
+        "commit": "b672aca509474559def2f6caec51fcd52cceee62"
       },
       "mra": {
-        "date": "2026-08-31",
-        "commit": "d91503fa728406e514b61f3dbfbea29a7cc879c7"
+        "date": "2026-10-16",
+        "commit": "b672aca509474559def2f6caec51fcd52cceee62"
+      },
+      "mister": {
+        "date": "2026-10-16",
+        "commit": "b672aca509474559def2f6caec51fcd52cceee62"
       }
     }
   },
@@ -3204,8 +3214,8 @@
   "trojan": {
     "origin": "external",
     "core_author": "jotego",
-    "framework": "jtframe",
     "mra_author": "jotego",
+    "framework": "jtframe",
     "beta": false,
     "external": {
       "repo": "jotego/jtcores",

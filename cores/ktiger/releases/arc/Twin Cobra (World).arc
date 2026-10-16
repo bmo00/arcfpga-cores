@@ -1,0 +1,15 @@
+[ARC]
+RBF=JTKTIGER
+MOD=5
+NAME=TWINCOBR
+CONF="P1,Switches"
+CONF="P1OH,Flip Screen,Off,On"
+CONF="P1OI,Service Mode,Off,On"
+CONF="P1OJ,Demo Sounds,On,Off"
+CONF="P1OKL,Coin A,1/1,2/1,3/1,4/1"
+CONF="P1OMN,Coin B,1/2,1/3,1/4,1/6"
+CONF="P1OOP,Difficulty,Normal,Easy,Hard,Very Hard"
+CONF="P1OQR,Bonus Life,50k 200k 150k+,70k 270k 200k+,50k Only,100k Only"
+CONF="P1OST,Lives,3,5,4,2"
+CONF="P1OU,Dip Switch Display,Off,On"
+BUTTONS="Shot,Bomb,Start,Coin,Core credits"

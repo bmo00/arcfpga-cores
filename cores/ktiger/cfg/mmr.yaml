@@ -1,0 +1,19 @@
+# Same register map as cores/wardnr/cfg/mmr.yaml's "scroll" block (Toaplan 1 tile-layer scroll
+# registers, written a byte at a time by the main CPU). Defined locally as "wardnr_scroll" with
+# no_core_name so `jtframe mmr ktiger` generates exactly jtwardnr_scroll_mmr — the module
+# wardnr/hdl/jtwardnr_scroll.v instantiates and cfg/files.yaml lists. Upstream imports it with
+# `include: {core: wardnr, name: wardnr_scroll}`, which this repo's jtframe rejects: imported blocks
+# keep their original name ("scroll"). See patches/README.md.
+- name: wardnr_scroll
+  no_core_name: true
+  size: 6
+  regs:
+    - name: scrx
+      dw: 16
+      at: "1,0"
+    - name: scry
+      dw: 16
+      at: "3,2"
+    - name: offs
+      dw: 16
+      at: "5,4"
